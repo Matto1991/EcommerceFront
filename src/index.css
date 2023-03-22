@@ -1,6 +1,11 @@
-.hero-image {
-  background-image: url("/public/img/");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lora", serif;
+}
+
+.tx-color {
+  color: #005b47 !important;
 }
