@@ -9,3 +9,12 @@
 .tx-color {
   color: #005b47 !important;
 }
+
+.hero-image {
+  background-image: url("/public/img/hero_image.webp");
+  filter: brightness(80%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 92vh;
+}
