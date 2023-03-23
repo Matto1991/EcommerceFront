@@ -47,7 +47,7 @@ export default function Home() {
             <div className="hero-title-container rounded">
               <h1 className="hero-title mb-4">In soft sculpture</h1>
               <div className="d-flex justify-content-end w-100">
-                <h4 className="hero-cta">SHOP THE COLLECTION</h4>
+                <h4 className="hero-cta">ABOUT THIS PROYECT</h4>
               </div>
             </div>
           </div>
