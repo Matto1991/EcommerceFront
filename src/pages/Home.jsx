@@ -9,7 +9,7 @@ export default function Home() {
   const getProducts = async () => {
     const response = await axios({
       method: "get",
-      url: `http://localhost:8000/products`,
+      url: `${process.env.REACT_APP_APIURL}/products`,
     });
     setProducts(response.data);
     console.log(response.data);
