@@ -34,6 +34,27 @@ html {
   /* box-shadow: 0px 0px 20px 0.2px rgba(0, 0, 0, 0.163); */
 }
 
+.navbar-dynamic-text {
+  color: black;
+}
+
+.navbar-static-text {
+  color: #fff !important;
+}
+
+.navbar-static-text a {
+  color: #fff !important;
+}
+.navbar-dynamic-logo {
+  font-size: 1.55rem !important;
+  color: var(--brand-ligth-brown) !important;
+}
+
+.navbar-static-logo {
+  font-size: 1.55rem !important;
+  color: #fff !important;
+}
+
 .navbar {
   position: fixed !important;
   top: 0;
@@ -44,41 +65,50 @@ html {
   transition: background-color 0.3s ease-in-out, position 0.3s ease-in-out;
 }
 
+.navbar-dropdown a {
+  color: white !important;
+}
+
 .navbar-logo {
-  color: var(--brand-ligth-brown) !important;
+  color: #fff !important;
   font-weight: 900;
 }
 
 .hero-image {
-  background-image: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 70%,
-      rgba(255, 255, 255, 0.278) 89%,
-      rgba(255, 255, 255, 0.803) 96%,
-      rgb(255, 255, 255) 100%
-    ),
-    url("/public/img/hero_image_2.webp");
+  background-image: url("/public/img/hero_image_3.webp");
+  filter: brightness(85%);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
 }
 
+.hero-title-container {
+  z-index: 10;
+  padding: 3.5rem 3.3rem 3.5rem 3.3rem;
+  background-color: rgba(224, 224, 224, 0.321);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
 .hero-text {
-  position: absolute;
-  right: 8%;
-  top: 19%;
-  color: var(--brand-green);
+  color: #104438dd;
+  /* color: #6e4426; */
   font-weight: bold;
 }
 
 .hero-title {
-  font-size: 3.2rem;
+  font-size: 4rem;
 }
 
 .hero-cta {
-  font-size: 0.9rem;
+  font-size: 1rem;
   cursor: pointer;
+}
+
+.hero-cta:hover {
+  color: #104438;
+  text-decoration: underline;
 }
 
 .card-price {
@@ -87,6 +117,7 @@ html {
 
 .featured-section {
   margin-top: 5.5rem;
+  width: 85%;
 }
 
 .featured-card {
@@ -102,8 +133,8 @@ html {
 
 .team-section {
   margin-top: 5.5rem;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
   background-color: rgba(48, 48, 48, 0.024);
 }
 
@@ -118,12 +149,12 @@ html {
 }
 
 .categories-section {
-  height: 100vh;
+  height: 85vh;
   margin-top: 5rem;
 }
 
 .categories-container {
-  width: 80%;
+  width: 85%;
 }
 
 .category-card {
@@ -143,31 +174,24 @@ html {
   color: var(--brand-ligth-brown) !important;
 }
 
-.living-category {
-  background-image: url("/public/img/living_cat.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.inspiration-section {
+  padding: 3rem 0rem 3rem 0rem;
+  background-color: rgba(48, 48, 48, 0.024);
+  margin-top: 5.5rem;
+  width: 100%;
+  height: 80vh;
 }
 
-.bedroom-category {
-  background-image: url("/public/img/bedroom_cat.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.inspiration-section-row {
+  width: 80%;
 }
 
-.dining-category {
-  background-image: url("/public/img/dining_cat.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.sets-category {
-  background-image: url("/public/img/sets_cat.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.inspiration-cta {
+  width: 25%;
+  padding: 0.9rem 0rem 0.9rem 0rem;
+  font-size: 1.1rem;
+  color: var(--brand-green);
+  background-color: rgba(69, 69, 69, 0.064);
+  cursor: pointer;
 }
 /* End Home Styles */
