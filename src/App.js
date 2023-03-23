@@ -9,6 +9,9 @@ import Dashboard from "./pages/Dashboard";
 import AdminProduct from "./pages/AdminProduct";
 import AdminUser from "./pages/AdminUser";
 import AdminOrder from "./pages/AdminOrder";
+import Product from "./components/Product";
+import AboutUs from "./components/AboutUs";
+import AboutProyect from "./components/AboutProyect";
 
 function App() {
   return (
@@ -18,10 +21,13 @@ function App() {
           {/* <Route path="/prueba" element={<Navbar />} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/prueba" element={<Cart />} />
-          <Route path="/admin" element={<Dashboard />} /> 
+          <Route path="/admin" element={<Dashboard />} />
           <Route path="/admin/products" element={<AdminProduct />} />
           <Route path="/admin/users" element={<AdminUser />} />
           <Route path="/admin/orders" element={<AdminOrder />} />
+          <Route path="/product/:id" element={<Product />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/about-this-proyect" element={<AboutProyect />} />
         </Routes>
       </div>
     </PersistGate>
