@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
+import axios from "axios";
+import Products from "../components/Products";
+
 
 export default function Home() {
+  const [products, setProducts] = useState([]);
+  const getProducts = async () => {
+    const response = await axios({
+      method: "get",
+      url: `http://localhost:8000/products`,
+    });
+    setProducts(response.data);
+    console.log(response.data);
+  };
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -13,6 +29,10 @@ export default function Home() {
           </div>
         </div>
       </div>
+       
+      { products.length && <div className="container pt-3">
+        <Products data={products} />
+      </div>}
     </>
   );
 }

@@ -12,7 +12,7 @@ function App() {
     <PersistGate loading={null} persistor={persistor}>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Navbar />} />
+          
           {/* <Route path="/prueba" element={<Navbar />} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/prueba" element={<Cart />} />
