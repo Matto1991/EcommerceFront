@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 // import AdminHome from "./components/AdminHome";
 // import Example from "./components/Cart";
 import Cart from "./components/Cart";
+import Product from "./components/Product";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
           {/* <Route path="/prueba" element={<Navbar />} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/prueba" element={<Cart />} />
+          <Route path="/product/:id" element={<Product />} />
+
         </Routes>
       </div>
     </PersistGate>

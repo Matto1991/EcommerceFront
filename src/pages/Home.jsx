@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [featured, setFeatured] = useState([]);
@@ -41,7 +42,8 @@ export default function Home() {
           {featured.map((product, index) => {
             return (
               <>
-                <div className="col-12 col-md-6 col-lg-3">
+               
+                <Link to={`product/${product.id}`} className="col-12 col-md-6 col-lg-3 text-decoration-none text-reset">
                   <div className="featured-card card d-flex flex-fill h-100">
                     <img
                       src={`${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`}
@@ -60,7 +62,8 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                </div>
+                  </Link>
+                  
               </>
             );
           })}
