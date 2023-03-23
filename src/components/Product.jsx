@@ -22,14 +22,15 @@ function Product() {
   }, [id]);
 
   return (
-      <div>
-          <Navbar/>
+    <div>
+      <Navbar />
       <div className="card mb-3 pt-5">
         <div className="row g-4 pt-5">
           <div className="col">
             <img
               src={`${process.env.REACT_APP_BACKEND_URL}/${product.images}`}
-              style={{ maxWidth: "700px" }}
+              style={{ maxWidth: "900px" }}
+              alt={product.name}
             />
           </div>
           <div className="col ">
