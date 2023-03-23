@@ -22,10 +22,29 @@ export default function Home() {
     <>
       <Navbar />
       <div className="row hero-image">
-        <div className="col-12">
-          <div className="col-6 d-flex flex-column justify-content-center ms-5 h-100 w-50 ">
-            <h1 className="display-3 fw-bold">Lorem ipsum </h1>
-            <h3>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h3>
+        <div className="col-12 position-relative">
+          <div className="hero-text">
+            <h1 className="hero-title mb-3">In soft sculpture</h1>
+            <h4 className="hero-cta">SHOP THE COLLECTION</h4>
+          </div>
+        </div>
+      </div>
+      <div className="categories-section">
+        <div className="d-flex justify-content-center w-100 mb-5">
+          <h2>Shop by categories</h2>
+        </div>
+        <div className="row h-100 mx-auto categories-container gx-3">
+          <div className="col-6 d-flex justify-content-center align-items-center rounded category-card living-category">
+            <h3 className="text-white fs-2">Living</h3>
+          </div>
+          <div className="col-6 d-flex justify-content-center align-items-center rounded category-card bedroom-category">
+            <h3 className="text-white fs-2 ">Bedroom</h3>
+          </div>
+          <div className="col-6 d-flex justify-content-center align-items-center rounded category-card dining-category">
+            <h3 className="text-white fs-2 ">Dining</h3>
+          </div>
+          <div className="col-6 d-flex justify-content-center align-items-center rounded category-card sets-category">
+            <h3 className="text-white fs-2">Sets</h3>
           </div>
         </div>
       </div>

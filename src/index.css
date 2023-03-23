@@ -6,15 +6,122 @@
   font-family: "Lora", serif;
 }
 
+html {
+  overflow-x: hidden;
+}
+
+/* Start Home styles */
+
 .tx-color {
   color: #005b47 !important;
 }
 
+.navbar-static {
+  background: transparent;
+}
+
+.navbar-dynamic {
+  position: sticky !important;
+  top: 0px;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.565);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  /* box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.111); */
+}
+
+.navbar {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 8vh;
+  transition: background-color 0.3s ease-in-out, position 0.3s ease-in-out;
+}
+
+.navbar-logo {
+  font-weight: 900;
+}
+
 .hero-image {
-  background-image: url("/public/img/hero_image.webp");
-  filter: brightness(80%);
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 70%,
+      rgba(255, 255, 255, 0.278) 89%,
+      rgba(255, 255, 255, 0.985) 98%,
+      rgb(255, 255, 255) 100%
+    ),
+    url("/public/img/hero_image_2.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 92vh;
+  height: 100vh;
 }
+
+.hero-text {
+  position: absolute;
+  right: 8%;
+  top: 19%;
+  color: #a47f53;
+  font-weight: bold;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+}
+
+.hero-cta {
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.categories-section {
+  height: 100vh;
+  margin-top: 5rem;
+}
+
+.categories-container {
+  width: 80%;
+}
+
+.category-card {
+  height: 40%;
+  cursor: pointer;
+  filter: brightness(85%);
+}
+
+.category-card:hover {
+  transform: scale(1.025);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.456);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.living-category {
+  background-image: url("/public/img/living_cat.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.bedroom-category {
+  background-image: url("/public/img/bedroom_cat.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.dining-category {
+  background-image: url("/public/img/dining_cat.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.sets-category {
+  background-image: url("/public/img/sets_cat.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/* End Home Styles */

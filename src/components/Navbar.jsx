@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import Cart from "./Cart";
 
 function NavbarNav() {
+  const [isScrolling, setIsScrolling] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.pageYOffset === 0) {
+      setIsScrolling(false);
+    } else {
+      setIsScrolling(true);
+    }
+  };
+
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar
+      className={`navbar ${isScrolling ? "navbar-dynamic" : "navbar-static"}`}
+      expand="lg"
+    >
       <Container>
-        <Navbar.Brand href="/" className="fs-3 tx-color">
+        <Navbar.Brand href="/" className="fs-3 tx-color navbar-logo">
           Ecozy Luxury
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
