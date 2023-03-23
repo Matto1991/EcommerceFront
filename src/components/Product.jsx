@@ -26,14 +26,14 @@ function Product() {
       <Navbar />
       <div className="card mb-3 pt-5">
         <div className="row g-4 pt-5">
-          <div className="col">
+          <div className="col-8">
             <img
               src={`${process.env.REACT_APP_BACKEND_URL}/${product.images}`}
-              style={{ maxWidth: "900px" }}
+              style={{ maxWidth: "100%" }}
               alt={product.name}
             />
           </div>
-          <div className="col ">
+          <div className="col-4">
             <div className="card-body">
               <h2 className="card-title ">{product.name}</h2>
               <h5 className="border-top bold card-price pt-2">
