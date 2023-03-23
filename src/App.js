@@ -5,6 +5,10 @@ import { Routes, Route } from "react-router-dom";
 // import AdminHome from "./components/AdminHome";
 // import Example from "./components/Cart";
 import Cart from "./components/Cart";
+import Dashboard from "./pages/Dashboard";
+import AdminProduct from "./pages/AdminProduct";
+import AdminUser from "./pages/AdminUser";
+import AdminOrder from "./pages/AdminOrder";
 
 function App() {
   return (
@@ -14,6 +18,10 @@ function App() {
           {/* <Route path="/prueba" element={<Navbar />} /> */}
           <Route path="/" element={<Home />} />
           <Route path="/prueba" element={<Cart />} />
+          <Route path="/admin" element={<Dashboard />} /> 
+          <Route path="/admin/products" element={<AdminProduct />} />
+          <Route path="/admin/users" element={<AdminUser />} />
+          <Route path="/admin/orders" element={<AdminOrder />} />
         </Routes>
       </div>
     </PersistGate>
