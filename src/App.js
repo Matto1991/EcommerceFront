@@ -6,6 +6,8 @@ import { Routes, Route } from "react-router-dom";
 // import Example from "./components/Cart";
 import Cart from "./components/Cart";
 import Product from "./components/Product";
+import AboutUs from "./components/AboutUs";
+import AboutProyect from "./components/AboutProyect";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/prueba" element={<Cart />} />
           <Route path="/product/:id" element={<Product />} />
 
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/about-this-proyect" element={<AboutProyect />} />
         </Routes>
       </div>
     </PersistGate>
