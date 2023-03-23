@@ -35,7 +35,7 @@ function NavbarNav() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="#link">About this project </Nav.Link>
+            <Nav.Link href="#link">Our team </Nav.Link>
             <NavDropdown title="Categories" className="w-25">
               <NavDropdown.Item href="#action/3.1">Living</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Bedroom</NavDropdown.Item>

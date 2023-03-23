@@ -27,9 +27,9 @@ html {
   top: 0px;
   z-index: 100;
   background-color: rgba(255, 255, 255, 0.565);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  /* box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.111); */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  /* box-shadow: 0px 0px 20px 0.2px rgba(0, 0, 0, 0.163); */
 }
 
 .navbar {
@@ -83,6 +83,10 @@ html {
   color: #a47f53;
 }
 
+.featured-section {
+  margin-top: 5.5rem;
+}
+
 .featured-card {
   cursor: pointer;
   transition: transform 0.3s ease-in-out 0.1s, box-shadow 0.3s ease-in-out;
@@ -91,6 +95,24 @@ html {
 .featured-card:hover {
   transform: scale(1.015);
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.456);
+  border: none;
+}
+
+.team-section {
+  margin-top: 5.5rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: rgba(48, 48, 48, 0.024);
+}
+
+.cta {
+  width: 15%;
+  padding: 1.1rem 0rem 1.1rem 0rem;
+  font-size: 1.1rem;
+  color: var(--brand-green);
+  background-color: rgba(69, 69, 69, 0.064);
+  cursor: pointer;
+  /* border: 1px solid var(--brand-green); */
 }
 
 .categories-section {
@@ -103,15 +125,20 @@ html {
 }
 
 .category-card {
-  height: 40%;
+  height: 100%;
   cursor: pointer;
-  filter: brightness(85%);
-  transition: transform 0.3s ease-in-out 0.1s, box-shadow 0.3s ease-in-out;
+  filter: brightness(90%);
+  transition: transform 0.3s ease-in-out 0.1s, box-shadow 0.3s ease-in-out,
+    filter 0.3s ease-in-out;
 }
 
 .category-card:hover {
-  transform: scale(1.015);
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.456);
+  filter: brightness(100%);
+  /* box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.456); */
+}
+
+.category-card-title {
+  color: var(--brand-ligth-brown) !important;
 }
 
 .living-category {

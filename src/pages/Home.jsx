@@ -33,8 +33,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container mt-5">
-        <div className="d-flex justify-content-center w-100 mt-5 mb-5">
+      <div className="featured-section container">
+        <div className="d-flex justify-content-center w-100 mb-5">
           <h2>Featured</h2>
         </div>
         <div className="row g-4">
@@ -48,10 +48,12 @@ export default function Home() {
                       alt={`${product.name}`}
                       className="rounded-top"
                     />
-                    <div className="card-body">
-                      <h5 className="card-title">{product.name}</h5>
-                      <p className="card-text">{product.description}</p>
-                      <p className="card-text">
+                    <div className="card-body d-flex flex-column justify-content-between">
+                      <div>
+                        <h5 className="card-title">{product.name}</h5>
+                        <p className="card-text">{product.description}</p>
+                      </div>
+                      <p className="card-text mt-4">
                         <small className="bold card-price">
                           US$ {`${product.price}`}
                         </small>
@@ -65,22 +67,38 @@ export default function Home() {
         </div>
       </div>
 
+      <div className=" d-flex justify-content-center team-section">
+        <div className="rounded text-center cta">Our team</div>
+      </div>
+
       <div className="categories-section">
         <div className="d-flex justify-content-center w-100 mb-5">
           <h2>Shop by categories</h2>
         </div>
-        <div className="row h-100 mx-auto categories-container gx-3">
-          <div className="col-12 d-flex justify-content-center align-items-center rounded category-card living-category mb-3">
-            <h3 className="text-white fs-2 ">Living</h3>
+        <div className="row g-2 mx-auto categories-container h-50 mb-2">
+          <div className="col-8">
+            <div className="d-flex justify-content-center align-items-center rounded category-card living-category">
+              <h3 className="text-white display-5 category-card-title">
+                Living
+              </h3>
+            </div>
           </div>
-          <div className="col-12 d-flex justify-content-center align-items-center rounded category-card bedroom-category mb-3">
-            <h3 className="text-white fs-2">Bedroom</h3>
+          <div className="col-4">
+            <div className="d-flex justify-content-center align-items-center rounded category-card bedroom-category">
+              <h3 className="text-white display-5">Bedroom</h3>
+            </div>
           </div>
-          <div className="col-12 d-flex justify-content-center align-items-center rounded category-card dining-category mb-3">
-            <h3 className="text-white fs-2 ">Dining</h3>
+        </div>
+        <div className="row g-2 mx-auto categories-container h-50">
+          <div className="col-4">
+            <div className="d-flex justify-content-center align-items-center rounded category-card dining-category">
+              <h3 className="text-white display-5 ">Dining</h3>
+            </div>
           </div>
-          <div className="col-12 d-flex justify-content-center align-items-center rounded category-card sets-category">
-            <h3 className="text-white fs-2">Sets</h3>
+          <div className="col-8">
+            <div className="d-flex justify-content-center align-items-center rounded category-card sets-category">
+              <h3 className="text-white display-5">Sets</h3>
+            </div>
           </div>
         </div>
       </div>
