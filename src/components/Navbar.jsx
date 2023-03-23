@@ -28,7 +28,7 @@ function NavbarNav() {
       expand="lg"
     >
       <Container>
-        <Navbar.Brand href="/" className="fs-3 tx-color navbar-logo">
+        <Navbar.Brand href="/" className="fs-3 navbar-logo">
           Ecozy Luxury
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

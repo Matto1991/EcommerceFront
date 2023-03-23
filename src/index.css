@@ -10,11 +10,13 @@ html {
   overflow-x: hidden;
 }
 
-/* Start Home styles */
-
-.tx-color {
-  color: #005b47 !important;
+:root {
+  --brand-green: #005b47;
+  --brand-dark-brown: #975d34;
+  --brand-ligth-brown: #a47f53;
 }
+
+/* Start Home styles */
 
 .navbar-static {
   background: transparent;
@@ -41,6 +43,7 @@ html {
 }
 
 .navbar-logo {
+  color: var(--brand-ligth-brown) !important;
   font-weight: 900;
 }
 
@@ -49,7 +52,7 @@ html {
       180deg,
       rgba(255, 255, 255, 0) 70%,
       rgba(255, 255, 255, 0.278) 89%,
-      rgba(255, 255, 255, 0.985) 98%,
+      rgba(255, 255, 255, 0.803) 96%,
       rgb(255, 255, 255) 100%
     ),
     url("/public/img/hero_image_2.webp");
@@ -63,7 +66,7 @@ html {
   position: absolute;
   right: 8%;
   top: 19%;
-  color: #a47f53;
+  color: var(--brand-green);
   font-weight: bold;
 }
 
@@ -74,6 +77,20 @@ html {
 .hero-cta {
   font-size: 0.9rem;
   cursor: pointer;
+}
+
+.card-price {
+  color: #a47f53;
+}
+
+.featured-card {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out 0.1s, box-shadow 0.3s ease-in-out;
+}
+
+.featured-card:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.456);
 }
 
 .categories-section {
@@ -89,12 +106,12 @@ html {
   height: 40%;
   cursor: pointer;
   filter: brightness(85%);
+  transition: transform 0.3s ease-in-out 0.1s, box-shadow 0.3s ease-in-out;
 }
 
 .category-card:hover {
-  transform: scale(1.025);
+  transform: scale(1.015);
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.456);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .living-category {
