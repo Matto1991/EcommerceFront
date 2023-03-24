@@ -53,7 +53,7 @@ function NavbarNav() {
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
               }`}
             >
-              Our team{" "}
+              About this project{" "}
             </Nav.Link>
             <NavDropdown
               className={`w-25 ${
