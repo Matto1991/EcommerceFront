@@ -1,5 +1,10 @@
+/* Start Icons */
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
+/* End Icons */
+
+/* Start Fonts */
 @font-face {
   font-family: "IvyOra Display";
   src: local("IvyOra Display Thin"), local("IvyOra-Display-Thin"),
@@ -32,6 +37,102 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Futura";
+  src: local("Futura Pt Book"), local("Futura-Book"),
+    url("/public/fonts/Futura-Book.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: local("Futura Pt Medium"), local("Futura-Medium"),
+    url("/public/fonts/Futura-Medium.ttf") format("ttf");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: local("Futura Pt Bold"), local("Futura-Bold"),
+    url("/public/fonts/Futura-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* End Fonts */
+
+/* Start Animations */
+
+@keyframes op1 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes op1 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+
+@keyframes op2 {
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes op2 {
+  40% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+}
+
+@keyframes op3 {
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes op3 {
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* End Animations */
+
 * {
   margin: 0;
   padding: 0;
@@ -47,10 +148,12 @@ html {
   --brand-green: #005b47;
   --brand-dark-brown: #975d34;
   --brand-ligth-brown: #a47f53;
-  --light-gray: #959595;
+  --light-gray-text: #959595;
+  --light-gray-background: rgba(48, 48, 48, 0.024);
+  --dark-gray-background: rgba(48, 48, 48, 0.085);
 }
 
-/* Start Home styles */
+/* Start Navbar Styles */
 
 .navbar-static {
   background: transparent;
@@ -66,27 +169,56 @@ html {
   /* box-shadow: 0px 0px 20px 0.2px rgba(0, 0, 0, 0.163); */
 }
 
+.navbar-static-text {
+  margin: 0rem 0.5rem;
+}
 .navbar-dynamic-text {
-  color: black;
+  margin: 0rem 0.5rem;
 }
 
-.navbar-static-text {
-  color: #fff !important;
+.navbar-dynamic-text a {
+  font-family: "Futura";
 }
 
 .navbar-static-text a {
   color: #fff !important;
+  font-family: "Futura";
+  padding: 0 !important;
 }
+
+.navbar-static-text::after {
+  content: "";
+  display: block;
+  position: absolute;
+  padding: 0;
+  left: 0;
+  bottom: -3px;
+  height: 1.5px;
+  width: 0;
+  background-color: #fff;
+  transition: width 0.4s;
+}
+
+.navbar-static-text:hover::after {
+  width: 100%;
+}
+
+.navbar-dynamic-text a {
+  font-family: "Futura";
+}
+
 .navbar-dynamic-logo {
   font-size: 1.55rem !important;
   color: var(--brand-green) !important;
   font-weight: 500;
+  font-family: "Futura";
 }
 
 .navbar-static-logo {
   font-size: 1.55rem !important;
   color: #fff !important;
   font-weight: 500;
+  font-family: "Futura";
 }
 
 .navbar {
@@ -99,9 +231,39 @@ html {
   transition: background-color 0.3s ease-in-out, position 0.3s ease-in-out;
 }
 
-.navbar-dropdown a {
-  color: white !important;
+/* End Navbar Styles  */
+
+/* Start Footer Styles */
+
+.footer {
+  margin-top: 5.5rem;
+  background-color: var(--dark-gray-background);
 }
+
+.footer-container {
+  width: 90%;
+  padding: 3rem 0rem 3rem 0rem;
+}
+
+.footer-list {
+  font-size: 0.9rem;
+  color: var(--brand-green);
+}
+
+.footer-list li {
+  margin-bottom: 0.5rem;
+  font-family: "Futura";
+  font-weight: 400;
+}
+
+.footer-text {
+  font-family: "Futura";
+  font-weight: 400;
+}
+
+/* End Footer Styles */
+
+/* Start Home styles */
 
 .hero-image {
   background-image: url("/public/img/hero_image.webp");
@@ -112,25 +274,50 @@ html {
   height: 100vh;
 }
 
-.hero-title-container {
+/* .hero-title-container {
+  position: relative;
   z-index: 10;
-  padding: 3.5rem 3.3rem 3.5rem 3.3rem;
+  height: 35%;
+  width: 50%;
+  padding: 1rem 1rem 1rem 1rem;
   background-color: rgba(255, 255, 255, 0.128);
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-}
+} */
 
 .hero-text {
   color: #104438dd;
 }
 
 .hero-title {
-  font-size: 3.7rem;
+  font-size: 3rem;
   font-weight: 500;
+  position: absolute;
+  top: 21%;
+  right: 12%;
+  opacity: 0;
+}
+
+.animation-first-phrase {
+  animation: op1 9s infinite;
+  -webkit-animation: op1 9s infinite;
+}
+
+.animation-second-phrase {
+  animation: op2 9s infinite;
+  -webkit-animation: op2 9s infinite;
+}
+
+.animation-third-phrase {
+  animation: op3 9s infinite;
+  -webkit-animation: op3 9s infinite;
 }
 
 .hero-cta {
-  font-size: 1rem;
+  position: absolute;
+  top: 33%;
+  right: 12%;
+  font-size: 0.85rem;
   cursor: pointer;
 }
 
@@ -166,7 +353,7 @@ html {
 .featured-card-text {
   font-size: 0.9rem;
   font-weight: 400;
-  color: var(--light-gray);
+  color: var(--light-gray-text);
 }
 
 .team-section {
@@ -217,9 +404,9 @@ html {
 }
 
 .inspiration-section {
+  margin-top: 13rem;
   padding: 3rem 0rem 3rem 0rem;
   background-color: rgba(48, 48, 48, 0.024);
-  margin-top: 5.5rem;
   width: 100%;
   height: 80vh;
 }
