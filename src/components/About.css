@@ -2,19 +2,96 @@
 
 .hero-about {
   background-image: linear-gradient(
-    to bottom,
-    #005b47,
-    #396741,
-    #5e703e,
-    #827844,
-    #a47f53
-  );
-  height: 30vh;
+      180deg,
+      rgba(255, 255, 255, 0) 70%,
+      rgba(255, 255, 255, 0.278) 89%,
+      rgba(255, 255, 255, 0.803) 96%,
+      rgb(255, 255, 255) 100%
+    ),
+    url("/public/img/team-opacit.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
 }
 
-.team {
-  border: #005b47 solid 3px;
+.small-box {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: -15%;
+  left: 5%;
+  background-color: var(--brand-green);
+}
+
+.img-team {
   border-radius: 50%;
-  height: 100%;
-  width: 100%;
+}
+
+.card-container {
+  height: 450px;
+  width: 300px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.shape-team {
+  background-color: #005b47;
+  height: 250px;
+  width: 500px;
+  margin-left: -20px;
+  position: relative;
+  top: -80px;
+  box-shadow: 0 2px 15px #000;
+  transform: rotate(25deg);
+}
+
+.img-team-andy {
+  height: 200px;
+  width: 200px;
+  background-image: url("/public/img/team_Andres.png");
+  position: relative;
+  top: 150px;
+  margin-left: 110px;
+  background-size: cover;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 15px rgb(58, 54, 54);
+  transform: rotate(-25deg);
+}
+
+.img-team-vir {
+  height: 200px;
+  width: 200px;
+  background-image: url("/public/img/VirginiaBarbaroimg.jpg");
+  position: relative;
+  top: 150px;
+  margin-left: 110px;
+  background-size: cover;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 15px rgb(58, 54, 54);
+  transform: rotate(-25deg);
+}
+
+.img-team-ali {
+  height: 200px;
+  width: 200px;
+  background-image: url("/public/img/AlineFariasprueba.jpg");
+  position: relative;
+  top: 150px;
+  margin-left: 110px;
+  background-size: cover;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 15px rgb(58, 54, 54);
+  transform: rotate(-25deg);
+}
+
+.icons-team i {
+  margin-left: 10px;
+  font-size: 30px;
+  transition: 0.3s;
 }
