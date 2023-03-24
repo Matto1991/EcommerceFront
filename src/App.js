@@ -27,7 +27,7 @@ function App() {
           <Route path="/admin/orders" element={<AdminOrder />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/about-this-proyect" element={<AboutProyect />} />
+          <Route path="/about" element={<AboutProyect />} />
         </Routes>
       </div>
     </PersistGate>
