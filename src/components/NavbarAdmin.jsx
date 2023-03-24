@@ -1,5 +1,5 @@
 import React from "react";
-import "flowbite";
+// import "flowbite";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import "./admin.css";

@@ -1,0 +1,7 @@
+.brown {
+  color: var(--brand-dark-brown) !important;
+}
+
+.green {
+  background-color: var(--brand-green) !important;
+}
