@@ -21,14 +21,15 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/prueba" element={<Cart />} />
+          {/* <Route path="/prueba" element={<AboutProyectcopy />} /> */}
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/admin/products" element={<AdminProduct />} />
           <Route path="/admin/users" element={<AdminUser />} />
           <Route path="/admin/orders" element={<AdminOrder />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/about-this-proyect" element={<AboutProyect />} />
+          <Route path="/about" element={<AboutProyect />} />
+
           <Route path="/profile" element={<AdminProfile />} />
           <Route path="/orders" element={<AdminOwnOrder />} />
         </Routes>
