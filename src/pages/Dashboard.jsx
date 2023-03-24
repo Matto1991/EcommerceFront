@@ -1,23 +1,16 @@
 import React from "react";
-// import AdminOptions from "../components/AdminOptions";
+import { Link } from "react-router-dom";
 import NavbarAdmin from "../components/NavbarAdmin";
-import OffCanvas from "../components/OffCanvas";
 
 function Dashboard() {
   return (
     <>
-      <NavbarAdmin />
       <div>
-        {/* <AdminOptions /> */}
+      <NavbarAdmin />
         <section className="container">
-          <h1>AdminHome</h1>
-          <OffCanvas />
+          <h3>Dashboard</h3>
           <div className="d-flex justify-content-between pt-4">
             <h2 className="d-inline">Last 10 0rders</h2>
-
-            <a href="/panel/admin/crear">
-              <button className="btn btn-success btn-m">New</button>
-            </a>
           </div>
           <div className="table-responsive">
             <table className="table table-striped table-hover border border rounded shadow mt-5">
@@ -36,7 +29,7 @@ function Dashboard() {
 
                   <td>
                     <a href="/panel/admin/item.id/edit ">
-                      <button className="btn btn-dark mb-2 w-100">Edit</button>
+                      <button className="edit-btn mb-2 w-100">View</button>
                     </a>
                   </td>
                 </tr>
