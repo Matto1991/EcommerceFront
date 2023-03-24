@@ -1,10 +1,12 @@
 import React, { useEffect } from "react";
-import OffCanvas from "../components/OffCanvas";
 import { useState } from "react";
 import axios from "axios";
+import NavbarAdmin from "../components/NavbarAdmin";
+import { Link } from "react-router-dom";
 
 function AdminUser() {
   const [users, setUsers] = useState([]);
+  const [admins, setAdmins] = useState([]);
 
   useEffect(() => {
     const getUsers = async () => {
@@ -16,19 +18,28 @@ function AdminUser() {
       console.log(response.data);
     };
     getUsers();
+
+    const getAdmins = async () => {
+      const response = await axios({
+        method: "get",
+        url: `${process.env.REACT_APP_BACKEND_URL}/admins`
+      })
+      setAdmins(response.data)
+      console.log(response.data)
+    }
+    getAdmins();
   }, []);
 
   return (
     <div>
       {/* <AdminOptions /> */}
+      <NavbarAdmin />
       <section className="container">
-        <h1></h1>
-        <OffCanvas />
         <div className="d-flex justify-content-between pt-4">
           <h2 className="d-inline">Users</h2>
-          <a href="/panel/admin/crear">
-            <button className="btn btn-success btn-m">New</button>
-          </a>
+          <Link to="">
+            <button className="btn btn-outline-success btn-m">Add user</button>
+          </Link>
         </div>
         <div className="table-responsive">
           <table className="table table-striped table-hover border border rounded shadow mt-5">
@@ -56,9 +67,30 @@ function AdminUser() {
                       <td> admin yes/no</td>
                       <td>
                         <a href="/panel/admin/item.id/edit ">
-                          <button className="btn btn-dark mb-2 w-100">
-                            Edit
-                          </button>
+                          <button className="edit-btn mb-2 w-100">Edit</button>
+                        </a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </>
+              );
+            })}
+             {admins.map((admin) => {
+              return (
+                <>
+                  <tbody>
+                    <tr>
+                      <th scope="row">{admin.id}</th>
+                      <td>{admin.avatar}</td>
+                      <td>
+                        {" "}
+                        {admin.firstname} {admin.lastname}{" "}
+                      </td>
+                      <td> {admin.email} </td>
+                      <td> admin yes/no</td>
+                      <td>
+                        <a href="/panel/admin/item.id/edit ">
+                          <button className="edit-btn mb-2 w-100">Edit</button>
                         </a>
                       </td>
                     </tr>

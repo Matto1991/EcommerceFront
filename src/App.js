@@ -12,22 +12,26 @@ import AdminOrder from "./pages/AdminOrder";
 import Product from "./components/Product";
 import AboutUs from "./components/AboutUs";
 import AboutProyect from "./components/AboutProyect";
+import AdminProfile from "./pages/AdminProfile";
+import AdminOwnOrder from "./pages/AdminOwnOrder";
 
 function App() {
   return (
     <PersistGate loading={null} persistor={persistor}>
       <div className="App">
         <Routes>
-          {/* <Route path="/prueba" element={<Navbar />} /> */}
           <Route path="/" element={<Home />} />
-          <Route path="/prueba" element={<Cart />} />
+          {/* <Route path="/prueba" element={<AboutProyectcopy />} /> */}
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/admin/products" element={<AdminProduct />} />
           <Route path="/admin/users" element={<AdminUser />} />
           <Route path="/admin/orders" element={<AdminOrder />} />
           <Route path="/product/:id" element={<Product />} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/about-this-proyect" element={<AboutProyect />} />
+          <Route path="/about" element={<AboutProyect />} />
+
+          <Route path="/profile" element={<AdminProfile />} />
+          <Route path="/orders" element={<AdminOwnOrder />} />
         </Routes>
       </div>
     </PersistGate>

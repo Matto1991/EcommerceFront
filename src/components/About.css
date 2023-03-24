@@ -1,52 +1,6 @@
-.hero-image-aboutUs {
-  background-image: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 70%,
-      rgba(255, 255, 255, 0.278) 89%,
-      rgba(255, 255, 255, 0.803) 96%,
-      rgb(255, 255, 255) 100%
-    ),
-    url("/public/img/about-ec.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 50vh;
-}
+/* ABOUT */
 
-.ethics-politics {
-  background-image: url("/public/img/etica.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.equity-politics {
-  background-image: url("/public/img/equa.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.safety-politics {
-  background-image: url("/public/img/seguridad-first.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.sustainability-politics {
-  background-image: url("/public/img/sust.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
-.about-title {
-  font-weight: 400;
-  color: var(--brand-green) !important;
-}
-
-.hero-image-aboutProyect {
+.hero-about {
   background-image: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 70%,
@@ -59,4 +13,85 @@
   background-size: cover;
   background-position: center;
   height: 50vh;
+}
+
+.small-box {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: -15%;
+  left: 5%;
+  background-color: var(--brand-green);
+}
+
+.img-team {
+  border-radius: 50%;
+}
+
+.card-container {
+  height: 450px;
+  width: 300px;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.shape-team {
+  background-color: #005b47;
+  height: 250px;
+  width: 500px;
+  margin-left: -20px;
+  position: relative;
+  top: -80px;
+  box-shadow: 0 2px 15px #000;
+  transform: rotate(25deg);
+}
+
+.img-team-andy {
+  height: 200px;
+  width: 200px;
+  background-image: url("/public/img/team_Andres.png");
+  position: relative;
+  top: 150px;
+  margin-left: 110px;
+  background-size: cover;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 15px rgb(58, 54, 54);
+  transform: rotate(-25deg);
+}
+
+.img-team-vir {
+  height: 200px;
+  width: 200px;
+  background-image: url("/public/img/VirginiaBarbaroimg.jpg");
+  position: relative;
+  top: 150px;
+  margin-left: 110px;
+  background-size: cover;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 15px rgb(58, 54, 54);
+  transform: rotate(-25deg);
+}
+
+.img-team-ali {
+  height: 200px;
+  width: 200px;
+  background-image: url("/public/img/AlineFariasprueba.jpg");
+  position: relative;
+  top: 150px;
+  margin-left: 110px;
+  background-size: cover;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 15px rgb(58, 54, 54);
+  transform: rotate(-25deg);
+}
+
+.icons-team i {
+  margin-left: 10px;
+  font-size: 30px;
+  transition: 0.3s;
 }

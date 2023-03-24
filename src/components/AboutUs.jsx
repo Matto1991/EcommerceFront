@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import axios from "axios";
-import About from "../components/About.css";
+import Aboutus from "../components/Aboutus.css";
 
 export default function AboutUs() {
   const [featured, setFeatured] = useState([]);

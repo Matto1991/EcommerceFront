@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import OffCanvas from "../components/OffCanvas";
+import NavbarAdmin from "../components/NavbarAdmin";
+import { Link } from "react-router-dom";
 
 function AdminProduct() {
   const [products, setProducts] = useState([]);
@@ -19,24 +20,23 @@ function AdminProduct() {
 
   return (
     <div>
+      <NavbarAdmin />
       <section className="container">
-        <h1></h1>
-        <OffCanvas />
         <div className="d-flex justify-content-between pt-4">
           <h2 className="d-inline">Products</h2>
-          <a href="/panel/admin/crear">
-            <button className="btn btn-success btn-m">New</button>
-          </a>
+          <Link to="">
+            <button className="btn btn-outline-success btn-m">Add product</button>
+          </Link>
         </div>
         <div className="table-responsive">
           <table className="table table-striped table-hover border border rounded shadow mt-5">
-                  <thead>
-                    <tr>
-                      <th scope="col">Name</th>
-                      <th scope="col">Price</th>
-                      <th scope="col">Stock</th>
-                    </tr>
-                  </thead>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Stock</th>
+              </tr>
+            </thead>
             {products.map((product) => {
               return (
                 <>
@@ -46,11 +46,11 @@ function AdminProduct() {
                       <td> US$ {product.price} </td>
                       <td> {product.stock}</td>
                       <td>
-                        <a href="/panel/admin/item.id/edit ">
-                          <button className="btn btn-dark mb-2 w-100">
+                        <Link to="">
+                          <button className="edit-btn mb-2 w-100">
                             Edit
                           </button>
-                        </a>
+                        </Link>
                       </td>
                     </tr>
                   </tbody>
