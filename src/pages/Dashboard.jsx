@@ -29,7 +29,7 @@ function Dashboard() {
 
                   <td>
                     <a href="/panel/admin/item.id/edit ">
-                      <button className="edit-btn mb-2 w-100">Edit</button>
+                      <button className="edit-btn mb-2 w-100">View</button>
                     </a>
                   </td>
                 </tr>
