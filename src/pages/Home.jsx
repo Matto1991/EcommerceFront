@@ -45,20 +45,18 @@ export default function Home() {
       <div className="row hero-image">
         <div className="col-12">
           <div className="d-flex justify-content-center align-items-center hero-text h-100 position-relative">
-            {/* <div className="hero-title-container rounded"> */}
-            <p className="animation-first-phrase hero-title mb-4">
-              In soft sculpture
-            </p>
-            <p className="animation-second-phrase hero-title mb-4">
-              The mohair
-            </p>
-            <p className="animation-third-phrase hero-title mb-4">
-              The winter edit
-            </p>
-            <div className="w-100">
-              <h4 className="hero-cta">SHOP OUR COLLECTIONS</h4>
+            <div>
+              <p className="animation-first-phrase hero-title hero-title1-sm mb-4">
+                In soft sculpture
+              </p>
+              <p className="animation-second-phrase hero-title hero-title2-sm mb-4">
+                The mohair
+              </p>
+              <p className="animation-third-phrase hero-title hero-title3-sm mb-4">
+                The winter edit
+              </p>
+              <h4 className="hero-cta hero-cta-sm">SHOP OUR COLLECTIONS</h4>
             </div>
-            {/* </div> */}
           </div>
         </div>
       </div>
@@ -117,7 +115,7 @@ export default function Home() {
               <h2>Shop by categories</h2>
             </div>
             <div className="row g-2 mx-auto categories-container h-100 mb-2">
-              <div className="col-8">
+              <div className="col-lg-8 col-md-8 col-sm-12">
                 <div className="row g-2 h-100">
                   <div className="col-12">
                     <div
@@ -167,9 +165,9 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="col-4">
+              <div className="col-lg-4 col-md-4 col-sm-12">
                 <div
-                  className="d-flex justify-content-center align-items-center rounded category-card"
+                  className="d-flex justify-content-center align-items-center rounded category-card-right"
                   style={{
                     backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[3].image})`,
                     backgroundRepeat: "no-Repeat",
@@ -186,14 +184,14 @@ export default function Home() {
       )}
       <div className="inspiration-section">
         <div className="row mx-auto inspiration-section-row">
-          <div className="col-4">
+          <div className="col-lg-4">
             <img src="/img/inspiration.webp" alt="inspiration" width="100%" />
           </div>
 
-          <div className="col-8">
+          <div className="col-lg-8">
             <div className="d-flex flex-column justify-content-center align-items-center h-100">
-              <h4 className="fs-2">Get Inspired</h4>
-              <p className="mb-5 text-secondary">
+              <h4 className="fs-2 mt-5">Get Inspired</h4>
+              <p className="mb-5 text-secondary text-center">
                 Discover our favorite looks across the home to inspire your
                 space.
               </p>

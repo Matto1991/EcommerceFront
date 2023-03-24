@@ -155,6 +155,11 @@ html {
 
 /* Start Navbar Styles */
 
+.navbar-toggler {
+  border: none !important;
+  outline: none !important;
+}
+
 .navbar-static {
   background: transparent;
 }
@@ -274,17 +279,6 @@ html {
   height: 100vh;
 }
 
-/* .hero-title-container {
-  position: relative;
-  z-index: 10;
-  height: 35%;
-  width: 50%;
-  padding: 1rem 1rem 1rem 1rem;
-  background-color: rgba(255, 255, 255, 0.128);
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-} */
-
 .hero-text {
   color: #104438dd;
 }
@@ -364,8 +358,8 @@ html {
 }
 
 .cta {
-  width: 15%;
-  padding: 1.1rem 0rem 1.1rem 0rem;
+  width: 12rem;
+  padding: 1.1rem 1rem 1.1rem 1rem;
   font-size: 1.1rem;
   color: var(--brand-green);
   background-color: rgba(69, 69, 69, 0.064);
@@ -379,7 +373,6 @@ html {
 }
 
 .categories-section {
-  height: 85vh;
   margin-top: 5rem;
 }
 
@@ -388,7 +381,14 @@ html {
 }
 
 .category-card {
-  height: 100%;
+  height: 40vh;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out 0.1s, box-shadow 0.3s ease-in-out,
+    filter 0.3s ease-in-out;
+}
+
+.category-card-right {
+  height: 81vh;
   cursor: pointer;
   transition: transform 0.3s ease-in-out 0.1s, box-shadow 0.3s ease-in-out,
     filter 0.3s ease-in-out;
@@ -404,11 +404,11 @@ html {
 }
 
 .inspiration-section {
-  margin-top: 13rem;
+  margin-top: 5rem;
   padding: 3rem 0rem 3rem 0rem;
   background-color: rgba(48, 48, 48, 0.024);
   width: 100%;
-  height: 80vh;
+  height: fit-content;
 }
 
 .inspiration-section-row {
@@ -416,7 +416,7 @@ html {
 }
 
 .inspiration-cta {
-  width: 25%;
+  width: 10rem;
   padding: 0.9rem 0rem 0.9rem 0rem;
   font-size: 1.1rem;
   color: var(--brand-green);
@@ -429,3 +429,47 @@ html {
   background-color: rgba(67, 67, 67, 0.152);
 }
 /* End Home Styles */
+
+@media only screen and (max-width: 1024px) {
+  .hero-title {
+    font-size: 3rem;
+    font-weight: 500;
+    opacity: 0;
+  }
+
+  .hero-cta {
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+
+  .hero-title1-sm {
+    position: absolute;
+    top: 40%;
+    right: 5%;
+  }
+
+  .hero-title2-sm {
+    position: absolute;
+    top: 40%;
+    right: 20%;
+  }
+
+  .hero-title3-sm {
+    position: absolute;
+    top: 40%;
+    right: 8%;
+  }
+
+  .hero-cta-sm {
+    position: absolute;
+    top: 53%;
+    right: 10%;
+  }
+
+  .category-card {
+    height: 33vh;
+  }
+  .category-card-right {
+    height: 33vh;
+  }
+}

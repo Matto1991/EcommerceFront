@@ -40,7 +40,7 @@ function NavbarNav() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <div
-              className={`position-relative ${
+              className={` ${
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
               }`}
             >
