@@ -1,12 +1,9 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import About from "../components/About.css";
+import Footer from "./Footer";
 
 export default function AboutProyect() {
-  {
-    // /* <img src="img/AlineFarias.jpg" className="card-img" alt="ali" /> */
-  }
-
   return (
     <>
       <Navbar />
@@ -15,6 +12,7 @@ export default function AboutProyect() {
       </div>
 
       <div className="container mt-5">
+        {/*       
         <div className="row">
           <div className="col-3 col-sm-6 col-md-4 col-lg-3 p-3  mt-5 mb-5">
             <div class="card">
@@ -60,65 +58,67 @@ export default function AboutProyect() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="row mt-5 d-flex justify-content-evenly">
-          <div className="col-6 col-sm-6 col-md-4 col-lg-3 p-3 shadow card-container rounded mt-5 mb-5">
-            <div className="shape-team">
-              <div className="img-team-andy"></div>
+        <div class="container">
+          <div class="row  d-flex justify-content-around">
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 p-3 shadow card-container rounded mt-5 mb-5">
+              <div class="shape-team">
+                <div class="img-team-andy"></div>
+              </div>
+              <h3 class="mt-3 fw-bold">Andrés Viera</h3>
+              <h4 class="card-team-title"> Full Stack Developer Jr </h4>
+              <br />
+              <div class="icons-team">
+                <i class="bi bi-linkedin me-2"></i>
+                <i class="bi bi-github me-2"></i>
+                <i class="bi bi-envelope-fill "></i>
+              </div>
             </div>
-            <h3 className="mt-3 fw-bold">Andrés Viera</h3>
-            <h4 className="card-team-title"> Full Stack Developer Jr </h4>
-            <br />
-            <div className="icons-team">
-              <i class="bi bi-linkedin me-2"></i>
-              <i class="bi bi-envelope-fill me-2"></i>
-              <i class="bi bi-github"></i>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 p-3 shadow card-container rounded mt-5 mb-5">
+              <div class="shape-team">
+                <div class="img-team-vir"></div>
+              </div>
+              <h3 class="mt-3 fw-bold">Virginia Barbaro</h3>
+              <h4 class="card-team-title"> Full Stack Developer Jr </h4>
+              <br />
+              <div class="icons-team">
+                <i class="bi bi-linkedin me-2"></i>
+                <i class="bi bi-github me-2"></i>
+                <i class="bi bi-envelope-fill "></i>
+              </div>
             </div>
-          </div>
-          <div className="col-6 col-sm-6 col-md-4 col-lg-3 p-3 shadow card-container rounded mt-5 mb-5">
-            <div className="shape-team">
-              <div className="img-team-vir"></div>
+
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 p-3 shadow card-container rounded mt-5 mb-5">
+              <div class="shape-team">
+                <div class="img-team-ali"></div>
+              </div>
+              <h3 class="mt-3 fw-bold">Aline Farias</h3>
+              <h4 class="card-team-title"> Full Stack Developer Jr </h4>
+              <br />
+              <div class="icons-team">
+                <i class="bi bi-linkedin me-2"></i>
+                <i class="bi bi-github me-2"></i>
+                <i class="bi bi-envelope-fill "></i>
+              </div>
             </div>
-            <h3 className="mt-3 fw-bold">Virginia Barbaro</h3>
-            <h4 className="card-team-title"> Full Stack Developer Jr </h4>
-            <br />
-            <div className="icons-team">
-              <i class="bi bi-linkedin me-2"></i>
-              <i class="bi bi-envelope-fill me-2"></i>
-              <i class="bi bi-github"></i>
-            </div>
-          </div>
-        </div>
-        <div className="row mt-3 d-flex justify-content-evenly">
-          <div className="col-6 col-sm-6 col-md-4 col-lg-3 p-3 shadow card-container rounded mt-5 mb-5">
-            <div className="shape-team">
-              <div className="img-team-ali"></div>
-            </div>
-            <h3 className="mt-3 fw-bold">Aline Farias</h3>
-            <h4 className="card-team-title"> Full Stack Developer Jr </h4>
-            <br />
-            <div className="icons-team">
-              <i class="bi bi-linkedin me-2"></i>
-              <i class="bi bi-envelope-fill me-2"></i>
-              <i class="bi bi-github"></i>
-            </div>
-          </div>
-          <div className="col-6 col-sm-6 col-md-4 col-lg-3 p-3 shadow card-container rounded mt-5 mb-5">
-            <div className="shape-team">
-              <div className="img-team-andy"></div>
-            </div>
-            <h3 className="mt-3 fw-bold">Matias Sandín</h3>
-            <h4 className="card-team-title"> Full Stack Developer Jr </h4>
-            <br />
-            <div className="icons-team">
-              <i class="bi bi-linkedin me-2"></i>
-              <i class="bi bi-envelope-fill me-2"></i>
-              <i class="bi bi-github"></i>
+            <div class="col-6 col-sm-6 col-md-4 col-lg-3 p-3 shadow card-container rounded mt-5 mb-5">
+              <div class="shape-team">
+                <div class="img-team-ali"></div>
+              </div>
+              <h3 class="mt-3 fw-bold">Aline Farias</h3>
+              <h4 class="card-team-title"> Full Stack Developer Jr </h4>
+              <br />
+              <div class="icons-team">
+                <i class="bi bi-linkedin me-2"></i>
+                <i class="bi bi-github me-2"></i>
+                <i class="bi bi-envelope-fill "></i>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
