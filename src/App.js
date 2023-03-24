@@ -13,7 +13,6 @@ import AboutUs from "./components/AboutUs";
 import AboutProyect from "./components/AboutProyect";
 import AdminProfile from "./pages/AdminProfile";
 import AdminOwnOrder from "./pages/AdminOwnOrder";
-import Cart from "./components/Cart";
 
 function App() {
   return (
@@ -21,7 +20,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/prueba" element={<Cart />} />
+          {/* <Route path="/prueba" element={<Cart />} /> */}
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/admin/products" element={<AdminProduct />} />
           <Route path="/admin/users" element={<AdminUser />} />
