@@ -47,7 +47,7 @@ export default function Home() {
             <div className="hero-title-container rounded">
               <h1 className="hero-title mb-4">In soft sculpture</h1>
               <div className="d-flex justify-content-end w-100">
-                <h4 className="hero-cta">ABOUT THIS PROYECT</h4>
+                <h4 className="hero-cta">SHOP THE COLLECTION</h4>
               </div>
             </div>
           </div>
@@ -76,8 +76,12 @@ export default function Home() {
                         />
                         <div className="card-body d-flex flex-column justify-content-between">
                           <div>
-                            <h5 className="card-title">{product.name}</h5>
-                            <p className="card-text">{product.description}</p>
+                            <h5 className="card-title featured-card-title">
+                              {product.name}
+                            </h5>
+                            <p className="card-text featured-card-text">
+                              {product.description}
+                            </p>
                           </div>
                           <p className="card-text mt-4">
                             <small className="bold card-price">
@@ -94,58 +98,67 @@ export default function Home() {
           </div>
 
           <div className="d-flex justify-content-center team-section">
-            <div className="rounded text-center cta">Meet our team</div>
+            <div className="rounded text-center cta">
+              Meet our team <i className="bi bi-arrow-up-right-square ms-2"></i>
+            </div>
           </div>
 
           <div className="categories-section">
-            <div className="d-flex justify-content-center w-100 mb-4">
+            <div className="d-flex justify-content-center w-100 mb-5">
               <h2>Shop by categories</h2>
             </div>
-            <div className="row g-2 mx-auto categories-container h-50 mb-2">
+            <div className="row g-2 mx-auto categories-container h-100 mb-2">
               <div className="col-8">
-                <div
-                  className="d-flex justify-content-center align-items-center rounded category-card"
-                  style={{
-                    backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[0].image})`,
-                    backgroundRepeat: "no-Repeat",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <h3 className="text-white display-6 category-card-title">
-                    {categories[0].name}
-                  </h3>
+                <div className="row g-2 h-100">
+                  <div className="col-12">
+                    <div
+                      className="d-flex justify-content-center align-items-center rounded category-card"
+                      style={{
+                        backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[0].image})`,
+                        backgroundRepeat: "no-Repeat",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    >
+                      <h3 className="text-white display-6 category-card-title">
+                        {categories[0].name}
+                      </h3>
+                    </div>
+                  </div>
+
+                  <div className="col-6">
+                    <div
+                      className="d-flex justify-content-center align-items-center rounded category-card"
+                      style={{
+                        backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[1].image})`,
+                        backgroundRepeat: "no-Repeat",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    >
+                      <h3 className="text-white display-6">
+                        {categories[1].name}
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="col-6">
+                    <div
+                      className="d-flex justify-content-center align-items-center rounded category-card"
+                      style={{
+                        backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[2].image})`,
+                        backgroundRepeat: "no-Repeat",
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    >
+                      <h3 className="text-white display-6">
+                        {categories[2].name}
+                      </h3>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="col-4">
-                <div
-                  className="d-flex justify-content-center align-items-center rounded category-card"
-                  style={{
-                    backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[1].image})`,
-                    backgroundRepeat: "no-Repeat",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <h3 className="text-white display-6">{categories[1].name}</h3>
-                </div>
-              </div>
-            </div>
-            <div className="row g-2 mx-auto categories-container h-50">
-              <div className="col-4">
-                <div
-                  className="d-flex justify-content-center align-items-center rounded category-card"
-                  style={{
-                    backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[2].image})`,
-                    backgroundRepeat: "no-Repeat",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <h3 className="text-white display-6">{categories[2].name}</h3>
-                </div>
-              </div>
-              <div className="col-8">
                 <div
                   className="d-flex justify-content-center align-items-center rounded category-card"
                   style={{
@@ -177,7 +190,7 @@ export default function Home() {
                       your space.
                     </p>
                     <div className="rounded text-center inspiration-cta">
-                      Meet our team
+                      Shop by set <i className="bi bi-handbag ms-2"></i>
                     </div>
                   </div>
                 </div>
