@@ -39,22 +39,20 @@ function NavbarNav() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link
-              href="/"
-              className={`${
+            <div
+              className={`position-relative ${
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
               }`}
             >
-              Home
-            </Nav.Link>
-            <Nav.Link
-              href="#link"
-              className={`${
+              <Nav.Link href="#link">Home</Nav.Link>
+            </div>
+            <div
+              className={`position-relative ${
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
               }`}
             >
-              About this project{" "}
-            </Nav.Link>
+              <Nav.Link href="#link">About this project </Nav.Link>
+            </div>
             <NavDropdown
               className={`w-25 ${
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -43,13 +44,21 @@ export default function Home() {
       <Navbar />
       <div className="row hero-image">
         <div className="col-12">
-          <div className="d-flex justify-content-center align-items-center hero-text h-100">
-            <div className="hero-title-container rounded">
-              <h1 className="hero-title mb-4">In soft sculpture</h1>
-              <div className="d-flex justify-content-end w-100">
-                <h4 className="hero-cta">SHOP THE COLLECTION</h4>
-              </div>
+          <div className="d-flex justify-content-center align-items-center hero-text h-100 position-relative">
+            {/* <div className="hero-title-container rounded"> */}
+            <p className="animation-first-phrase hero-title mb-4">
+              In soft sculpture
+            </p>
+            <p className="animation-second-phrase hero-title mb-4">
+              The mohair
+            </p>
+            <p className="animation-third-phrase hero-title mb-4">
+              The winter edit
+            </p>
+            <div className="w-100">
+              <h4 className="hero-cta">SHOP OUR COLLECTIONS</h4>
             </div>
+            {/* </div> */}
           </div>
         </div>
       </div>
@@ -172,33 +181,30 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="inspiration-section">
-              <div className="row mx-auto inspiration-section-row">
-                <div className="col-4">
-                  <img
-                    src="/img/inspiration.webp"
-                    alt="inspiration"
-                    width="100%"
-                  />
-                </div>
-
-                <div className="col-8">
-                  <div className="d-flex flex-column justify-content-center align-items-center h-100">
-                    <h4 className="fs-2">Get Inspired</h4>
-                    <p className="mb-5 text-secondary">
-                      Discover our favorite looks across the home to inspire
-                      your space.
-                    </p>
-                    <div className="rounded text-center inspiration-cta">
-                      Shop by set <i className="bi bi-handbag ms-2"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </>
       )}
+      <div className="inspiration-section">
+        <div className="row mx-auto inspiration-section-row">
+          <div className="col-4">
+            <img src="/img/inspiration.webp" alt="inspiration" width="100%" />
+          </div>
+
+          <div className="col-8">
+            <div className="d-flex flex-column justify-content-center align-items-center h-100">
+              <h4 className="fs-2">Get Inspired</h4>
+              <p className="mb-5 text-secondary">
+                Discover our favorite looks across the home to inspire your
+                space.
+              </p>
+              <div className="rounded text-center inspiration-cta">
+                Shop by set <i className="bi bi-handbag ms-2"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <Footer />
     </>
   );
 }
