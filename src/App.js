@@ -3,8 +3,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistor } from "./redux/storeConfig";
 import { Routes, Route } from "react-router-dom";
 // import AdminHome from "./components/AdminHome";
-// import Example from "./components/Cart";
-import Cart from "./components/Cart";
+
 import Dashboard from "./pages/Dashboard";
 import AdminProduct from "./pages/AdminProduct";
 import AdminUser from "./pages/AdminUser";
@@ -21,7 +20,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/prueba" element={<AboutProyectcopy />} /> */}
+          {/* <Route path="/prueba" element={<Cart />} /> */}
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/admin/products" element={<AdminProduct />} />
           <Route path="/admin/users" element={<AdminUser />} />

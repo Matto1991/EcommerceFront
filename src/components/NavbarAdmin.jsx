@@ -4,9 +4,6 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import "./admin.css";
 import OffCanvas from "./OffCanvas";
-import Avatar from "@mui/material/Avatar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import DropdownButton from "react-bootstrap/DropdownButton";
 
 function NavbarAdmin() {
   return (
@@ -17,9 +14,7 @@ function NavbarAdmin() {
       <Container>
         <Navbar.Brand>Administrator panel</Navbar.Brand>
         <OffCanvas />
-        <NavDropdown.Item href="/profile">Your profile</NavDropdown.Item>
-        <NavDropdown.Item href="/orders">Your Orders</NavDropdown.Item>
-        <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
+
         <div class="flex items-center md:order-2">
           <button
             type="button"
@@ -33,7 +28,7 @@ function NavbarAdmin() {
             <img
               class="w-8 h-8 rounded-full"
               src="/img/imagenAdmin.png"
-              alt="user photo"
+              alt="userphoto"
             />
           </button>
           {/* <!-- Dropdown menu --> */}
@@ -52,31 +47,24 @@ function NavbarAdmin() {
             <ul class="py-2" aria-labelledby="user-menu-button">
               <li>
                 <a
-                  href="#"
+                  href="/profile"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                 >
-                  Dashboard
+                  Your profile
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
+                  href="/orders"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                 >
-                  Settings
+                  Your Orders
                 </a>
               </li>
+
               <li>
                 <a
-                  href="#"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
-                >
-                  Earnings
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
+                  href="/logout"
                   class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
                 >
                   Sign out

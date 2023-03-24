@@ -30,11 +30,9 @@
 
 .card-container {
   height: 450px;
-  width: 300px;
+  max-width: 350px;
   background-size: cover;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+
   overflow: hidden;
 }
 .shape-team {
@@ -54,7 +52,6 @@
   background-image: url("/public/img/team_Andres.png");
   position: relative;
   top: 150px;
-  margin-left: 110px;
   background-size: cover;
   border: none;
   border-radius: 50%;
