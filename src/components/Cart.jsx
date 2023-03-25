@@ -4,6 +4,7 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
 import Cartc from "./Cartc.css";
 
+
 function Cart({ name }) {
   const [show, setShow] = useState(false);
 
@@ -39,39 +40,35 @@ function Cart({ name }) {
             <div>
               <ul className="my-4">
                 {products.map((product) => (
-                  <li key={product.id}>
-                    <div className="border border-2 rounded mb-2">
-                      <img
-                        src="img\TheLeroyChair.webp"
-                        alt={product.imageAlt}
-                        className="object-cover "
-                      />
-                    </div>
-
-                    <div className="flex justify-between fs-5">
-                      <h4>
-                        <Link
-                          to="/product/:name"
-                          className="brown text-decoration-none"
-                        >
-                          {product.name}
-                        </Link>
-                      </h4>
-                      <p className="ms-3">$ {product.price}</p>
-                    </div>
-
-                    <div className="d-flex justify-between fs-6">
-                      <p className="text-secondary-light">
-                        Qty {product.quantity}
-                      </p>
-
+                  <li key={product.id} className="">
+                    <div className="row text-end">
+                      <div className="col-4">
+                        <div className="border border-2 rounded mb-2">
+                          <img
+                            src="img\TheLeroyChair.webp"
+                            alt={product.imageAlt}
+                            className=""
+                          />
+                        </div>
+                      </div>
+                      <div className="col-8">
+                        <div className="fs-5">
+                          <h4>
+                            <Link
+                              to="/product/:name"
+                              className="brown text-decoration-none"
+                            >
+                              {product.name}
+                            </Link>
+                          </h4>
+                          <small className="fw-2 ">$ {product.price}</small>
+                        </div>
+                      </div>
                       <div className="d-flex">
-                        <button
-                          type="button"
-                          className="fs-6 text-secondary-light"
-                        >
-                          Remove
-                        </button>
+                        
+                      <p className="text-secondary-light text-center">
+                          Qty product.quantity
+                        </p>
                       </div>
                     </div>
                   </li>
