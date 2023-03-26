@@ -45,3 +45,7 @@
   font-weight: 400;
   color: var(--brand-green) !important;
 }
+
+.card-text{
+  color: var(--brand-dark-brown) 
+}

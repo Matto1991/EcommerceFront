@@ -2,26 +2,10 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import axios from "axios";
 import Aboutus from "../components/Aboutus.css";
+import Footer from "../components/Footer"
 
 export default function AboutUs() {
-  const [featured, setFeatured] = useState([]);
-
-  useEffect(() => {
-    const getFeatured = async () => {
-      const response = await axios({
-        method: "GET",
-        url: `${process.env.REACT_APP_BACKEND_URL}/products`,
-      });
-
-      const featuredProducts = response.data.splice(0, 4);
-      setFeatured(featuredProducts);
-
-      console.log(featuredProducts);
-    };
-
-    getFeatured();
-  }, []);
-
+  
   return (
     <>
       <Navbar />
@@ -31,22 +15,33 @@ export default function AboutUs() {
         </div>
       </div>
 
-      <div className="featured-section container">
+     
         <h1 className="mb-3 text-center about-title">About Ecozy</h1>
-        <div className="d-flex justify-content-center w-100 mb-5">
+       <div className="row p-3 g-3">
+        <div className="col-md-4 p-3">
           <p className="fs-4">
             We are an online store dedicated to offering a wide selection of
             high-quality, uniquely designed furniture made from sustainable and
             environmentally-friendly materials. We take pride in providing a
             diverse range of styles and designs to meet the needs of our most
             discerning customers, from modern and minimalist furniture to more
-            traditional and classic pieces. All of our furniture is crafted with
+            traditional and classic pieces.
+          </p>
+        </div>
+        <div className="col-md-4 p-3">
+          <p className=" fs-4 ">
+          All of our furniture is crafted with
             high-quality materials, such as solid wood, bamboo, cane, and other
             sustainable materials, which gives them exceptional durability and
             resilience. Moreover, all of our products are designed and
             manufactured with a focus on sustainability, which means they are
             designed to minimize environmental impact and reduce the carbon
-            footprint. Our goal is to offer our customers the best possible
+            footprint.
+          </p>
+        </div>
+        <div className=" col-md-4 p-3">
+          <p className=" fs-4">
+          Our goal is to offer our customers the best possible
             shopping experience, with fast and secure shipping, exceptional
             customer service, and competitive pricing. If you are looking for
             high-quality, uniquely designed furniture, but also want to do your
@@ -55,7 +50,12 @@ export default function AboutUs() {
             perfect piece for your home!
           </p>
         </div>
-      </div>
+        </div>
+
+
+         
+    
+      
 
       <div className=" d-flex justify-content-center team-section">
         <div className="rounded text-center cta">About this proyect</div>
@@ -97,7 +97,7 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-        <h1 className="mt-5">Footer</h1>
+        <Footer/>
       </div>
     </>
   );

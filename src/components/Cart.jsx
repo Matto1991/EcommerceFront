@@ -4,7 +4,6 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
 import Cartc from "./Cartc.css";
 
-
 function Cart({ name }) {
   const [show, setShow] = useState(false);
 
@@ -25,6 +24,7 @@ function Cart({ name }) {
 
   return (
     <>
+   
       <Button
         onClick={handleShow}
         className="fs-2 ms-auto me-2 bi bi-cart2 btn-offCanvas-settings"
@@ -64,11 +64,13 @@ function Cart({ name }) {
                           <small className="fw-2 ">$ {product.price}</small>
                         </div>
                       </div>
-                      <div className="d-flex">
-                        
-                      <p className="text-secondary-light text-center">
-                          Qty product.quantity
+                      <div className=" mt-3">
+                      
+                        <p className="text-secondary-light">
+                          Qty 
                         </p>
+                        
+                        <button className="btn text-secondary">Remove</button>
                       </div>
                     </div>
                   </li>
@@ -105,3 +107,4 @@ function Cart({ name }) {
 }
 
 export default Cart;
+
