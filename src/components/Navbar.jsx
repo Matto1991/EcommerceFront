@@ -65,7 +65,7 @@ function NavbarNav() {
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
               }`}
             >
-              <Nav.Link href="/about">About&nbsp;proyect</Nav.Link>
+              <Nav.Link href="/about">About&nbsp;project</Nav.Link>
             </div>
             <NavDropdown
               className={`w-25 ${
