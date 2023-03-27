@@ -16,13 +16,18 @@ import AdminOwnOrder from "./pages/AdminOwnOrder";
 import Cart from "./components/Cart";
 import Category from "./components/Category";
 import Navbar from "./components/Navbar";
+<<<<<<< HEAD
 import Login2 from "./components/Login2";
+=======
+import  Login  from "./pages/Login";
+import SingUp from "./pages/SignUp";
+>>>>>>> 3a25574c3b4fe52e97f40972bd2c236d45418d1c
 
 function App() {
   return (
     <PersistGate loading={null} persistor={persistor}>
       <div className="App">
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/category/:name" element={<Category />} />
@@ -36,6 +41,8 @@ function App() {
           <Route path="/about" element={<AboutProyect />} />
           <Route path="/profile" element={<AdminProfile />} />
           <Route path="/orders" element={<AdminOwnOrder />} />
+          <Route path="/sign-up" element={<SingUp />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<h2>There's nothing here: 404!</h2>} />
           <Route path="/prueba" element={<Login2 />} />
         </Routes>
