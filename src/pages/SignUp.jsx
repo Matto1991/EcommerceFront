@@ -23,35 +23,20 @@ function SingUp() {
             </div>
           </div>
           <p className="free-account">Create a free account to shopping</p>
-          <label htmlFor="firstname">Firstname</label>
-          <input
-            type="text"
-            placeholder="Firstname"
-            name="firstname"
-            id="firstname"
-          />
+            <label htmlFor="firstname">Firstname</label>
+            <input type="text" placeholder="Firstname" name="firstname" id="firstname" />
 
-          <label htmlFor="lastname">Lastname</label>
-          <input
-            type="text"
-            placeholder="Lastname"
-            name="lastname"
-            id="lastname"
-          />
+            <label htmlFor="lastname">Lastname</label>
+            <input type="text" placeholder="Lastname" name="lastname" id="lastname" />
 
-          <label htmlFor="email">Email</label>
-          <input type="email" placeholder="Email" name="email" id="email" />
+            <label htmlFor="email">Email</label>
+            <input type="email" placeholder="Email" name="email" id="email" />
 
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            id="password"
-          />
+            <label htmlFor="password">Password</label>
+            <input type="password" placeholder="Password" name="password" id="password" />
 
-          <label htmlFor="avatar">Image</label>
-          <input type="file" placeholder="Image" name="avatar" id="avatar" />
+            <label htmlFor="avatar">Image</label>
+            <input type="file" placeholder="Image" name="avatar" id="avatar" />
         </form>
       </div>
     </div>

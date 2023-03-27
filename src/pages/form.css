@@ -1,47 +1,85 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .form-login {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url("/public/img/image-back.webp");
-    background-position: center;
-    background-size: cover;
-    color: #fff;
-}   
-
-.container-form {
-    width: 90%;
-    height: 90vh;
-    display: flex;
-    justify-content: space-around;
-    transition: all .5s ease-out;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/public/img/image-back.webp");
+  background-position: center;
+  background-size: cover;
+  color: #fff;
 }
 
 .welcome-back {
-     display: flex;
-     align-items: center;
-     text-align: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
-
 .message {
-    padding: 1rem;
+justify-content: center;
+
 }
 
-.nessage h2 {
-    font-size: 1.7rem;
-    padding: 1rem 0;
+.sign-up-btn {
+    background-color: #005b47 !important;
 }
 
-.message button {
-    padding: 1rem;
-    font-weight: 400;
-    background-color: blue;
-    border-radius: 2rem;
-    border: none;
+.formulary {
+  background-color: #20202081;
+  text-align: center;
+}
+
+.create-account {
+  padding: 2.7rem 0;
+  font-size: 1.7rem;
+}
+
+.icons {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.border-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in;
+}
+
+.formulary input {
+  width: 70%;
+  display: block;
+  margin: auto;
+  margin-bottom: 2rem;
+  background-color: transparent;
+  border: none;
+  border-bottom: #fff thin solid;
+  text-align: center;
+  outline: none;
+  padding: 0.2rem 0;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.formulary input[type="button"] {
+  width: 60%;
+  margin: auto;
+  border: solid thin #fff;
+  padding: 0.7rem;
+  border-radius: 2rem;
+  background-color: #fff;
+  font-weight: 600;
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  cursor: pointer;
 }

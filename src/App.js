@@ -16,12 +16,9 @@ import AdminOwnOrder from "./pages/AdminOwnOrder";
 import Cart from "./components/Cart";
 import Category from "./components/Category";
 import Navbar from "./components/Navbar";
-<<<<<<< HEAD
 import Products from "./components/Products";
-=======
 import  Login  from "./pages/Login";
 import SingUp from "./pages/SignUp";
->>>>>>> 0deb944df6a89e56ceb3a2718c623c8b6cbc53da
 
 function App() {
   return (
