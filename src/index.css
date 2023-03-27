@@ -145,6 +145,7 @@ html {
 }
 
 :root {
+  --category-gray: #faf9f7;
   --brand-green: #005b47;
   --brand-dark-brown: #975d34;
   --brand-ligth-brown: #a47f53;
@@ -237,7 +238,14 @@ html {
 }
 
 /* End Navbar Styles  */
+/* category card*/
+.categories-card{
+  background-color: var(--category-gray) !important;
+}
 
+.pt-8{
+  padding-top: 8vh;
+}
 /* Start Footer Styles */
 
 .footer {

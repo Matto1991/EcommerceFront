@@ -14,13 +14,17 @@ import AboutProyect from "./components/AboutProyect";
 import AdminProfile from "./pages/AdminProfile";
 import AdminOwnOrder from "./pages/AdminOwnOrder";
 import Cart from "./components/Cart";
+import Category from "./components/Category";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <PersistGate loading={null} persistor={persistor}>
       <div className="App">
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/category/:name" element={<Category />} />
           <Route path="/prueba" element={<Cart />} />
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/admin/products" element={<AdminProduct />} />

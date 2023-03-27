@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Categories from "../components/Categories";
 
 export default function Home() {
   const [featured, setFeatured] = useState([]);
@@ -41,7 +41,6 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
       <div className="row hero-image">
         <div className="col-12">
           <div className="d-flex justify-content-center align-items-center hero-text h-100 position-relative">
@@ -111,74 +110,7 @@ export default function Home() {
           </div>
 
           <div className="categories-section">
-            <div className="d-flex justify-content-center w-100 mb-5">
-              <h2>Shop by categories</h2>
-            </div>
-            <div className="row g-2 mx-auto categories-container h-100 mb-2">
-              <div className="col-lg-8 col-md-8 col-sm-12">
-                <div className="row g-2 h-100">
-                  <div className="col-12">
-                    <div
-                      className="d-flex justify-content-center align-items-center rounded category-card"
-                      style={{
-                        backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[0].image})`,
-                        backgroundRepeat: "no-Repeat",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-                    >
-                      <h3 className="text-white display-6 category-card-title">
-                        {categories[0].name}
-                      </h3>
-                    </div>
-                  </div>
-
-                  <div className="col-6">
-                    <div
-                      className="d-flex justify-content-center align-items-center rounded category-card"
-                      style={{
-                        backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[1].image})`,
-                        backgroundRepeat: "no-Repeat",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-                    >
-                      <h3 className="text-white display-6">
-                        {categories[1].name}
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div
-                      className="d-flex justify-content-center align-items-center rounded category-card"
-                      style={{
-                        backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[2].image})`,
-                        backgroundRepeat: "no-Repeat",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-                    >
-                      <h3 className="text-white display-6">
-                        {categories[2].name}
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-4 col-sm-12">
-                <div
-                  className="d-flex justify-content-center align-items-center rounded category-card-right"
-                  style={{
-                    backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[3].image})`,
-                    backgroundRepeat: "no-Repeat",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <h3 className="text-white display-6">{categories[3].name}</h3>
-                </div>
-              </div>
-            </div>
+            <Categories data={categories} />
           </div>
         </>
       )}

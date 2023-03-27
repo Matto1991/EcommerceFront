@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import "./ProductStyles.css";
+import Categories from "./Categories";
 function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
@@ -40,7 +41,7 @@ function Product() {
 
   return (
     <>
-      <div className="nav-card">
+      <div>
         <Navbar />
 
         <div className="card mb-3 pt-5">
@@ -54,9 +55,8 @@ function Product() {
             </div>
             <div className="col-12 col-lg-4">
               <div className="card-body ">
-                              <h1 className="title card-title ">{product.name}</h1>
-                              <p>Ships in 1 week | 
-Unlimited White Glove Delivery for $145</p>
+                <h1 className="title card-title ">{product.name}</h1>
+                <p>Ships in 1 week | Unlimited White Glove Delivery for $145</p>
 
                 <h4 className="border-top bold card-price pt-2">
                   US$ {product.price}
@@ -79,91 +79,7 @@ Unlimited White Glove Delivery for $145</p>
       {categories.length > 0 && (
         <>
           <div className="categories-section">
-            <div className="d-flex justify-content-center w-100 mb-4">
-              <h2>Shop by categories</h2>
-            </div>
-            <div className="row g-2 mx-auto categories-container h-50 mb-2">
-              <div className="col-8">
-                <div
-                  className="d-flex justify-content-center align-items-center rounded category-card"
-                  style={{
-                    backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[0].image})`,
-                    backgroundRepeat: "no-Repeat",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <h3 className="text-white display-6 category-card-title">
-                    {categories[0].name}
-                  </h3>
-                </div>
-              </div>
-              <div className="col-4">
-                <div
-                  className="d-flex justify-content-center align-items-center rounded category-card"
-                  style={{
-                    backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[1].image})`,
-                    backgroundRepeat: "no-Repeat",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <h3 className="text-white display-6">{categories[1].name}</h3>
-                </div>
-              </div>
-            </div>
-            <div className="row g-2 mx-auto categories-container h-50">
-              <div className="col-4">
-                <div
-                  className="d-flex justify-content-center align-items-center rounded category-card"
-                  style={{
-                    backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[2].image})`,
-                    backgroundRepeat: "no-Repeat",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <h3 className="text-white display-6">{categories[2].name}</h3>
-                </div>
-              </div>
-              <div className="col-8">
-                <div
-                  className="d-flex justify-content-center align-items-center rounded category-card"
-                  style={{
-                    backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[3].image})`,
-                    backgroundRepeat: "no-Repeat",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <h3 className="text-white display-6">{categories[3].name}</h3>
-                </div>
-              </div>
-            </div>
-            <div className="inspiration-section">
-              <div className="row mx-auto inspiration-section-row">
-                <div className="col-4">
-                  <img
-                    src="/img/inspiration.webp"
-                    alt="inspiration"
-                    width="100%"
-                  />
-                </div>
-
-                <div className="col-8">
-                  <div className="d-flex flex-column justify-content-center align-items-center h-100">
-                    <h4 className="fs-2">Get Inspired</h4>
-                    <p className="mb-5 text-secondary">
-                      Discover our favorite looks across the home to inspire
-                      your space.
-                    </p>
-                    <div className="rounded text-center inspiration-cta">
-                      Meet our team
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Categories data={categories} />
           </div>
         </>
       )}
