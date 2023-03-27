@@ -16,6 +16,7 @@ import AdminOwnOrder from "./pages/AdminOwnOrder";
 import Cart from "./components/Cart";
 import Category from "./components/Category";
 import Navbar from "./components/Navbar";
+import Login2 from "./components/Login2";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/profile" element={<AdminProfile />} />
           <Route path="/orders" element={<AdminOwnOrder />} />
           <Route path="*" element={<h2>There's nothing here: 404!</h2>} />
+          <Route path="/prueba" element={<Login2 />} />
         </Routes>
       </div>
     </PersistGate>
