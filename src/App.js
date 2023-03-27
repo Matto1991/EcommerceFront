@@ -33,9 +33,9 @@ function App() {
           <Route path="/product/:id" element={<Product />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/about" element={<AboutProyect />} />
-
           <Route path="/profile" element={<AdminProfile />} />
           <Route path="/orders" element={<AdminOwnOrder />} />
+          <Route path="*" element={<h2>There's nothing here: 404!</h2>} />
         </Routes>
       </div>
     </PersistGate>

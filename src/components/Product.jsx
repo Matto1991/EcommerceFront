@@ -48,6 +48,7 @@ function Product() {
           <div className="row g-4 pt-5">
             <div className="col-12 col-lg-8">
               <img
+                className="h-100"
                 src={`${process.env.REACT_APP_BACKEND_URL}/${product.images}`}
                 style={{ maxWidth: "100%" }}
                 alt={product.name}
