@@ -1,14 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import {  useParams } from "react-router-dom";
-
+import Cart from "../components/Cart"
 import "./ProductStyles.css";
 import Categories from "./Categories";
+
+
+
 function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
-
+  
   const [categories, setCategories] = useState([]);
+
+ 
 
   useEffect(() => {
     const getProduct = async () => {
@@ -71,7 +76,9 @@ function Product() {
 
               <div class="d-flex justify-content-around align-items-end ">
                 <h4 class="card-text pt-5  bold card-price">Free shipping</h4>
-                <button class="button bold">Add to cart</button>
+                <Cart/>Add to cart
+      
+                
               </div>
             </div>
           </div>

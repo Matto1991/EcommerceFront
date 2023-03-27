@@ -14,12 +14,13 @@ function Cart({ name }) {
       name: "The Muir Sofa",
       description:
         "Artisanal woodworking meets expertly tailored, high-end comfort in The Muir Sofa. Its striking silhouette with built-in side table form a mixed material work of art.",
-      images: ["/public/img/TheMuirSofa.png"],
+      images: ["/img/TheLeroyChair.webp"],
       price: 4100,
       stock: 20,
       featured: false,
       categoryId: 1,
     },
+    
   ];
 
   return (
@@ -40,17 +41,8 @@ function Cart({ name }) {
             <div>
               <ul className="my-4">
                 {products.map((product) => (
-                  <li key={product.id} className="">
-                    <div className="row text-end">
-                      <div className="col-4">
-                        <div className="border border-2 rounded mb-2">
-                          <img
-                            src="img\TheLeroyChair.webp"
-                            alt={product.imageAlt}
-                            className="w-25"
-                          />
-                        </div>
-                      </div>
+                  <li key={product.id} className="list-unstyled">
+                    <div className="row">
                       <div className="col-8">
                         <div className="fs-5">
                           <h4>
@@ -61,12 +53,20 @@ function Cart({ name }) {
                               {product.name}
                             </Link>
                           </h4>
-                          <small className="fw-2 ">$ {product.price}</small>
+                          <small className="fw-2">$ {product.price}</small>
                         </div>
                       </div>
-                      <div className=" mt-3">
-                      
-                        <p className="text-secondary-light">
+                      <div className="col-4">
+                        <div className="border border-2 rounded mb-2">
+                          <img
+                            alt="img\TheLeroyChair.webp"
+                            src={product.images}
+                            className="img-fluid"
+                          />
+                        </div>
+                      </div>
+                      <div className=" mt-3 text-end">
+                                              <p className="text-secondary-light">
                           Qty 
                         </p>
                         
@@ -77,7 +77,7 @@ function Cart({ name }) {
                 ))}
               </ul>
               <div className="border-top  py-6 px-4 ">
-                <div className="d-flex justify-between fw-bolder">
+                <div className="d-flex justify-between fw-bolder mt-4 ">
                   <p>Subtotal</p>
                   <p>$262.00</p>
                 </div>
@@ -91,7 +91,7 @@ function Cart({ name }) {
                 </div>
                 <div className="mt-5 d-flex justify-center text-center ">
                   <p>
-                    <button type="button" className="fw-bolder">
+                    <button type="button" className=" btn fw-bolder">
                       Continue Shopping
                       <span aria-hidden="true"> &rarr;</span>
                     </button>
