@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.form-login {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/public/img/image-back.webp");
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+}   
+
+.container-form {
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    transition: all .5s ease-out;
+}
+
+.welcome-back {
+     display: flex;
+     align-items: center;
+     text-align: center;
+}
+
+.message {
+    padding: 1rem;
+}
+
+.nessage h2 {
+    font-size: 1.7rem;
+    padding: 1rem 0;
+}
+
+.message button {
+    padding: 1rem;
+    font-weight: 400;
+    background-color: blue;
+    border-radius: 2rem;
+    border: none;
+}

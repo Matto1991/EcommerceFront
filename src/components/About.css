@@ -77,15 +77,8 @@
 .img-team-ali {
   height: 200px;
   width: 200px;
-  background-image: url("/public/img/AlineFariasprueba.jpg");
-  position: relative;
-  top: 150px;
-  left: -30px; /* @query para desk*/
-  background-size: cover;
-  border: none;
   border-radius: 50%;
-  box-shadow: 0 2px 15px rgb(58, 54, 54);
-  transform: rotate(-25deg);
+  border: solid 3px var(--brand-ligth-brown);
 }
 .img-team-matto {
   height: 200px;
@@ -104,7 +97,7 @@
 
 .icons-team i {
   margin-left: 10px;
-  font-size: 30px;
+  font-size: 20px;
   transition: 0.3s;
 }
 
@@ -114,6 +107,18 @@
   position: absolute;
   top: -30px;
   left: 20px;
+  background-color: var(--brand-green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-comment {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -30px;
+  right: 20px;
   background-color: var(--brand-green);
   display: flex;
   justify-content: center;
