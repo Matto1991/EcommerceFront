@@ -25,9 +25,9 @@ function Cart({ name }) {
   return (
     <>
    
-      <Button
+      <Button 
         onClick={handleShow}
-        className="fs-2 ms-auto me-2 bi bi-cart2 btn-offCanvas-settings"
+        className="fs-2  ms-auto me-2 bi bi-cart2 btn-offCanvas-settings"
       >
         {name}
       </Button>

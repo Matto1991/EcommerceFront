@@ -4,7 +4,7 @@ import NavbarAdmin from "../components/NavbarAdmin";
 
 function AdminOrder() {
   const [orders, setOrders] = useState([]);
-
+console.log(orders)
   useEffect(() => {
     const getOrders = async () => {
       const response = await axios({

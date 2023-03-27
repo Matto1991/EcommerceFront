@@ -162,7 +162,7 @@ html {
 }
 
 .navbar-static {
-  background: transparent;
+  background-color: #a480536c;
 }
 
 .navbar-nav {
@@ -173,7 +173,7 @@ html {
   position: sticky !important;
   top: 0px;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.565);
+  background-color: #a480536c;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   /* box-shadow: 0px 0px 20px 0.2px rgba(0, 0, 0, 0.163); */
@@ -205,7 +205,7 @@ html {
 
 .dropdown-menu {
   padding: 0 !important;
-  background-color: #005b47a6 !important;
+  background-color: #a480536c !important;
   border: 1px solid var(--dark-gray-background) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -239,7 +239,7 @@ html {
 
 .navbar-dynamic-logo {
   font-size: 1.55rem !important;
-  color: var(--brand-green) !important;
+  color: #fff !important;
   font-weight: 500;
   font-family: "Futura";
 }
@@ -392,15 +392,15 @@ html {
   width: 12rem;
   padding: 1.1rem 1rem 1.1rem 1rem;
   font-size: 1.1rem;
-  color: var(--brand-green);
-  background-color: rgba(69, 69, 69, 0.064);
+  color: #fff;
+  background-color: #005b47;
   cursor: pointer;
   /* border: 1px solid var(--brand-green); */
   transition: background-color 0.15s ease-in-out 0.1s;
 }
 
 .cta:hover {
-  background-color: rgba(67, 67, 67, 0.152);
+  background-color: #005b4796;
 }
 
 .categories-section {
@@ -454,14 +454,14 @@ html {
   width: 10rem;
   padding: 0.9rem 0rem 0.9rem 0rem;
   font-size: 1.1rem;
-  color: var(--brand-green);
-  background-color: rgba(69, 69, 69, 0.064);
+  color: #fff;
+  background-color: #005b47;
   cursor: pointer;
   transition: background-color 0.15s ease-in-out 0.1s;
 }
 
 .inspiration-cta:hover {
-  background-color: rgba(67, 67, 67, 0.152);
+  background-color: #005b47a9;
 }
 /* End Home Styles */
 
@@ -508,3 +508,13 @@ html {
     height: 33vh;
   }
 }
+
+/* @media (max-width: 991px) {
+  .dropdown-menu {
+    padding: 0 !important;
+    background-color: #a480536c !important;
+    border: 1px solid var(--dark-gray-background) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+} */
