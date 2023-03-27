@@ -6,6 +6,7 @@ import "./admin.css";
 import OffCanvas from "./OffCanvas";
 import Avatar from "@mui/material/Avatar";
 import { Button } from "react-bootstrap";
+import NavDropdown from "react-bootstrap/NavDropdown";
 
 function NavbarAdmin() {
   return (
@@ -15,13 +16,16 @@ function NavbarAdmin() {
     >
       <Container>
         <Navbar.Brand>Administrator panel</Navbar.Brand>
-        <Button className="ms-auto btn-img-admin">
+          <NavDropdown className="text-black ms-auto mt-2">
+            <NavDropdown.Item href="/profile">Your Profile</NavDropdown.Item>
+            <NavDropdown.Item href="/orders">Your Orders</NavDropdown.Item>
+            <NavDropdown.Item href="#">Logout</NavDropdown.Item>
+          </NavDropdown>
           <Avatar
             alt="Remy Sharp"
             src="/img/imagenAdmin.png"
-            className="ms-auto"
+            className="mx-1"
           />
-        </Button>
         <OffCanvas />
       </Container>
     </Navbar>

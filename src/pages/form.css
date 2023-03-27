@@ -15,6 +15,14 @@
   color: #fff;
 }
 
+#email::placeholder {
+  color: rgba(255, 255, 255, 0.762);
+}
+
+#password::placeholder {
+  color: rgba(255, 255, 255, 0.762);
+}
+
 .welcome-back {
   display: flex;
   align-items: center;
@@ -22,19 +30,27 @@
 }
 
 .message {
-justify-content: center;
+  justify-content: center;
 }
 
-/* .link-sign-up {
-} */
+.link-sign-up {
+  color: #d09064;
+  font-size: 1.2rem;
+}
+
+.link-sign-up:hover {
+    color: #975d34;
+}
 
 .sign-up-btn {
-    background-color: #005b47 !important;
+  background-color: #005b47 !important;
 }
 
 .formulary {
   background-color: #20202081;
+  backdrop-filter: blur(3px);
   text-align: center;
+  border-radius: 10px;
 }
 
 .create-account {

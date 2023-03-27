@@ -2,7 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
+
 function Category() {
+  
   const { name } = useParams();
   const [category, setCategory] = useState();
   const [products, setProducts] = useState([]);
