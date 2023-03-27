@@ -1,4 +1,4 @@
-import { Password } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 import React from "react";
 import "./form.css";
 
@@ -9,9 +9,11 @@ function Login() {
         <div className="row">
           <div className="message col-md-6 col-lg-6 text-center d-flex flex-column">
             <h2 className="h2-message">Welcome to Ecozy Luxury</h2>
-            <link to="/sign-up">
-              <p className="p-message"> Don't have an account? Sign up</p>
-            </link>
+            <p className="p-message">
+              {" "}
+              Don't have an account? 
+              <Link to="/sign-up" className="text-decoration-none fw-bold link-sign-up"> Sign up</Link>
+            </p>
             {/* <button className="btn btn-lg btn-success sign-up-btn border-0">Sign Up</button> */}
           </div>
           <div className="col-md-6 col-lg-6 formulary">
@@ -38,7 +40,6 @@ function Login() {
                 placeholder="Password"
                 name="password"
                 id="password"
-                value={Password}
               />
             </form>
           </div>
