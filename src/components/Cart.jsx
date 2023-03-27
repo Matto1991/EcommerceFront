@@ -47,7 +47,7 @@ function Cart({ name }) {
                           <img
                             src="img\TheLeroyChair.webp"
                             alt={product.imageAlt}
-                            className=""
+                            className="w-25"
                           />
                         </div>
                       </div>
