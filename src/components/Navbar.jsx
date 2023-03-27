@@ -51,7 +51,7 @@ function NavbarNav() {
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
               }`}
             >
-              <Nav.Link href="/">Products</Nav.Link>
+              <Nav.Link href="/products">Products</Nav.Link>
             </div>
             <div
               className={`position-relative ${
@@ -73,17 +73,21 @@ function NavbarNav() {
               }`}
               title="Categories"
             >
-              <NavDropdown.Item href="#action/3.1">Living</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Bedroom</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Dining</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.4">Sets</NavDropdown.Item>
+              <NavDropdown.Item href="/category/living">
+                Living
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/category/bedroom">
+                Bedroom
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/category/dining">
+                Dining
+              </NavDropdown.Item>
+              <NavDropdown.Item href="/category/sets">Sets</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
                 Inspiration
               </NavDropdown.Item>
             </NavDropdown>
-            
-
           </Nav>
         </Navbar.Collapse>
       </Container>

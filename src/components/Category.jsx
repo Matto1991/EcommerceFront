@@ -27,7 +27,7 @@ function Category() {
       ) : (
         <>
           <div className="container pt-8">
-            <h2>{category.name}</h2>
+            <h2 className="mt-4">{category.name}</h2>
             {products.map((product) => {
               return (
                 <div className="row g-4" key={product.id}>
@@ -35,7 +35,7 @@ function Category() {
                     className=" card mb-3 
                    border-0"
                   >
-                    <div className="row pt-5">
+                    <div className="row pt-4">
                       <div className="col-12 col-lg-8 p-0 ">
                         <img
                           className="img-fluid h-100 w-100"

@@ -16,6 +16,7 @@ import AdminOwnOrder from "./pages/AdminOwnOrder";
 import Cart from "./components/Cart";
 import Category from "./components/Category";
 import Navbar from "./components/Navbar";
+import Products from "./components/Products";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/category/:name" element={<Category />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/admin" element={<Dashboard />} />
