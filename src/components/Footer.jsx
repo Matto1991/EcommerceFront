@@ -38,6 +38,22 @@ export default function Footer() {
         </div>
         <div className="col-4">
           <div className="d-flex flex-column justify-content-center align-items-center h-100">
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                placeholder="Email"
+                aria-label="Recipient's username"
+                aria-describedby="button-addon2"
+                className=" form-control w-50 "
+              />
+              <button
+                className="btn btn-outline-secondary sign-up-btn text-white"
+                type="button"
+                id="button-addon2"
+              >
+                Catalogue
+              </button>
+            </div>
             <p className="mb-5 footer-text">
               Peek into the world behind our design-driven, handcrafted
               furniture and discover our latest arrivals.

@@ -20,18 +20,17 @@ function Cart({ name }) {
       featured: false,
       categoryId: 1,
     },
-    
   ];
 
   return (
     <>
-   
-      <Button 
+      <span
         onClick={handleShow}
-        className="fs-2  ms-auto me-2 bi bi-cart2 btn-offCanvas-settings"
+        className=" ms-auto me-2 bi bi-bag-fill cart-nav position-relative"
       >
         {name}
-      </Button>
+      </span>
+
       <Offcanvas show={show} onHide={handleClose} placement={"end"}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Shopping cart</Offcanvas.Title>
@@ -66,10 +65,8 @@ function Cart({ name }) {
                         </div>
                       </div>
                       <div className=" mt-3 text-end">
-                                              <p className="text-secondary-light">
-                          Qty 
-                        </p>
-                        
+                        <p className="text-secondary-light">Qty</p>
+
                         <button className="btn text-secondary">Remove</button>
                       </div>
                     </div>
@@ -107,4 +104,3 @@ function Cart({ name }) {
 }
 
 export default Cart;
-

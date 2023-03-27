@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Cart from "../components/Cart";
 import "./ProductStyles.css";
 import Categories from "./Categories";
 import NavbarOther from "../components/NavbarOther";
@@ -71,7 +70,6 @@ function Product() {
 
               <div class="d-flex justify-content-around align-items-end ">
                 <h4 class="card-text pt-5  bold card-price">Free shipping</h4>
-                <Cart />
                 Add to cart
               </div>
             </div>

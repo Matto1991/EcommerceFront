@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Cart from "../components/Cart";
 
 function NavbarNav() {
   const [isScrolling, setIsScrolling] = useState(false);
@@ -38,7 +39,7 @@ function NavbarNav() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
+          <Nav className="ms-auto align-items-center">
             <div
               className={`position-relative ${
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
@@ -65,7 +66,7 @@ function NavbarNav() {
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
               }`}
             >
-              <Nav.Link href="/about">About&nbsp;project</Nav.Link>
+              <Nav.Link href="/about">Project&nbsp;detalis</Nav.Link>
             </div>
             <NavDropdown
               className={`w-25 ${
@@ -88,6 +89,9 @@ function NavbarNav() {
                 Inspiration
               </NavDropdown.Item>
             </NavDropdown>
+            <NavDropdown.Item href="#">
+              <Cart />
+            </NavDropdown.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>
