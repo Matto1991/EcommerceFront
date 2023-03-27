@@ -52,7 +52,7 @@ function Cart({ name }) {
                               {product.name}
                             </Link>
                           </h4>
-                          <small className="fw-2">$ {product.price}</small>
+                          <small className="fw-2 ">$ {product.price}</small>
                         </div>
                       </div>
                       <div className="col-4">
@@ -76,7 +76,7 @@ function Cart({ name }) {
               <div className="border-top  py-6 px-4 ">
                 <div className="d-flex justify-between fw-bolder mt-4 ">
                   <p>Subtotal</p>
-                  <p>$262.00</p>
+                  <p>$ 262.00</p>
                 </div>
                 <p className="mt-1 text-secondary-light">
                   Shipping and taxes calculated at checkout.
