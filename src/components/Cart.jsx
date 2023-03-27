@@ -11,7 +11,7 @@ function Cart({ name }) {
   const handleShow = () => setShow(true);
   const products = [
     {
-      name: "The Muir Sofa",
+      name: "The Leroy Chair",
       description:
         "Artisanal woodworking meets expertly tailored, high-end comfort in The Muir Sofa. Its striking silhouette with built-in side table form a mixed material work of art.",
       images: ["/img/TheLeroyChair.webp"],
