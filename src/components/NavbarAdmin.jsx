@@ -1,5 +1,5 @@
 import React from "react";
-import "flowbite";
+// import "flowbite";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import "./admin.css";
@@ -15,7 +15,7 @@ function NavbarAdmin() {
         <Navbar.Brand>Administrator panel</Navbar.Brand>
         <OffCanvas />
 
-        <div class="flex items-center md:order-2">
+        {/* <div class="flex items-center md:order-2">
           <button
             type="button"
             class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
@@ -31,7 +31,7 @@ function NavbarAdmin() {
               alt="userphoto"
             />
           </button>
-          {/* <!-- Dropdown menu --> */}
+          {/* <!-- Dropdown menu --> 
           <div
             class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
             id="user-dropdown"
@@ -72,7 +72,7 @@ function NavbarAdmin() {
               </li>
             </ul>
           </div>
-        </div>
+        </div> */}
       </Container>
     </Navbar>
   );
