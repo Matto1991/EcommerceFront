@@ -509,6 +509,9 @@ html {
 .inspiration-cta:hover {
   background-color: #005b47a9;
 }
+.categories-card{
+  background-color: #ece9e6;
+}
 /* End Home Styles */
 
 @media only screen and (max-width: 1024px) {
@@ -564,3 +567,6 @@ html {
     -webkit-backdrop-filter: blur(10px);
   }
 } */
+
+
+/* #ece9e6 */
