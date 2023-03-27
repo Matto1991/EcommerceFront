@@ -42,12 +42,12 @@ function Product() {
 
   return (
     <>
-      <div>
-        <div className="card mb-3 pt-5">
+      <div className="container">
+        <div className="card mb-3 pt-5 border-0">
           <div className="row g-4 pt-5">
             <div className="col-12 col-lg-8">
               <img
-                className="img-fluid"
+                className="img-fluid h-100"
                 src={`${process.env.REACT_APP_BACKEND_URL}/${product.images}`}
                 alt={product.name}
               />
@@ -78,7 +78,7 @@ function Product() {
       </div>
       {categories.length > 0 && (
         <>
-          <div className="categories-section">
+          <div className="categories-section border-top pt-5">
             <Categories data={categories} />
           </div>
         </>
