@@ -56,7 +56,10 @@ export default function Home() {
               <p className="animation-third-phrase hero-title hero-title3-sm mb-4">
                 The winter edit
               </p>
-              <h4 className="hero-cta hero-cta-sm">SHOP OUR COLLECTIONS</h4>
+              <Link to={"/products"} className="text-reset ">
+                {" "}
+                <h4 className="hero-cta hero-cta-sm">SHOP OUR COLLECTIONS</h4>
+              </Link>
             </div>
           </div>
         </div>
@@ -82,7 +85,7 @@ export default function Home() {
                           alt={`${product.name}`}
                           className="rounded-top"
                         />
-                        <div className="card-body d-flex flex-column justify-content-between rounded-bottom">
+                        <div className="card-body featured-card-body d-flex flex-column justify-content-between rounded-bottom">
                           <div>
                             <h5 className="card-title featured-card-title">
                               {product.name}

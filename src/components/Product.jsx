@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Cart from "../components/Cart";
 import "./ProductStyles.css";
 import Categories from "./Categories";
+import NavbarOther from "../components/NavbarOther";
 
 function Product() {
   const { id } = useParams();
@@ -42,6 +43,7 @@ function Product() {
 
   return (
     <>
+      <NavbarOther />
       <div className="container">
         <div className="card mb-3 pt-5 border-0">
           <div className="row g-4 pt-5">
