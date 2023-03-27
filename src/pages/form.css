@@ -20,9 +20,12 @@
   align-items: center;
   text-align: center;
 }
+
 .message {
 justify-content: center;
+}
 
+.link-sign-up {
 }
 
 .sign-up-btn {
