@@ -1,6 +1,3 @@
-import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import axios from "axios";
 import Aboutus from "../components/Aboutus.css";
 import Footer from "../components/Footer"
 
@@ -8,7 +5,7 @@ export default function AboutUs() {
   
   return (
     <>
-      <Navbar />
+      
       <div className="row hero-image-aboutUs">
         <div className="col-12 position-relative">
           <div className="hero-text"></div>

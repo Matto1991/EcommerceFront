@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import {  useParams } from "react-router-dom";
+
 import "./ProductStyles.css";
 import Categories from "./Categories";
 function Product() {
@@ -42,7 +42,7 @@ function Product() {
   return (
     <>
       <div>
-        <Navbar />
+       
 
         <div className="card mb-3 pt-5">
           <div className="row g-4 pt-5">
