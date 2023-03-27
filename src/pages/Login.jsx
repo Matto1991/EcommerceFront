@@ -1,3 +1,4 @@
+import { Password } from "@mui/icons-material";
 import React from "react";
 import "./form.css"
 
@@ -34,6 +35,7 @@ function Login() {
             placeholder="Password"
             name="password"
             id="password"
+            value={Password}
           />
         </form>
       </div>
