@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import Navbar from "../components/Navbar";
 function Category() {
   const { name } = useParams();
   const [category, setCategory] = useState();
@@ -26,6 +26,7 @@ function Category() {
         <p>NO DATA</p>
       ) : (
         <>
+          <Navbar />
           <div className="container pt-8">
             <h2 className="mt-4">{category.name}</h2>
             {products.map((product) => {

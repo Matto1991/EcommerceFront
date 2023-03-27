@@ -1,19 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import {  useParams } from "react-router-dom";
-import Cart from "../components/Cart"
+import { useParams } from "react-router-dom";
+import Cart from "../components/Cart";
 import "./ProductStyles.css";
 import Categories from "./Categories";
-
-
 
 function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
-  
-  const [categories, setCategories] = useState([]);
 
- 
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     const getProduct = async () => {
@@ -47,15 +43,12 @@ function Product() {
   return (
     <>
       <div>
-       
-
         <div className="card mb-3 pt-5">
           <div className="row g-4 pt-5">
             <div className="col-12 col-lg-8">
               <img
                 className="img-fluid"
                 src={`${process.env.REACT_APP_BACKEND_URL}/${product.images}`}
-                
                 alt={product.name}
               />
             </div>
@@ -76,9 +69,8 @@ function Product() {
 
               <div class="d-flex justify-content-around align-items-end ">
                 <h4 class="card-text pt-5  bold card-price">Free shipping</h4>
-                <Cart/>Add to cart
-      
-                
+                <Cart />
+                Add to cart
               </div>
             </div>
           </div>
