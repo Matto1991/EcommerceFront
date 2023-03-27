@@ -48,7 +48,6 @@ function Category() {
                           <h4 className="title card-title pb-5 ">
                             {product.name}
                           </h4>
-
                           <p className="d-flex flex-column ">
                             READY TO SHIP <span>Ships in 3-5 days</span>{" "}
                           </p>
