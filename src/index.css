@@ -39,10 +39,10 @@
 
 @font-face {
   font-family: "Futura";
-  src: local("Futura Pt Book"), local("Futura-Book"),
-    url("/public/fonts/Futura-Book.ttf") format("ttf");
-  font-weight: 400;
-  font-style: normal;
+  src: local("Futura Pt Light"), local("Futura-Light"),
+    url("/public/fonts/Futura-Light.ttf") format("ttf");
+  font-weight: 200;
+  font-style: light;
 }
 
 @font-face {
@@ -165,6 +165,10 @@ html {
   background: transparent;
 }
 
+.navbar-nav {
+  color: var(--light-gray-text) !important;
+}
+
 .navbar-dynamic {
   position: sticky !important;
   top: 0px;
@@ -178,18 +182,38 @@ html {
 .navbar-static-text {
   margin: 0rem 0.5rem;
 }
+
 .navbar-dynamic-text {
   margin: 0rem 0.5rem;
 }
 
 .navbar-dynamic-text a {
+  padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+  color: #fff !important;
   font-family: "Futura";
 }
 
 .navbar-static-text a {
+  padding: 0.3rem 0.6rem 0.3rem 0.6rem;
   color: #fff !important;
   font-family: "Futura";
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(0, 0, 0, 0.169);
+}
+
+.dropdown-menu {
   padding: 0 !important;
+  background-color: transparent !important;
+  border: 1px solid var(--dark-gray-background) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dropdown-menu hr {
+  margin: 0;
+  border: 0.2px solid var(--light-gray-text) !important;
 }
 
 .navbar-static-text::after {
@@ -239,11 +263,11 @@ html {
 
 /* End Navbar Styles  */
 /* category card*/
-.categories-card{
+.categories-card {
   background-color: var(--category-gray) !important;
 }
 
-.pt-8{
+.pt-8 {
   padding-top: 8vh;
 }
 /* Start Footer Styles */
@@ -266,12 +290,11 @@ html {
 .footer-list li {
   margin-bottom: 0.5rem;
   font-family: "Futura";
-  font-weight: 400;
+  font-weight: 200;
 }
 
 .footer-text {
   font-family: "Futura";
-  font-weight: 400;
 }
 
 /* End Footer Styles */
@@ -400,6 +423,10 @@ html {
   cursor: pointer;
   transition: transform 0.3s ease-in-out 0.1s, box-shadow 0.3s ease-in-out,
     filter 0.3s ease-in-out;
+}
+
+.category-card-right:hover {
+  filter: brightness(85%);
 }
 
 .category-card:hover {
