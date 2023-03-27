@@ -27,7 +27,7 @@ export default function AboutProyect() {
       
     <span className="p-2 rounded icon-about"><i class="fs-5 bi bi-code-square text-white"></i></span>
       <div className="card-body mt-3">
-        <h5 className="card-title">Tecnologías prueba</h5>
+        <h5 className="card-title">Tecnologías prueba2</h5>
         <p className="card-text">Para el Front-End del sitio se desarrolló una aplicación en React, mientras que para el Back-End se desarrolló una REST API hecha con Node.js, Express, mySQL y Git/GitHub.</p>
       </div>
     </div>
