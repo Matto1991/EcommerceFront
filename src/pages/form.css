@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body {
+.form-login {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -34,5 +34,14 @@ body {
 }
 
 .nessage h2 {
-    
+    font-size: 1.7rem;
+    padding: 1rem 0;
+}
+
+.message button {
+    padding: 1rem;
+    font-weight: 400;
+    background-color: blue;
+    border-radius: 2rem;
+    border: none;
 }

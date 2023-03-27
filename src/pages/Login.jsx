@@ -4,7 +4,7 @@ import "./form.css"
 
 function Login() {
   return (
-    <div>
+    <div className="form-login">
       <div className="container-form sign-up">
         <div className="message">
           <h2>Welcome to Ecozy Luxury</h2>
