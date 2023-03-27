@@ -1,11 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import NavbarOther from "../components/NavbarOther";
 function Category() {
+  const navigate = useNavigate();
   const { name } = useParams();
   const [category, setCategory] = useState();
   const [products, setProducts] = useState([]);
+  const handleGoTo = (url) => {
+    navigate(url);
+  };
   const getCategories = async () => {
     const response = await axios({
       method: "GET",
@@ -35,6 +39,7 @@ function Category() {
                   <div
                     className=" card mb-3 
                    border-0"
+                    onClick={() => handleGoTo(`/product/${product.id}`)}
                   >
                     <div className="row pt-4">
                       <div className="col-12 col-lg-8 p-0 ">
