@@ -9,8 +9,9 @@ function Login() {
         <div className="row">
           <div className="message col-md-6 col-lg-6 text-center d-flex flex-column">
             <h2 className="h2-message">Welcome to Ecozy Luxury</h2>
-            <link to="/si"
-            <p className="p-message"> Don't have an account? Sign up</p>
+            <link to="/sign-up">
+              <p className="p-message"> Don't have an account? Sign up</p>
+            </link>
             {/* <button className="btn btn-lg btn-success sign-up-btn border-0">Sign Up</button> */}
           </div>
           <div className="col-md-6 col-lg-6 formulary">
