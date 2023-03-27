@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Categories from "../components/Categories";
+import Navbar from "../components/Navbar";
 
 export default function Home() {
   const [featured, setFeatured] = useState([]);
@@ -41,6 +42,7 @@ export default function Home() {
 
   return (
     <>
+      <Navbar />
       <div className="row hero-image">
         <div className="col-12">
           <div className="d-flex justify-content-center align-items-center hero-text h-100 position-relative">
