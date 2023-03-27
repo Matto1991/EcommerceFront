@@ -15,11 +15,10 @@
   color: #fff;
 }
 
-#email::placeholder {
+.input-tx {
   color: rgba(255, 255, 255, 0.762);
 }
-
-#password::placeholder {
+.input-tx::placeholder {
   color: rgba(255, 255, 255, 0.762);
 }
 
@@ -39,11 +38,11 @@
 }
 
 .link-sign-up:hover {
-    color: #975d34;
+  color: #975d34;
 }
 
 .sign-up-btn {
-  background-color: #005b47 !important;
+  background-color: #005b47bd !important;
 }
 
 .formulary {

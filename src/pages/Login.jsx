@@ -27,7 +27,13 @@ function Login() {
               <h2 className="create-account">Login</h2>
 
               <label htmlFor="email"></label>
-              <input type="email" placeholder="Email" name="email" id="email"/>
+              <input
+                type="email"
+                placeholder="Email"
+                name="email"
+                id="email"
+                className="input-tx"
+              />
 
               <label htmlFor="password"></label>
               <input
@@ -35,6 +41,7 @@ function Login() {
                 placeholder="Password"
                 name="password"
                 id="password"
+                className="input-tx"
               />
               <div className="icons">
                 <div className="border-icon">

@@ -1,45 +1,98 @@
 import React from "react";
+import IconButton from "@mui/material/IconButton";
+import PhotoCamera from "@mui/icons-material/PhotoCamera";
+import { Link } from "react-router-dom";
 
 function SingUp() {
   return (
-    <div>
-      <div className="container-form sign-up">
-        <div className="message">
-          <h2>Welcome to Ecozy Luxury</h2>
-          <p> Already have an account? Sign in</p>
-          <button className="sign-up-btn">Login</button>
-        </div>
-        <form className="formulary">
-          <h2 className="create-account">Create an account</h2>
-          <div className="icons">
-            <div className="border-icon">
-              <i className="bi bi-instagram"></i>
+    <>
+      <div className="form-login">
+        <div className="container sign-up p-5">
+          <div className="row formulary p-3">
+            <div className="message col-md-6 col-lg-6 text-center d-flex flex-column">
+              <h2 className="h2-message">Welcome to Ecozy Luxury</h2>
+              <p className="p-message">
+                {" "}
+                Have already an account?
+                <Link
+                  to="/login"
+                  className="text-decoration-none fw-bold link-sign-up"
+                >
+                  {" "}
+                  Sign in
+                </Link>
+              </p>
+              {/* <button className="btn btn-lg btn-success sign-up-btn border-0">Sign Up</button> */}
             </div>
-            <div className="border-icon">
-              <i className="bi bi-facebook"></i>
-            </div>
-            <div className="border-icon">
-              <i className="bi bi-linkedin"></i>
+
+            <div className="col-md-5 col-lg-5">
+              <form>
+                <h2 className="create-account fs-1">Register</h2>
+
+                <label></label>
+                <input
+                  type="text"
+                  placeholder="Firstname"
+                  name="firstname"
+                  id="firstname"
+                  className="input-tx"
+                />
+                <label></label>
+                <input
+                  type="text"
+                  placeholder="Lastname"
+                  name="lastname"
+                  id="lastname"
+                  className="input-tx"
+                />
+                <label htmlFor="password"></label>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  id="password"
+                  className="input-tx"
+                />
+                <label htmlFor="email"></label>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  id="email"
+                  className="input-tx"
+                />
+                <label></label>
+                <input
+                  type="text"
+                  placeholder="Address"
+                  name="address"
+                  id="address"
+                  className="input-tx"
+                />
+                <label></label>
+                <input
+                  type="text"
+                  placeholder="Phone"
+                  name="phone"
+                  id="phone"
+                  className="input-tx"
+                />
+
+                <IconButton aria-label="upload picture" component="label">
+                  <input hidden accept="image/*" type="file" />
+                  <small className="me-2 input-tx">Upload </small>{" "}
+                  <PhotoCamera className="input-tx" />
+                </IconButton>
+
+                <button className="btn btn-success sign-up-btn border-0 w-75 m-4 fs-5 d-block mx-auto">
+                  Create
+                </button>
+              </form>
             </div>
           </div>
-          <p className="free-account">Create a free account to shopping</p>
-            <label htmlFor="firstname">Firstname</label>
-            <input type="text" placeholder="Firstname" name="firstname" id="firstname" />
-
-            <label htmlFor="lastname">Lastname</label>
-            <input type="text" placeholder="Lastname" name="lastname" id="lastname" />
-
-            <label htmlFor="email">Email</label>
-            <input type="email" placeholder="Email" name="email" id="email" />
-
-            <label htmlFor="password">Password</label>
-            <input type="password" placeholder="Password" name="password" id="password" />
-
-            <label htmlFor="avatar">Image</label>
-            <input type="file" placeholder="Image" name="avatar" id="avatar" />
-        </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

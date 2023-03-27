@@ -15,7 +15,7 @@ import AdminOwnOrder from "./pages/AdminOwnOrder";
 import Cart from "./components/Cart";
 import Category from "./components/Category";
 import Products from "./components/Products";
-import  Login  from "./pages/Login";
+import Login from "./pages/Login";
 import SingUp from "./pages/SignUp";
 
 function App() {
