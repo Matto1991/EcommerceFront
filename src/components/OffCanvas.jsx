@@ -11,7 +11,7 @@ function OffCanvas({ name }) {
 
   return (
     <>
-      <Button onClick={handleShow} className="ms-auto me-2 bi bi-gear btn-offCanvas-settings">
+      <Button onClick={handleShow} className="bi bi-three-dots-vertical btn-offCanvas-settings">
         {name}
       </Button>
       <Offcanvas show={show} onHide={handleClose} placement={"start"}>
