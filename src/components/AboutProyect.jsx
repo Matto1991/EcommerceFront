@@ -1,11 +1,11 @@
 import React from "react";
 import About from "../components/About.css";
 import Footer from "./Footer";
-import Navbar from "../components/Navbar";
+import NavbarOther from "../components/NavbarOther";
 export default function AboutProyect() {
   return (
     <>
-      <Navbar />
+      <NavbarOther />
       <div className="row hero-about">
         <div className="col-12 position-relative"></div>
       </div>

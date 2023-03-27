@@ -154,7 +154,7 @@ html {
   --dark-gray-background: rgba(48, 48, 48, 0.085);
 }
 
-/* Start Navbar Styles */
+/* Start Home Navbar Styles */
 
 .navbar-toggler {
   border: none !important;
@@ -162,7 +162,9 @@ html {
 }
 
 .navbar-static {
-  background-color: #a480536c;
+  position: fixed !important;
+  top: 0px;
+  z-index: 100;
 }
 
 .navbar-nav {
@@ -180,40 +182,56 @@ html {
 }
 
 .navbar-static-text {
-  margin: 0rem 0.5rem;
+  margin: 0rem 0.8rem;
 }
 
 .navbar-dynamic-text {
-  margin: 0rem 0.5rem;
+  margin: 0rem 0.8rem;
 }
 
 .navbar-dynamic-text a {
-  padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+  padding: 0 !important;
   color: #fff !important;
   font-family: "Futura";
 }
 
 .navbar-static-text a {
-  padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+  padding: 0 !important;
   color: #fff !important;
   font-family: "Futura";
+}
+.dropdown-menu a {
+  padding: 0.2rem 0rem 0.2rem 0.5rem !important;
 }
 
 .dropdown-menu a:hover {
   background-color: rgba(0, 0, 0, 0.169);
 }
 
-.dropdown-menu {
+.navbar-static-text .dropdown-menu {
   padding: 0 !important;
-  background-color: #a480536c !important;
+  background-color: var(--light-gray-background) !important;
   border: 1px solid var(--dark-gray-background) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
-.dropdown-menu hr {
+.navbar-dynamic-text .dropdown-menu {
+  padding: 0 !important;
+  border: 1px solid var(--dark-gray-background) !important;
+  background-color: #a480536c;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.navbar-static-text .dropdown-menu hr {
   margin: 0;
   border: 0.2px solid var(--light-gray-text) !important;
+}
+
+.navbar-dynamic-text .dropdown-menu hr {
+  margin: 0;
+  border: 0.2px solid #fff !important;
 }
 
 .navbar-static-text::after {
@@ -230,6 +248,23 @@ html {
 }
 
 .navbar-static-text:hover::after {
+  width: 100%;
+}
+
+.navbar-dynamic-text::after {
+  content: "";
+  display: block;
+  position: absolute;
+  padding: 0;
+  left: 0;
+  bottom: -3px;
+  height: 1.5px;
+  width: 0;
+  background-color: #fff;
+  transition: width 0.4s;
+}
+
+.navbar-dynamic-text:hover::after {
   width: 100%;
 }
 
@@ -261,15 +296,16 @@ html {
   transition: background-color 0.3s ease-in-out, position 0.3s ease-in-out;
 }
 
-/* End Navbar Styles  */
-/* category card*/
-.categories-card {
-  background-color: var(--category-gray) !important;
+/* End Navbar Home Styles  */
+
+/* Start Navbar Other Styles */
+
+.navbar-other-static {
+  background-color: #a480536c;
 }
 
-.pt-8 {
-  padding-top: 8vh;
-}
+/* End Navbar Other Styles  */
+
 /* Start Footer Styles */
 
 .footer {
@@ -363,12 +399,18 @@ html {
 .featured-card {
   cursor: pointer;
   transition: transform 0.3s ease-in-out 0.1s, box-shadow 0.3s ease-in-out;
+  border: none !important;
 }
 
 .featured-card:hover {
   transform: scale(1.015);
   box-shadow: 0px 0px 8px 1.3px rgba(0, 0, 0, 0.456);
   border: none;
+}
+
+.card-body {
+  border: 1px solid var(--dark-gray-background);
+  border-top: 0;
 }
 
 .featured-card-title {
@@ -390,8 +432,8 @@ html {
 
 .cta {
   width: 12rem;
-  padding: 1.1rem 1rem 1.1rem 1rem;
-  font-size: 1.1rem;
+  padding: 0.9rem 0.8rem 0.9rem 0.8rem;
+  font-size: 1rem;
   color: #fff;
   background-color: #005b47;
   cursor: pointer;
@@ -400,7 +442,7 @@ html {
 }
 
 .cta:hover {
-  background-color: #005b4796;
+  background-color: #005b47da;
 }
 
 .categories-section {
@@ -416,6 +458,11 @@ html {
   cursor: pointer;
   transition: transform 0.3s ease-in-out 0.1s, box-shadow 0.3s ease-in-out,
     filter 0.3s ease-in-out;
+  background-color: var(--category-gray) !important;
+}
+
+.pt-8 {
+  padding-top: 8vh;
 }
 
 .category-card-right {
@@ -452,8 +499,8 @@ html {
 
 .inspiration-cta {
   width: 10rem;
-  padding: 0.9rem 0rem 0.9rem 0rem;
-  font-size: 1.1rem;
+  padding: 0.9rem 0.8rem 0.9rem 0.8rem;
+  font-size: 1rem;
   color: #fff;
   background-color: #005b47;
   cursor: pointer;

@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
 function Categories({ data }) {
   const navigate = useNavigate();
   const handleGoTo = (url) => {
@@ -9,7 +8,6 @@ function Categories({ data }) {
 
   return (
     <>
-      <Navbar />
       <div className="d-flex justify-content-center w-100 mb-5">
         <h2>Shop by categories</h2>
       </div>

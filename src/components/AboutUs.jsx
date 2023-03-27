@@ -1,10 +1,10 @@
 import Aboutus from "../components/Aboutus.css";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import NavbarOther from "../components/NavbarOther";
 export default function AboutUs() {
   return (
     <>
-      <Navbar />
+      <NavbarOther />
 
       <div className="row hero-image-aboutUs">
         <div className="col-12 position-relative">

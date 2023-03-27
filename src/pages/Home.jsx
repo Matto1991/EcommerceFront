@@ -82,7 +82,7 @@ export default function Home() {
                           alt={`${product.name}`}
                           className="rounded-top"
                         />
-                        <div className="card-body d-flex flex-column justify-content-between">
+                        <div className="card-body d-flex flex-column justify-content-between rounded-bottom">
                           <div>
                             <h5 className="card-title featured-card-title">
                               {product.name}

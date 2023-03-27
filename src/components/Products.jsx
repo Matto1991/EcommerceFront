@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import NavbarOther from "../components/NavbarOther";
 function Products() {
   const navigate = useNavigate();
   const handleGoTo = (url) => {
@@ -22,7 +22,7 @@ function Products() {
   }, []);
   return (
     <>
-      <Navbar />
+      <NavbarOther />
       <div className="row g-4 container-fluid pt-5 ">
         <h2 className="pt-5">All products</h2>
         {products.map((product) => {
