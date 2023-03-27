@@ -2,7 +2,6 @@ import Home from "./pages/Home";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor } from "./redux/storeConfig";
 import { Routes, Route } from "react-router-dom";
-// import AdminHome from "./components/AdminHome";
 
 import Dashboard from "./pages/Dashboard";
 import AdminProduct from "./pages/AdminProduct";
@@ -15,18 +14,14 @@ import AdminProfile from "./pages/AdminProfile";
 import AdminOwnOrder from "./pages/AdminOwnOrder";
 import Cart from "./components/Cart";
 import Category from "./components/Category";
-import Navbar from "./components/Navbar";
-
 import Products from "./components/Products";
-
-import Login from "./pages/Login";
+import  Login  from "./pages/Login";
 import SingUp from "./pages/SignUp";
 
 function App() {
   return (
     <PersistGate loading={null} persistor={persistor}>
       <div className="App">
-        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
