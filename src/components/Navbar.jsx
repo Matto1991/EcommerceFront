@@ -92,7 +92,7 @@ function NavbarNav() {
                 Inspiration
               </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown.Item href="#">
+            <NavDropdown.Item href="#" className="ms-3">
               <Cart />
               
             </NavDropdown.Item>

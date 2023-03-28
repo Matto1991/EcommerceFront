@@ -35,7 +35,7 @@ function App() {
         <Route path="/about" element={<AboutProyect />} />
         <Route path="/profile" element={<AdminProfile />} />
         <Route path="/orders" element={<AdminOwnOrder />} />
-        <Route path="/sign-up" element={<SingUp />} />
+        <Route path="/signup" element={<SingUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/prueba" element={<CheckOut />} />
         <Route path="*" element={<h2>There's nothing here: 404!</h2>} />
