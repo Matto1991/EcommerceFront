@@ -16,6 +16,7 @@ import Category from "./components/Category";
 import Products from "./components/Products";
 import Login from "./pages/Login";
 import SingUp from "./pages/SignUp";
+import CheckOut from "./components/CheckOut";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/orders" element={<AdminOwnOrder />} />
         <Route path="/sign-up" element={<SingUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/prueba" element={<CheckOut />} />
         <Route path="*" element={<h2>There's nothing here: 404!</h2>} />
       </Routes>
     </div>

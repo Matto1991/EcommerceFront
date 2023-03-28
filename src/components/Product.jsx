@@ -47,7 +47,7 @@ function Product() {
     product.images && (
       <>
         <NavbarOther />
-        <div className="container">
+        <div className="container mt-5">
           <div className="card mb-3 pt-5 border-0">
             <div className="row g-4 pt-5">
               <div className="col-12 col-lg-8">
