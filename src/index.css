@@ -304,6 +304,12 @@ html {
   background-color: #a480536c;
 }
 
+.cart-nav {
+  width: 0.5px;
+  height: 0.5px;
+  color: whitesmoke;
+}
+
 /* End Navbar Other Styles  */
 
 /* Start Footer Styles */
@@ -509,9 +515,10 @@ html {
 .inspiration-cta:hover {
   background-color: #005b47a9;
 }
-.categories-card{
+.categories-card {
   background-color: #ece9e6;
 }
+
 /* End Home Styles */
 
 @media only screen and (max-width: 1024px) {
@@ -567,6 +574,5 @@ html {
     -webkit-backdrop-filter: blur(10px);
   }
 } */
-
 
 /* #ece9e6 */

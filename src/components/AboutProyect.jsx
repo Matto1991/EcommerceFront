@@ -15,7 +15,7 @@ export default function AboutProyect() {
           <div className="col">
             <div className="card h-100 shadow">
               <span className="p-2 rounded icon-about">
-                <i class="fs-5 bi bi-clock text-white"></i>
+                <i className="fs-5 bi bi-clock text-white"></i>
               </span>
               <div className="card-body mt-3">
                 <h5 className="card-title">Duración</h5>
@@ -30,7 +30,7 @@ export default function AboutProyect() {
           <div className="col">
             <div className="card h-100 shadow">
               <span className="p-2 rounded icon-about">
-                <i class="fs-5 bi bi-code-square text-white"></i>
+                <i className="fs-5 bi bi-code-square text-white"></i>
               </span>
               <div className="card-body mt-3">
                 <h5 className="card-title">Tecnologías</h5>
@@ -45,7 +45,7 @@ export default function AboutProyect() {
           <div className="col">
             <div className="card h-100 shadow">
               <span className="p-2 rounded icon-about">
-                <i class=" fs-5 bi bi-list-ul text-white"></i>
+                <i className=" fs-5 bi bi-list-ul text-white"></i>
               </span>
               <div className="card-body mt-3">
                 <h5 className="card-title">División de tareas</h5>
@@ -63,17 +63,17 @@ export default function AboutProyect() {
 
         <div className="mx-auto mt-5">
           <h1 className="text-center mb-5 fw-bold">Equipo</h1>
-          <div class="row g-2">
-            <div class="col-md-6  col-lg-3">
-              <div class="card border-0 p-3">
+          <div className="row g-2">
+            <div className="col-md-6  col-lg-3">
+              <div className="card border-0 p-3">
                 <img
                   src="/img/team_Andres.png"
-                  class="img-team-ali shadow mx-auto"
+                  className="img-team-ali shadow mx-auto"
                   alt="..."
                 />
-                <div class="card-body text-center">
-                  <h5 class="card-title">Andrés Viera</h5>
-                  <p class="card-text fw-bold ">Full Stack Developer Jr.</p>
+                <div className="card-body text-center">
+                  <h5 className="card-title">Andrés Viera</h5>
+                  <p className="card-text fw-bold ">Full Stack Developer Jr.</p>
                 </div>
 
                 <div className="icons-team text-center">
@@ -83,16 +83,16 @@ export default function AboutProyect() {
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="card border-0 p-3">
+            <div className="col-md-6 col-lg-3">
+              <div className="card border-0 p-3">
                 <img
                   src="/img/VirginiaBarbaroimg.jpg"
-                  class="img-team-ali shadow mx-auto"
+                  className="img-team-ali shadow mx-auto"
                   alt="..."
                 />
-                <div class="card-body text-center">
-                  <h5 class="card-title">Virginia Barbaro</h5>
-                  <p class="card-text fw-bold ">Full Stack Developer Jr.</p>
+                <div className="card-body text-center">
+                  <h5 className="card-title">Virginia Barbaro</h5>
+                  <p className="card-text fw-bold ">Full Stack Developer Jr.</p>
                 </div>
 
                 <div className="icons-team text-center">
@@ -102,16 +102,16 @@ export default function AboutProyect() {
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="card border-0 p-3">
+            <div className="col-md-6 col-lg-3">
+              <div className="card border-0 p-3">
                 <img
                   src="/img/AlineFariasprueba.jpg"
-                  class="img-team-ali shadow mx-auto"
+                  className="img-team-ali shadow mx-auto"
                   alt="..."
                 />
-                <div class="card-body text-center">
-                  <h5 class="card-title">Aline Farias</h5>
-                  <p class="card-text fw-bold ">Full Stack Developer Jr.</p>
+                <div className="card-body text-center">
+                  <h5 className="card-title">Aline Farias</h5>
+                  <p className="card-text fw-bold ">Full Stack Developer Jr.</p>
                 </div>
 
                 <div className="icons-team text-center">
@@ -121,16 +121,16 @@ export default function AboutProyect() {
                 </div>
               </div>
             </div>
-            <div class="col-md-6 col-lg-3">
-              <div class="card border-0 p-3">
+            <div className="col-md-6 col-lg-3">
+              <div className="card border-0 p-3">
                 <img
                   src="/img/Mathi.jpg"
-                  class="img-team-ali shadow mx-auto"
+                  className="img-team-ali shadow mx-auto"
                   alt="..."
                 />
-                <div class="card-body text-center">
-                  <h5 class="card-title">Mathias Sandin</h5>
-                  <p class="card-text fw-bold ">Full Stack Developer Jr.</p>
+                <div className="card-body text-center">
+                  <h5 className="card-title">Mathias Sandin</h5>
+                  <p className="card-text fw-bold ">Full Stack Developer Jr.</p>
                 </div>
 
                 <div className="icons-team text-center">

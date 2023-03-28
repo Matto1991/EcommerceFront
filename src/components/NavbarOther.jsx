@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Cart from "./Cart";
 
 function NavbarOther() {
   const [isScrolling, setIsScrolling] = useState(false);
@@ -85,6 +86,9 @@ function NavbarOther() {
                 Inspiration
               </NavDropdown.Item>
             </NavDropdown>
+            <NavDropdown.Item href="#">
+              <Cart />
+            </NavDropdown.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>
