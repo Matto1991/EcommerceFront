@@ -87,48 +87,59 @@ function Cart({ name }) {
                             ></i>
                           </div>
 
-                        <IconButton aria-label="delete" size="small">
-                          <DeleteIcon
-                            fontSize="small"
-                            // className="brown"
-                            onClick={() => handleRemoveProduct(product)}
-                          />
-                        </IconButton>
+                          <IconButton aria-label="delete" size="small">
+                            <DeleteIcon
+                              fontSize="small"
+                              // className="brown"
+                              onClick={() => handleRemoveProduct(product)}
+                            />
+                          </IconButton>
+                        </div>
                       </div>
-                    </div>
-                    <hr />
-                  </li>
-                ))}
-              </ul>
-              <div className="border-top  py-6 px-4 ">
-                <div className="d-flex justify-content-end mt-4 ">
-                  {
-                    products.length > 0 && <p>Total: <strong> { 
-                    products.reduce((acc, product) => acc + product.price * product.quantity, 0)} U$S </strong></p>
-                  }
-                </div>
-                <p className="mt-1 text-secondary-light">
-                  Shipping and taxes calculated at checkout.
-                </p>
-                <div className="mt-6 d-grid gap-2">
-                  <Link to="/login" className="btn btn-success btn-lg green">
-                    Checkout
-                  </Link>
-                </div>
-                <div className="mt-5 d-flex justify-center text-center ">
-                  <p>
-                    <button type="button" className=" btn fw-bolder">
-                      Continue Shopping
-                      <span aria-hidden="true"> &rarr;</span>
-                    </button>
+                      <hr />
+                    </li>
+                  ))}
+                </ul>
+                <div className="border-top  py-6 px-4 ">
+                  <div className="d-flex justify-content-end mt-4 ">
+                    {products.length > 0 && (
+                      <p>
+                        Total:{" "}
+                        <strong>
+                          {" "}
+                          {products.reduce(
+                            (acc, product) =>
+                              acc + product.price * product.quantity,
+                            0
+                          )}{" "}
+                          U$S{" "}
+                        </strong>
+                      </p>
+                    )}
+                  </div>
+                  <p className="mt-1 text-secondary-light">
+                    Shipping and taxes calculated at checkout.
                   </p>
+                  <div className="mt-6 d-grid gap-2">
+                    <Link to="/login" className="btn btn-success btn-lg green">
+                      Checkout
+                    </Link>
+                  </div>
+                  <div className="mt-5 d-flex justify-center text-center ">
+                    <p>
+                      <button type="button" className=" btn fw-bolder">
+                        Continue Shopping
+                        <span aria-hidden="true"> &rarr;</span>
+                      </button>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </Offcanvas.Body>
-      </Offcanvas>
-    </>
+          </Offcanvas.Body>
+        </Offcanvas>
+      </>
+    )
   );
 }
 
