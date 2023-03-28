@@ -1,15 +1,30 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "./ProductStyles.css";
 import Categories from "./Categories";
 import NavbarOther from "../components/NavbarOther";
+import { addToCart } from "../redux/cartReducer";
+
 
 function Product() {
-  const { id } = useParams();
-  const [product, setProduct] = useState([]);
 
+  const { id } = useParams();
+
+  const item = useSelector((state) => state.cart)
+  const dispatch = useDispatch();
+
+  const [product, setProduct] = useState([]);
   const [categories, setCategories] = useState([]);
+
+
+  const handleAddToCart = () => {
+    dispatch(
+      addToCart({productId: product.id}) 
+    )
+  }
 
   useEffect(() => {
     const getProduct = async () => {
@@ -18,7 +33,6 @@ function Product() {
         url: `${process.env.REACT_APP_BACKEND_URL}/products/${id}`,
       });
 
-      console.log(response.data);
       setProduct(response.data);
     };
 
@@ -33,8 +47,6 @@ function Product() {
       });
 
       setCategories(response.data);
-
-      console.log(response.data);
     };
 
     getCategories();
@@ -70,7 +82,9 @@ function Product() {
 
               <div class="d-flex justify-content-around align-items-end ">
                 <h4 class="card-text pt-5  bold card-price">Free shipping</h4>
-                Add to cart
+               <button
+               onClick={handleAddToCart}
+               > Add to cart</button>
               </div>
             </div>
           </div>
