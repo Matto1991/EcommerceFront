@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
 import Cartc from "./Cartc.css";
+import { removeFromCart } from "../redux/cartReducer";
 
 function Cart({ name }) {
   const [show, setShow] = useState(false);
@@ -11,20 +12,12 @@ function Cart({ name }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const products = useSelector((state) => state.cart.products)
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.cart.products);
 
-  // const products = [
-  //   {
-  //     name: "The Leroy Chair",
-  //     description:
-  //       "Artisanal woodworking meets expertly tailored, high-end comfort in The Muir Sofa. Its striking silhouette with built-in side table form a mixed material work of art.",
-  //     images: ["/img/TheLeroyChair.webp"],
-  //     price: 4100,
-  //     stock: 20,
-  //     featured: false,
-  //     categoryId: 1,
-  //   },
-  // ];
+  const handleRemoveProduct = (product) => {
+    dispatch(removeFromCart(product));
+  };
 
   return (
     <>
@@ -70,8 +63,12 @@ function Cart({ name }) {
                       </div>
                       <div className=" mt-3 text-end">
                         <p className="text-secondary-light">Qty</p>
-
-                        <button className="btn text-secondary">Remove</button>
+                        <button
+                          className="btn text-secondary"
+                          onClick={() => handleRemoveProduct(product)}
+                        >
+                          Remove
+                        </button>
                       </div>
                     </div>
                   </li>

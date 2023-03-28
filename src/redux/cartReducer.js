@@ -15,10 +15,13 @@ const cartSlice = createSlice({
         ? (productInCart.quantity += 1)
         : state.products.push({ ...product, quantity: 1 });
     },
-
-    removeFromCart(state, action) {
-      return state;
+    decreaseCart(state, action) {
+      const productIndex = state.cart
     },
+    removeFromCart(state, action) {
+        const updatedCart = state.products.filter((product) => product.id !== action.payload.id)
+        state.products = updatedCart;
+      },
   },
 });
 
