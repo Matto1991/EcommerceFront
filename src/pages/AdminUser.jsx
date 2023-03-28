@@ -3,32 +3,44 @@ import { useState } from "react";
 import axios from "axios";
 import NavbarAdmin from "../components/NavbarAdmin";
 import { Link } from "react-router-dom";
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function AdminUser() {
   const [users, setUsers] = useState([]);
   const [admins, setAdmins] = useState([]);
 
+  const getUsers = async () => {
+    const response = await axios({
+      method: "get",
+      url: `${process.env.REACT_APP_BACKEND_URL}/users`,
+    });
+    setUsers(response.data);
+    console.log(response.data);
+  };
   useEffect(() => {
-    const getUsers = async () => {
-      const response = await axios({
-        method: "get",
-        url: `${process.env.REACT_APP_BACKEND_URL}/users`,
-      });
-      setUsers(response.data);
-      console.log(response.data);
-    };
     getUsers();
 
     const getAdmins = async () => {
       const response = await axios({
         method: "get",
-        url: `${process.env.REACT_APP_BACKEND_URL}/admins`
-      })
-      setAdmins(response.data)
-      console.log(response.data)
-    }
+        url: `${process.env.REACT_APP_BACKEND_URL}/admins`,
+      });
+      setAdmins(response.data);
+      console.log(response.data);
+    };
     getAdmins();
   }, []);
+
+  const handleDelete = async (id) => {
+    const response = await axios({
+      method: "delete",
+      url: `${process.env.REACT_APP_BACKEND_URL}/users/${id}`,
+    });
+  };
+  useEffect(() => {
+    getUsers();
+  }, [users]);
 
   return (
     <div>
@@ -70,12 +82,22 @@ function AdminUser() {
                           <button className="edit-btn mb-2 w-100">Edit</button>
                         </a>
                       </td>
+                      <td>
+                        <IconButton
+                          type="submit"
+                          aria-label="delete"
+                          size="small"
+                          onClick={() => handleDelete(user.id)}
+                        >
+                          <DeleteIcon fontSize="small" />
+                        </IconButton>
+                      </td>
                     </tr>
                   </tbody>
                 </>
               );
             })}
-             {admins.map((admin) => {
+            {admins.map((admin) => {
               return (
                 <>
                   <tbody>
