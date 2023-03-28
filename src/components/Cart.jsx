@@ -3,24 +3,29 @@ import { useSelector, useDispatch } from "react-redux";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
-import { removeFromCart } from "../redux/cartReducer";
+import { decreaseCart, removeFromCart } from "../redux/cartReducer";
 import Cartc from "./Cartc.css";
 import IconButton from "@mui/material/IconButton";
 
 import DeleteIcon from "@mui/icons-material/Delete";
 
 function Cart({ name }) {
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const dispatch = useDispatch();
+
   const products = useSelector((state) => state.cart.products);
 
   const handleRemoveProduct = (product) => {
     dispatch(removeFromCart(product));
   };
+
+  const handleDecreaseCart = (product) => 
+  dispatch(decreaseCart(product))
 
   return (
     <>
@@ -66,13 +71,17 @@ function Cart({ name }) {
                       </div>
                       <div className=" d-flex justify-content-between mt-3 text-end ">
                         <div className="border rounded border-1 d-flex align-items-center">
-                          <i class=" btn border-0 bi bi-caret-left"></i>{" "}
+                          <i class=" btn border-0 bi bi-caret-left" onClick={() => handleDecreaseCart(product)}></i>{" "}
                           {product.quantity}
                           <i class="btn border-0 bi bi-caret-right"></i>
                         </div>
 
                         <IconButton aria-label="delete" size="small">
-                          <DeleteIcon fontSize="small" onClick={() => handleRemoveProduct(product)}/>
+                          <DeleteIcon
+                            fontSize="small"
+                            // className="brown"
+                            onClick={() => handleRemoveProduct(product)}
+                          />
                         </IconButton>
                       </div>
                     </div>
