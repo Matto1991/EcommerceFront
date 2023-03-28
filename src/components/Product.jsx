@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
 import Cart from "../components/Cart";
 import "./ProductStyles.css";
@@ -14,6 +15,9 @@ function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [categories, setCategories] = useState([]);
+
+  const products = useSelector((state) => state.cart);
+  console.log(product);
 
   useEffect(() => {
     const getProduct = async () => {
