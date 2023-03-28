@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
+import { useSelector } from "react-redux";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Cart from "../components/Cart";
 
 function NavbarNav() {
   const [isScrolling, setIsScrolling] = useState(false);
+
+  const products = useSelector((state) => state.cart.products);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -91,6 +94,7 @@ function NavbarNav() {
             </NavDropdown>
             <NavDropdown.Item href="#">
               <Cart />
+              
             </NavDropdown.Item>
           </Nav>
         </Navbar.Collapse>

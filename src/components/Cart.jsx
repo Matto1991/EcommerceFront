@@ -98,9 +98,11 @@ function Cart({ name }) {
                 ))}
               </ul>
               <div className="border-top  py-6 px-4 ">
-                <div className="d-flex justify-between fw-bolder mt-4 ">
-                  <p>Subtotal</p>
-                  <p>$ 262.00</p>
+                <div className="d-flex justify-content-end mt-4 ">
+                  {
+                    products.length > 0 && <p>Total: <strong> { 
+                    products.reduce((acc, product) => acc + product.price * product.quantity, 0)} U$S </strong></p>
+                  }
                 </div>
                 <p className="mt-1 text-secondary-light">
                   Shipping and taxes calculated at checkout.

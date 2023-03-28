@@ -24,7 +24,10 @@ function Product() {
   const products = useSelector((state) => state.cart.products);
 
   const notify = () => {
-    toast.success(`Added ${product.name} to cart`)};
+    toast.success(`Added ${product.name} to cart`, {
+      position: "bottom-left",
+    });
+  };
 
   useEffect(() => {
     const getProduct = async () => {
@@ -86,7 +89,7 @@ function Product() {
                   </h4>
                   <Cart />
                   <button onClick={() => handleAddToCart()}>Add to cart</button>
-                  <ToastContainer className="toast-message"/>
+                  <ToastContainer className="toast-message" />
                 </div>
               </div>
             </div>

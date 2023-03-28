@@ -3,7 +3,7 @@ import { toast } from "react-toastify";
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: { products: [] },
+  initialState: { products: [], cartTotalQuantity: 0 },
   reducers: {
     addToCart(state, action) {
       const { product } = action.payload;
@@ -13,7 +13,7 @@ const cartSlice = createSlice({
 
       productInCart
         ? (productInCart.quantity += 1)
-        : state.products.push({ ...product, quantity: 1 });
+        : state.products.push({ ...product, quantity: 1, });
         
     },
     decreaseCart(state, action) {

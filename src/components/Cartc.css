@@ -5,3 +5,10 @@
 .green {
   background-color: var(--brand-green) !important;
 }
+
+.toast-message .Toastify__toast {
+  /* background-color: rgba(211, 211, 211, 0.781); */
+  color: black;
+  backdrop-filter: blur(10px);
+  font-size: .8rem;
+}
