@@ -3,10 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
-import { addToCart, decreaseCart, removeFromCart, increaseCart } from "../redux/cartReducer";
+import {
+  addToCart,
+  decreaseCart,
+  removeFromCart,
+  increaseCart,
+} from "../redux/cartReducer";
 import Cartc from "./Cartc.css";
 import IconButton from "@mui/material/IconButton";
-
 import DeleteIcon from "@mui/icons-material/Delete";
 
 function Cart({ name }) {
@@ -16,7 +20,6 @@ function Cart({ name }) {
   const handleShow = () => setShow(true);
 
   const dispatch = useDispatch();
-
   const products = useSelector((state) => state.cart.products);
 
   const handleRemoveProduct = (product) => {

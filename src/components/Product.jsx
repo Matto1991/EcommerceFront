@@ -9,6 +9,8 @@ import "./ProductStyles.css";
 import Categories from "./Categories";
 import NavbarOther from "../components/NavbarOther";
 import Rating from "@mui/material/Rating";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Product() {
   const dispatch = useDispatch();
@@ -20,6 +22,9 @@ function Product() {
   const [value, setValue] = useState(4);
 
   const products = useSelector((state) => state.cart.products);
+
+  const notify = () => {
+    toast.success(`Added ${product.name} to cart`)};
 
   useEffect(() => {
     const getProduct = async () => {
@@ -34,6 +39,7 @@ function Product() {
   }, []);
 
   const handleAddToCart = () => {
+    notify();
     dispatch(addToCart({ product }));
   };
 
@@ -80,6 +86,7 @@ function Product() {
                   </h4>
                   <Cart />
                   <button onClick={() => handleAddToCart()}>Add to cart</button>
+                  <ToastContainer className="toast-message"/>
                 </div>
               </div>
             </div>
