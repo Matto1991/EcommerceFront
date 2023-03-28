@@ -8,6 +8,7 @@ import Cart from "../components/Cart";
 import "./ProductStyles.css";
 import Categories from "./Categories";
 import NavbarOther from "../components/NavbarOther";
+import Rating from "@mui/material/Rating";
 
 function Product() {
   const dispatch = useDispatch();
@@ -15,6 +16,8 @@ function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [categories, setCategories] = useState([]);
+
+  const [value, setValue] = useState(4);
 
   const products = useSelector((state) => state.cart.products);
   console.log(products);
@@ -52,10 +55,16 @@ function Product() {
               <div className="col-12 col-lg-4">
                 <div className="card-body ">
                   <h1 className="title card-title ">{product.name}</h1>
-                  <p>
-                    Ships in 1 week | Unlimited White Glove Delivery for $145
-                  </p>
+                  <p>Ships in 1 week |</p>
 
+                  <Rating
+                    name="simple-controlled"
+                    className="brown"
+                    value={value}
+                    onChange={(event, newValue) => {
+                      setValue(newValue);
+                    }}
+                  />
                   <h4 className="border-top bold card-price pt-2">
                     US$ {product.price}
                   </h4>

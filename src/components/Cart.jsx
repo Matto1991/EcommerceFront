@@ -3,8 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
-import Cartc from "./Cartc.css";
 import { removeFromCart } from "../redux/cartReducer";
+import Cartc from "./Cartc.css";
+import IconButton from "@mui/material/IconButton";
+
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function Cart({ name }) {
   const [show, setShow] = useState(false);
@@ -56,21 +59,24 @@ function Cart({ name }) {
                         <div className="border border-2 rounded mb-2">
                           <img
                             alt="img\TheLeroyChair.webp"
-                            src={product.images}
+                            src={`${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`}
                             className="img-fluid"
                           />
                         </div>
                       </div>
-                      <div className=" mt-3 text-end">
-                        <p className="text-secondary-light">Qty</p>
-                        <button
-                          className="btn text-secondary"
-                          onClick={() => handleRemoveProduct(product)}
-                        >
-                          Remove
-                        </button>
+                      <div className=" d-flex justify-content-between mt-3 text-end ">
+                        <div className="border rounded border-1 d-flex align-items-center">
+                          <i class=" btn border-0 bi bi-caret-left"></i>{" "}
+                          {product.quantity}
+                          <i class="btn border-0 bi bi-caret-right"></i>
+                        </div>
+
+                        <IconButton aria-label="delete" size="small">
+                          <DeleteIcon fontSize="small" onClick={() => handleRemoveProduct(product)}/>
+                        </IconButton>
                       </div>
                     </div>
+                    <hr />
                   </li>
                 ))}
               </ul>
