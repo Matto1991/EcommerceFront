@@ -37,10 +37,10 @@ function AdminUser() {
       method: "delete",
       url: `${process.env.REACT_APP_BACKEND_URL}/users/${id}`,
     });
+    // console.log(typeof response.data);
+    // console.log(users);
+    setUsers(users.filter((item) => item.id !== Number(response.data)));
   };
-  useEffect(() => {
-    getUsers();
-  }, [users]);
 
   return (
     <div>
