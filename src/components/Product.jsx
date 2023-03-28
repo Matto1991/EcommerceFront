@@ -10,14 +10,15 @@ import Categories from "./Categories";
 import NavbarOther from "../components/NavbarOther";
 
 function Product() {
+
   const dispatch = useDispatch();
 
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [categories, setCategories] = useState([]);
 
-  const products = useSelector((state) => state.cart);
-  console.log(product);
+  const products = useSelector((state) => state.cart.products);
+  console.log(products);
 
   useEffect(() => {
     const getProduct = async () => {
@@ -31,10 +32,9 @@ function Product() {
     getProduct();
   }, []);
 
-  const handleAddToCart = () => {
-    console.log(product);
-    dispatch(addToCart({ product }));
-  };
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product))
+  }
 
   return (
     product.images && (
@@ -72,7 +72,7 @@ function Product() {
                     Free shipping
                   </h4>
                   <Cart />
-                  <button onClick={() => handleAddToCart()}>Add to cart</button>
+                  <button onClick={() => handleAddToCart(product)}>Add to cart</button>
                 </div>
               </div>
             </div>

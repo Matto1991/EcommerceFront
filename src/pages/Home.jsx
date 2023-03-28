@@ -12,13 +12,9 @@ export default function Home() {
     const getFeatured = async () => {
       const response = await axios({
         method: "GET",
-        url: `${process.env.REACT_APP_BACKEND_URL}/products`,
+        url: `${process.env.REACT_APP_BACKEND_URL}/products/featured`,
       });
-
-      const featuredProducts = response.data.splice(0, 4);
-      setFeatured(featuredProducts);
-
-      console.log(featuredProducts);
+      setFeatured(response.data);
     };
 
     getFeatured();
