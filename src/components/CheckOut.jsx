@@ -10,7 +10,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 function CheckOut() {
   return (
     <>
-      <div className="container">
+      <div className="container-order">
         <div className="row">
           <form className="col-6">
             <div className="mb-3">
