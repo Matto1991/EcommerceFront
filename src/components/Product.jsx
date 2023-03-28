@@ -10,7 +10,6 @@ import Categories from "./Categories";
 import NavbarOther from "../components/NavbarOther";
 
 function Product() {
-
   const dispatch = useDispatch();
 
   const { id } = useParams();
@@ -32,9 +31,9 @@ function Product() {
     getProduct();
   }, []);
 
-  const handleAddToCart = (product) => {
-    dispatch(addToCart(product))
-  }
+  const handleAddToCart = () => {
+    dispatch(addToCart({ product }));
+  };
 
   return (
     product.images && (
@@ -72,7 +71,7 @@ function Product() {
                     Free shipping
                   </h4>
                   <Cart />
-                  <button onClick={() => handleAddToCart(product)}>Add to cart</button>
+                  <button onClick={() => handleAddToCart()}>Add to cart</button>
                 </div>
               </div>
             </div>

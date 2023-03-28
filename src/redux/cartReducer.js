@@ -16,8 +16,9 @@ const cartSlice = createSlice({
         : state.products.push({ ...product, quantity: 1 });
     },
 
-    // removeFromCart(state, action) {
-    //   return state;
+    removeFromCart(state, action) {
+      return state;
+    },
   },
 });
 
