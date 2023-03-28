@@ -1,48 +1,94 @@
-import { Link } from "react-router-dom";
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setToken } from "../redux/sessionReducer";
+import { useNavigate, Link } from "react-router-dom";
 import "./form.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const invalidCredentials = () => toast.error("Invalid Credentials!");
+  const userNotFound = () => toast.error("You are not registered yet!");
+
+  const handleUserLogin = async (event) => {
+    event.preventDefault();
+    const formData = { email, password };
+
+    const response = await axios.post(
+      `${process.env.REACT_APP_BACKEND_URL}/tokens`,
+      formData
+    );
+
+    if (response.data.message === "Invalid credentials") {
+      invalidCredentials();
+    } else if (response.data.message === "User not found") {
+      userNotFound();
+    } else {
+      dispatch(setToken(response.data));
+      navigate("/");
+    }
+  };
+
   return (
-    <div className="form-login">
-      <div className="container sign-up p-5">
-        <div className="row formulary p-3">
-          <div className="message col-md-6 col-lg-6 text-center d-flex flex-column">
-            <h2 className="h2-message">Welcome to Ecozy Luxury</h2>
-            <p className="p-message">
-              {" "}
-              Don't have an account?
-              <Link
-                to="/sign-up"
-                className="text-decoration-none fw-bold link-sign-up"
-              >
+    <>
+      <ToastContainer />
+
+      <div className="form-login">
+        <div className="container sign-up p-5">
+          <div className="row formulary p-3">
+            <div className="message col-md-6 col-lg-6 text-center d-flex flex-column">
+              <h2 className="h2-message">Welcome to Ecozy Luxury</h2>
+              <p className="p-message">
                 {" "}
-                Sign up
-              </Link>
-            </p>
-            {/* <button className="btn btn-lg btn-success sign-up-btn border-0">Sign Up</button> */}
-          </div>
-          <div className="col-md-5 col-lg-5">
-            <form>
-              <h2 className="create-account">Login</h2>
+                Don't have an account?
+                <Link
+                  to="/signup"
+                  className="text-decoration-none fw-bold fs-6 ms-1 link-sign-up"
+                >
+                  {" "}
+                  Sign up
+                </Link>
+              </p>
+              {/* <button className="btn btn-lg btn-success sign-up-btn border-0">Sign Up</button> */}
+            </div>
+            <div className="col-md-5 col-lg-5">
+              <form onSubmit={(event) => handleUserLogin(event)}>
+                <h2 className="create-account">Login</h2>
 
-              <label htmlFor="email"></label>
-              <input
-                type="email"
-                placeholder="Email"
-                name="email"
-                id="email"
-                className="input-tx"
-              />
+                <label htmlFor="email"></label>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  id="email"
+                  className="input-tx"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                />
 
-              <label htmlFor="password"></label>
-              <input
-                type="password"
-                placeholder="Password"
-                name="password"
-                id="password"
-                className="input-tx"
-              />
+                <label htmlFor="password"></label>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  id="password"
+                  className="input-tx"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
+                />
+
+                <button
+                  className="btn btn-success sign-up-btn border-0 w-75 m-4 fs-5 d-block mx-auto"
+                  type="submit"
+                >
+                  Log in
+                </button>
+              </form>
               <div className="icons">
                 <div className="border-icon">
                   <i className="bi bi-instagram"></i>
@@ -54,11 +100,11 @@ function Login() {
                   <i className="bi bi-linkedin"></i>
                 </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
