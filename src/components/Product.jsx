@@ -20,7 +20,6 @@ function Product() {
   const [value, setValue] = useState(4);
 
   const products = useSelector((state) => state.cart.products);
-  console.log(products);
 
   useEffect(() => {
     const getProduct = async () => {
