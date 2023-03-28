@@ -94,7 +94,15 @@ function NavbarNav() {
             </NavDropdown>
             <NavDropdown.Item href="#" className="ms-3">
               <Cart />
-              
+              {products.length > 0 && (
+                <small className="text-white">
+                  {console.log(products)}
+                  {products.reduce(
+                    (acc, product) => acc + products.length + product.quantity,
+                    0
+                  )}
+                </small>
+              )}
             </NavDropdown.Item>
           </Nav>
         </Navbar.Collapse>
