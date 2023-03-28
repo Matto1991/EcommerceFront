@@ -7,7 +7,6 @@ import Navbar from "../components/Navbar";
 
 export default function Home() {
   const [featured, setFeatured] = useState([]);
-  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     const getFeatured = async () => {
@@ -23,21 +22,6 @@ export default function Home() {
     };
 
     getFeatured();
-  }, []);
-
-  useEffect(() => {
-    const getCategories = async () => {
-      const response = await axios({
-        method: "GET",
-        url: `${process.env.REACT_APP_BACKEND_URL}/categories`,
-      });
-
-      setCategories(response.data);
-
-      console.log(response.data);
-    };
-
-    getCategories();
   }, []);
 
   return (
@@ -65,60 +49,58 @@ export default function Home() {
         </div>
       </div>
 
-      {categories.length > 0 && (
-        <>
-          <div className="featured-section mx-auto">
-            <div className="d-flex justify-content-center w-100 mb-5">
-              <h2>Featured</h2>
-            </div>
-            <div className="row g-4">
-              {featured.map((product) => {
-                return (
-                  <div key={product.id} className="col-12 col-md-6 col-lg-3">
-                    <Link
-                      to={`product/${product.id}`}
-                      className="text-decoration-none text-black"
-                    >
-                      <div className="featured-card card d-flex flex-fill h-100">
-                        <img
-                          src={`${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`}
-                          alt={`${product.name}`}
-                          className="rounded-top"
-                        />
-                        <div className="card-body featured-card-body d-flex flex-column justify-content-between rounded-bottom">
-                          <div>
-                            <h5 className="card-title featured-card-title">
-                              {product.name}
-                            </h5>
-                            <p className="card-text featured-card-text">
-                              {product.description}
-                            </p>
-                          </div>
-                          <p className="card-text mt-4">
-                            <small className="bold card-price">
-                              From US$ {`${product.price}`}
-                            </small>
+      <>
+        <div className="featured-section mx-auto">
+          <div className="d-flex justify-content-center w-100 mb-5">
+            <h2>Featured</h2>
+          </div>
+          <div className="row g-4">
+            {featured.map((product) => {
+              return (
+                <div key={product.id} className="col-12 col-md-6 col-lg-3">
+                  <Link
+                    to={`product/${product.id}`}
+                    className="text-decoration-none text-black"
+                  >
+                    <div className="featured-card card d-flex flex-fill h-100">
+                      <img
+                        src={`${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`}
+                        alt={`${product.name}`}
+                        className="rounded-top"
+                      />
+                      <div className="card-body featured-card-body d-flex flex-column justify-content-between rounded-bottom">
+                        <div>
+                          <h5 className="card-title featured-card-title">
+                            {product.name}
+                          </h5>
+                          <p className="card-text featured-card-text">
+                            {product.description}
                           </p>
                         </div>
+                        <p className="card-text mt-4">
+                          <small className=" card-price">
+                            From US$ {`${product.price}`}
+                          </small>
+                        </p>
                       </div>
-                    </Link>
-                  </div>
-                );
-              })}
-            </div>
+                    </div>
+                  </Link>
+                </div>
+              );
+            })}
           </div>
+        </div>
 
-          <div className="d-flex justify-content-center team-section">
-            <div className="rounded text-center cta">
-              Meet our team <i className="bi bi-arrow-up-right-square ms-2"></i>
-            </div>
+        <div className="d-flex justify-content-center team-section">
+          <div className="rounded text-center cta">
+            Meet our team <i className="bi bi-arrow-up-right-square ms-2"></i>
           </div>
+        </div>
 
-          <div className="categories-section">
-            <Categories data={categories} />
-          </div>
-        </>
-      )}
+        <div className="categories-section">
+          <Categories />
+        </div>
+      </>
       <div className="inspiration-section">
         <div className="row mx-auto inspiration-section-row">
           <div className="col-lg-4">

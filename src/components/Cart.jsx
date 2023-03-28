@@ -20,13 +20,11 @@ function Cart({ name }) {
       featured: false,
       categoryId: 1,
     },
-    
   ];
 
   return (
     <>
-   
-      <Button 
+      <Button
         onClick={handleShow}
         className="fs-2  ms-auto me-2 bi bi-cart2 btn-offCanvas-settings"
       >
@@ -40,8 +38,8 @@ function Cart({ name }) {
           <div className="mt-8">
             <div>
               <ul className="my-4">
-                {products.map((product) => (
-                  <li key={product.id} className="list-unstyled">
+                {products.map((product, index) => (
+                  <li key={index} className="list-unstyled">
                     <div className="row">
                       <div className="col-8">
                         <div className="fs-5">
@@ -66,10 +64,8 @@ function Cart({ name }) {
                         </div>
                       </div>
                       <div className=" mt-3 text-end">
-                                              <p className="text-secondary-light">
-                          Qty 
-                        </p>
-                        
+                        <p className="text-secondary-light">Qty</p>
+
                         <button className="btn text-secondary">Remove</button>
                       </div>
                     </div>
@@ -107,4 +103,3 @@ function Cart({ name }) {
 }
 
 export default Cart;
-
