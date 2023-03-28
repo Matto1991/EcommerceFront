@@ -2,21 +2,32 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import NavbarAdmin from "../components/NavbarAdmin";
 import { Link } from "react-router-dom";
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function AdminProduct() {
   const [products, setProducts] = useState([]);
 
+  const getProduct = async () => {
+    const response = await axios({
+      method: "get",
+      url: `${process.env.REACT_APP_BACKEND_URL}/products`,
+    });
+    setProducts(response.data);
+  };
   useEffect(() => {
-    const getProduct = async () => {
-      const response = await axios({
-        method: "get",
-        url: `${process.env.REACT_APP_BACKEND_URL}/products`,
-      });
-      setProducts(response.data);
-      console.log(response.data);
-    };
     getProduct();
   }, []);
+
+  const handleDelete = async (id) => {
+    const response = await axios({
+      method: "delete",
+      url: `${process.env.REACT_APP_BACKEND_URL}/products/${id}`,
+    });
+  };
+  useEffect(() => {
+    getProduct();
+  }, [products]);
 
   return (
     <div>
@@ -25,7 +36,9 @@ function AdminProduct() {
         <div className="d-flex justify-content-between pt-4">
           <h2 className="d-inline">Products</h2>
           <Link to="">
-            <button className="btn btn-outline-success btn-m">Add product</button>
+            <button className="btn btn-outline-success btn-m">
+              Add product
+            </button>
           </Link>
         </div>
         <div className="table-responsive">
@@ -47,10 +60,18 @@ function AdminProduct() {
                       <td> {product.stock}</td>
                       <td>
                         <Link to="">
-                          <button className="edit-btn mb-2 w-100">
-                            Edit
-                          </button>
+                          <button className="edit-btn mb-2 w-100">Edit</button>
                         </Link>
+                      </td>
+                      <td>
+                        <IconButton
+                          type="submit"
+                          aria-label="delete"
+                          size="small"
+                          onClick={() => handleDelete(product.id)}
+                        >
+                          <DeleteIcon fontSize="small" />
+                        </IconButton>
                       </td>
                     </tr>
                   </tbody>
