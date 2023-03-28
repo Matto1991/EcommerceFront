@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
@@ -9,18 +10,21 @@ function Cart({ name }) {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const products = [
-    {
-      name: "The Leroy Chair",
-      description:
-        "Artisanal woodworking meets expertly tailored, high-end comfort in The Muir Sofa. Its striking silhouette with built-in side table form a mixed material work of art.",
-      images: ["/img/TheLeroyChair.webp"],
-      price: 4100,
-      stock: 20,
-      featured: false,
-      categoryId: 1,
-    },
-  ];
+
+  const products = useSelector((state) => state.cart.products)
+
+  // const products = [
+  //   {
+  //     name: "The Leroy Chair",
+  //     description:
+  //       "Artisanal woodworking meets expertly tailored, high-end comfort in The Muir Sofa. Its striking silhouette with built-in side table form a mixed material work of art.",
+  //     images: ["/img/TheLeroyChair.webp"],
+  //     price: 4100,
+  //     stock: 20,
+  //     featured: false,
+  //     categoryId: 1,
+  //   },
+  // ];
 
   return (
     <>
