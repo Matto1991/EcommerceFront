@@ -57,7 +57,7 @@ function AdminProduct() {
                       <td> US$ {product.price} </td>
                       <td> {product.stock}</td>
                       <td>
-                        <Link to="">
+                        <Link to={`/admin/edit/product/${product.id}`}>
                           <button className="edit-btn mb-2 w-100">Edit</button>
                         </Link>
                       </td>

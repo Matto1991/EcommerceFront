@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "../redux/sessionReducer";
 import { useNavigate, Link } from "react-router-dom";
 import "./form.css";
@@ -8,6 +8,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
+  const user = useSelector((state) => state.session.user);
+
+  console.log(user);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");

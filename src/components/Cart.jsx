@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link } from "react-router-dom";
 import {
-  addToCart,
   decreaseCart,
   removeFromCart,
   increaseCart,
 } from "../redux/cartReducer";
-import Cartc from "./Cartc.css";
+import "./Cart.css";
 import IconButton from "@mui/material/IconButton";
 
 import DeleteIcon from "@mui/icons-material/Delete";
