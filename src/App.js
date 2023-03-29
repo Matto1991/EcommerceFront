@@ -17,6 +17,7 @@ import Products from "./components/Products";
 import Login from "./pages/Login";
 import SingUp from "./pages/SignUp";
 import CheckOut from "./components/CheckOut";
+import CreateUser from "./pages/CreateUser";
 
 function App() {
   return (
@@ -26,10 +27,12 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/category/:name" element={<Category />} />
         <Route path="/cart" element={<Cart />} />
+
         <Route path="/admin" element={<Dashboard />} />
         <Route path="/admin/products" element={<AdminProduct />} />
         <Route path="/admin/users" element={<AdminUser />} />
         <Route path="/admin/orders" element={<AdminOrder />} />
+        <Route path="/admin/newUser" element={<CreateUser />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/about" element={<AboutProyect />} />

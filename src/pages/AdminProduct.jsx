@@ -24,10 +24,8 @@ function AdminProduct() {
       method: "delete",
       url: `${process.env.REACT_APP_BACKEND_URL}/products/${id}`,
     });
+    setProducts(products.filter((item) => item.id !== Number(response.data)));
   };
-  useEffect(() => {
-    getProduct();
-  }, [products]);
 
   return (
     <div>
