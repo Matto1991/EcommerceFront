@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
-import Cart from "../components/Cart";
 import "./ProductStyles.css";
 import Categories from "./Categories";
 import NavbarOther from "../components/NavbarOther";
@@ -56,9 +55,11 @@ function Product() {
               <div className="col-12 col-lg-8">
                 <img
                   className="img-fluid h-100"
-                  src={ typeof product.images === "object"
-                  ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
-                  : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `}
+                  src={
+                    typeof product.images === "object"
+                      ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
+                      : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `
+                  }
                   alt={product.name}
                 />
               </div>
