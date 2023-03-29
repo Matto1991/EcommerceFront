@@ -1,16 +1,10 @@
 import React from "react";
-import TextField from "@mui/material/TextField";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from "@mui/material/InputLabel";
 import NavbarAdmin from "../components/NavbarAdmin";
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
 import { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
-import { Category } from "@mui/icons-material";
 
 function AdminCreateProduct() {
   const token = useSelector((state) => state.session.token);

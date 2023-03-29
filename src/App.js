@@ -20,7 +20,13 @@ import CheckOut from "./pages/CheckOut";
 import CreateUser from "./pages/CreateUser";
 import EditUser from "./pages/EditUser";
 import EditProduct from "./pages/EditProduct";
+<<<<<<< HEAD
+import CreateCategory from "./pages/CreateCategory";
+import AdminCategories from "./pages/AdminCategories";
+import EditCategory from "./pages/EditCategory";
+=======
 import AdminCreateProduct from "./pages/AdminCreateProduct";
+>>>>>>> ea3121f121c6c6e391ae487d4ff51120af844c3e
 
 function App() {
   return (
@@ -46,6 +52,9 @@ function App() {
         <Route path="/admin/orders" element={<AdminOrder />} />
         <Route path="/admin/create/product" element={<AdminCreateProduct />} />
         <Route path="admin/edit/product/:id" element={<EditProduct />} />
+        <Route path="/admin/categories" element={<AdminCategories />} />
+        <Route path="/admin/createCategory" element={<CreateCategory />} />
+        <Route path="/admin/editCategory/:id" element={<EditCategory />} />
 
         <Route path="*" element={<h2>There's nothing here: 404!</h2>} />
       </Routes>

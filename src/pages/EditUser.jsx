@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-// import { useNavigate, Link } from "react-router-dom";
-// import IconButton from "@mui/material/IconButton";
-// import PhotoCamera from "@mui/icons-material/PhotoCamera";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NavbarAdmin from "../components/NavbarAdmin";
@@ -13,9 +11,7 @@ function EditUser() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [image, setImage] = useState(null);
-  // const [isAdmin, setIsAdmin] = useState(false);
+
   const toastMessage = (error) => toast.error(error);
 
   const handleUserEdit = async (event) => {
