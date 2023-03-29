@@ -50,114 +50,7 @@ function AdminCreateProduct() {
   return (
     <>
       <NavbarAdmin />
-      {/* <div>
-        <div className="form-admin-create-product w-50 m-auto">
-          <div className="container p-3">
-            <div className="row p-3">
-              <form
-                className="col-md-8 col-lg-8 m-auto"
-                onSubmit={(event) => handleCreateProduct(event)}
-              >
-                <h4>Create product</h4>
-                <label htmlFor="name" id="name"></label>
-                <TextField
-                  id="standard-basic"
-                  label="Name"
-                  variant="standard"
-                  className="my-2"
-                  name="name"
-                  value={name}
-                  onChange={(event) => setName(event.target.value)}
-                />
 
-                <label htmlFor="description" id="description"></label>
-                <TextField
-                  id="standard-basic"
-                  label="Description"
-                  variant="standard"
-                  className="my-2"
-                  name="description"
-                  value={description}
-                  onChange={(event) => setDescription(event.target.value)}
-                />
-
-                <label htmlFor="price" id="price"></label>
-                <TextField
-                  id="standard-basic"
-                  label="Price"
-                  variant="standard"
-                  className="my-2"
-                  name="price"
-                  value={price}
-                  onChange={(event) => setPrice(event.target.value)}
-                />
-
-                <label htmlFor="stock" id="stock"></label>
-                <TextField
-                  id="standard-basic"
-                  label="Stock"
-                  variant="standard"
-                  className="my-2"
-                  name="stock"
-                  value={stock}
-                  onChange={(event) => setStock(event.target.value)}
-                />
-
-                <label htmlFor="featured" id="featured"></label>
-                <TextField
-                  id="standard-basic"
-                  label="Featured"
-                  variant="standard"
-                  className="my-2"
-                  name="featured"
-                  value={featured}
-                  onChange={(event) => setFeatured(event.target.value)}
-                />
-
-                <label htmlFor="featured" id="featured"></label>
-                <TextField
-                  id="standard-basic"
-                  label="Category"
-                  variant="standard"
-                  className="my-2"
-                  name="categoryId"
-                  value={categoryId}
-                  onChange={(event) => setCategoryId(event.target.value)}
-                />
-
-                <Stack
-                  direction="row"
-                  alignItems="center"
-                  className="input-upload-foto-admin-form my-2"
-                >
-                  <IconButton
-                    color="primary"
-                    aria-label="upload picture"
-                    component="label"
-                    className="p-0 mt-2"
-                  >
-                    <input
-                      hidden
-                      accept="image/*"
-                      multiple
-                      type="file"
-                      onChange={(event) => setImage(event.target.files[0])}
-                    />
-                    <PhotoCamera className="input-upload-foto-admin-form me-2" />
-                    <p className="input-upload-foto-admin-form">Upload foto </p>
-                  </IconButton>
-                </Stack>
-                <button
-                  className="btn btn-outline-success mt-2 btn-create-product"
-                  type="submit"
-                >
-                  Create
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div> */}
       <div className="container p-5">
         <div className="col-md-5 col-lg-5 mx-auto">
           <h2 className=" text-dark create-account fs-1">Create</h2>
@@ -264,7 +157,7 @@ function AdminCreateProduct() {
               className=" mt-3"
             >
               <input
-              hidden
+                hidden
                 accept="image/*"
                 type="file"
                 name="image"
