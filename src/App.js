@@ -18,6 +18,7 @@ import Login from "./pages/Login";
 import SingUp from "./pages/SignUp";
 import CheckOut from "./components/CheckOut";
 import CreateUser from "./pages/CreateUser";
+import EditUser from "./pages/EditUser";
 import EditProduct from "./pages/EditProduct";
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <Route path="/admin/products" element={<AdminProduct />} />
         <Route path="/admin/users" element={<AdminUser />} />
         <Route path="/admin/newUser" element={<CreateUser />} />
+        <Route path="/admin/edit-user/:id" element={<EditUser />} />
         <Route path="/admin/orders" element={<AdminOrder />} />
         <Route path="admin/edit/product/:id" element={<EditProduct />} />
 
