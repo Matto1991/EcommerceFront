@@ -2,14 +2,21 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import NavbarAdmin from "../components/NavbarAdmin";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 function AdminUser() {
   const [users, setUsers] = useState([]);
   const [admins, setAdmins] = useState([]);
-
+  const navigate = useNavigate();
+  const handleGoTo = (url, isAdmin) => {
+    navigate(url, {
+      state: {
+        isAdmin,
+      },
+    });
+  };
   const getUsers = async () => {
     const response = await axios({
       method: "get",
@@ -49,7 +56,7 @@ function AdminUser() {
       <section className="container">
         <div className="d-flex justify-content-between pt-4">
           <h2 className="d-inline">Users</h2>
-          <Link to="">
+          <Link to="/admin/newUser">
             <button className="btn btn-outline-success btn-m">Add user</button>
           </Link>
         </div>
@@ -78,7 +85,14 @@ function AdminUser() {
                       <td> {user.email} </td>
                       <td> admin yes/no</td>
                       <td>
-                        <a href="/panel/admin/item.id/edit ">
+                        {/* <Link to={`/admin/EditUser`}>
+                          <button className="edit-btn mb-2 w-100">Edit</button>
+                        </Link> */}
+                        <a
+                          onClick={() =>
+                            handleGoTo(`/admin/edit-user/${user.id}`)
+                          }
+                        >
                           <button className="edit-btn mb-2 w-100">Edit</button>
                         </a>
                       </td>
@@ -111,7 +125,11 @@ function AdminUser() {
                       <td> {admin.email} </td>
                       <td> admin yes/no</td>
                       <td>
-                        <a href="/panel/admin/item.id/edit ">
+                        <a
+                          onClick={() =>
+                            handleGoTo(`/admin/edit-user/${admin.id}`)
+                          }
+                        >
                           <button className="edit-btn mb-2 w-100">Edit</button>
                         </a>
                       </td>
