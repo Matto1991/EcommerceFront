@@ -16,7 +16,7 @@ import Category from "./components/Category";
 import Products from "./components/Products";
 import Login from "./pages/Login";
 import SingUp from "./pages/SignUp";
-import CheckOut from "./components/CheckOut";
+import CheckOut from "./pages/CheckOut";
 import CreateUser from "./pages/CreateUser";
 import EditProduct from "./pages/EditProduct";
 
