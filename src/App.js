@@ -19,6 +19,7 @@ import SingUp from "./pages/SignUp";
 import CheckOut from "./components/CheckOut";
 import CreateUser from "./pages/CreateUser";
 import EditProduct from "./pages/EditProduct";
+import AdminCreateProduct from "./pages/AdminCreateProduct";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/admin/users" element={<AdminUser />} />
         <Route path="/admin/newUser" element={<CreateUser />} />
         <Route path="/admin/orders" element={<AdminOrder />} />
+        <Route path="/admin/create/product" element={<AdminCreateProduct />} />
         <Route path="admin/edit/product/:id" element={<EditProduct />} />
 
         <Route path="*" element={<h2>There's nothing here: 404!</h2>} />

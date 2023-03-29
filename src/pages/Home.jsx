@@ -60,7 +60,8 @@ export default function Home() {
                   >
                     <div className="featured-card card d-flex flex-fill h-100">
                       <img
-                        src={`${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`}
+
+                        src={typeof product.images === "object" ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}` : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images}` } 
                         alt={`${product.name}`}
                         className="rounded-top"
                       />

@@ -34,7 +34,11 @@ function Products() {
                   onClick={() => handleGoTo(`/product/${product.id}`)}
                 >
                   <img
-                    src={`${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`}
+                    src={
+                      typeof product.images === "object"
+                        ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
+                        : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `
+                    }
                     alt={`${product.name}`}
                     className="rounded-top"
                   />

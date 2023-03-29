@@ -66,8 +66,10 @@ function Cart({ name }) {
                         <div className="col-4">
                           <div className="border border-2 rounded mb-2">
                             <img
-                              alt="img\TheLeroyChair.webp"
-                              src={`${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`}
+                              alt={product.name}
+                              src={ typeof product.images === "object"
+                              ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
+                              : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `}
                               className="img-fluid"
                             />
                           </div>

@@ -56,7 +56,9 @@ function Product() {
               <div className="col-12 col-lg-8">
                 <img
                   className="img-fluid h-100"
-                  src={`${process.env.REACT_APP_BACKEND_URL}/${product.images}`}
+                  src={ typeof product.images === "object"
+                  ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
+                  : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `}
                   alt={product.name}
                 />
               </div>

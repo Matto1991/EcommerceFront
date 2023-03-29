@@ -33,7 +33,7 @@ function AdminProduct() {
       <section className="container">
         <div className="d-flex justify-content-between pt-4">
           <h2 className="d-inline">Products</h2>
-          <Link to="">
+          <Link to="/admin/create/product">
             <button className="btn btn-outline-success btn-m">
               Add product
             </button>
@@ -54,7 +54,7 @@ function AdminProduct() {
                   <tbody>
                     <tr>
                       <th scope="row"> {product.name}</th>
-                      <td> US$ {product.price} </td>
+                      <td> U$S {product.price} </td>
                       <td> {product.stock}</td>
                       <td>
                         <Link to={`/admin/edit/product/${product.id}`}>
