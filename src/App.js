@@ -20,6 +20,9 @@ import CheckOut from "./pages/CheckOut";
 import CreateUser from "./pages/CreateUser";
 import EditUser from "./pages/EditUser";
 import EditProduct from "./pages/EditProduct";
+import CreateCategory from "./pages/CreateCategory";
+import AdminCategories from "./pages/AdminCategories";
+import EditCategory from "./pages/EditCategory";
 
 function App() {
   return (
@@ -44,6 +47,9 @@ function App() {
         <Route path="/admin/edit-user/:id" element={<EditUser />} />
         <Route path="/admin/orders" element={<AdminOrder />} />
         <Route path="admin/edit/product/:id" element={<EditProduct />} />
+        <Route path="/admin/categories" element={<AdminCategories />} />
+        <Route path="/admin/createCategory" element={<CreateCategory />} />
+        <Route path="/admin/editCategory/:id" element={<EditCategory />} />
 
         <Route path="*" element={<h2>There's nothing here: 404!</h2>} />
       </Routes>
