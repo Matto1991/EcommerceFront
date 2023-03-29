@@ -10,9 +10,7 @@ import { setToken } from "../redux/sessionReducer";
 
 function NavbarOther() {
   const [isScrolling, setIsScrolling] = useState(false);
-
   const products = useSelector((state) => state.cart.products);
-
   const dispatch = useDispatch();
 
   const handleLogout = () => {
@@ -45,7 +43,7 @@ function NavbarOther() {
         <Navbar.Brand
           href="/"
           className={`${
-            isScrolling ? "navbar-dynamic-logo" : "navbar-static-logo"
+            isScrolling ? "navbar-dynamic-logo" : "navbar-other-static-logo"
           }`}
         >
           Ecozy Luxury
@@ -55,31 +53,31 @@ function NavbarOther() {
           <Nav className="ms-auto align-items-center">
             <div
               className={`position-relative ${
-                isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
+                isScrolling ? "navbar-dynamic-text" : "navbar-other-static-text"
               }`}
             >
               <Nav.Link href="/">Home</Nav.Link>
             </div>
             <div
               className={`position-relative ${
-                isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
+                isScrolling ? "navbar-dynamic-text" : "navbar-other-static-text"
               }`}
             >
               <Nav.Link href="/products">Products</Nav.Link>
             </div>
             <div
               className={`position-relative ${
-                isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
+                isScrolling ? "navbar-dynamic-text" : "navbar-other-static-text"
               }`}
             >
               <Nav.Link href="/about-us">About</Nav.Link>
             </div>
             <div
               className={`position-relative ${
-                isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
+                isScrolling ? "navbar-dynamic-text" : "navbar-other-static-text"
               }`}
             >
-              <Nav.Link href="/about">About&nbsp;project</Nav.Link>
+              <Nav.Link href="/project-details">Project&nbsp;details</Nav.Link>
             </div>
             <NavDropdown className={"navbar-dynamic-text"} title="Categories">
               <NavDropdown.Item href="/category/living">
@@ -100,16 +98,15 @@ function NavbarOther() {
             <Avatar
               alt="Remy Sharp"
               src="/img/imagenAdmin.png"
-              className="mx-2"
+              className="navbar-avatar mx-2"
             />
-            <NavDropdown className="text-white ms-auto mt-2">
+            <NavDropdown className="ms-auto mt-2">
               <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
               <NavDropdown.Item href="/orders">Orders</NavDropdown.Item>
               <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown.Item href="#" className="ms-3">
               <Cart />
-              <small className="text-white"> {products.length}</small>
             </NavDropdown.Item>
           </Nav>
         </Navbar.Collapse>

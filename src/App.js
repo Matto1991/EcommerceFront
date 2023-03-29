@@ -16,8 +16,9 @@ import Category from "./components/Category";
 import Products from "./components/Products";
 import Login from "./pages/Login";
 import SingUp from "./pages/SignUp";
-import CheckOut from "./components/CheckOut";
+import CheckOut from "./pages/CheckOut";
 import CreateUser from "./pages/CreateUser";
+import EditUser from "./pages/EditUser";
 import EditProduct from "./pages/EditProduct";
 import AdminCreateProduct from "./pages/AdminCreateProduct";
 
@@ -31,7 +32,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/about" element={<AboutProyect />} />
+        <Route path="/project-details" element={<AboutProyect />} />
         <Route path="/profile" element={<AdminProfile />} />
         <Route path="/orders" element={<AdminOwnOrder />} />
         <Route path="/signup" element={<SingUp />} />
@@ -41,6 +42,7 @@ function App() {
         <Route path="/admin/products" element={<AdminProduct />} />
         <Route path="/admin/users" element={<AdminUser />} />
         <Route path="/admin/newUser" element={<CreateUser />} />
+        <Route path="/admin/edit-user/:id" element={<EditUser />} />
         <Route path="/admin/orders" element={<AdminOrder />} />
         <Route path="/admin/create/product" element={<AdminCreateProduct />} />
         <Route path="admin/edit/product/:id" element={<EditProduct />} />

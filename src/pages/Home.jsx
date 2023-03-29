@@ -48,7 +48,7 @@ export default function Home() {
       <>
         <div className="featured-section mx-auto">
           <div className="d-flex justify-content-center w-100 mb-5">
-            <h2>Featured</h2>
+            <h2 className="section-title">Featured</h2>
           </div>
           <div className="row g-4">
             {featured.map((product) => {
@@ -75,7 +75,7 @@ export default function Home() {
                           </p>
                         </div>
                         <p className="card-text mt-4">
-                          <small className=" card-price">
+                          <small className="card-price">
                             From US$ {`${product.price}`}
                           </small>
                         </p>
@@ -89,9 +89,14 @@ export default function Home() {
         </div>
 
         <div className="d-flex justify-content-center team-section">
-          <div className="rounded text-center cta">
-            Meet our team <i className="bi bi-arrow-up-right-square ms-2"></i>
-          </div>
+          <Link
+            to="/project-details"
+            className="text-decoration-none text-reset"
+          >
+            <div className="rounded text-center cta">
+              Meet our team <i className="bi bi-arrow-up-right-square ms-2"></i>
+            </div>
+          </Link>
         </div>
 
         <div className="categories-section">
@@ -106,14 +111,19 @@ export default function Home() {
 
           <div className="col-lg-8">
             <div className="d-flex flex-column justify-content-center align-items-center h-100">
-              <h4 className="fs-2 mt-5">Get Inspired</h4>
-              <p className="mb-5 text-secondary text-center">
+              <h4 className="fs-2 mt-5 section-title">Get Inspired</h4>
+              <p className="section-subtitle mb-5 text-secondary text-center">
                 Discover our favorite looks across the home to inspire your
                 space.
               </p>
-              <div className="rounded text-center inspiration-cta">
-                Shop by set <i className="bi bi-handbag ms-2"></i>
-              </div>
+              <Link
+                to="/category/sets"
+                className="text-decoration-none text-reset"
+              >
+                <div className="rounded text-center inspiration-cta">
+                  Shop by set <i className="bi bi-handbag ms-2"></i>
+                </div>
+              </Link>
             </div>
           </div>
         </div>

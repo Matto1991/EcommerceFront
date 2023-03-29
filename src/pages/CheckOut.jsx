@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -7,15 +7,52 @@ import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useSelector, useDispatch } from "react-redux";
 import Footer from "../components/Footer";
-import NavbarOther from "./NavbarOther";
+import NavbarOther from "../components/NavbarOther";
 import { removeFromCart } from "../redux/cartReducer";
+import axios from "axios";
 
 function CheckOut() {
   const products = useSelector((state) => state.cart.products);
+  const token = useSelector((state) => state.session.token);
+
+  const [email, setEmail] = useState("");
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [address, setAddress] = useState("");
+  const [apartment, setApartment] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [zipcode, setZipcode] = useState("");
+  const [payment_method, setPayment_method] = useState("");
+
   const dispatch = useDispatch();
 
   const handleRemoveProduct = (product) => {
     dispatch(removeFromCart(product));
+  };
+
+  const handleCheckout = async () => {
+    await axios({
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      method: "POST",
+      url: `${process.env.REACT_APP_BACKEND_URL}/orders`,
+      data: {
+        products,
+        details: {
+          email,
+          firstname,
+          lastname,
+          address,
+          apartment,
+          city,
+          state,
+          zipcode,
+          payment_method,
+        },
+      },
+    });
   };
 
   return (
@@ -35,6 +72,8 @@ function CheckOut() {
                     id="email"
                     name="email"
                     placeholder="Email"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
                   />
                 </div>
                 <hr />
@@ -47,6 +86,8 @@ function CheckOut() {
                     id="firstname"
                     name="firstname"
                     placeholder="Firstname"
+                    value={firstname}
+                    onChange={(event) => setFirstname(event.target.value)}
                   />
                 </div>
                 <div className="mb-3">
@@ -57,6 +98,8 @@ function CheckOut() {
                     id="lastname"
                     name="lastname"
                     placeholder="Lastname"
+                    value={lastname}
+                    onChange={(event) => setLastname(event.target.value)}
                   />
                 </div>
                 <div className="mb-3">
@@ -67,6 +110,8 @@ function CheckOut() {
                     id="address"
                     name="address"
                     placeholder="Address"
+                    value={address}
+                    onChange={(event) => setAddress(event.target.value)}
                   />
                 </div>
                 <div className="mb-3">
@@ -77,6 +122,8 @@ function CheckOut() {
                     id="apartment"
                     name="apartment"
                     placeholder="Apartment, suite,etc"
+                    value={apartment}
+                    onChange={(event) => setApartment(event.target.value)}
                   />
                 </div>
                 <div className="mb-3">
@@ -87,6 +134,8 @@ function CheckOut() {
                     id="city"
                     name="city"
                     placeholder="City"
+                    value={city}
+                    onChange={(event) => setCity(event.target.value)}
                   />
                 </div>
                 <div className="mb-3">
@@ -97,37 +146,49 @@ function CheckOut() {
                     id="state"
                     name="state"
                     placeholder="State"
+                    value={state}
+                    onChange={(event) => setState(event.target.value)}
                   />
                 </div>
                 <div className="mb-3">
-                  <label className="form-label">Postal code</label>
+                  <label className="form-label">Zip code</label>
                   <input
                     type="Text"
                     className="form-control"
-                    id="postalCode"
-                    name="postalCod"
-                    placeholder="Postal Code"
+                    id="zipcode"
+                    name="zipcode"
+                    placeholder="Zip Code"
+                    value={zipcode}
+                    onChange={(event) => setZipcode(event.target.value)}
                   />
                 </div>
                 <RadioGroup
                   row
                   aria-labelledby="demo-row-radio-buttons-group-label"
                   name="row-radio-buttons-group"
+                  value={payment_method}
+                  onChange={(event) => setPayment_method(event.target.value)}
                 >
                   <FormControlLabel
-                    value="female"
+                    value="creditCard"
                     control={<Radio />}
                     label="Credit card"
+                    name="payment_method"
+                    onChange={(event) => setPayment_method(event.target.value)}
                   />
                   <FormControlLabel
-                    value="male"
+                    value="paypal"
                     control={<Radio />}
                     label="PayPal"
+                    name="payment_method"
+                    onChange={(event) => setPayment_method(event.target.value)}
                   />
                   <FormControlLabel
-                    value="other"
+                    value="etransfer"
                     control={<Radio />}
                     label="eTransfer"
+                    name="payment_method"
+                    onChange={(event) => setPayment_method(event.target.value)}
                   />
                 </RadioGroup>
               </form>
@@ -217,9 +278,12 @@ function CheckOut() {
                   Shipping and taxes calculated at checkout.
                 </p>
                 <div className="mt-6 d-grid gap-2">
-                  <Link to="/login" className="btn btn-success btn-lg green">
-                    Checkout
-                  </Link>
+                  <button
+                    className="btn btn-success btn-lg green"
+                    onClick={handleCheckout}
+                  >
+                    Confirm order
+                  </button>
                 </div>
                 <div className="mt-5 d-flex justify-center text-center ">
                   <p>

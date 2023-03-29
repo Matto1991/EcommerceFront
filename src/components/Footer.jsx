@@ -47,7 +47,7 @@ export default function Footer() {
                 className=" form-control w-50 "
               />
               <button
-                className="btn btn-outline-secondary sign-up-btn text-white"
+                className="btn btn-outline-secondary footer-cta text-white"
                 type="button"
                 id="button-addon2"
               >

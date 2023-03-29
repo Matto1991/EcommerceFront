@@ -69,7 +69,7 @@ function NavbarNav() {
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
               }`}
             >
-              <Nav.Link href="/about">Project&nbsp;detalis</Nav.Link>
+              <Nav.Link href="/project-details">Project&nbsp;detalis</Nav.Link>
             </div>
             <NavDropdown
               className={`w-25 ${
@@ -94,8 +94,8 @@ function NavbarNav() {
             </NavDropdown>
             <NavDropdown.Item href="#" className="ms-3">
               <Cart />
-              {products.length > 0 && (
-                <small className="text-white">
+              {products && products.length > 0 && (
+                <small className="cart-product-number">
                   {console.log(products)}
                   {products.reduce(
                     (acc, product) => acc + products.length + product.quantity,

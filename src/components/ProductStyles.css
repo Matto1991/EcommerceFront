@@ -1,36 +1,73 @@
+.product-title {
+  font-family: "IvyOra";
+}
 
+.product-subtitle {
+  font-size: 0.95rem;
+}
 
+.product-price {
+  font-family: "IvyOra";
+  font-size: 1.25rem;
+  color: #a47f53;
+  font-weight: 400;
+}
 
+.product-price-small {
+  font-family: "IvyOra";
+  font-size: 0.95rem;
+  color: #a47f53;
+  font-weight: 400;
+}
 
-/* CSS */
+.product-description {
+  font-size: 1.1rem;
+  color: #a47f53;
+  font-weight: 200;
+}
+
+.product-additional-info {
+  font-size: 0.95rem;
+}
+
+.product-btn {
+  color: white;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  background-color: #4b2e1ae8;
+  border: none;
+}
+
+.product-btn:hover {
+  background-color: #4b2e1aca;
+}
+
 .button {
-    background-color: #f8f9fa;
-    border: 1px solid #f8f9fa;
-    border-radius: 4px;
-    color: #3c4043;
-    cursor: pointer;
-    font-family: arial, sans-serif;
-    font-size: 18px;
-    height: 36px;
-    line-height: 27px;
-    min-width: 54px;
-    padding: 0 16px;
-    text-align: center;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: pre;
+  background-color: #f8f9fa;
+  border: 1px solid #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  cursor: pointer;
+  font-family: arial, sans-serif;
+  font-size: 18px;
+  height: 36px;
+  line-height: 27px;
+  min-width: 54px;
+  padding: 0 16px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
 }
 
 .button:hover {
-    color: #a47f53;
-    border-color: #a47f53;
-    box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
-    color: #202124;
+  color: #a47f53;
+  border-color: #a47f53;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 1px 1px;
+  color: #202124;
 }
 
 .button:focus {
-    border-color: #a47f53;
-    outline: none;
+  border-color: #a47f53;
+  outline: none;
 }
-
