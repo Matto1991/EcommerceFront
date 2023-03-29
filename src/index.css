@@ -565,10 +565,8 @@ html {
   }
 }
 
-.container-order {
-  width: 300vw;
-  height: 300vh;
-  padding: 10px;
+.order-box {
+  margin-top: 150px;
 }
 
 /* @media (max-width: 991px) {

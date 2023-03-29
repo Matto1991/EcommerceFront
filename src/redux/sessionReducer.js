@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const sessionSlice = createSlice({
   name: "session",
@@ -6,9 +6,7 @@ const sessionSlice = createSlice({
 
   reducers: {
     setToken(state, action) {
-      console.log(current(state));
-      console.log(action.payload);
-      return { ...action.payload };
+      return action.payload;
     },
   },
 });

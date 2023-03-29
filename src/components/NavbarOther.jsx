@@ -4,12 +4,20 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Cart from "./Cart";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Avatar } from "@mui/material";
+import { setToken } from "../redux/sessionReducer";
 
 function NavbarOther() {
   const [isScrolling, setIsScrolling] = useState(false);
 
   const products = useSelector((state) => state.cart.products);
+
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(setToken({ token: null, user: null }));
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -44,7 +52,7 @@ function NavbarOther() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
+          <Nav className="ms-auto align-items-center">
             <div
               className={`position-relative ${
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
@@ -89,10 +97,21 @@ function NavbarOther() {
                 Inspiration
               </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown.Item href="#">
+            <Avatar
+              alt="Remy Sharp"
+              src="/img/imagenAdmin.png"
+              className="mx-2"
+            />
+            <NavDropdown className="text-white ms-auto mt-2">
+              <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+              <NavDropdown.Item href="/orders">Orders</NavDropdown.Item>
+              <NavDropdown.Item href="#" onClick={handleLogout}>
+                Logout
+              </NavDropdown.Item>
+            </NavDropdown>
+            <NavDropdown.Item href="#" className="ms-3">
               <Cart />
-
-              <small className="text-white">{products.quantity } </small>
+              <small className="text-white"> {products.length}</small>
             </NavDropdown.Item>
           </Nav>
         </Navbar.Collapse>
