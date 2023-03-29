@@ -105,9 +105,7 @@ function NavbarOther() {
             <NavDropdown className="text-white ms-auto mt-2">
               <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
               <NavDropdown.Item href="/orders">Orders</NavDropdown.Item>
-              <NavDropdown.Item href="#" onClick={handleLogout}>
-                Logout
-              </NavDropdown.Item>
+              <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown.Item href="#" className="ms-3">
               <Cart />
