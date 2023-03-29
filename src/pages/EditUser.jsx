@@ -33,11 +33,7 @@ function EditUser() {
       { firstname: firstName, lastname: lastName, email }
     );
     if (response.data.error) {
-      if (response.data.error === "Repeated email") {
-        toastMessage("You are already registered!");
-      } else {
-        toastMessage("Unexpected error");
-      }
+      toastMessage("Unexpected error");
     } else {
       toast.success("Success");
       handleCleanForm();

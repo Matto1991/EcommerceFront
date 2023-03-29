@@ -37,12 +37,12 @@ function Category() {
               return (
                 <div className="row g-4" key={product.id}>
                   <div
-                    className=" card mb-3 
+                    className=" hoverCard card mb-3 
                    border-0"
                     onClick={() => handleGoTo(`/product/${product.id}`)}
                   >
                     <div className="row pt-4">
-                      <div className="col-12 col-lg-8 p-0 ">
+                      <div className=" col-12 col-lg-8 p-0 ">
                         <img
                           className="img-fluid h-100 w-100"
                           src={`${process.env.REACT_APP_BACKEND_URL}/${product.images}`}
