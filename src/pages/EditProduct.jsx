@@ -1,107 +1,176 @@
 import React from "react";
+import NavbarAdmin from "../components/NavbarAdmin";
+import IconButton from "@mui/material/IconButton";
+import PhotoCamera from "@mui/icons-material/PhotoCamera";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
 
 function EditProduct() {
+  const token = useSelector((state) => state.session);
+
+  const { id } = useParams();
+
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [stock, setStock] = useState("");
+  const [featured, setFeatured] = useState("");
+  const [categoryId, setCategoryId] = useState("");
+  const [image, setImage] = useState(null);
+
+  const handleEditProduct = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("description", description);
+    formData.append("price", price);
+    formData.append("stock", stock);
+    formData.append("featured", featured);
+    formData.append("image", image);
+    formData.append("categoryId", categoryId);
+
+    const response = await axios({
+      headers: {
+        "Content-Type": "multipart/form-data",
+        //   Authorization: `bearer ${token}`,
+      },
+      method: "PATCH",
+      url: `${process.env.REACT_APP_BACKEND_URL}/products/${id}`,
+      data: formData,
+    });
+    console.log(response.data);
+  };
+
   return (
     <>
-      <div class="container">
-        <form
-          class="mx-auto border mt-5 shadow rounded"
-          method="post"
-          action="/panel/admin/<%= article.id %>/update"
-          enctype="multipart/form-data"
-        >
-          <div class="bg-light m-0 p-0 w-100">
-            <h1 class="fs-3 p-2">Edit product</h1>
-          </div>
-          <div class="mb-3 p-2">
-            <label for="title" class="form-label fw-bold">
-              Name
-            </label>
-            <input
-              type="text"
-              name="title"
-              class="form-control"
-              id="title"
-              placeholder="Enter title..."
-              value="{product.title}"
-            />
-          </div>
-          <div class="mb-3 p-2">
-            <label for="content" class="form-label fw-bold">
-              Description
-            </label>
-            <textarea
-              class="form-control"
-              name="content"
-              id="content"
-              placeholder="Enter content..."
-              rows="2"
-            ></textarea>
-          </div>
-          <div class="mb-3 p-2">
-            <label for="title" class="form-label fw-bold">
-              Price
-            </label>
-            <input
-              type="text"
-              name="title"
-              class="form-control"
-              id="title"
-              placeholder="Enter title..."
-              value="{product.title}"
-            />
-          </div>
-          <div class="mb-3 p-2">
-            <label for="title" class="form-label fw-bold">
-              Stock
-            </label>
-            <input
-              type="text"
-              name="title"
-              class="form-control"
-              id="title"
-              placeholder="Enter title..."
-              value="{product.title}"
-            />
-          </div>
-          <div class="mb-3 p-2">
-            <label for="title" class="form-label fw-bold">
-              Featured
-            </label>
-            <input
-              type="text"
-              name="title"
-              class="form-control"
-              id="title"
-              placeholder="Enter title..."
-              value="{product.title}"
-            />
-          </div>
-
-          <div class="mb-3 p-2">
-            <label for="image" class="form-label fw-bold">
-              Image
-            </label>
-            <input
-              type="file"
-              class="form-control"
-              id="image"
-              name="image"
-              required
-            />
-          </div>
-
-          <button type="submit" class="btn btn-success m-2">
-            Save
-          </button>
-        </form>
-        <div class="container mx-auto my-2 px-2">
-          <a
-            class="d-block mx-auto text-decoration-none text-dark m-5"
-            href="/panel/admin/"
+      <NavbarAdmin />
+      <div className="container p-5">
+        <div className="col-md-5 col-lg-5 mx-auto">
+          <h2 className=" text-dark create-account fs-1">Edit product</h2>
+          <form
+            className="row g-3"
+            onSubmit={(event) => {
+              handleEditProduct(event);
+            }}
           >
-            Return
-          </a>
+            <div className="col-md-6">
+              <label htmlFor="inputEmail4" className="form-label">
+                Name
+              </label>
+              <input
+                className="form-control"
+                type="text"
+                placeholder="name"
+                name="name"
+                id="name"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                required
+              />
+            </div>
+
+            <div className="col-md-6">
+              <label htmlFor="inputPassword4" className="form-label">
+                Description
+              </label>
+              <input
+                className="form-control"
+                type="text"
+                placeholder="Lastname"
+                name="description"
+                id="description"
+                value={description}
+                onChange={(event) => setDescription(event.target.value)}
+                required
+              />
+            </div>
+            <div className="col-md-6">
+              <label htmlFor="inputPassword4" className="form-label">
+                category
+              </label>
+              <input
+                className="form-control"
+                type="text"
+                placeholder="Lastname"
+                name="category"
+                id="category"
+                value={categoryId}
+                onChange={(event) => setCategoryId(event.target.value)}
+                required
+              />
+            </div>
+            <div className="col-12">
+              <label htmlFor="Price" className="form-label"></label>
+              Price
+              <input
+                type="text"
+                className="form-control"
+                placeholder="price"
+                name="price"
+                id="price"
+                value={price}
+                onChange={(event) => setPrice(event.target.value)}
+                required
+              />
+            </div>
+            <div className="col-12">
+              <label htmlFor="inputAddress2" className="form-label">
+                Featured
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="featured"
+                name="featured"
+                id="featured"
+                value={featured}
+                onChange={(event) => setFeatured(event.target.value)}
+                required
+              />
+            </div>
+            <div className="col-12">
+              <label htmlFor="inputAddress2" className="form-label">
+                stock
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="stock"
+                name="stock"
+                id="stock"
+                value={stock}
+                onChange={(event) => setStock(event.target.value)}
+                required
+              />
+            </div>
+            <IconButton
+              aria-label="upload picture"
+              component="label"
+              className=" mt-3"
+            >
+              <input
+                hidden
+                accept="image/*"
+                type="file"
+                name="image"
+                onChange={(event) => setImage(event.target.files[0])}
+                required
+              />
+              <small className="me-2 input-tx text-dark">Upload </small>{" "}
+              <PhotoCamera className="input-tx text-dark" />
+            </IconButton>
+            <div className="col-6">
+              <button
+                className="btn btn-success sign-up-btn border-0 w-75 m-4 fs-5 d-block mx-auto"
+                type="submit"
+              >
+                Edit
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </>
