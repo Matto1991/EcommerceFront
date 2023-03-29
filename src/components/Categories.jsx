@@ -27,7 +27,7 @@ function Categories() {
       {categories.length > 0 && (
         <>
           <div className="d-flex justify-content-center w-100 mb-5">
-            <h2>Shop by categories</h2>
+            <h2 className="section-title">Shop by categories</h2>
           </div>
           <div className="row g-2 mx-auto categories-container h-100 mb-2">
             <div className="col-lg-8 col-md-8 col-sm-12">
