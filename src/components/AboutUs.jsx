@@ -1,4 +1,4 @@
-import Aboutus from "../components/Aboutus.css";
+import "../components/Aboutus.css";
 import Footer from "../components/Footer";
 import NavbarOther from "../components/NavbarOther";
 export default function AboutUs() {

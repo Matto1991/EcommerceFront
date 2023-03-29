@@ -43,10 +43,10 @@ function Login() {
 
       <div className="form-login">
         <div className="container sign-up p-5">
-          <div className="row formulary p-3">
-            <div className="message col-md-6 col-lg-6 text-center d-flex flex-column">
-              <h2 className="h2-message">Welcome to Ecozy Luxury</h2>
-              <p className="p-message">
+          <div className="row formulary ">
+            <div className="formulary-welcome-message col-md-6 col-lg-6 text-center d-flex flex-column justify-content-center">
+              <h2>Welcome to Ecozy Luxury</h2>
+              <p className="formulary-subtitle">
                 {" "}
                 Don't have an account?
                 <Link
@@ -86,7 +86,7 @@ function Login() {
                 />
 
                 <button
-                  className="btn btn-success sign-up-btn border-0 w-75 m-4 fs-5 d-block mx-auto"
+                  className="log-in-btn rounded border-0 w-75 mt-5 mb-4  d-block mx-auto"
                   type="submit"
                 >
                   Log in

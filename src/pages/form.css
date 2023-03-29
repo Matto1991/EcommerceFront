@@ -15,6 +15,16 @@
   color: #fff;
 }
 
+.form-auth input {
+  font-family: "Outfit";
+  font-weight: 300;
+}
+
+.form-auth-field {
+  font-family: "Outfit";
+  font-weight: 300;
+}
+
 .input-tx {
   color: rgba(255, 255, 255, 0.762);
 }
@@ -28,34 +38,61 @@
   text-align: center;
 }
 
-.message {
-  justify-content: center;
+.formulary-subtitle {
+  font-weight: 200;
 }
 
 .link-sign-up {
-  color: #d09064;
+  color: #8e5430;
   font-size: 1.2rem;
 }
 
 .link-sign-up:hover {
-  color: #975d34;
+  color: #8e5430;
 }
 
 .sign-up-btn {
-  background-color: #005b47bd !important;
+  padding: 0.7rem 0 0.7rem 0;
+  color: rgba(255, 255, 255, 0.776);
+  background-color: #4b2e1ae8;
+  font-size: 1.23rem;
+  font-weight: 200;
+  transition: background-color 0.15s ease-in-out 0.1s;
+}
+
+.sign-up-btn:hover {
+  background-color: #4b2e1a;
+}
+
+.log-in-btn {
+  padding: 0.65rem 0 0.65rem 0;
+  color: rgba(255, 255, 255, 0.776);
+  background-color: #4b2e1ae8;
+  font-size: 1.23rem;
+  font-weight: 200;
+  transition: background-color 0.15s ease-in-out 0.1s;
+}
+
+.log-in-btn:hover {
+  background-color: #4b2e1a;
 }
 
 .formulary {
-  height: 90%;
+  padding: 3rem 1.5rem 3rem 1.5rem;
   background-color: #20202081;
   backdrop-filter: blur(3px);
   text-align: center;
   border-radius: 10px;
 }
 
+.formulary-welcome-message h2 {
+  font-family: "IvyOra";
+}
+
 .create-account {
   margin: 0 0 2rem 0;
-  font-size: 1.7rem;
+  font-size: 2.3rem;
+  font-family: "IvyOra";
 }
 
 .icons {

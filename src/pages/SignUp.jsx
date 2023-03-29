@@ -36,18 +36,20 @@ function SingUp() {
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer className="toastify--error" />
       <div className="form-login">
         <div className="container p-5">
-          <div className="row formulary p-5">
-            <div className="message col-md-6 col-lg-6 text-center d-flex flex-column">
-              <h2 className="h2-message">Welcome to Ecozy Luxury</h2>
-              <p className="p-message">
+          <div className="row formulary">
+            <div className="formulary-welcome-message justify-content-center col-md-6 col-lg-6 text-center d-flex flex-column">
+              <h2>Welcome to Ecozy Luxury</h2>
+              <p>
                 {" "}
-                <span className="me-1">Already have an account?</span>
+                <span className="me-1 formulary-subtitle">
+                  Already have an account?
+                </span>
                 <Link
                   to="/login"
-                  className="text-decoration-none fw-bold link-sign-up fs-6"
+                  className="formulary-subtitle text-decoration-none fw-bold link-sign-up fs-6"
                 >
                   {" "}
                   Sign in
@@ -56,13 +58,13 @@ function SingUp() {
               {/* <button className="btn btn-lg btn-success sign-up-btn border-0">Sign Up</button> */}
             </div>
 
-            <div className="col-md-5 col-lg-5">
+            <div className="form-auth col-md-5 col-lg-5">
               <form
                 onSubmit={(event) => {
                   handleUserCreation(event);
                 }}
               >
-                <h2 className="create-account fs-1">Register</h2>
+                <h2 className="create-account">Register</h2>
 
                 <input
                   type="text"
@@ -99,7 +101,7 @@ function SingUp() {
                   placeholder="Password"
                   name="password"
                   id="password"
-                  className="input-tx"
+                  className="input-tx mt-3"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
                   required
@@ -117,12 +119,14 @@ function SingUp() {
                     onChange={(event) => setImage(event.target.files[0])}
                     required
                   />
-                  <small className="me-2 input-tx">Upload </small>{" "}
+                  <small className="me-2 input-tx form-auth-field">
+                    Upload{" "}
+                  </small>{" "}
                   <PhotoCamera className="input-tx" />
                 </IconButton>
 
                 <button
-                  className="btn btn-success sign-up-btn border-0 w-75 m-4 fs-5 d-block mx-auto"
+                  className="sign-up-btn rounded border-0 w-75 m-4 d-block mx-auto"
                   type="submit"
                 >
                   Create

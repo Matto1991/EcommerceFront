@@ -1,12 +1,12 @@
 /* Start Icons */
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
-
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;600&display=swap");
 /* End Icons */
 
 /* Start Fonts */
 @font-face {
-  font-family: "IvyOra Display";
+  font-family: "IvyOra";
   src: local("IvyOra Display Thin"), local("IvyOra-Display-Thin"),
     url("/public/fonts/IvyOraDisplay-Thin.woff2") format("woff2");
   font-weight: 100;
@@ -14,7 +14,7 @@
 }
 
 @font-face {
-  font-family: "IvyOra Text";
+  font-family: "IvyOra";
   src: local("IvyOra Text Regular"), local("IvyOra-Text-Regular"),
     url("/public/fonts/IvyOraText-Regular.woff2") format("woff2");
   font-weight: 400;
@@ -22,7 +22,7 @@
 }
 
 @font-face {
-  font-family: "IvyOra Text";
+  font-family: "IvyOra";
   src: local("IvyOra Text Medium"), local("IvyOra-Text-Medium"),
     url("/public/fonts/IvyOraText-Medium.woff2") format("woff2");
   font-weight: 500;
@@ -30,33 +30,9 @@
 }
 
 @font-face {
-  font-family: "IvyOra Text";
+  font-family: "IvyOra";
   src: local("IvyOra Text Bold"), local("IvyOra-Text-Bold"),
     url("/public/fonts/IvyOraText-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Futura";
-  src: local("Futura Pt Light"), local("Futura-Light"),
-    url("/public/fonts/Futura-Light.ttf") format("ttf");
-  font-weight: 200;
-  font-style: light;
-}
-
-@font-face {
-  font-family: "Futura";
-  src: local("Futura Pt Medium"), local("Futura-Medium"),
-    url("/public/fonts/Futura-Medium.ttf") format("ttf");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Futura";
-  src: local("Futura Pt Bold"), local("Futura-Bold"),
-    url("/public/fonts/Futura-Bold.ttf") format("ttf");
   font-weight: 700;
   font-style: normal;
 }
@@ -137,7 +113,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "IvyOra Text";
+  font-family: "Outfit";
 }
 
 html {
@@ -147,12 +123,23 @@ html {
 :root {
   --category-gray: #faf9f7;
   --brand-green: #005b47;
+  --brand-green-dark: #024738;
   --brand-dark-brown: #975d34;
   --brand-ligth-brown: #a47f53;
   --light-gray-text: #959595;
   --light-gray-background: rgba(48, 48, 48, 0.024);
   --dark-gray-background: rgba(48, 48, 48, 0.085);
 }
+
+/* Start Toastify Styles */
+
+/* .toastify--error .Toastify__toast {
+  color: white;
+  background-color: #20202081 !important;
+  backdrop-filter: blur(3px);
+} */
+
+/* End Toastify Styles */
 
 /* Start Home Navbar Styles */
 
@@ -175,7 +162,7 @@ html {
   position: sticky !important;
   top: 0px;
   z-index: 100;
-  background-color: #a480536c;
+  background-color: #ffffff90;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   /* box-shadow: 0px 0px 20px 0.2px rgba(0, 0, 0, 0.163); */
@@ -191,14 +178,16 @@ html {
 
 .navbar-dynamic-text a {
   padding: 0 !important;
-  color: #fff !important;
-  font-family: "Futura";
+  color: black !important;
+  font-size: 0.95rem;
+  font-family: 200;
 }
 
 .navbar-static-text a {
+  font-size: 0.95rem;
   padding: 0 !important;
   color: #fff !important;
-  font-family: "Futura";
+  font-family: 200;
 }
 .dropdown-menu a {
   padding: 0.2rem 0rem 0.2rem 0.5rem !important;
@@ -214,14 +203,26 @@ html {
   border: 1px solid var(--dark-gray-background) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-static-text .dropdown-menu .dropdown-item {
+  font-size: 0.9rem;
+  font-weight: 200;
 }
 
 .navbar-dynamic-text .dropdown-menu {
   padding: 0 !important;
   border: 1px solid var(--dark-gray-background) !important;
-  background-color: #a480536c;
+  background-color: #ffffff6e;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-dynamic-text .dropdown-menu .dropdown-item {
+  font-size: 0.9rem;
+  font-weight: 200;
 }
 
 .navbar-static-text .dropdown-menu hr {
@@ -240,7 +241,7 @@ html {
   position: absolute;
   padding: 0;
   left: 0;
-  bottom: -3px;
+  bottom: -2px;
   height: 1.5px;
   width: 0;
   background-color: #fff;
@@ -251,16 +252,42 @@ html {
   width: 100%;
 }
 
+.navbar-static .cart-nav {
+  width: 0.5px;
+  height: 0.5px;
+  margin-right: 0.3rem;
+  color: white;
+}
+
+.navbar-dynamic .cart-nav {
+  width: 0.5px;
+  height: 0.5px;
+  margin-right: 0.3rem;
+  color: black;
+}
+
+.navbar-static .cart-product-number {
+  font-size: 0.9rem;
+  color: white;
+  font-weight: 100;
+}
+
+.navbar-dynamic .cart-product-number {
+  font-size: 0.9rem;
+  color: black;
+  font-weight: 100;
+}
+
 .navbar-dynamic-text::after {
   content: "";
   display: block;
   position: absolute;
   padding: 0;
   left: 0;
-  bottom: -3px;
+  bottom: -2px;
   height: 1.5px;
   width: 0;
-  background-color: #fff;
+  background-color: black;
   transition: width 0.4s;
 }
 
@@ -268,22 +295,16 @@ html {
   width: 100%;
 }
 
-.navbar-dynamic-text a {
-  font-family: "Futura";
-}
-
 .navbar-dynamic-logo {
-  font-size: 1.55rem !important;
-  color: #fff !important;
-  font-weight: 500;
-  font-family: "Futura";
+  font-size: 1.6rem !important;
+  color: black !important;
+  font-weight: 600;
 }
 
 .navbar-static-logo {
-  font-size: 1.55rem !important;
+  font-size: 1.6rem !important;
   color: #fff !important;
-  font-weight: 500;
-  font-family: "Futura";
+  font-weight: 600;
 }
 
 .navbar {
@@ -292,8 +313,13 @@ html {
   left: 0;
   right: 0;
   z-index: 100;
-  height: 8vh;
+  height: 7.5vh;
   transition: background-color 0.3s ease-in-out, position 0.3s ease-in-out;
+}
+
+.navbar-avatar {
+  width: 2.2rem !important;
+  height: 2.2rem !important;
 }
 
 /* End Navbar Home Styles  */
@@ -301,13 +327,54 @@ html {
 /* Start Navbar Other Styles */
 
 .navbar-other-static {
-  background-color: #a480536c;
+  background-color: #ffffff6e;
 }
 
-.cart-nav {
+.navbar-other-static-text::after {
+  content: "";
+  display: block;
+  position: absolute;
+  padding: 0;
+  left: 0;
+  bottom: -2px;
+  height: 1.5px;
+  width: 0;
+  background-color: black;
+  transition: width 0.4s;
+}
+
+.navbar-other-static-text:hover::after {
+  width: 100%;
+}
+
+.navbar-other-static-text {
+  margin: 0rem 0.8rem;
+}
+
+.navbar-other-static-text a {
+  font-size: 0.95rem;
+  padding: 0 !important;
+  font-family: 200;
+  color: black;
+}
+
+.navbar-other-static-logo {
+  font-size: 1.6rem !important;
+  color: black;
+  font-weight: 600;
+}
+
+.navbar-other-static .cart-nav {
   width: 0.5px;
   height: 0.5px;
-  color: whitesmoke;
+  margin-right: 0.3rem;
+  color: black;
+}
+
+.navbar-other-static .cart-product-number {
+  font-size: 0.9rem;
+  color: black;
+  font-weight: 100;
 }
 
 /* End Navbar Other Styles  */
@@ -317,6 +384,14 @@ html {
 .footer {
   margin-top: 5.5rem;
   background-color: var(--dark-gray-background);
+}
+
+.footer input {
+  font-weight: 300;
+}
+
+.footer button {
+  font-weight: 300;
 }
 
 .footer-container {
@@ -331,12 +406,20 @@ html {
 
 .footer-list li {
   margin-bottom: 0.5rem;
-  font-family: "Futura";
-  font-weight: 200;
+
+  font-weight: 300;
+}
+
+.footer-cta {
+  background-color: #4b2e1ae8 !important;
+}
+
+.footer-cta:hover {
+  background-color: #4b2e1aca !important;
 }
 
 .footer-text {
-  font-family: "Futura";
+  color: #4b2e1ae8;
 }
 
 /* End Footer Styles */
@@ -363,6 +446,7 @@ html {
   top: 21%;
   right: 12%;
   opacity: 0;
+  font-family: "IvyOra";
 }
 
 .animation-first-phrase {
@@ -386,6 +470,7 @@ html {
   right: 12%;
   font-size: 0.85rem;
   cursor: pointer;
+  font-weight: 200;
 }
 
 .hero-cta:hover {
@@ -394,12 +479,21 @@ html {
 }
 
 .card-price {
-  color: #a47f53;
+  color: #806340;
+  font-weight: 400;
 }
 
 .featured-section {
   margin-top: 5.5rem;
   width: 85%;
+}
+
+.section-title {
+  font-family: "IvyOra";
+}
+
+.section-subtitle {
+  font-weight: 200;
 }
 
 .featured-card {
@@ -419,35 +513,41 @@ html {
   border-top: 0;
 }
 .featured-card-title {
+  font-family: "IvyOra";
   font-weight: 500;
 }
 
 .featured-card-text {
   font-size: 0.9rem;
-  font-weight: 400;
+  font-weight: 200;
   color: var(--light-gray-text);
 }
 
 .team-section {
   margin-top: 5.5rem;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
   background-color: rgba(48, 48, 48, 0.024);
 }
 
 .cta {
   width: 12rem;
   padding: 0.9rem 0.8rem 0.9rem 0.8rem;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #005b47;
+  font-size: 1.05rem;
+  color: var(--brand-green);
+  background-color: var(--dark-gray-background);
   cursor: pointer;
-  /* border: 1px solid var(--brand-green); */
-  transition: background-color 0.15s ease-in-out 0.1s;
+  transition: background-color 0.2s ease-in-out 0.1s,
+    color 0.2s ease-in-out 0.1s;
+}
+
+.cta a {
+  font-weight: 200;
 }
 
 .cta:hover {
-  background-color: #005b47da;
+  color: #fff;
+  background-color: var(--brand-green);
 }
 
 .categories-section {
@@ -506,21 +606,55 @@ html {
   width: 10rem;
   padding: 0.9rem 0.8rem 0.9rem 0.8rem;
   font-size: 1rem;
-  color: #fff;
-  background-color: #005b47;
+  font-weight: 200;
+  color: var(--brand-green);
+  background-color: var(--dark-gray-background);
   cursor: pointer;
-  transition: background-color 0.15s ease-in-out 0.1s;
+  transition: background-color 0.2s ease-in-out 0.1s,
+    color 0.2s ease-in-out 0.1s;
 }
 
 .inspiration-cta:hover {
-  background-color: #005b47a9;
+  color: #fff;
+  background-color: var(--brand-green);
 }
-.categories-card {
-  background-color: #ece9e6;
-}
-
 /* End Home Styles */
 
+/* Start Categories Styles */
+
+.category-section {
+  width: 80%;
+}
+
+.category-section-title {
+  font-size: 1.6rem;
+  font-family: "ivyOra";
+  font-weight: 400;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  color: #c3a997;
+  border: 1px solid #b99984;
+  /* border: 1.5px solid #024738e3; */
+  width: fit-content;
+}
+
+.categories-card {
+  background-color: rgba(245, 245, 245, 0.742);
+}
+
+.categories-card-title {
+  font-size: 1.85rem;
+  font-family: "ivyOra";
+}
+
+.categories-price {
+  font-size: 1.1rem;
+}
+
+.categories-additional-info {
+  font-size: 0.95rem;
+}
+
+/* End Cateogries Styles */
 @media only screen and (max-width: 1024px) {
   .hero-title {
     font-size: 3rem;
@@ -568,20 +702,8 @@ html {
 .order-box {
   margin-top: 150px;
 }
-.hoverCard:hover{
-transform: scale(1.015);
- border: none;
-cursor: pointer;
+.hoverCard:hover {
+  transform: scale(1.015);
+  border: none;
+  cursor: pointer;
 }
-
-/* @media (max-width: 991px) {
-  .dropdown-menu {
-    padding: 0 !important;
-    background-color: #a480536c !important;
-    border: 1px solid var(--dark-gray-background) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-} */
-
-/* #ece9e6 */

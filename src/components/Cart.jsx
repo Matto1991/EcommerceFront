@@ -34,10 +34,11 @@ function Cart({ name }) {
       <>
         <span
           onClick={handleShow}
-          className=" ms-auto me-2 bi bi-bag-fill cart-nav position-relative"
+          className="ms-auto bi bi-bag cart-nav position-relative"
         >
           {name}
         </span>
+        <small className="cart-product-number"> {products.length}</small>
 
         <Offcanvas show={show} onHide={handleClose} placement={"end"}>
           <Offcanvas.Header closeButton>
@@ -66,8 +67,10 @@ function Cart({ name }) {
                         <div className="col-4">
                           <div className="border border-2 rounded mb-2">
                             <img
-                              alt="img\TheLeroyChair.webp"
-                              src={`${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`}
+                              alt={product.name}
+                              src={ typeof product.images === "object"
+                              ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
+                              : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `}
                               className="img-fluid"
                             />
                           </div>
@@ -75,7 +78,7 @@ function Cart({ name }) {
                         <div className=" d-flex justify-content-between mt-3 text-end ">
                           <div className="border rounded border-1 d-flex align-items-center">
                             <i
-                              className=" btn border-0 bi bi-caret-left"
+                              className="btn border-0 bi bi-caret-left"
                               onClick={() => handleDecreaseCart(product)}
                             ></i>{" "}
                             {product.quantity}

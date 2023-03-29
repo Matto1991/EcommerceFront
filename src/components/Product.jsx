@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
-import Cart from "../components/Cart";
 import "./ProductStyles.css";
 import Categories from "./Categories";
 import NavbarOther from "../components/NavbarOther";
@@ -56,14 +55,18 @@ function Product() {
               <div className="col-12 col-lg-8">
                 <img
                   className="img-fluid h-100"
-                  src={`${process.env.REACT_APP_BACKEND_URL}/${product.images}`}
+                  src={
+                    typeof product.images === "object"
+                      ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
+                      : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `
+                  }
                   alt={product.name}
                 />
               </div>
               <div className="col-12 col-lg-4">
                 <div className="card-body ">
-                  <h1 className="title card-title ">{product.name}</h1>
-                  <p>Ships in 1 week |</p>
+                  <h1 className="product-title card-title ">{product.name}</h1>
+                  <p>Ships in 1 week</p>
 
                   <Rating
                     name="simple-controlled"
@@ -73,22 +76,29 @@ function Product() {
                       setValue(newValue);
                     }}
                   />
-                  <h4 className="border-top bold card-price pt-2">
-                    US$ {product.price}
+                  <h4 className="bold product-price pt-2">
+                    <small className="product-price-small">from</small> US$
+                    {product.price}
                   </h4>
-                  <h5 className="card-text border-bottom pt-4 pb-3 ">
+                  <h5 className="border-top card-text product-description border-bottom pt-4 pb-3 ">
                     {product.description}
                   </h5>
-                  <h5>SHOWN</h5>
-                  <p>Fabric or Leather: Mohair - Mink Size: 100" Wide</p>
+                  <h5 className="product-additional-info">SHOWN</h5>
+                  <p className="product-additional-info">
+                    Fabric or Leather: Mohair - Mink Size: 100" Wide
+                  </p>
                 </div>
 
                 <div className="d-flex justify-content-around align-items-end ">
-                  <h4 className="card-text pt-5  bold card-price">
+                  <h4 className="card-text pt-5 fw-light card-price">
                     Free shipping
                   </h4>
-                  <Cart />
-                  <button onClick={() => handleAddToCart()}>Add to cart</button>
+                  <button
+                    className="product-btn rounded"
+                    onClick={() => handleAddToCart()}
+                  >
+                    Add to cart
+                  </button>
                   <ToastContainer className="toast-message" />
                 </div>
               </div>

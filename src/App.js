@@ -20,9 +20,13 @@ import CheckOut from "./pages/CheckOut";
 import CreateUser from "./pages/CreateUser";
 import EditUser from "./pages/EditUser";
 import EditProduct from "./pages/EditProduct";
+<<<<<<< HEAD
 import CreateCategory from "./pages/CreateCategory";
 import AdminCategories from "./pages/AdminCategories";
 import EditCategory from "./pages/EditCategory";
+=======
+import AdminCreateProduct from "./pages/AdminCreateProduct";
+>>>>>>> ea3121f121c6c6e391ae487d4ff51120af844c3e
 
 function App() {
   return (
@@ -34,7 +38,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/about" element={<AboutProyect />} />
+        <Route path="/project-details" element={<AboutProyect />} />
         <Route path="/profile" element={<AdminProfile />} />
         <Route path="/orders" element={<AdminOwnOrder />} />
         <Route path="/signup" element={<SingUp />} />
@@ -46,6 +50,7 @@ function App() {
         <Route path="/admin/newUser" element={<CreateUser />} />
         <Route path="/admin/edit-user/:id" element={<EditUser />} />
         <Route path="/admin/orders" element={<AdminOrder />} />
+        <Route path="/admin/create/product" element={<AdminCreateProduct />} />
         <Route path="admin/edit/product/:id" element={<EditProduct />} />
         <Route path="/admin/categories" element={<AdminCategories />} />
         <Route path="/admin/createCategory" element={<CreateCategory />} />

@@ -1,15 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import NavbarOther from "../components/NavbarOther";
 function Category() {
-  const navigate = useNavigate();
   const { name } = useParams();
   const [category, setCategory] = useState();
   const [products, setProducts] = useState([]);
-  const handleGoTo = (url) => {
-    navigate(url);
-  };
+
   const getCategories = async () => {
     const response = await axios({
       method: "GET",
@@ -31,45 +28,57 @@ function Category() {
       ) : (
         <>
           <NavbarOther />
-          <div className="container pt-8">
-            <h2 className="mt-4">{category.name}</h2>
+          <div className="category-section mx-auto pt-8">
+            <h2 className="category-section-title mt-5 rounded">
+              {category.name} collection
+            </h2>
             {products.map((product) => {
               return (
                 <div className="row g-4" key={product.id}>
-                  <div
-                    className=" hoverCard card mb-3 
-                   border-0"
-                    onClick={() => handleGoTo(`/product/${product.id}`)}
+                  <Link
+                    to={`/product/${product.id}`}
+                    className="text-reset text-decoration-none"
                   >
-                    <div className="row pt-4">
-                      <div className=" col-12 col-lg-8 p-0 ">
-                        <img
-                          className="img-fluid h-100 w-100"
-                          src={`${process.env.REACT_APP_BACKEND_URL}/${product.images}`}
-                          alt={product.name}
-                        />
-                      </div>
-                      <div className="col-12 col-lg-4 p-0">
-                        <div className="categories-card card-body h-100 justify-content-center align-items-center d-flex flex-column">
-                          <h4 className="title card-title pb-5 ">
-                            {product.name}
-                          </h4>
-                          <p className="d-flex flex-column ">
-                            READY TO SHIP <span>Ships in 3-5 days</span>{" "}
-                          </p>
+                    <div
+                      className="card mb-3 
+                   border-0"
+                    >
+                      <div className="row pt-4">
+                        <div className="col-12 col-lg-8 p-0 ">
+                          <img
+                            className="img-fluid h-100 w-100"
+                            src={`${process.env.REACT_APP_BACKEND_URL}/${product.images}`}
+                            alt={product.name}
+                          />
+                        </div>
+                        <div className="col-12 col-lg-4 p-0">
+                          <div className="categories-card rounded-end card-body h-100 justify-content-center align-items-center d-flex flex-column">
+                            <h4 className="categories-card-title card-title pb-5 ">
+                              {product.name}
+                            </h4>
+                            <p className="categories-additional-info d-flex flex-column ">
+                              READY TO SHIP{" "}
+                              <span className="text-center">
+                                Ships in 3-5 days
+                              </span>{" "}
+                            </p>
 
-                          <p className="d-flex flex-column">
-                            MADE TO ORDER <span>Ships in 2 weeks</span>{" "}
-                          </p>
+                            <p className="categories-additional-info d-flex flex-column">
+                              MADE TO ORDER{" "}
+                              <span className="text-center">
+                                Ships in 2 weeks
+                              </span>{" "}
+                            </p>
 
-                          <h5 className=" bold card-price pt-2">
-                            <span className="text-dark">From</span> US${" "}
-                            {product.price}
-                          </h5>
+                            <h5 className="categories-price bold card-price pt-2">
+                              <span className="text-dark">from</span> US${" "}
+                              {product.price}
+                            </h5>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               );
             })}

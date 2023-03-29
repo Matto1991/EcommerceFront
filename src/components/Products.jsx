@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import NavbarOther from "../components/NavbarOther";
 function Products() {
   const navigate = useNavigate();
@@ -28,29 +28,33 @@ function Products() {
           <h2 className="pt-5">All products</h2>
           {products.map((product) => {
             return (
-              <div key={product.id} className="col-12 col-md-6  mt-5">
+              <div key={product.id} className="col-12 col-md-6 mt-5">
                 <div
                   className="featured-card card d-flex flex-fill h-100"
                   onClick={() => handleGoTo(`/product/${product.id}`)}
                 >
                   <img
-                    src={`${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`}
+                    src={
+                      typeof product.images === "object"
+                        ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
+                        : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `
+                    }
                     alt={`${product.name}`}
                     className="rounded-top"
                   />
-                  <div className="card-body d-flex flex-column justify-content-between">
+                  <div className="card-body rounded-bottom featured-card-body d-flex justify-content-between">
                     <div>
                       <h4 className="card-title featured-card-title">
                         {product.name}
                       </h4>
-                      <p className="d-flex flex-column ">
+                      <p className="d-flex flex-column product-subtitle mt-3  ">
                         MADE TO ORDER{" "}
                         <span className=" featured-card-text">
                           Ships in 3-5 days
                         </span>{" "}
                       </p>
                     </div>
-                    <p className="card-text mt-4">
+                    <p className="card-text">
                       <small className="bold card-price">
                         From US$ {`${product.price}`}
                       </small>
