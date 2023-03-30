@@ -24,6 +24,7 @@ import CreateCategory from "./pages/CreateCategory";
 import AdminCategories from "./pages/AdminCategories";
 import EditCategory from "./pages/EditCategory";
 import AdminCreateProduct from "./pages/AdminCreateProduct";
+import Error from "./pages/Error";
 
 function App() {
   return (
@@ -53,7 +54,7 @@ function App() {
         <Route path="/admin/createCategory" element={<CreateCategory />} />
         <Route path="/admin/editCategory/:id" element={<EditCategory />} />
 
-        <Route path="*" element={<h2>There's nothing here: 404!</h2>} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );
