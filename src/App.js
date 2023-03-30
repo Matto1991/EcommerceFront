@@ -7,7 +7,7 @@ import AdminProduct from "./pages/AdminProduct";
 import AdminUser from "./pages/AdminUser";
 import AdminOrder from "./pages/AdminOrder";
 import Product from "./components/Product";
-import AboutUs from "./components/AboutUs";
+
 import AboutProyect from "./components/AboutProyect";
 import AdminProfile from "./pages/AdminProfile";
 import AdminOwnOrder from "./pages/AdminOwnOrder";
@@ -35,7 +35,7 @@ function App() {
         <Route path="/category/:name" element={<Category />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/product/:id" element={<Product />} />
-        <Route path="/about-us" element={<AboutUs />} />
+
         <Route path="/project-details" element={<AboutProyect />} />
         <Route path="/profile" element={<AdminProfile />} />
         <Route path="/orders" element={<AdminOwnOrder />} />

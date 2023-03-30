@@ -11,7 +11,7 @@ export default function AboutProyect() {
       </div>
 
       <div className="container mt-5">
-        <div className="row row-cols-1 row-cols-md-3 g-4 mb-5 ">
+        <div className="row row-cols-1 row-cols-lg-3 g-5 mb-5 ">
           <div className="col">
             <div className="card h-100 shadow">
               <span className="p-2 rounded icon-about">
@@ -20,9 +20,13 @@ export default function AboutProyect() {
               <div className="card-body mt-3">
                 <h5 className="card-title">Duración</h5>
                 <p className="card-text">
-                  El proyecto fue desarrollado en tan sólo 3 semanas, durante
-                  marzo de 2023. El mismo se dividió en demos de una semana de
-                  duración.
+                  Este proyecto se llevó a cabo en un período de tres semanas,
+                  específicamente en marzo de 2023, con una metodología de demos
+                  semanales. Durante el proyecto el equipo se enfocó en
+                  seleccionar un producto y diseñar minuciosamente el sitio web
+                  para su comercialización. Se empleó una planificación rigurosa
+                  y detallada para garantizar el cumplimiento de los objetivos
+                  en el plazo establecido.
                 </p>
               </div>
             </div>
@@ -35,9 +39,14 @@ export default function AboutProyect() {
               <div className="card-body mt-3">
                 <h5 className="card-title">Tecnologías</h5>
                 <p className="card-text">
-                  Para el Front-End del sitio se desarrolló una aplicación en
-                  React, mientras que para el Back-End se desarrolló una REST
-                  API hecha con Node.js, Express, mySQL y Git/GitHub.
+                  Para realizar este proyecto desarrollamos una REST API hecha
+                  con Node.js, Sequalize, Express, mySQL para el Back-End, Table
+                  plus como herramienta para gestionar nuestra base de datos,
+                  mientras que para el Front-End utilizamos React, Redux, React
+                  Boostrap y Boostrap. Para administrar y alojar nuestros
+                  archivos utilizamos Git y GitHub. Vercel y Supabase para que
+                  hoy ustedes desde donde se encuentren puedan apreciar nuestro
+                  trabajo.
                 </p>
               </div>
             </div>
@@ -50,10 +59,14 @@ export default function AboutProyect() {
               <div className="card-body mt-3">
                 <h5 className="card-title">División de tareas</h5>
                 <p className="card-text">
-                  Para la organización y planificación del proyecto se utilizó
-                  Trello y Figma. Esto permitió que cada integrante del equipo
-                  estuviese permanentemente al tanto del estado del proyecto así
-                  como de las tareas que debía realizar.
+                  En este proyecto se emplearon herramientas digitales como
+                  Trello y Figma para la gestión y organización del trabajo en
+                  equipo. Estas plataformas permitieron una comunicación fluida
+                  y constante entre los integrantes del grupo, así como el
+                  seguimiento y control de las tareas a realizar en cada fase
+                  del proyecto. El uso de estas herramientas tecnológicas
+                  favoreció la coordinación y colaboración del equipo, lo que
+                  contribuyó a la consecución exitosa del proyecto.
                 </p>
               </div>
             </div>
@@ -62,7 +75,7 @@ export default function AboutProyect() {
         <hr />
 
         <div className="mx-auto mt-5">
-          <h1 className="text-center mb-5 fw-bold">Equipo</h1>
+          <h2 className="text-center mb-5 fw-bold">Equipo</h2>
           <div className="row g-2">
             <div className="col-md-6  col-lg-3">
               <div className="card border-0 p-3">
@@ -72,7 +85,7 @@ export default function AboutProyect() {
                   alt="..."
                 />
                 <div className="card-body text-center">
-                  <h5 className="card-title">Andrés Viera</h5>
+                  <h4 className="card-title">Andrés Viera</h4>
                   <p className="card-text fw-bold ">Full Stack Developer Jr.</p>
                 </div>
 
@@ -91,7 +104,7 @@ export default function AboutProyect() {
                   alt="..."
                 />
                 <div className="card-body text-center">
-                  <h5 className="card-title">Virginia Barbaro</h5>
+                  <h4 className="card-title">Virginia Barbaro</h4>
                   <p className="card-text fw-bold ">Full Stack Developer Jr.</p>
                 </div>
 
@@ -110,7 +123,7 @@ export default function AboutProyect() {
                   alt="..."
                 />
                 <div className="card-body text-center">
-                  <h5 className="card-title">Aline Farias</h5>
+                  <h4 className="card-title">Aline Farias</h4>
                   <p className="card-text fw-bold ">Full Stack Developer Jr.</p>
                 </div>
 
@@ -129,7 +142,7 @@ export default function AboutProyect() {
                   alt="..."
                 />
                 <div className="card-body text-center">
-                  <h5 className="card-title">Mathias Sandin</h5>
+                  <h4 className="card-title ">Mathias Sandin</h4>
                   <p className="card-text fw-bold ">Full Stack Developer Jr.</p>
                 </div>
 
@@ -141,72 +154,36 @@ export default function AboutProyect() {
               </div>
             </div>
           </div>
+
+          <hr />
+          <div className="mt-5 w-50 mx-auto">
+            <div className="card shadow">
+              <div className="card-body mt-3 text-center">
+                <p className="card-text fs-5">
+                  “La única manera de hacer un trabajo genial es amar lo que
+                  haces”.
+                </p>
+                <p className="fs-5 fw-bold">Steve Jobs</p>
+              </div>
+            </div>
+          </div>
+          <div className="mt-5">
+            <hr />
+            <h2 className="text-center mt-5 mb-4 fw-bold">Tecnologias</h2>
+            <img
+              src="/img/Tecnologias(1).png"
+              alt="tecnologias"
+              className="w-100"
+            />
+          </div>
+          <br />
+          <div className="m-4 text-center">
+            <hr />
+            <img src="/img/ha_logo.svg" alt="tecnologias" className="ha-img " />
+          </div>
         </div>
       </div>
       <Footer />
     </>
   );
 }
-
-<div className="row text-center">
-  <div className="col-12 col-md-6  col-xl-3 p-3  ">
-    <div className="shadow card-container rounded">
-      <div className="shape-team">
-        <div className="img-team-andy mx-auto"></div>
-      </div>
-      <h3 className="mt-3 fw-bold">Andrés Viera</h3>
-      <h4 className="card-team-title"> Full Stack Developer Jr </h4>
-      <br />
-      <div className="icons-team">
-        <i className="bi bi-linkedin me-2"></i>
-        <i className="bi bi-github me-2"></i>
-        <i className="bi bi-envelope-fill "></i>
-      </div>
-    </div>
-  </div>
-  <div className="col-12 col-md-6  col-xl-3 p-3  ">
-    <div className="shadow card-container rounded">
-      <div className="shape-team">
-        <div className="img-team-vir mx-auto"></div>
-      </div>
-      <h3 className="mt-3 fw-bold">Virginia Babaro</h3>
-      <h4 className="card-team-title"> Full Stack Developer Jr </h4>
-      <br />
-      <div className="icons-team">
-        <i className="bi bi-linkedin me-2"></i>
-        <i className="bi bi-github me-2"></i>
-        <i className="bi bi-envelope-fill "></i>
-      </div>
-    </div>
-  </div>
-  <div className="col-12 col-md-6  col-xl-3 p-3 ">
-    <div className="shadow card-container rounded">
-      <div className="shape-team">
-        <div className="img-team-ali mx-auto"></div>
-      </div>
-      <h3 className="mt-3 fw-bold">Aline Farias</h3>
-      <h4 className="card-team-title"> Full Stack Developer Jr </h4>
-      <br />
-      <div className="icons-team">
-        <i className="bi bi-linkedin me-2"></i>
-        <i className="bi bi-github me-2"></i>
-        <i className="bi bi-envelope-fill "></i>
-      </div>
-    </div>
-  </div>
-  <div className="col-12 col-md-6  col-xl-3 p-3  ">
-    <div className="shadow card-container rounded">
-      <div className="shape-team">
-        <div className="img-team-matto mx-auto"></div>
-      </div>
-      <h3 className="mt-3 fw-bold">Mathias Sandín</h3>
-      <h4 className="card-team-title"> Full Stack Developer Jr </h4>
-      <br />
-      <div className="icons-team">
-        <i className="bi bi-linkedin me-2"></i>
-        <i className="bi bi-github me-2"></i>
-        <i className="bi bi-envelope-fill "></i>
-      </div>
-    </div>
-  </div>
-</div>;
