@@ -56,7 +56,7 @@ function AdminUser() {
       <section className="container">
         <div className="d-flex justify-content-between pt-4">
           <h2 className="d-inline">Users</h2>
-          <Link to="/admin/newUser">
+          <Link to="/admin/create/user">
             <button className="btn btn-outline-success btn-m">Add user</button>
           </Link>
         </div>
@@ -90,7 +90,7 @@ function AdminUser() {
                         </Link> */}
                         <a
                           onClick={() =>
-                            handleGoTo(`/admin/edit-user/${user.id}`)
+                            handleGoTo(`/admin/edit/user/${user.id}`)
                           }
                         >
                           <button className="edit-btn mb-2 w-100">Edit</button>
@@ -127,7 +127,7 @@ function AdminUser() {
                       <td>
                         <a
                           onClick={() =>
-                            handleGoTo(`/admin/edit-user/${admin.id}`)
+                            handleGoTo(`/admin/edit/user/${admin.id}`)
                           }
                         >
                           <button className="edit-btn mb-2 w-100">Edit</button>

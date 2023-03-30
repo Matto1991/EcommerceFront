@@ -105,9 +105,11 @@ function NavbarOther() {
               <NavDropdown.Item href="/orders">Orders</NavDropdown.Item>
               <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown.Item href="#" className="ms-3">
+            <Nav.Link className="ms-3 d-flex">
+            {/* {products && products.cartTotalQuantity > 0 && ( */}
               <Cart />
-            </NavDropdown.Item>
+            {/* )} */}
+            </Nav.Link> 
           </Nav>
         </Navbar.Collapse>
       </Container>
