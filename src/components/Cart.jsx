@@ -13,6 +13,9 @@ import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 function Cart({ name }) {
+  // const cartTotalQuantity = useSelector(
+  //   (state) => state.cart.cartTotalQuantity
+  // );
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -29,6 +32,8 @@ function Cart({ name }) {
   const handleDecreaseCart = (product) => dispatch(decreaseCart(product));
   const handleIncrementCart = (product) => dispatch(increaseCart(product));
 
+  console.log(products);
+
   return (
     products && (
       <>
@@ -38,7 +43,10 @@ function Cart({ name }) {
         >
           {name}
         </span>
-        <small className="cart-product-number"> {products.length}</small>
+        <small className="mx-3 cart-product-number">
+          {products.reduce((a, b) => Number(a) + Number(b.quantity), 0)}
+        </small>
+        {/* <small className="cart-product-number"> {products.length}</small> */}
 
         <Offcanvas show={show} onHide={handleClose} placement={"end"}>
           <Offcanvas.Header closeButton>
@@ -61,16 +69,18 @@ function Cart({ name }) {
                                 {product.name}
                               </Link>
                             </h4>
-                            <small className="fw-2 ">$ {product.price}</small>
+                            <small className="fw-2 ">U$S {product.price}</small>
                           </div>
                         </div>
                         <div className="col-4">
                           <div className="border border-2 rounded mb-2">
                             <img
                               alt={product.name}
-                              src={ typeof product.images === "object"
-                              ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
-                              : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `}
+                              src={
+                                typeof product.images === "object"
+                                  ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
+                                  : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `
+                              }
                               className="img-fluid"
                             />
                           </div>
@@ -87,7 +97,9 @@ function Cart({ name }) {
                               onClick={() => handleIncrementCart(product)}
                             ></i>
                           </div>
-
+                          <p>
+                            subtotal: U$S {product.quantity * product.price}{" "}
+                          </p>
                           <IconButton aria-label="delete" size="small">
                             <DeleteIcon
                               fontSize="small"

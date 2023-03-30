@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: { products: [], cartTotalQuantity: 0 },
+  initialState: { products: [] },
   reducers: {
     addToCart(state, action) {
       const { product } = action.payload;
@@ -14,37 +14,25 @@ const cartSlice = createSlice({
         ? (productInCart.quantity += 1)
         : state.products.push({ ...product, quantity: 1 });
     },
+
     decreaseCart(state, action) {
-      const productIndex = state.products.findIndex(
+      const product = state.products.find(
         (product) => product.id === action.payload.id
       );
-      if (state.products[productIndex].quantity > 1) {
-        state.products[productIndex].quantity -= 1;
-      } else if (state.products[productIndex].quantity === 1) {
-        const newQuantityProducts = state.products.filter(
-          (product) => product.id !== action.payload.id
-        );
-        state.products = newQuantityProducts;
-      }
+      if (product.quantity > 1) product.quantity -= 1;
     },
+
     increaseCart(state, action) {
-      const productIndex = state.products.findIndex(
+      const product = state.products.find(
         (product) => product.id === action.payload.id
       );
-      if (state.products[productIndex].quantity >= 1) {
-        state.products[productIndex].quantity += 1;
-      } else if (state.products[productIndex].quantity === 1) {
-        const newQuantityProducts = state.products.filter(
-          (product) => product.id !== action.payload.id
-        );
-        state.products = newQuantityProducts;
-      }
+      product.quantity >= 1 ? (product.quantity += 1) : (product.quantity = 1);
     },
+
     removeFromCart(state, action) {
-      const updatedCart = state.products.filter(
+      state.products = state.products.filter(
         (product) => product.id !== action.payload.id
       );
-      state.products = updatedCart;
     },
   },
 });
