@@ -1,15 +1,26 @@
 import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Cart from "../components/Cart";
+import { Avatar } from "@mui/material";
+import { setToken } from "../redux/sessionReducer";
 
 function NavbarNav() {
   const [isScrolling, setIsScrolling] = useState(false);
 
   const products = useSelector((state) => state.cart.products);
+  const dispatch = useDispatch();
+
+  const cartTotalQuantity = useSelector(
+    (state) => state.cart.cartTotalQuantity
+  );
+
+  const handleLogout = () => {
+    dispatch(setToken({ token: null, user: null }));
+  };
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -71,6 +82,7 @@ function NavbarNav() {
             >
               <Nav.Link href="/project-details">Project&nbsp;detalis</Nav.Link>
             </div>
+
             <NavDropdown
               className={`w-25 ${
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
@@ -92,18 +104,25 @@ function NavbarNav() {
                 Inspiration
               </NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown.Item href="#" className="ms-3">
+              <Avatar
+                alt="Remy Sharp"
+                src="/img/imagenAdmin.png"
+                className="navbar-avatar"
+              />
+              <NavDropdown  className={` ${
+                isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
+              }`}>
+                <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                <NavDropdown.Item href="/orders">Orders</NavDropdown.Item>
+                <NavDropdown.Item onClick={handleLogout}>
+                  Logout
+                </NavDropdown.Item>
+              </NavDropdown>
+            <Nav.Link className="ms-3 d-flex">
+              {/* {products && products.cartTotalQuantity > 0 && ( */}
               <Cart />
-              {products && products.length > 0 && (
-                <small className="cart-product-number">
-                  {console.log(products)}
-                  {products.reduce(
-                    (acc, product) => acc + products.length + product.quantity,
-                    0
-                  )}
-                </small>
-              )}
-            </NavDropdown.Item>
+              {/* )} */}
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
