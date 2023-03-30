@@ -40,6 +40,15 @@ function OffCanvas({ name }) {
             </li>
             <li className="nav-item">
               <Link
+                to="/admin/categories"
+                className="nav-link text-dark offcanvas-link"
+              >
+                <i className="bi bi-card-list me-2"></i>
+                Categories
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
                 to="/admin/users"
                 className="nav-link text-dark offcanvas-link"
               >

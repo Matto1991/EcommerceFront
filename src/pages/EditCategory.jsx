@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import NavbarAdmin from "../components/NavbarAdmin";
 import { IconButton } from "@mui/material";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function EditCategory() {
   const { id } = useParams();
@@ -37,7 +37,7 @@ function EditCategory() {
               handleCategoryEdit(event);
             }}
           >
-            <div className="col-md-6">
+            <div className=" col-12 ">
               <label htmlFor="inputEmail4" className="form-label">
                 Name
               </label>
@@ -52,11 +52,10 @@ function EditCategory() {
                 required
               />
             </div>
-
             <IconButton
               aria-label="upload picture"
               component="label"
-              className=" mt-3"
+              className=" mt-3 "
             >
               <input
                 hidden
@@ -66,7 +65,7 @@ function EditCategory() {
                 onChange={(event) => setImage(event.target.files[0])}
                 required
               />
-              <small className="me-2 input-tx text-dark">Upload </small>{" "}
+              <small className="me-2 input-tx text-dark ">Upload </small>{" "}
               <PhotoCamera className="input-tx text-dark" />
             </IconButton>
 

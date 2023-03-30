@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
@@ -53,6 +53,17 @@ function Product() {
           <div className="card mb-3 pt-5 border-0">
             <div className="row g-4 pt-5">
               <div className="col-12 col-lg-8">
+                <div className="d-flex">
+                  <h4>
+                    <i class="bi bi-arrow-left"></i>{" "}
+                    <a
+                      href="/products"
+                      className="text-black text-decoration-none"
+                    >
+                      Back to all products
+                    </a>
+                  </h4>
+                </div>
                 <img
                   className="img-fluid h-100"
                   src={

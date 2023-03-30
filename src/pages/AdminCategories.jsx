@@ -25,7 +25,7 @@ function AdminCategories() {
   const handleDelete = async (id) => {
     const response = await axios({
       method: "delete",
-      url: `${process.env.REACT_APP_BACKEND_URL}/users/${id}`,
+      url: `${process.env.REACT_APP_BACKEND_URL}/categories/${id}`,
     });
     // console.log(typeof response.data);
     // console.log(users);
@@ -36,48 +36,55 @@ function AdminCategories() {
   return (
     <>
       <NavbarAdmin />
-      <Link to="/admin/createCategory">
-        <button className="btn btn-outline-success btn-m">Add Category</button>
-      </Link>
-      <div className="table-responsive">
-        <table className="table table-striped table-hover border border rounded shadow mt-5">
-          <thead>
-            <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Name</th>
-            </tr>
-          </thead>
-          {categories.map((category) => {
-            return (
-              <>
-                <tbody>
-                  <tr>
-                    <td scope="row">{category.id}</td>
+      <div className="container ">
+        <div className="d-flex justify-content-between pt-4">
+          <h2 className="d-inline">Categories</h2>
+          <Link to="/admin/createCategory">
+            <button className="btn btn-outline-success btn-m me-auto">
+              Add Category
+            </button>
+          </Link>
+        </div>
+        <div className="table-responsive">
+          <table className="table table-striped table-hover border border rounded shadow mt-5">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            {categories.map((category) => {
+              return (
+                <>
+                  <tbody>
+                    <tr>
+                      <td scope="row">{category.id}</td>
 
-                    <td>{category.name}</td>
-                    <td>
-                      <Link to={`/admin/editCategory/${category.id}`}>
-                        <button className="btn btn-outline-success btn-m">
-                          Edit
-                        </button>
-                      </Link>
-                    </td>
-                    <td>
-                      <IconButton
-                        type="submit"
-                        aria-label="delete"
-                        size="small"
-                        onClick={() => handleDelete(category.id)}
-                      >
-                        <DeleteIcon fontSize="small" />
-                      </IconButton>
-                    </td>
-                  </tr>
-                </tbody>
-              </>
-            );
-          })}
-        </table>
+                      <td>{category.name}</td>
+                      <td>
+                        <Link to={`/admin/editCategory/${category.id}`}>
+                          <button className="btn btn-outline-success btn-m">
+                            Edit
+                          </button>
+                        </Link>
+                      </td>
+                      <td>
+                        <IconButton
+                          type="submit"
+                          aria-label="delete"
+                          size="small"
+                          onClick={() => handleDelete(category.id)}
+                        >
+                          <DeleteIcon fontSize="small" />
+                        </IconButton>
+                      </td>
+                    </tr>
+                  </tbody>
+                </>
+              );
+            })}
+          </table>
+        </div>
       </div>
     </>
   );
