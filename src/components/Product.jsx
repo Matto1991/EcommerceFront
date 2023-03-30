@@ -55,7 +55,7 @@ function Product() {
               <div className="col-12 col-lg-8">
                 <div className="d-flex">
                   <h4>
-                    <i class="bi bi-arrow-left"></i>{" "}
+                    <i className="bi bi-arrow-left"></i>{" "}
                     <a
                       href="/products"
                       className="text-black text-decoration-none"
