@@ -2,13 +2,21 @@
   color: var(--brand-dark-brown) !important;
 }
 
-.green {
-  background-color: var(--brand-green) !important;
+.cta-ck-btn {
+  color: white !important;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  background-color: #4b2e1ae8 !important;
+  border: none;
+}
+
+.cta-ck-btn:hover {
+  background-color: #4b2e1aca !important;
+  color: white !important;
 }
 
 .toast-message .Toastify__toast {
   /* background-color: rgba(211, 211, 211, 0.781); */
   color: black;
   backdrop-filter: blur(10px);
-  font-size: .8rem;
+  font-size: 0.8rem;
 }

@@ -68,12 +68,13 @@ function NavbarHome() {
             >
               <Nav.Link href="/products">Products</Nav.Link>
             </div>
+
             <div
               className={`position-relative ${
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
               }`}
             >
-              <Nav.Link href="/project-details">Project&nbsp;detalis</Nav.Link>
+              <Nav.Link href="/project-details">About&nbsp;Project</Nav.Link>
             </div>
 
             <NavDropdown
