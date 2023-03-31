@@ -60,8 +60,11 @@ export default function Home() {
                   >
                     <div className="featured-card card d-flex flex-fill h-100">
                       <img
-
-                        src={typeof product.images === "object" ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}` : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images}` } 
+                        src={
+                          typeof product.images === "object"
+                            ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
+                            : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images}`
+                        }
                         alt={`${product.name}`}
                         className="rounded-top"
                       />
@@ -76,7 +79,7 @@ export default function Home() {
                         </div>
                         <p className="card-text mt-4">
                           <small className="card-price">
-                            From US$ {`${product.price}`}
+                            From U$S {`${product.price}`}
                           </small>
                         </p>
                       </div>

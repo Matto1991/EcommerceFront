@@ -56,7 +56,7 @@ function Products() {
                     </div>
                     <p className="card-text">
                       <small className="bold card-price">
-                        From US$ {`${product.price}`}
+                        From U$S {`${product.price}`}
                       </small>
                     </p>
                   </div>

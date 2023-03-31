@@ -88,7 +88,7 @@ function Product() {
                     }}
                   />
                   <h4 className="bold product-price pt-2">
-                    <small className="product-price-small">from</small> US$
+                    <small className="product-price-small">from</small> U$S{" "}
                     {product.price}
                   </h4>
                   <h5 className="border-top card-text product-description border-bottom pt-4 pb-3 ">
