@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 import NavbarOther from "../components/NavbarOther";
 import { removeFromCart } from "../redux/cartReducer";
 import axios from "axios";
-import "./Checkout.css";
+import "./checkout.css";
 
 function CheckOut() {
   const products = useSelector((state) => state.cart.products);

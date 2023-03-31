@@ -1,9 +1,9 @@
 import React from "react";
-import "../components/About.css";
+import "../components/about.css";
 import Footer from "./Footer";
 import NavbarOther from "../components/NavbarOther";
 
-import "../pages/Form.css";
+import "../pages/form.css";
 
 export default function AboutProyect() {
   return (

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "../redux/sessionReducer";
 import { useNavigate, Link } from "react-router-dom";
-import "./Form.css";
+import "./form.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

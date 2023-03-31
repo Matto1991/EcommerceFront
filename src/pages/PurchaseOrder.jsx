@@ -6,9 +6,6 @@ import { useSelector } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
 
-import Box from "@mui/material/Box";
-import Slider from "@mui/material/Slider";
-
 import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
 import Rating from "@mui/material/Rating";
@@ -62,6 +59,7 @@ IconContainer.propTypes = {
 
 function PurchaseOrder() {
   const location = useLocation();
+  
   console.log(location.state);
 
   const products = useSelector((state) => state.cart.products);

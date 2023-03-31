@@ -5,7 +5,9 @@ import NavbarAdmin from "../components/NavbarAdmin";
 import AdminDash from "../components/AdminDash";
 
 function AdminOrder() {
+
   const token = useSelector((state) => state.session.token);
+  
   const [orders, setOrders] = useState([]);
   useEffect(() => {
     const getOrders = async () => {

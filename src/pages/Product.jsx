@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
-import "./ProductStyles.css";
+import "./productStyles.css";
 import Categories from "../components/Categories";
 import NavbarOther from "../components/NavbarOther";
 import Rating from "@mui/material/Rating";
@@ -36,7 +36,6 @@ function Product() {
       });
       setProduct(response.data);
     };
-
     getProduct();
   }, []);
 
