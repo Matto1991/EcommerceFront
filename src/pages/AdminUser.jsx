@@ -98,7 +98,11 @@ function AdminUser() {
                         {" "}
                         <Avatar
                           alt="Remy Sharp"
-                          src={user.images}
+                          src={
+                            typeof user.avatar === "object"
+                              ? `${process.env.REACT_APP_BACKEND_URL}/${user.avatar}`
+                              : `${process.env.REACT_APP_BACKEND_URL}/img/users/${user.avatar} `
+                          }
                           className="navbar-avatar ms-4"
                         />
                       </td>

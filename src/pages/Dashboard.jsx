@@ -34,7 +34,7 @@ function Dashboard() {
                       <td> product.price</td>
 
                       <td>
-                        <a href="/panel/admin/item.id/edit ">
+                        <a href="#">
                           <button className="edit-btn mb-2 w-100">View</button>
                         </a>
                       </td>

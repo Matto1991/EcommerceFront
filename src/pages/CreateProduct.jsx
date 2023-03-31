@@ -38,7 +38,6 @@ export default function CreateProduct() {
       url: `${process.env.REACT_APP_BACKEND_URL}/products`,
       data: formData,
     });
-    console.log(response.data);
   };
 
   return (
@@ -145,25 +144,25 @@ export default function CreateProduct() {
                 required
               />
             </div>
-            <IconButton
-              aria-label="upload picture"
-              component="label"
-              className=" mt-3"
-            >
-              <input
-                hidden
-                accept="image/*"
-                type="file"
-                name="image"
-                onChange={(event) => setImage(event.target.files[0])}
-                required
-              />
-              <small className="me-2 input-tx text-dark">Upload </small>{" "}
-              <PhotoCamera className="input-tx text-dark" />
-            </IconButton>
-            <div className="col-6">
+            <div className="col-6 mx-auto">
+              <IconButton
+                aria-label="upload picture"
+                component="label"
+                className=" mt-3"
+              >
+                <input
+                  hidden
+                  accept="image/*"
+                  type="file"
+                  name="image"
+                  onChange={(event) => setImage(event.target.files[0])}
+                  required
+                />
+                <small className="me-2 input-tx text-dark ">Upload </small>{" "}
+                <PhotoCamera className="input-tx text-dark" />
+              </IconButton>
               <button
-                className="btn btn-success sign-up-btn border-0 w-75 m-4 fs-5 d-block mx-auto"
+                className="btn cta text-white mt-4  border-0 w-75 fs-5"
                 type="submit"
               >
                 Create

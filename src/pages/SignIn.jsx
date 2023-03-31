@@ -36,7 +36,6 @@ function Login() {
       userNotFound();
     } else {
       dispatch(setToken(response.data));
-      console.log(response.data);
       navigate("/");
     }
   };

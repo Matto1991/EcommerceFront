@@ -8,8 +8,6 @@ function AdminOwnOrder() {
   const token = useSelector((state) => state.session.token);
   const [orders, setOrders] = useState([]);
 
-  console.log(orders);
-  console.log(token);
   useEffect(() => {
     const getOrders = async () => {
       const response = await axios({
@@ -20,7 +18,6 @@ function AdminOwnOrder() {
         url: `${process.env.REACT_APP_BACKEND_URL}/orders/${token.id}`,
       });
       setOrders(response.data);
-      console.log(response.data);
     };
     getOrders();
   }, []);
