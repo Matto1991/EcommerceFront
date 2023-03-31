@@ -38,7 +38,6 @@ export default function CreateProduct() {
       url: `${process.env.REACT_APP_BACKEND_URL}/products`,
       data: formData,
     });
-    console.log(response.data);
   };
 
   return (

@@ -30,7 +30,7 @@ import AdminCategories from "./pages/AdminCategories";
 import EditCategory from "./pages/EditCategory";
 import CreateProduct from "./pages/CreateProduct";
 import Error from "./pages/Error";
-import PurchaseOrder from "./pages/PurchaseOrder";
+import PurchaseOrder from "./pages/Thanks";
 
 function App() {
   return (

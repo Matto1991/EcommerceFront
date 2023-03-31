@@ -10,11 +10,9 @@ import {
 import "./cart.css";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { setToken } from "../redux/sessionReducer";
 
 function Cart({ name }) {
-  // const cartTotalQuantity = useSelector(
-  //   (state) => state.cart.cartTotalQuantity
-  // );
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -23,6 +21,7 @@ function Cart({ name }) {
   const dispatch = useDispatch();
 
   const products = useSelector((state) => state.cart.products);
+  const user = useSelector((state) => state.session);
 
   const handleRemoveProduct = (product) => {
     dispatch(removeFromCart(product));
@@ -30,6 +29,8 @@ function Cart({ name }) {
 
   const handleDecreaseCart = (product) => dispatch(decreaseCart(product));
   const handleIncrementCart = (product) => dispatch(increaseCart(product));
+
+  const redirectTo = user && user.id ? "/checkout" : "/login";
 
   return (
     products && (
@@ -140,10 +141,9 @@ function Cart({ name }) {
                   Shipping and taxes calculated at checkout.
                 </p>
                 <div className="mt-6 d-grid gap-2">
-                  <Link to="/login" className="btn btn-lg cta-ck-btn">
+                  <Link to={redirectTo} className="btn btn-lg cta-ck-btn">
                     Checkout
                   </Link>
-
                   <button className="btn fw-bolder" onClick={handleClose}>
                     Continue Shopping
                     <span aria-hidden="true"> &rarr;</span>
