@@ -2,11 +2,12 @@ import React, { useEffect } from "react";
 import NavbarAdmin from "../components/NavbarAdmin";
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
 function EditProduct() {
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const [name, setName] = useState("");
@@ -65,6 +66,14 @@ function EditProduct() {
     <>
       <NavbarAdmin />
       <div className="container p-5">
+        <div
+          onClick={() => navigate(-1)}
+          className="text-black text-decoration-none mb-2 cursor-pointer"
+        >
+          <h4 className="fs-5">
+            <i className="bi bi-arrow-left fs-5"></i> Return
+          </h4>
+        </div>
         <div className="col-md-5 col-lg-5 mx-auto">
           <h2 className=" text-dark create-account fs-1">Edit product</h2>
           <form

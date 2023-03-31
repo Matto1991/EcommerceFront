@@ -1,13 +1,12 @@
 import Home from "./pages/Home";
-
 import { Routes, Route } from "react-router-dom";
-// import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 //Users
 import SignIn from "./pages/SignIn";
 import SingUp from "./pages/SignUp";
-import AboutProyect from "./components/AboutProyect";
-import Category from "./components/Category";
+import AboutProyect from "./pages/AboutProyect";
+import Category from "./pages/Category";
 import Product from "./pages/Product";
 import Products from "./pages/Products";
 import Cart from "./components/Cart";
@@ -45,28 +44,28 @@ function App() {
         <Route path="/project-details" element={<AboutProyect />} />
         <Route path="/signup" element={<SingUp />} />
         <Route path="/login" element={<SignIn />} />
-        {/* <Route element={<ProtectedRoute />}> */}
-        <Route path="/thanks" element={<PurchaseOrder />} />
-        <Route path="/profile" element={<AdminProfile />} />
-        <Route path="/checkout" element={<CheckOut />} />
-        {/* Admins */}
-        <Route path="/login-admin" element={<SignInAdmin />} />
-        <Route path="/admin" element={<Dashboard />} />
-        <Route path="/profile" element={<AdminProfile />} />
-        <Route path="/admin/products" element={<AdminProduct />} />
-        <Route path="admin/edit/product/:id" element={<EditProduct />} />
-        <Route path="/admin/users" element={<AdminUser />} />
-        <Route path="/admin/create/user" element={<CreateUser />} />
-        <Route path="/admin/edit/user/:id" element={<EditUser />} />
-        <Route path="/admin/edit/admin/:id" element={<EditAdmin />} />
-        <Route path="/admin/orders" element={<AdminOrder />} />
-        <Route path="/orders" element={<AdminOwnOrder />} />
-        <Route path="/admin/create/product" element={<CreateProduct />} />
-        <Route path="admin/edit/product/:id" element={<EditProduct />} />
-        <Route path="/admin/categories" element={<AdminCategories />} />
-        <Route path="/admin/createCategory" element={<CreateCategory />} />
-        <Route path="/admin/editCategory/:id" element={<EditCategory />} />
-        {/* </Route> */}
+        <Route element={<ProtectedRoute />}>
+          <Route path="/thanks" element={<PurchaseOrder />} />
+          <Route path="/profile" element={<AdminProfile />} />
+          <Route path="/checkout" element={<CheckOut />} />
+          {/* Admins */}
+          <Route path="/login-admin" element={<SignInAdmin />} />
+          <Route path="/admin" element={<Dashboard />} />
+          <Route path="/profile" element={<AdminProfile />} />
+          <Route path="/admin/products" element={<AdminProduct />} />
+          <Route path="admin/edit/product/:id" element={<EditProduct />} />
+          <Route path="/admin/users" element={<AdminUser />} />
+          <Route path="/admin/create/user" element={<CreateUser />} />
+          <Route path="/admin/edit/user/:id" element={<EditUser />} />
+          <Route path="/admin/edit/admin/:id" element={<EditAdmin />} />
+          <Route path="/admin/orders" element={<AdminOrder />} />
+          <Route path="/orders" element={<AdminOwnOrder />} />
+          <Route path="/admin/create/product" element={<CreateProduct />} />
+          <Route path="admin/edit/product/:id" element={<EditProduct />} />
+          <Route path="/admin/categories" element={<AdminCategories />} />
+          <Route path="/admin/createCategory" element={<CreateCategory />} />
+          <Route path="/admin/editCategory/:id" element={<EditCategory />} />
+        </Route>
 
         <Route path="*" element={<Error />} />
       </Routes>

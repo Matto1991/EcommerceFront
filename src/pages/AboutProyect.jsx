@@ -1,6 +1,6 @@
 import React from "react";
-import "../components/About.css";
-import Footer from "./Footer";
+import "../pages/About.css";
+import Footer from "../components/Footer";
 import NavbarOther from "../components/NavbarOther";
 
 import "../pages/form.css";

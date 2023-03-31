@@ -2,25 +2,25 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import NavbarOther from "../components/NavbarOther";
-import Footer from "./Footer";
+import Footer from "../components/Footer";
 function Category() {
   const { name } = useParams();
   const [category, setCategory] = useState();
   const [products, setProducts] = useState([]);
 
-  const getCategories = async () => {
-    const response = await axios({
-      method: "GET",
-      url: `${process.env.REACT_APP_BACKEND_URL}/categories/${name}`,
-    });
-
-    setCategory(response.data);
-    setProducts(response.data.products);
-  };
-
   useEffect(() => {
+    const getCategories = async () => {
+      const response = await axios({
+        method: "GET",
+        url: `${process.env.REACT_APP_BACKEND_URL}/categories/${name}`,
+      });
+
+      setCategory(response.data);
+      setProducts(response.data.products);
+    };
+
     getCategories();
-  }, [name]);
+  }, []);
 
   return (
     <div>

@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 import NavbarOther from "../components/NavbarOther";
 import { removeFromCart } from "../redux/cartReducer";
 import axios from "axios";
-import "./Checkout.css";
+import "./checkout.css";
 
 function CheckOut() {
   const products = useSelector((state) => state.cart.products);
@@ -284,7 +284,7 @@ function CheckOut() {
                     className="btn cta-co-btn w-100"
                     onClick={handleCheckout}
                   >
-                    Confirm orderrrrr
+                    Confirm order
                   </button>
                 </div>
                 <div className="mt-5 text-center">

@@ -5,6 +5,7 @@ import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateProduct() {
   const token = useSelector((state) => state.session.token);
@@ -16,6 +17,8 @@ export default function CreateProduct() {
   const [featured, setFeatured] = useState("");
   const [categoryId, setCategoryId] = useState("");
   const [image, setImage] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleCreateProduct = async (event) => {
     event.preventDefault();
@@ -45,6 +48,15 @@ export default function CreateProduct() {
       <NavbarAdmin />
 
       <div className="container p-5">
+        <div
+          onClick={() => navigate(-1)}
+          className="text-black text-decoration-none mb-2 cursor-pointer"
+        >
+          <h4 className="fs-5">
+            <i className="bi bi-arrow-left fs-5"></i> Return
+          </h4>
+        </div>
+
         <div className="col-md-5 col-lg-5 mx-auto">
           <h2 className=" text-dark create-account fs-1">Create product</h2>
 

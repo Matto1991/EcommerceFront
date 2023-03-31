@@ -123,18 +123,6 @@ html {
   --dark-gray-background: rgba(48, 48, 48, 0.085);
 }
 
-/* Start Toastify Styles */
-
-/* .toastify--error .Toastify__toast {
-  color: white;
-  background-color: #20202081 !important;
-  backdrop-filter: blur(3px);
-} */
-
-/* End Toastify Styles */
-
-/* Start Home Navbar Styles */
-
 .navbar-toggler {
   border: none !important;
   outline: none !important;
@@ -705,4 +693,8 @@ html {
 
 .error {
   margin-top: 40px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

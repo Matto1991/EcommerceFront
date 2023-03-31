@@ -3,8 +3,11 @@ import NavbarAdmin from "../components/NavbarAdmin";
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function CreateCategory() {
+  const navigate = useNavigate();
+
   const [name, setName] = useState("");
   const [image, setImage] = useState(null);
 
@@ -26,6 +29,14 @@ function CreateCategory() {
       <NavbarAdmin />
 
       <div className="container p-5 ">
+        <div
+          onClick={() => navigate(-1)}
+          className="text-black text-decoration-none mb-2 cursor-pointer"
+        >
+          <h4 className="fs-5">
+            <i className="bi bi-arrow-left fs-5"></i> Return
+          </h4>
+        </div>
         <div className="col-md-5 col-lg-5 mx-auto">
           <h2 className=" text-dark create-account fs-1">Create Category</h2>
 

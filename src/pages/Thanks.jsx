@@ -189,7 +189,7 @@ function PurchaseOrder() {
             <h5>Help us give you a better experience.</h5>
             <StyledRating
               name="highlight-selected-only"
-              defaultValue={2}
+              defaultValue={4}
               IconContainerComponent={IconContainer}
               getLabelText={(value) => customIcons[value].label}
               highlightSelectedOnly

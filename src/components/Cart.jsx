@@ -10,7 +10,6 @@ import {
 import "./Cart.css";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { setToken } from "../redux/sessionReducer";
 
 function Cart({ name }) {
   const [show, setShow] = useState(false);
@@ -75,7 +74,7 @@ function Cart({ name }) {
                               </Link>
                             </h4>
                             <small className="fw-2 cart-product-price">
-                              U$S {product.price}
+                              US$ {product.price}
                             </small>
                           </div>
                         </div>
@@ -105,12 +104,11 @@ function Cart({ name }) {
                             ></i>
                           </div>
                           <p className="cart-product-subtotal">
-                            subtotal: U$S {product.quantity * product.price}{" "}
+                            subtotal: US$ {product.quantity * product.price}{" "}
                           </p>
                           <IconButton aria-label="delete" size="small">
                             <DeleteIcon
                               fontSize="small"
-                              // className="brown"
                               onClick={() => handleRemoveProduct(product)}
                             />
                           </IconButton>
@@ -134,7 +132,7 @@ function Cart({ name }) {
                             acc + product.price * product.quantity,
                           0
                         )}{" "}
-                        U$S{" "}
+                        US${" "}
                       </strong>
                     </p>
                   )}
