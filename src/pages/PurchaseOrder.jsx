@@ -67,7 +67,9 @@ function PurchaseOrder() {
   const products = useSelector((state) => state.cart.products);
   const token = useSelector((state) => state.session.token);
   const user = useSelector((state) => state.session.user);
+
   const [currentOrders, setCurrentOrders] = useState([]);
+  
   console.log(currentOrders);
   useEffect(() => {
     const getOrders = async () => {
