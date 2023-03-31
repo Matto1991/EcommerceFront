@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
 import "./ProductStyles.css";
-import Categories from "./Categories";
+import Categories from "../components/Categories";
 import NavbarOther from "../components/NavbarOther";
 import Rating from "@mui/material/Rating";
 import { ToastContainer, toast } from "react-toastify";
@@ -53,17 +53,6 @@ function Product() {
           <div className="card mb-3 pt-5 border-0">
             <div className="row g-4 pt-5">
               <div className="col-12 col-lg-8">
-                <div className="d-flex">
-                  <h4>
-                    <i className="bi bi-arrow-left"></i>{" "}
-                    <a
-                      href="/products"
-                      className="text-black text-decoration-none"
-                    >
-                      Back to all products
-                    </a>
-                  </h4>
-                </div>
                 <img
                   className="img-fluid h-100"
                   src={
@@ -113,6 +102,13 @@ function Product() {
                   <ToastContainer className="toast-message" />
                 </div>
               </div>
+            </div>
+            <div className="d-flex mt-4">
+              <Link to="/products" className="text-black text-decoration-none">
+                <h4 className="fs-5">
+                  <i className="bi bi-arrow-left fs-5"></i> Back to all products
+                </h4>
+              </Link>
             </div>
           </div>
         </div>

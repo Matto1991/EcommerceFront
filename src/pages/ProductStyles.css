@@ -1,3 +1,36 @@
+.product-section {
+  margin-top: 7rem;
+  width: 80%;
+}
+
+.product-section-title {
+  font-size: 2.2rem;
+  font-family: "ivyOra";
+  font-weight: 400;
+  color: black;
+}
+
+.category-section-subtitle {
+  width: 50%;
+  font-size: 0.92rem;
+  font-family: "Outfit";
+  font-weight: 100;
+  color: black;
+}
+
+.product-card {
+  height: 100% !important;
+}
+
+.product-image {
+  filter: brightness(100%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.product-image:hover {
+  filter: brightness(90%);
+}
+
 .product-title {
   font-family: "IvyOra";
 }

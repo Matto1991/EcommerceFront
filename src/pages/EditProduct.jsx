@@ -1,15 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavbarAdmin from "../components/NavbarAdmin";
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
-import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
 function EditProduct() {
-  const token = useSelector((state) => state.session);
-
   const { id } = useParams();
 
   const [name, setName] = useState("");
@@ -19,8 +16,30 @@ function EditProduct() {
   const [featured, setFeatured] = useState("");
   const [categoryId, setCategoryId] = useState("");
   const [image, setImage] = useState(null);
+  const setProduct = (product) => {
+    setName(product.name);
+    setDescription(product.description);
+    setPrice(product.price);
+    setStock(product.stock);
+    setFeatured(product.featured);
+    setCategoryId(product.categoryId);
+    setImage(product.images);
+  };
 
-  const handleEditProduct = async (event) => {
+  useEffect(() => {
+    const getProduct = async () => {
+      const response = await axios({
+        method: "GET",
+        url: `${process.env.REACT_APP_BACKEND_URL}/products/${id}`,
+      });
+
+      setProduct(response.data);
+    };
+
+    getProduct();
+  }, []);
+
+  const handleProductEdit = async (event) => {
     event.preventDefault();
 
     const formData = new FormData();
@@ -35,7 +54,6 @@ function EditProduct() {
     const response = await axios({
       headers: {
         "Content-Type": "multipart/form-data",
-        //   Authorization: `bearer ${token}`,
       },
       method: "PATCH",
       url: `${process.env.REACT_APP_BACKEND_URL}/products/${id}`,
@@ -53,7 +71,7 @@ function EditProduct() {
           <form
             className="row g-3"
             onSubmit={(event) => {
-              handleEditProduct(event);
+              handleProductEdit(event);
             }}
           >
             <div className="col-md-6">

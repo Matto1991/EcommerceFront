@@ -8,7 +8,7 @@ import Cart from "../components/Cart";
 import { Avatar } from "@mui/material";
 import { setToken } from "../redux/sessionReducer";
 
-function NavbarNav() {
+function NavbarHome() {
   const [isScrolling, setIsScrolling] = useState(false);
 
   const products = useSelector((state) => state.cart.products);
@@ -73,13 +73,6 @@ function NavbarNav() {
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
               }`}
             >
-              <Nav.Link href="/about-us">About</Nav.Link>
-            </div>
-            <div
-              className={`position-relative ${
-                isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
-              }`}
-            >
               <Nav.Link href="/project-details">Project&nbsp;detalis</Nav.Link>
             </div>
 
@@ -104,24 +97,22 @@ function NavbarNav() {
                 Inspiration
               </NavDropdown.Item>
             </NavDropdown>
-              <Avatar
-                alt="Remy Sharp"
-                src="/img/imagenAdmin.png"
-                className="navbar-avatar"
-              />
-              <NavDropdown  className={` ${
+            <Avatar
+              alt="Remy Sharp"
+              src="/img/imagenAdmin.png"
+              className="navbar-avatar ms-4"
+            />
+            <NavDropdown
+              className={` ${
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
-              }`}>
-                <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-                <NavDropdown.Item href="/orders">Orders</NavDropdown.Item>
-                <NavDropdown.Item onClick={handleLogout}>
-                  Logout
-                </NavDropdown.Item>
-              </NavDropdown>
-            <Nav.Link className="ms-3 d-flex">
-              {/* {products && products.cartTotalQuantity > 0 && ( */}
+              }`}
+            >
+              <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+              <NavDropdown.Item href="/orders">Orders</NavDropdown.Item>
+              <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
+            </NavDropdown>
+            <Nav.Link className="d-flex">
               <Cart />
-              {/* )} */}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -130,4 +121,4 @@ function NavbarNav() {
   );
 }
 
-export default NavbarNav;
+export default NavbarHome;

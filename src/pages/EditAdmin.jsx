@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NavbarAdmin from "../components/NavbarAdmin";
 
-export default function EditUser() {
+export default function EditAdmin() {
   const token = useSelector((state) => state.session.token);
   const { id } = useParams();
   const [firstName, setFirstName] = useState("");
@@ -26,7 +26,7 @@ export default function EditUser() {
           Authorization: `Bearer ${token}`,
         },
         method: "GET",
-        url: `${process.env.REACT_APP_BACKEND_URL}/users/${id}`,
+        url: `${process.env.REACT_APP_BACKEND_URL}/admins/${id}`,
       });
 
       setUser(response.data);
@@ -35,7 +35,7 @@ export default function EditUser() {
     getUser();
   }, []);
 
-  const handleUserEdit = async (event) => {
+  const handleAdminEdit = async (event) => {
     event.preventDefault();
 
     const response = await axios({
@@ -43,14 +43,14 @@ export default function EditUser() {
         Authorization: `Bearer ${token}`,
       },
       method: "PATCH",
-      url: `${process.env.REACT_APP_BACKEND_URL}/users/${id}`,
+      url: `${process.env.REACT_APP_BACKEND_URL}/admins/${id}`,
       data: { firstname: firstName, lastname: lastName, email },
     });
 
     if (response.data.error) {
       toastMessage("Unexpected error");
     } else {
-      toast.success("Successfully edited User");
+      toast.success("Successfully edited Admin");
     }
   };
 
@@ -61,12 +61,12 @@ export default function EditUser() {
 
       <div className="container p-5">
         <div className="col-md-5 col-lg-5 mx-auto">
-          <h2 className=" text-dark create-account fs-1">Edit user</h2>
+          <h2 className=" text-dark create-account fs-1">Edit admin</h2>
 
           <form
             className="row g-3"
             onSubmit={(event) => {
-              handleUserEdit(event);
+              handleAdminEdit(event);
             }}
           >
             <div className="col-md-6">

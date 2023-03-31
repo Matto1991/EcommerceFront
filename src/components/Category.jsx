@@ -29,9 +29,15 @@ function Category() {
         <>
           <NavbarOther />
           <div className="category-section mx-auto pt-8">
-            <h2 className="category-section-title mt-5 rounded">
-              {category.name} collection
-            </h2>
+            <div className="d-flex align-items-center flex-column w-100 mb-4">
+              <h2 className="category-section-title rounded mt-5 mb-3">
+                {category.name} collection
+              </h2>
+              <p className="category-section-subtitle text-center">
+                A small batch assortment in our most popular materials. Ready to
+                ship within 3-5 days from our artisan workrooms.
+              </p>
+            </div>
             {products.map((product) => {
               return (
                 <div className="row g-4" key={product.id}>
@@ -46,7 +52,7 @@ function Category() {
                       <div className="row pt-4">
                         <div className="col-12 col-lg-8 p-0 ">
                           <img
-                            className="img-fluid h-100 w-100"
+                            className="product-image img-fluid h-100 w-100"
                             src={
                               typeof product.images === "object"
                                 ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`

@@ -17,6 +17,7 @@ function SingUp() {
 
   const handleUserCreation = async (event) => {
     event.preventDefault();
+
     const formData = new FormData();
     formData.append("firstname", firstName);
     formData.append("lastname", lastName);

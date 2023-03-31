@@ -70,13 +70,6 @@ function NavbarOther() {
                 isScrolling ? "navbar-dynamic-text" : "navbar-other-static-text"
               }`}
             >
-              <Nav.Link href="/about-us">About</Nav.Link>
-            </div>
-            <div
-              className={`position-relative ${
-                isScrolling ? "navbar-dynamic-text" : "navbar-other-static-text"
-              }`}
-            >
               <Nav.Link href="/project-details">Project&nbsp;details</Nav.Link>
             </div>
             <NavDropdown className={"navbar-dynamic-text"} title="Categories">
@@ -106,10 +99,10 @@ function NavbarOther() {
               <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link className="ms-3 d-flex">
-            {/* {products && products.cartTotalQuantity > 0 && ( */}
+              {/* {products && products.cartTotalQuantity > 0 && ( */}
               <Cart />
-            {/* )} */}
-            </Nav.Link> 
+              {/* )} */}
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

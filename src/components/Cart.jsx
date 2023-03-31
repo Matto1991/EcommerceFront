@@ -9,7 +9,6 @@ import {
 } from "../redux/cartReducer";
 import "./Cart.css";
 import IconButton from "@mui/material/IconButton";
-
 import DeleteIcon from "@mui/icons-material/Delete";
 
 function Cart({ name }) {
@@ -32,21 +31,26 @@ function Cart({ name }) {
   const handleDecreaseCart = (product) => dispatch(decreaseCart(product));
   const handleIncrementCart = (product) => dispatch(increaseCart(product));
 
-  console.log(products);
-
   return (
     products && (
       <>
         <span
           onClick={handleShow}
-          className="ms-auto bi bi-bag cart-nav position-relative"
+          className="bi bi-bag cart-nav cart-bag-icon"
+          onMouseEnter={(e) => {
+            e.target.classList.remove("bi-bag");
+            e.target.classList.add("bi-bag-fill");
+          }}
+          onMouseLeave={(e) => {
+            e.target.classList.remove("bi-bag-fill");
+            e.target.classList.add("bi-bag");
+          }}
         >
           {name}
         </span>
-        <small className="mx-3 cart-product-number">
+        <small className="cart-product-number">
           {products.reduce((a, b) => Number(a) + Number(b.quantity), 0)}
         </small>
-        {/* <small className="cart-product-number"> {products.length}</small> */}
 
         <Offcanvas show={show} onHide={handleClose} placement={"end"}>
           <Offcanvas.Header closeButton>
@@ -85,7 +89,7 @@ function Cart({ name }) {
                             />
                           </div>
                         </div>
-                        <div className=" d-flex justify-content-between mt-3 text-end ">
+                        <div className="d-flex justify-content-between mt-3 text-end ">
                           <div className="border rounded border-1 d-flex align-items-center">
                             <i
                               className="btn border-0 bi bi-caret-left"

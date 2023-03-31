@@ -1,30 +1,41 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import NavbarAdmin from "../components/NavbarAdmin";
 import { Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-function AdminProduct() {
+export default function AdminProduct() {
+  const token = useSelector((state) => state.session.token);
   const [products, setProducts] = useState([]);
 
-  const getProduct = async () => {
-    const response = await axios({
-      method: "get",
-      url: `${process.env.REACT_APP_BACKEND_URL}/products`,
-    });
-    setProducts(response.data);
-  };
   useEffect(() => {
+    const getProduct = async () => {
+      const response = await axios({
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        method: "GET",
+        url: `${process.env.REACT_APP_BACKEND_URL}/products`,
+      });
+      setProducts(response.data);
+    };
+
     getProduct();
   }, []);
 
-  const handleDelete = async (id) => {
+  const handlProductDelete = async (id) => {
     const response = await axios({
-      method: "delete",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      method: "DELETE",
       url: `${process.env.REACT_APP_BACKEND_URL}/products/${id}`,
     });
-    setProducts(products.filter((item) => item.id !== Number(response.data)));
+    setProducts(
+      products.filter((product) => product.id !== Number(response.data))
+    );
   };
 
   return (
@@ -50,30 +61,28 @@ function AdminProduct() {
             </thead>
             {products.map((product) => {
               return (
-                <>
-                  <tbody>
-                    <tr>
-                      <th scope="row"> {product.name}</th>
-                      <td> U$S {product.price} </td>
-                      <td> {product.stock}</td>
-                      <td>
-                        <Link to={`/admin/edit/product/${product.id}`}>
-                          <button className="edit-btn mb-2 w-100">Edit</button>
-                        </Link>
-                      </td>
-                      <td>
-                        <IconButton
-                          type="submit"
-                          aria-label="delete"
-                          size="small"
-                          onClick={() => handleDelete(product.id)}
-                        >
-                          <DeleteIcon fontSize="small" />
-                        </IconButton>
-                      </td>
-                    </tr>
-                  </tbody>
-                </>
+                <tbody key={product.id}>
+                  <tr>
+                    <th scope="row"> {product.name}</th>
+                    <td> US$ {product.price} </td>
+                    <td> {product.stock}</td>
+                    <td>
+                      <Link to={`/admin/edit/product/${product.id}`}>
+                        <button className="edit-btn mb-2 w-100">Edit</button>
+                      </Link>
+                    </td>
+                    <td>
+                      <IconButton
+                        type="submit"
+                        aria-label="delete"
+                        size="small"
+                        onClick={() => handlProductDelete(product.id)}
+                      >
+                        <DeleteIcon fontSize="small" />
+                      </IconButton>
+                    </td>
+                  </tr>
+                </tbody>
               );
             })}
           </table>
@@ -82,5 +91,3 @@ function AdminProduct() {
     </div>
   );
 }
-
-export default AdminProduct;

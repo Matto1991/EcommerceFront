@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import { ToastContainer, toast } from "react-toastify";
@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import NavbarAdmin from "../components/NavbarAdmin";
 
 function CreateUser() {
+  const token = useSelector((state) => state.session.token);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,20 +19,25 @@ function CreateUser() {
 
   const handleUserCreation = async (event) => {
     event.preventDefault();
+
     const formData = new FormData();
     formData.append("firstname", firstName);
     formData.append("lastname", lastName);
     formData.append("email", email);
     formData.append("password", password);
     formData.append("image", image);
-    console.log(formData);
+
     const response = await axios({
-      method: "post",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      method: "POST",
       url: `${process.env.REACT_APP_BACKEND_URL}${
-        !isAdmin ? "/users" : "/admins"
+        isAdmin ? "/admins" : "/users"
       }`,
       data: formData,
     });
+
     if (response.data.error) {
       if (response.data.error === "Repeated email") {
         toastMessage("You are already registered!");
@@ -39,18 +45,8 @@ function CreateUser() {
         toastMessage("Unexpected error");
       }
     } else {
-      toast.success("Success");
-      handleCleanForm();
+      toast.success(`Successfully created ${isAdmin ? "Admin" : "User"}`);
     }
-  };
-
-  const handleCleanForm = async () => {
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setPassword("");
-    setImage(null);
-    setIsAdmin("");
   };
 
   return (
@@ -60,7 +56,7 @@ function CreateUser() {
 
       <div className="container p-5">
         <div className="col-md-5 col-lg-5 mx-auto">
-          <h2 className=" text-dark create-account fs-1">Create</h2>
+          <h2 className=" text-dark create-account fs-1">Create User</h2>
 
           <form
             className="row g-3"

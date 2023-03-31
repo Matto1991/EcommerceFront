@@ -6,7 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
 
-function AdminCreateProduct() {
+export default function CreateProduct() {
   const token = useSelector((state) => state.session.token);
 
   const [name, setName] = useState("");
@@ -47,7 +47,7 @@ function AdminCreateProduct() {
 
       <div className="container p-5">
         <div className="col-md-5 col-lg-5 mx-auto">
-          <h2 className=" text-dark create-account fs-1">Create</h2>
+          <h2 className=" text-dark create-account fs-1">Create product</h2>
 
           <form
             className="row g-3"
@@ -175,5 +175,3 @@ function AdminCreateProduct() {
     </>
   );
 }
-
-export default AdminCreateProduct;

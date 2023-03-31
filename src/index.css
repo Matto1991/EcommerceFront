@@ -267,13 +267,16 @@ html {
 }
 
 .navbar-static .cart-product-number {
+  margin-top: 0.15rem;
+  margin-left: 1.1rem;
   font-size: 0.9rem;
   color: white;
   font-weight: 100;
 }
 
 .navbar-dynamic .cart-product-number {
-  font-size: 0.9rem;
+  margin-top: 0.15rem;
+  margin-left: 1.1rem;
   color: black;
   font-weight: 100;
 }
@@ -372,6 +375,8 @@ html {
 }
 
 .navbar-other-static .cart-product-number {
+  margin-top: 0.15rem;
+  margin-left: 1.1rem;
   font-size: 0.9rem;
   color: black;
   font-weight: 100;
@@ -627,14 +632,10 @@ html {
 }
 
 .category-section-title {
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   font-family: "ivyOra";
   font-weight: 400;
-  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
-  color: #c3a997;
-  border: 1px solid #b99984;
-  /* border: 1.5px solid #024738e3; */
-  width: fit-content;
+  color: black;
 }
 
 .categories-card {
@@ -655,6 +656,7 @@ html {
 }
 
 /* End Cateogries Styles */
+
 @media only screen and (max-width: 1024px) {
   .hero-title {
     font-size: 3rem;
