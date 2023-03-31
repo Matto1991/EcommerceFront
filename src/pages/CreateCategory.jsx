@@ -25,12 +25,12 @@ function CreateCategory() {
     <>
       <NavbarAdmin />
 
-      <div className="container p-5">
+      <div className="container p-5 ">
         <div className="col-md-5 col-lg-5 mx-auto">
           <h2 className=" text-dark create-account fs-1">Create Category</h2>
 
           <form
-            className="row g-3"
+            className="row g-3 "
             onSubmit={(event) => {
               handleCategoryCreation(event);
             }}
@@ -50,27 +50,28 @@ function CreateCategory() {
                 required
               />
             </div>
-
-            <IconButton
-              aria-label="upload picture"
-              component="label"
-              className=" mt-3"
-            >
-              <input
-                hidden
-                accept="image/*"
-                type="file"
-                name="image"
-                onChange={(event) => setImage(event.target.files[0])}
-                required
-              />
-              <small className="me-2 input-tx text-dark">Upload </small>{" "}
-              <PhotoCamera className="input-tx text-dark" />
-            </IconButton>
-
+            <div className="mx-auto">
+              <IconButton
+                aria-label="upload picture"
+                component="label"
+                className=" mt-3"
+              >
+                <input
+                  hidden
+                  accept="image/*"
+                  type="file"
+                  name="image"
+                  onChange={(event) => setImage(event.target.files[0])}
+                  required
+                  className=""
+                />
+                <small className="me-2 input-tx text-dark">Upload </small>{" "}
+                <PhotoCamera className="input-tx text-dark" />
+              </IconButton>
+            </div>
             <div className="col-6">
               <button
-                className="btn btn-success sign-up-btn border-0 w-75 m-4 fs-5 d-block mx-auto"
+                className="btn cta text-white sign-up-btn border-0 w-75 m-4 fs-5 d-block mx-auto"
                 type="submit"
               >
                 Create

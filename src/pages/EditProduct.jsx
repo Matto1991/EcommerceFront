@@ -179,9 +179,9 @@ function EditProduct() {
               <small className="me-2 input-tx text-dark">Upload </small>{" "}
               <PhotoCamera className="input-tx text-dark" />
             </IconButton>
-            <div className="col-6">
+            <div className="col-6 mx-auto">
               <button
-                className="btn btn-success sign-up-btn border-0 w-75 m-4 fs-5 d-block mx-auto"
+                className="btn cta text-white  border-0 w-75  fs-5 "
                 type="submit"
               >
                 Edit
