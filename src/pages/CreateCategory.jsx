@@ -14,11 +14,11 @@ function CreateCategory() {
     formData.append("name", name);
 
     formData.append("image", image);
-    const response = await axios.post(
-      `${process.env.REACT_APP_BACKEND_URL}/categories/store`,
-
-      formData
-    );
+    const response = await axios({
+      method: "post",
+      url: `${process.env.REACT_APP_BACKEND_URL}/categories/store`,
+      data: formData,
+    });
   };
 
   return (

@@ -32,7 +32,7 @@ function CheckOut() {
   };
 
   const handleCheckout = async () => {
-    await axios({
+    const response = await axios({
       headers: {
         Authorization: `Bearer ${token}`,
       },

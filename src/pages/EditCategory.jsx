@@ -16,10 +16,12 @@ function EditCategory() {
     formData.append("name", name);
 
     formData.append("image", image);
-    const response = await axios.patch(
-      `${process.env.REACT_APP_BACKEND_URL}/categories/${id}`,
+    const response = await axios({
+      method: "patch",
+      url: `${process.env.REACT_APP_BACKEND_URL}/categories/${id}`,
+     data: formData
+    }
 
-      formData
     );
   };
 

@@ -22,10 +22,11 @@ function Login() {
     event.preventDefault();
     const formData = { email, password };
 
-    const response = await axios.post(
-      `${process.env.REACT_APP_BACKEND_URL}/tokens`,
-      formData
-    );
+    const response = await axios({
+      method: "post",
+      url: `${process.env.REACT_APP_BACKEND_URL}/tokens`,
+      data: formData,
+    });
 
     if (response.data.message === "Invalid credentials") {
       invalidCredentials();

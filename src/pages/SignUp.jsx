@@ -23,10 +23,12 @@ function SingUp() {
     formData.append("email", email);
     formData.append("password", password);
     formData.append("image", image);
-    const response = await axios.post(
-      `${process.env.REACT_APP_BACKEND_URL}/users`,
-      formData
-    );
+
+    const response = await axios({
+      method: "post",
+      url: `${process.env.REACT_APP_BACKEND_URL}/users`,
+      data: formData,
+    });
     if (response.data.message === "User already exists") {
       userAlreadyExists();
     } else {

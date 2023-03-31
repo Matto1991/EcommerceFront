@@ -27,8 +27,6 @@ function AdminCategories() {
       method: "delete",
       url: `${process.env.REACT_APP_BACKEND_URL}/categories/${id}`,
     });
-    // console.log(typeof response.data);
-    // console.log(users);
     setCategories(
       categories.filter((item) => item.id !== Number(response.data))
     );

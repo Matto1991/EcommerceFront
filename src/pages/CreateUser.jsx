@@ -25,11 +25,13 @@ function CreateUser() {
     formData.append("password", password);
     formData.append("image", image);
     console.log(formData);
-    const response = await axios.post(
-      `${process.env.REACT_APP_BACKEND_URL}${!isAdmin ? "/users" : "/admins"}`,
-
-      formData
-    );
+    const response = await axios({
+      method: "post",
+      url: `${process.env.REACT_APP_BACKEND_URL}${
+        !isAdmin ? "/users" : "/admins"
+      }`,
+      data: formData,
+    });
     if (response.data.error) {
       if (response.data.error === "Repeated email") {
         toastMessage("You are already registered!");

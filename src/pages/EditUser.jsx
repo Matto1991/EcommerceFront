@@ -23,11 +23,11 @@ function EditUser() {
     // formData.append("password", password);
     // formData.append("image", image);
 
-    const response = await axios.patch(
-      `${process.env.REACT_APP_BACKEND_URL}/users/${id}`,
-
-      { firstname: firstName, lastname: lastName, email }
-    );
+    const response = await axios({
+      method: "patch",
+      url: `${process.env.REACT_APP_BACKEND_URL}/users/${id}`,
+      data: { firstname: firstName, lastname: lastName, email },
+    });
     if (response.data.error) {
       toastMessage("Unexpected error");
     } else {
