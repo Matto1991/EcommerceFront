@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AdminDash from "../components/AdminDash";
+import { Avatar } from "@mui/material";
 
 function AdminUser() {
   const token = useSelector((state) => state.session.token);
@@ -93,7 +94,14 @@ function AdminUser() {
                   <tbody key={user.id}>
                     <tr>
                       <th scope="row">{user.id}</th>
-                      <td>{user.avatar}</td>
+                      <td>
+                        {" "}
+                        <Avatar
+                          alt="Remy Sharp"
+                          src={user.images}
+                          className="navbar-avatar ms-4"
+                        />
+                      </td>
                       <td>
                         {" "}
                         {user.firstname} {user.lastname}{" "}
