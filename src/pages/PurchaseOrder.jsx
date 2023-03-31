@@ -184,7 +184,7 @@ function PurchaseOrder() {
                 <td>payment.</td>
                 <td>
                   <ul className="list-group text-end list-unstyled">
-                    <li className="textstyle">Subtotal total.products</li>
+                    <li className="textstyle">Subtotal total {products}</li>
                     <li className="">Shipping US$160</li>
                     <li className="">Tax US$60</li>
                     <li className="">Order Total</li>
