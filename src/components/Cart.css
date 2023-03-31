@@ -2,6 +2,19 @@
   color: var(--brand-dark-brown) !important;
 }
 
+.cart-product-title {
+  font-size: 1.3rem;
+  color: #98866b;
+}
+
+.cart-product-price {
+  font-size: 0.95rem;
+}
+
+.cart-product-subtotal {
+  font-size: 0.9rem;
+}
+
 .cta-ck-btn {
   color: white !important;
   padding: 0.5rem 0.8rem 0.5rem 0.8rem;

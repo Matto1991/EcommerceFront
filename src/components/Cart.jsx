@@ -69,12 +69,14 @@ function Cart({ name }) {
                             <h4>
                               <Link
                                 to="/product/:name"
-                                className="brown text-decoration-none"
+                                className="cart-product-title text-decoration-none"
                               >
                                 {product.name}
                               </Link>
                             </h4>
-                            <small className="fw-2 ">U$S {product.price}</small>
+                            <small className="fw-2 cart-product-price">
+                              U$S {product.price}
+                            </small>
                           </div>
                         </div>
                         <div className="col-4">
@@ -102,7 +104,7 @@ function Cart({ name }) {
                               onClick={() => handleIncrementCart(product)}
                             ></i>
                           </div>
-                          <p>
+                          <p className="cart-product-subtotal">
                             subtotal: U$S {product.quantity * product.price}{" "}
                           </p>
                           <IconButton aria-label="delete" size="small">
