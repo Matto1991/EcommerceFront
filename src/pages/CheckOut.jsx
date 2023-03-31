@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useSelector, useDispatch } from "react-redux";
@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 import NavbarOther from "../components/NavbarOther";
 import { removeFromCart } from "../redux/cartReducer";
 import axios from "axios";
-import "./checkout.css";
+import "./Checkout.css";
 
 function CheckOut() {
   const products = useSelector((state) => state.cart.products);
@@ -26,9 +26,8 @@ function CheckOut() {
   const [zipcode, setZipcode] = useState("");
   const [payment_method, setPayment_method] = useState("");
 
-  const [newOrder, setNewOrder] = useState(null);
-
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleRemoveProduct = (product) => {
     dispatch(removeFromCart(product));
@@ -36,11 +35,11 @@ function CheckOut() {
 
   const handleCheckout = async () => {
     const response = await axios({
+      method: "POST",
+      url: `${process.env.REACT_APP_BACKEND_URL}/orders`,
       headers: {
         Authorization: `Bearer ${token}`,
       },
-      method: "POST",
-      url: `${process.env.REACT_APP_BACKEND_URL}/orders`,
       data: {
         products,
         details: {
@@ -56,8 +55,7 @@ function CheckOut() {
         },
       },
     });
-    setNewOrder(response.data);
-    console.log(response.data);
+    if (response) navigate("/thanks", { state: response.data });
   };
 
   return (
@@ -282,14 +280,12 @@ function CheckOut() {
                   Shipping and taxes calculated at checkout.
                 </p>
                 <div className="mt-6 d-grid gap-2 text-center">
-                  <Link to="/thanks" state={newOrder}>
-                    <button
-                      className="btn cta-co-btn w-100"
-                      onClick={handleCheckout}
-                    >
-                      Confirm order
-                    </button>
-                  </Link>
+                  <button
+                    className="btn cta-co-btn w-100"
+                    onClick={handleCheckout}
+                  >
+                    Confirm orderrrrr
+                  </button>
                 </div>
                 <div className="mt-5 text-center">
                   <Link to={"/"}>

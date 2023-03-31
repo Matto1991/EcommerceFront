@@ -59,7 +59,6 @@ function EditProduct() {
       url: `${process.env.REACT_APP_BACKEND_URL}/products/${id}`,
       data: formData,
     });
-    console.log(response.data);
   };
 
   return (
