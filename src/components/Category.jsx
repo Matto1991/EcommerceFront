@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import NavbarOther from "../components/NavbarOther";
+import Footer from "./Footer";
 function Category() {
   const { name } = useParams();
   const [category, setCategory] = useState();
@@ -30,10 +31,10 @@ function Category() {
           <NavbarOther />
           <div className="category-section mx-auto pt-8">
             <div className="d-flex align-items-center flex-column w-100 mb-4">
-              <h2 className="category-section-title rounded mt-5 mb-3">
+              <h2 className="category-section-title rounded mt-5 mb-3 ">
                 {category.name} collection
               </h2>
-              <p className="category-section-subtitle text-center">
+              <p className="category-section-subtitle text-center fs-5 ">
                 A small batch assortment in our most popular materials. Ready to
                 ship within 3-5 days from our artisan workrooms.
               </p>
@@ -47,12 +48,12 @@ function Category() {
                   >
                     <div
                       className="card mb-3 
-                   border-0"
+                   border-0 rounded"
                     >
                       <div className="row pt-4">
-                        <div className="col-12 col-lg-8 p-0 ">
+                        <div className="col-12 col-lg-8 p-0  ">
                           <img
-                            className="product-image img-fluid h-100 w-100"
+                            className="product-image img-fluid "
                             src={
                               typeof product.images === "object"
                                 ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
@@ -62,7 +63,7 @@ function Category() {
                           />
                         </div>
                         <div className="col-12 col-lg-4 p-0">
-                          <div className="categories-card rounded-end card-body h-100 justify-content-center align-items-center d-flex flex-column">
+                          <div className="categories-card card-body h-100 justify-content-center align-items-center d-flex flex-column">
                             <h4 className="categories-card-title card-title pb-5 ">
                               {product.name}
                             </h4>
@@ -93,6 +94,7 @@ function Category() {
               );
             })}
           </div>
+          <Footer />
         </>
       )}
     </div>

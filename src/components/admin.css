@@ -5,7 +5,12 @@
 }
 
 .navbar-admin {
-  background-color: #dfd7cf;
+  position: sticky !important;
+  top: 0px;
+  z-index: 100;
+  background-color: #271c15;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .dropdown-foto-admin {
@@ -35,7 +40,6 @@
 }
 
 .edit-btn:hover {
-  color: blue;
+  color: #975d34 !important;
   background-color: transparent;
 }
-

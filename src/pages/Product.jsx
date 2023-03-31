@@ -80,7 +80,7 @@ function Product() {
                     <small className="product-price-small">from</small> U$S{" "}
                     {product.price}
                   </h4>
-                  <h5 className="border-top card-text product-description border-bottom pt-4 pb-3 ">
+                  <h5 className="border-top card-text product-description border-bottom pt-4 pb-3 fs-5">
                     {product.description}
                   </h5>
                   <h5 className="product-additional-info">SHOWN</h5>

@@ -3,14 +3,13 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "../redux/sessionReducer";
 import { useNavigate, Link } from "react-router-dom";
-import "./form.css";
+import "./Form.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
   const user = useSelector((state) => state.session.user);
   const token = useSelector((state) => state.session.token);
-
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -37,7 +36,7 @@ function Login() {
       userNotFound();
     } else {
       dispatch(setToken(response.data));
-      console.log(response.data)
+      console.log(response.data);
       navigate("/");
     }
   };

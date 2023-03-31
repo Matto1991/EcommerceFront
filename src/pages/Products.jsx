@@ -27,7 +27,7 @@ function Products() {
           <h2 className="product-section-title rounded mt-2 mb-3">
             All products
           </h2>
-          <p className="category-section-subtitle text-center">
+          <p className="category-section-subtitle text-center fs-5 ">
             Rooted in sculpted forms, luxurious texture, and a reverence for
             craftsmanship, each piece is definitively modern, yet an enduring
             classic.
@@ -36,7 +36,7 @@ function Products() {
         <div className="row g-4 container-fluid">
           {products.map((product) => {
             return (
-              <div key={product.id} className="col-12 col-md-6 mt-5">
+              <div key={product.id} className="col-12 col-md-6 mt-5 p-3">
                 <Link
                   to={`/product/${product.id}`}
                   className="text-reset text-decoration-none"
@@ -49,7 +49,7 @@ function Products() {
                           : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `
                       }
                       alt={`${product.name}`}
-                      className="product-image rounded-top"
+                      className="product-image rounded-top "
                       width="100%"
                     />
                     <div className="card-body rounded-bottom featured-card-body d-flex justify-content-between p-4">

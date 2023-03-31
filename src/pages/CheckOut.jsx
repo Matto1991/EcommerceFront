@@ -65,7 +65,7 @@ function CheckOut() {
       <>
         <NavbarOther />
         <div className="container order-box">
-          <div className="row p-5 h-100 border rounded ck-form ">
+          <div className="row p-3 h-100 border rounded ">
             <div className="col-md-6 ">
               <form className="form-control border-0 rounded p-2">
                 <h3 className="mb-2">Contact information</h3>
@@ -281,9 +281,12 @@ function CheckOut() {
                 <p className="mt-1 text-secondary-light">
                   Shipping and taxes calculated at checkout.
                 </p>
-                <div className="mt-6 d-grid gap-2">
+                <div className="mt-6 d-grid gap-2 text-center">
                   <Link to="/thanks" state={newOrder}>
-                    <button className="btn cta-co-btn" onClick={handleCheckout}>
+                    <button
+                      className="btn cta-co-btn w-100"
+                      onClick={handleCheckout}
+                    >
                       Confirm order
                     </button>
                   </Link>

@@ -5,6 +5,7 @@ import NavbarAdmin from "../components/NavbarAdmin";
 import { Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
+import AdminDash from "../components/AdminDash";
 
 export default function AdminProduct() {
   const token = useSelector((state) => state.session.token);
@@ -39,55 +40,61 @@ export default function AdminProduct() {
   };
 
   return (
-    <div>
+    <>
       <NavbarAdmin />
-      <section className="container">
-        <div className="d-flex justify-content-between pt-4">
-          <h2 className="d-inline">Products</h2>
-          <Link to="/admin/create/product">
-            <button className="btn btn-outline-success btn-m">
-              Add product
-            </button>
-          </Link>
-        </div>
-        <div className="table-responsive">
-          <table className="table table-striped table-hover border border rounded shadow mt-5">
-            <thead>
-              <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Stock</th>
-              </tr>
-            </thead>
-            {products.map((product) => {
-              return (
-                <tbody key={product.id}>
-                  <tr>
-                    <th scope="row"> {product.name}</th>
-                    <td> US$ {product.price} </td>
-                    <td> {product.stock}</td>
-                    <td>
-                      <Link to={`/admin/edit/product/${product.id}`}>
-                        <button className="edit-btn mb-2 w-100">Edit</button>
-                      </Link>
-                    </td>
-                    <td>
-                      <IconButton
-                        type="submit"
-                        aria-label="delete"
-                        size="small"
-                        onClick={() => handlProductDelete(product.id)}
-                      >
-                        <DeleteIcon fontSize="small" />
-                      </IconButton>
-                    </td>
-                  </tr>
-                </tbody>
-              );
-            })}
-          </table>
-        </div>
-      </section>
-    </div>
+
+      <div className="d-flex">
+        <AdminDash />
+
+        <section className="container">
+          <div className="d-flex justify-content-between pt-4">
+            <h2 className="d-inline">Products</h2>
+            <Link to="/admin/create/product">
+              <button className="btn cta text-white btn-m">Add product</button>
+            </Link>
+          </div>
+          <div className="table-responsive">
+            <table className="table table-striped table-hover border border rounded shadow mt-5 ">
+              <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Stock</th>
+                  <th scope="col" className="text-end">
+                    Options
+                  </th>
+                </tr>
+              </thead>
+              {products.map((product) => {
+                return (
+                  <tbody key={product.id}>
+                    <tr>
+                      <th scope="row"> {product.name}</th>
+                      <td> US$ {product.price} </td>
+                      <td> {product.stock}</td>
+                      <td className="d-flex justify-content-end">
+                        <Link to={`/admin/edit/product/${product.id}`}>
+                          <button className="edit-btn mb-2 w-100 me-3">
+                            Edit
+                          </button>
+                        </Link>
+                        <IconButton
+                          type="submit"
+                          aria-label="delete"
+                          size="small"
+                          onClick={() => handlProductDelete(product.id)}
+                        >
+                          <DeleteIcon fontSize="small" />
+                        </IconButton>
+                      </td>
+                    </tr>
+                  </tbody>
+                );
+              })}
+            </table>
+          </div>
+        </section>
+      </div>
+    </>
   );
 }

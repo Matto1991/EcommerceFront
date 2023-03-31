@@ -539,8 +539,8 @@ html {
   width: 12rem;
   padding: 0.9rem 0.8rem 0.9rem 0.8rem;
   font-size: 1.05rem;
-  color: var(--brand-green);
-  background-color: var(--dark-gray-background);
+  color: #fff;
+  background-color: #4b2e1ae8 !important;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out 0.1s,
     color 0.2s ease-in-out 0.1s;
@@ -552,7 +552,7 @@ html {
 
 .cta:hover {
   color: #fff;
-  background-color: var(--brand-green);
+  background-color: #4b2e1aca !important;
 }
 
 .categories-section {
@@ -592,13 +592,13 @@ html {
 }
 
 .category-card-title {
-  color: var(--brand-ligth-brown) !important;
+  color: black !important;
 }
 
 .inspiration-section {
   margin-top: 5rem;
   padding: 3rem 0rem 3rem 0rem;
-  background-color: rgba(48, 48, 48, 0.024);
+  background-color: var(--dark-gray-background);
   width: 100%;
   height: fit-content;
 }
@@ -612,8 +612,8 @@ html {
   padding: 0.9rem 0.8rem 0.9rem 0.8rem;
   font-size: 1rem;
   font-weight: 200;
-  color: var(--brand-green);
-  background-color: var(--dark-gray-background);
+  color: #fff;
+  background-color: #4b2e1ae8 !important;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out 0.1s,
     color 0.2s ease-in-out 0.1s;
@@ -621,7 +621,7 @@ html {
 
 .inspiration-cta:hover {
   color: #fff;
-  background-color: var(--brand-green);
+  background-color: #4b2e1aca !important;
 }
 /* End Home Styles */
 
@@ -639,7 +639,7 @@ html {
 }
 
 .categories-card {
-  background-color: rgba(245, 245, 245, 0.742);
+  background-color: var(--dark-gray-background);
 }
 
 .categories-card-title {

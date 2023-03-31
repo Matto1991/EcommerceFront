@@ -2,12 +2,15 @@ import React from "react";
 import "../components/About.css";
 import Footer from "./Footer";
 import NavbarOther from "../components/NavbarOther";
+
+import "../pages/Form.css";
+
 export default function AboutProyect() {
   return (
     <>
       <NavbarOther />
-      <div className="row hero-about">
-        <div className="col-12 position-relative"></div>
+      <div className="hero-about">
+        <div className=""></div>
       </div>
 
       <div className="container mt-5">
@@ -177,7 +180,7 @@ export default function AboutProyect() {
               <div className="card-body mt-3 text-center">
                 <p className=" fs-4 fst-italic">
                   “La única manera de hacer un trabajo genial es{" "}
-                  <strong className="text-danger">amar</strong> lo que haces”.
+                  <strong>amar</strong> lo que haces”.
                 </p>
 
                 <p className="fs-5 fw-bold card-text text-end">Steve Jobs</p>

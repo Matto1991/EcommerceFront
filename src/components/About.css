@@ -8,11 +8,18 @@
       rgba(255, 255, 255, 0.803) 96%,
       rgb(255, 255, 255) 100%
     ),
-    url("/public/img/team-opacit.png");
+    url("/public/img/Ecozy\ Luzury\ \(3\).png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 50vh;
+}
+
+.hero-title-about {
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--brand-dark-brown);
+  font-family: "IvyOra";
 }
 
 .img-team {
@@ -81,5 +88,12 @@
   width: 300px;
 }
 
-.img-tec {
-}
+/* .card-blur {
+  background-color: #2020201b;
+  backdrop-filter: blur(3px);
+  text-align: center;
+  border-radius: 5px;
+  position: relative;
+  top: 80%;
+  right: 10%;
+} */
