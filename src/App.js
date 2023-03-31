@@ -67,6 +67,7 @@ function App() {
         <Route path="/admin/createCategory" element={<CreateCategory />} />
         <Route path="/admin/editCategory/:id" element={<EditCategory />} />
         {/* </Route> */}
+
         <Route path="*" element={<Error />} />
       </Routes>
     </div>
