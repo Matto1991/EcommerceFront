@@ -138,27 +138,27 @@ function CreateUser() {
                 onChange={(event) => setImage(event.target.files[0])}
                 required
               />
-              <small className="me-2 input-tx text-dark">Upload </small>{" "}
+              <small className="me-2 input-tx text-dark ">Upload </small>{" "}
               <PhotoCamera className="input-tx text-dark" />
             </IconButton>
 
             <div className="col-12">
-              <div className="form-check">
+              <div className="form-check ">
                 <input
-                  className="form-check-input"
+                  className="form-check-input "
                   type="checkbox"
                   id="gridCheck"
                   value={isAdmin}
                   onChange={() => setIsAdmin(!isAdmin)}
                 />
-                <label className="form-check-label" htmlFor="gridCheck">
+                <label className="form-check-label  " htmlFor="gridCheck">
                   Admin
                 </label>
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-6 mx-auto">
               <button
-                className="btn btn-success sign-up-btn border-0 w-75 m-4 fs-5 d-block mx-auto"
+                className="btn text-white cta sign-up-btn border-0 w-75 m-4 fs-5 d-block mx-auto"
                 type="submit"
               >
                 Create
