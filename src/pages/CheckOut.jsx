@@ -25,6 +25,8 @@ function CheckOut() {
   const [zipcode, setZipcode] = useState("");
   const [payment_method, setPayment_method] = useState("");
 
+  const [newOrder, setNewOrder] = useState(null);
+
   const dispatch = useDispatch();
 
   const handleRemoveProduct = (product) => {
@@ -53,6 +55,8 @@ function CheckOut() {
         },
       },
     });
+    setNewOrder(response.data);
+    console.log(response.data);
   };
 
   return (
@@ -278,12 +282,14 @@ function CheckOut() {
                   Shipping and taxes calculated at checkout.
                 </p>
                 <div className="mt-6 d-grid gap-2">
-                  <button
-                    className="btn btn-success btn-lg green"
-                    onClick={handleCheckout}
-                  >
-                    Confirm order
-                  </button>
+                  <Link to="/thanks" state={newOrder}>
+                    <button
+                      className="btn btn-success btn-lg green"
+                      onClick={handleCheckout}
+                    >
+                      Confirm order
+                    </button>
+                  </Link>
                 </div>
                 <div className="mt-5 d-flex justify-center text-center ">
                   <p>

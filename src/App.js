@@ -30,6 +30,7 @@ import AdminCategories from "./pages/AdminCategories";
 import EditCategory from "./pages/EditCategory";
 import CreateProduct from "./pages/CreateProduct";
 import Error from "./pages/Error";
+import PurchaseOrder from "./pages/PurchaseOrder";
 
 function App() {
   return (
@@ -45,6 +46,8 @@ function App() {
         <Route path="/signup" element={<SingUp />} />
         <Route path="/login" element={<SignIn />} />
         {/* <Route element={<ProtectedRoute />}> */}
+        <Route path="/thanks" element={<PurchaseOrder />} />
+        <Route path="/profile" element={<AdminProfile />} />
         <Route path="/checkout" element={<CheckOut />} />
         {/* Admins */}
         <Route path="/login-admin" element={<SignInAdmin />} />

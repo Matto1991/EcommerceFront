@@ -6,7 +6,6 @@ import NavbarAdmin from "../components/NavbarAdmin";
 function AdminOrder() {
   const token = useSelector((state) => state.session.token);
   const [orders, setOrders] = useState([]);
-
   useEffect(() => {
     const getOrders = async () => {
       const response = await axios({
@@ -18,6 +17,7 @@ function AdminOrder() {
       });
 
       setOrders(response.data);
+      console.log(orders);
     };
 
     getOrders();
@@ -40,26 +40,24 @@ function AdminOrder() {
                 <th scope="col">Status</th>
               </tr>
             </thead>
-            {orders.map((order) => {
-              return (
-                <tbody>
-                  <tr>
-                    <th scope="row"> order id</th>
-                    <td> user Id </td>
-                    <td> total Price</td>
-                    <td>
-                      <i className="bi bi-box-seam me-2"></i>
-                      status
-                    </td>
-                    <td>
-                      <a href="/panel/admin/item.id/edit">
-                        <button className="edit-btn mb-2 w-100">Edit</button>
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              );
-            })}
+            <ul>
+              {orders.map((order) => {
+                <li key={order.id}>
+                  <tbody>
+                    <tr>
+                      <th scope="row">{order.id}</th>
+                      <td> user Id </td>
+                      <td> total Price</td>
+                      <td>
+                        <i className="bi bi-box-seam me-2"></i>
+                        status
+                      </td>
+                    </tr>
+                  </tbody>
+                  ;
+                </li>;
+              })}
+            </ul>
           </table>
         </div>
       </section>

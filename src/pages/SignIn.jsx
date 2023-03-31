@@ -9,8 +9,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
   const user = useSelector((state) => state.session.user);
+  const token = useSelector((state) => state.session.token);
 
-  console.log(user);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -20,12 +21,14 @@ function Login() {
 
   const handleUserLogin = async (event) => {
     event.preventDefault();
-    const formData = { email, password };
 
     const response = await axios({
+      headers: {
+        Authorization: `bearer ${token}`,
+      },
       method: "post",
       url: `${process.env.REACT_APP_BACKEND_URL}/auth/users`,
-      data: formData,
+      data: { email: email, password: password },
     });
 
     if (response.data.message === "Invalid credentials") {
@@ -34,6 +37,7 @@ function Login() {
       userNotFound();
     } else {
       dispatch(setToken(response.data));
+      console.log(response.data)
       navigate("/");
     }
   };
