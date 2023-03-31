@@ -34,7 +34,7 @@ function Category() {
               <h2 className="category-section-title rounded mt-5 mb-3 ">
                 {category.name} collection
               </h2>
-              <p className="category-section-subtitle text-center fs-5 ">
+              <p className="category-section-subtitle text-center">
                 A small batch assortment in our most popular materials. Ready to
                 ship within 3-5 days from our artisan workrooms.
               </p>

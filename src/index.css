@@ -6,34 +6,26 @@
 
 /* Start Fonts */
 @font-face {
-  font-family: "IvyOra";
-  src: local("IvyOra Display Thin"), local("IvyOra-Display-Thin"),
-    url("/public/fonts/IvyOraDisplay-Thin.woff2") format("woff2");
-  font-weight: 100;
+  font-family: "BerlingskeSerif";
+  src: local("BerlingskeSerif-Lt"),
+    url("/public/fonts/BerlingskeSerif-Lt.woff2") format("woff2");
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "IvyOra";
-  src: local("IvyOra Text Regular"), local("IvyOra-Text-Regular"),
-    url("/public/fonts/IvyOraText-Regular.woff2") format("woff2");
-  font-weight: 400;
+  font-family: "BerlingskeSerif";
+  src: local("BerlingskeSerif Regular"), local("BerlingskeSerif-Regular"),
+    url("/public/fonts/BerlingskeSerif-Regular.woff2") format("woff2");
+  font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "IvyOra";
-  src: local("IvyOra Text Medium"), local("IvyOra-Text-Medium"),
-    url("/public/fonts/IvyOraText-Medium.woff2") format("woff2");
+  font-family: "BerlingskeSerif";
+  src: local("BerlingskeSerif-Md"),
+    url("/public/fonts/BerlingskeSerif-Md.woff2") format("woff2");
   font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "IvyOra";
-  src: local("IvyOra Text Bold"), local("IvyOra-Text-Bold"),
-    url("/public/fonts/IvyOraText-Bold.woff2") format("woff2");
-  font-weight: 700;
   font-style: normal;
 }
 
@@ -406,7 +398,7 @@ html {
 
 .footer-list {
   font-size: 0.9rem;
-  color: var(--brand-dark-brown);
+  color: #98866b;
 }
 
 .footer-list li {
@@ -445,13 +437,13 @@ html {
 }
 
 .hero-title {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 500;
   position: absolute;
   top: 21%;
   right: 12%;
   opacity: 0;
-  font-family: "IvyOra";
+  font-family: "BerlingskeSerif";
 }
 
 .animation-first-phrase {
@@ -484,7 +476,7 @@ html {
 }
 
 .card-price {
-  color: #806340;
+  color: #98866b;
   font-weight: 400;
 }
 
@@ -494,7 +486,7 @@ html {
 }
 
 .section-title {
-  font-family: "IvyOra";
+  font-family: "BerlingskeSerif";
 }
 
 .section-subtitle {
@@ -518,7 +510,7 @@ html {
   border-top: 0;
 }
 .featured-card-title {
-  font-family: "IvyOra";
+  font-family: "BerlingskeSerif";
   font-weight: 500;
 }
 
@@ -539,6 +531,7 @@ html {
   width: 12rem;
   padding: 0.9rem 0.8rem 0.9rem 0.8rem;
   font-size: 1.05rem;
+  font-weight: 200;
   color: #fff;
   background-color: #4b2e1ae8 !important;
   cursor: pointer;
@@ -633,18 +626,18 @@ html {
 
 .category-section-title {
   font-size: 2.2rem;
-  font-family: "ivyOra";
+  font-family: "BerlingskeSerif";
   font-weight: 400;
   color: black;
 }
 
 .categories-card {
-  background-color: var(--dark-gray-background);
+  background-color: rgba(203, 203, 203, 0.1);
 }
 
 .categories-card-title {
   font-size: 1.85rem;
-  font-family: "ivyOra";
+  font-family: "BerlingskeSerif";
 }
 
 .categories-price {

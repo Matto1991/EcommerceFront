@@ -5,7 +5,7 @@
 
 .product-section-title {
   font-size: 2.2rem;
-  font-family: "ivyOra";
+  font-family: "BerlingskeSerif";
   font-weight: 400;
   color: black;
 }
@@ -13,8 +13,8 @@
 .category-section-subtitle {
   width: 50%;
   font-size: 0.92rem;
-  font-family: "Outfit";
-  font-weight: 100;
+  font-family: "BerlingskeSerif";
+  font-weight: 300;
   color: black;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .product-title {
-  font-family: "IvyOra";
+  font-family: "BerlingskeSerif";
 }
 
 .product-subtitle {
@@ -40,22 +40,22 @@
 }
 
 .product-price {
-  font-family: "IvyOra";
+  font-family: "BerlingskeSerif";
   font-size: 1.25rem;
-  color: #a47f53;
+  color: #98866b;
   font-weight: 400;
 }
 
 .product-price-small {
-  font-family: "IvyOra";
+  font-family: "BerlingskeSerif";
   font-size: 0.95rem;
-  color: #a47f53;
+  color: #98866b;
   font-weight: 400;
 }
 
 .product-description {
   font-size: 1.1rem;
-  color: #a47f53;
+  color: #98866b;
   font-weight: 200;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .product-btn:hover {
-  background-color: #4b2e1aca;
+  background-color: #98866bdc;
 }
 
 .button {

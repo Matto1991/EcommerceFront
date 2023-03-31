@@ -38,9 +38,7 @@ export default function Home() {
               </p>
               <Link to={"/products"} className="text-reset ">
                 {" "}
-                <h4 className="hero-cta hero-cta-sm fs-6 fw-bold">
-                  SHOP OUR COLLECTIONS
-                </h4>
+                <h4 className="hero-cta hero-cta-sm">SHOP OUR COLLECTIONS</h4>
               </Link>
             </div>
           </div>
@@ -75,7 +73,7 @@ export default function Home() {
                           <h5 className="card-title featured-card-title">
                             {product.name}
                           </h5>
-                          <p className="card-text featured-card-text fs-5">
+                          <p className="card-text featured-card-text">
                             {product.description}
                           </p>
                         </div>
@@ -125,7 +123,7 @@ export default function Home() {
                 className="text-decoration-none text-reset"
               >
                 <div className="rounded text-center inspiration-cta">
-                  Shop by set <i className="bi bi-handbag-fill ms-2"></i>
+                  Shop by set <i className="bi bi-handbag ms-2"></i>
                 </div>
               </Link>
             </div>

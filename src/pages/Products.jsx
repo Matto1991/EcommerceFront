@@ -27,7 +27,7 @@ function Products() {
           <h2 className="product-section-title rounded mt-2 mb-3">
             All products
           </h2>
-          <p className="category-section-subtitle text-center fs-5 ">
+          <p className="category-section-subtitle text-center ">
             Rooted in sculpted forms, luxurious texture, and a reverence for
             craftsmanship, each piece is definitively modern, yet an enduring
             classic.
