@@ -10,6 +10,7 @@ import Footer from "../components/Footer";
 import NavbarOther from "../components/NavbarOther";
 import { removeFromCart } from "../redux/cartReducer";
 import axios from "axios";
+import "./Checkout.css";
 
 function CheckOut() {
   const products = useSelector((state) => state.cart.products);
@@ -60,9 +61,9 @@ function CheckOut() {
       <>
         <NavbarOther />
         <div className="container order-box">
-          <div className="row p-5">
+          <div className="row p-5 h-100 border rounded ck-form ">
             <div className="col-md-6 ">
-              <form className="form-control rounded p-2">
+              <form className="form-control border-0 rounded p-2">
                 <h3 className="mb-2">Contact information</h3>
                 <div className="mb-3">
                   <label className="form-label">Email address</label>
@@ -77,30 +78,32 @@ function CheckOut() {
                   />
                 </div>
                 <hr />
-
-                <div className="mb-3">
-                  <label className="form-label">Firstname</label>
-                  <input
-                    type="Text"
-                    className="form-control"
-                    id="firstname"
-                    name="firstname"
-                    placeholder="Firstname"
-                    value={firstname}
-                    onChange={(event) => setFirstname(event.target.value)}
-                  />
-                </div>
-                <div className="mb-3">
-                  <label className="form-label">Lastname</label>
-                  <input
-                    type="Text"
-                    className="form-control"
-                    id="lastname"
-                    name="lastname"
-                    placeholder="Lastname"
-                    value={lastname}
-                    onChange={(event) => setLastname(event.target.value)}
-                  />
+                <div className="d-flex ">
+                  <div className="mb-3 w-50 me-3">
+                    <label className="form-label">Firstname</label>
+                    <input
+                      className="form-control"
+                      type="text"
+                      placeholder="Firstname"
+                      name="firstname"
+                      id="firstname"
+                      value={firstname}
+                      onChange={(event) => setFirstname(event.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className="mb-3 w-50">
+                    <label className="form-label">Lastname</label>
+                    <input
+                      type="Text"
+                      className="form-control"
+                      id="lastname"
+                      name="lastname"
+                      placeholder="Lastname"
+                      value={lastname}
+                      onChange={(event) => setLastname(event.target.value)}
+                    />
+                  </div>
                 </div>
                 <div className="mb-3">
                   <label className="form-label">Address</label>
@@ -114,55 +117,62 @@ function CheckOut() {
                     onChange={(event) => setAddress(event.target.value)}
                   />
                 </div>
-                <div className="mb-3">
-                  <label className="form-label">Apartment, suite,etc</label>
-                  <input
-                    type="Text"
-                    className="form-control"
-                    id="apartment"
-                    name="apartment"
-                    placeholder="Apartment, suite,etc"
-                    value={apartment}
-                    onChange={(event) => setApartment(event.target.value)}
-                  />
+                <div className="d-flex ">
+                  <div className="mb-3 me-3">
+                    <label className="form-label">Apartment</label>
+                    <input
+                      type="Text"
+                      className="form-control"
+                      id="apartment"
+                      name="apartment"
+                      placeholder="Apartment, suite,etc"
+                      value={apartment}
+                      onChange={(event) => setApartment(event.target.value)}
+                    />
+                  </div>
+
+                  <div className="mb-3">
+                    <label className="form-label">City</label>
+                    <input
+                      type="Text"
+                      className="form-control"
+                      id="city"
+                      name="city"
+                      placeholder="City"
+                      value={city}
+                      onChange={(event) => setCity(event.target.value)}
+                    />
+                  </div>
                 </div>
-                <div className="mb-3">
-                  <label className="form-label">City</label>
-                  <input
-                    type="Text"
-                    className="form-control"
-                    id="city"
-                    name="city"
-                    placeholder="City"
-                    value={city}
-                    onChange={(event) => setCity(event.target.value)}
-                  />
+                <div className="d-flex ">
+                  <div className="mb-3 me-3">
+                    <label className="form-label">State</label>
+                    <input
+                      type="Text"
+                      className="form-control"
+                      id="state"
+                      name="state"
+                      placeholder="State"
+                      value={state}
+                      onChange={(event) => setState(event.target.value)}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <label className="form-label">Zip code</label>
+                    <input
+                      type="Text"
+                      className="form-control"
+                      id="zipcode"
+                      name="zipcode"
+                      placeholder="Zip Code"
+                      value={zipcode}
+                      onChange={(event) => setZipcode(event.target.value)}
+                    />
+                  </div>
                 </div>
-                <div className="mb-3">
-                  <label className="form-label">State</label>
-                  <input
-                    type="Text"
-                    className="form-control"
-                    id="state"
-                    name="state"
-                    placeholder="State"
-                    value={state}
-                    onChange={(event) => setState(event.target.value)}
-                  />
-                </div>
-                <div className="mb-3">
-                  <label className="form-label">Zip code</label>
-                  <input
-                    type="Text"
-                    className="form-control"
-                    id="zipcode"
-                    name="zipcode"
-                    placeholder="Zip Code"
-                    value={zipcode}
-                    onChange={(event) => setZipcode(event.target.value)}
-                  />
-                </div>
+                <h5 className="text-center m-3">Payment method</h5>
                 <RadioGroup
+                  className="d-flex justify-content-evenly"
                   row
                   aria-labelledby="demo-row-radio-buttons-group-label"
                   name="row-radio-buttons-group"
@@ -192,10 +202,11 @@ function CheckOut() {
                   />
                 </RadioGroup>
               </form>
+              <div></div>
             </div>
-            <div className="col-md-6 d-flex flex-column">
+            <div className="col-md-6 d-flex flex-column h-100">
               <div
-                className="form-control rounded overflow-auto"
+                className="form-control border-0 rounded overflow-auto"
                 style={{ maxHeight: "500px" }}
               >
                 <div>
@@ -217,7 +228,7 @@ function CheckOut() {
                             </div>
                           </div>
                           <div className="col-4">
-                            <div className="border border-1 rounded mb-2">
+                            <div className="mb-2">
                               <img
                                 alt="img\TheLeroyChair.webp"
                                 src={
@@ -225,27 +236,16 @@ function CheckOut() {
                                     ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
                                     : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `
                                 }
-                                className="img-fluid"
+                                className="img-fluid border border-1 rounded"
                               />
                             </div>
                           </div>
-                          <div className=" d-flex justify-content-between mt-3 text-end ">
-                            <div className="border rounded border-1 d-flex align-items-center">
-                              <i
-                                className=" btn border-0 bi bi-caret-left"
-                                // onClick={() => handleDecreaseCart(product)}
-                              ></i>{" "}
-                              {product.quantity}
-                              <i
-                                className="btn border-0 bi bi-caret-right"
-                                // onClick={() => handleIncrementCart(product)}
-                              ></i>
-                            </div>
+                          <div className="d-flex justify-content-between">
+                            <p>Qty: {product.quantity}</p>
 
                             <IconButton aria-label="delete" size="small">
                               <DeleteIcon
                                 fontSize="small"
-                                // className="brown"
                                 onClick={() => handleRemoveProduct(product)}
                               />
                             </IconButton>
@@ -257,7 +257,7 @@ function CheckOut() {
                   </ul>
                 </div>
               </div>
-              <div className="border-top  py-6 px-4 ">
+              <div className="py-6 px-4 ">
                 <div className="d-flex justify-content-end mt-4 ">
                   {products.length > 0 && (
                     <p>
@@ -278,19 +278,19 @@ function CheckOut() {
                   Shipping and taxes calculated at checkout.
                 </p>
                 <div className="mt-6 d-grid gap-2">
-                  <button
-                    className="btn btn-success btn-lg green"
-                    onClick={handleCheckout}
-                  >
+                  <button className="btn cta-co-btn" onClick={handleCheckout}>
                     Confirm order
                   </button>
                 </div>
-                <div className="mt-5 d-flex justify-center text-center ">
-                  <p>
-                    <button type="button" className=" btn fw-bolder">
-                      Continue Shopping <span aria-hidden="true"> &rarr;</span>
-                    </button>
-                  </p>
+                <div className="mt-5 text-center">
+                  <Link to={"/"}>
+                    <p>
+                      <button type="button" className=" btn fw-bolder">
+                        Continue Shopping{" "}
+                        <span aria-hidden="true"> &rarr;</span>
+                      </button>
+                    </p>
+                  </Link>
                 </div>
               </div>
             </div>

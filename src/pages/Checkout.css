@@ -1,0 +1,15 @@
+.cta-co-btn {
+  color: white !important;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+  background-color: #4b2e1ae8 !important;
+  border: none;
+}
+
+.cta-co-btn:hover {
+  background-color: #4b2e1aca !important;
+  color: white !important;
+}
+
+.ck-form {
+  padding: 70px !important;
+}

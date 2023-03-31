@@ -57,7 +57,7 @@ function Cart({ name }) {
             <Offcanvas.Title>Shopping cart</Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <div className="mt-8">
+            <div className="d-flex flex-column justify-content-between h-100">
               <div>
                 <ul className="my-4">
                   {products.map((product, index) => (
@@ -117,39 +117,37 @@ function Cart({ name }) {
                     </li>
                   ))}
                 </ul>
-                <div className="border-top  py-6 px-4 ">
-                  <div className="d-flex justify-content-end mt-4 ">
-                    {products.length > 0 && (
-                      <p>
-                        Total:{" "}
-                        <strong>
-                          {" "}
-                          {products.reduce(
-                            (acc, product) =>
-                              acc + product.price * product.quantity,
-                            0
-                          )}{" "}
-                          U$S{" "}
-                        </strong>
-                      </p>
-                    )}
-                  </div>
-                  <p className="mt-1 text-secondary-light">
-                    Shipping and taxes calculated at checkout.
-                  </p>
-                  <div className="mt-6 d-grid gap-2">
-                    <Link to="/login" className="btn btn-success btn-lg green">
-                      Checkout
-                    </Link>
-                  </div>
-                  <div className="mt-5 d-flex justify-center text-center ">
+              </div>
+
+              <div className="border-top  py-6 px-4 ">
+                <div className="d-flex justify-content-end mt-4 ">
+                  {products.length > 0 && (
                     <p>
-                      <button type="button" className=" btn fw-bolder">
-                        Continue Shopping
-                        <span aria-hidden="true"> &rarr;</span>
-                      </button>
+                      Total:{" "}
+                      <strong>
+                        {" "}
+                        {products.reduce(
+                          (acc, product) =>
+                            acc + product.price * product.quantity,
+                          0
+                        )}{" "}
+                        U$S{" "}
+                      </strong>
                     </p>
-                  </div>
+                  )}
+                </div>
+                <p className="mt-1 text-secondary-light">
+                  Shipping and taxes calculated at checkout.
+                </p>
+                <div className="mt-6 d-grid gap-2">
+                  <Link to="/login" className="btn btn-lg cta-ck-btn">
+                    Checkout
+                  </Link>
+
+                  <button className="btn fw-bolder" onClick={handleClose}>
+                    Continue Shopping
+                    <span aria-hidden="true"> &rarr;</span>
+                  </button>
                 </div>
               </div>
             </div>
