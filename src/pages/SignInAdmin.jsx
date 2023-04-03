@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function LoginAdmin() {
-  const user = useSelector((state) => state.session.user);
+  const user = useSelector((state) => state.session);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -19,12 +19,18 @@ export default function LoginAdmin() {
 
   const handleAdminLogin = async (event) => {
     event.preventDefault();
-    const formData = { email, password };
 
-    const response = await axios.post(
-      `${process.env.REACT_APP_BACKEND_URL}/auth/admins`,
-      formData
-    );
+    const response = await axios({
+      headers: {
+        Authorization: `bearer: ${user.token}`,
+      },
+      method: "post",
+      url: `${process.env.REACT_APP_BACKEND_URL}/auth/admins`,
+      data: {
+        email,
+        password,
+      },
+    });
 
     if (response.data.message === "Invalid credentials") {
       invalidCredentials();
