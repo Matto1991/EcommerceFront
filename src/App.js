@@ -44,12 +44,12 @@ function App() {
         <Route path="/project-details" element={<AboutProyect />} />
         <Route path="/signup" element={<SingUp />} />
         <Route path="/login" element={<SignIn />} />
+        <Route path="/login/admin" element={<SignInAdmin />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/thanks" element={<PurchaseOrder />} />
           <Route path="/profile" element={<AdminProfile />} />
           <Route path="/checkout" element={<CheckOut />} />
           {/* Admins */}
-          <Route path="/login-admin" element={<SignInAdmin />} />
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/profile" element={<AdminProfile />} />
           <Route path="/admin/products" element={<AdminProduct />} />

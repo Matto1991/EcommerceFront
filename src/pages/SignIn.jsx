@@ -8,23 +8,29 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
-  const user = useSelector((state) => state.session.user);
+  const user = useSelector((state) => state.session);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const invalidCredentials = () => toast.error("Invalid Credentials!");
   const userNotFound = () => toast.error("You are not registered yet!");
 
   const handleUserLogin = async (event) => {
     event.preventDefault();
-    const formData = { email, password };
 
     const response = await axios({
+      headers: {
+        Authorization: `bearer: ${user.token}`,
+      },
       method: "post",
       url: `${process.env.REACT_APP_BACKEND_URL}/auth/users`,
-      data: formData,
+      data: {
+        email,
+        password
+      }
     });
 
     if (response.data.message === "Invalid credentials") {
