@@ -169,6 +169,15 @@ html {
   color: #fff !important;
   font-family: 200;
 }
+
+
+@media (min-width: 992px) {
+  #navbar-movil {
+    margin-left: auto;
+    align-items: center;
+  }
+}
+
 .dropdown-menu a {
   padding: 0.2rem 0rem 0.2rem 0.5rem !important;
 }
