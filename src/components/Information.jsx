@@ -62,7 +62,7 @@ function Information() {
             <strong>Comprador</strong>:
           </p>
           <ul>
-            <li>E-mail: usuario@ecozy.com</li>
+            <li>E-mail: user@ecozy.com</li>
             <li>Password: 1234</li>
           </ul>
           <Link to="/login">
