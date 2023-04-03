@@ -42,7 +42,7 @@ function Information() {
             El presente sitio de e-commerce es un proyecto desarrollado por
             estudiantes del Coding Bootcamp de Hack Academy.
           </p>
-          <Link to="/about-project">
+          <Link to="/project/details">
             {" "}
             <button className="btn cta text-white">
               Sobre este proyecto
