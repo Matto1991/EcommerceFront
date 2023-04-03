@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Information() {
   const [show, setShow] = useState(false);
@@ -12,14 +14,20 @@ function Information() {
 
   const navigate = useNavigate();
 
+  const notify = () => {
+    toast.success("Database reset successfully", {
+      position: "bottom-right",
+    });
+  };
+
   const handleResetDb = () => {
     const getReset = async () => {
       await axios({
         method: "POST",
         url: `${process.env.REACT_APP_BACKEND_URL}/reset`,
       });
-      navigate("/");
     };
+    notify();
     getReset();
   };
 
@@ -95,6 +103,7 @@ function Information() {
           <button onClick={()=>handleResetDb()} className="btn cta text-white">
             Reiniciar BD
           </button>
+          <ToastContainer className="toast-message" />
         </Offcanvas.Body>
       </Offcanvas>
     </>
