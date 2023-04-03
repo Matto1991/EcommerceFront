@@ -48,7 +48,7 @@ export default function Home() {
       <>
         <div className="featured-section mx-auto">
           <div className="d-flex justify-content-center w-100 mb-5">
-            <h2 className="section-title">Featuredss</h2>
+            <h2 className="section-title">Featured</h2>
           </div>
           <div className="row g-4">
             {featured.map((product) => {
