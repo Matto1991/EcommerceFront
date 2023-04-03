@@ -41,7 +41,7 @@ function App() {
         <Route path="/category/:name" element={<Category />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/product/:id" element={<Product />} />
-        <Route path="/project-details" element={<AboutProyect />} />
+        <Route path="/project/details" element={<AboutProyect />} />
         <Route path="/signup" element={<SingUp />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/login/admin" element={<SignInAdmin />} />
@@ -66,7 +66,6 @@ function App() {
           <Route path="/admin/createCategory" element={<CreateCategory />} />
           <Route path="/admin/editCategory/:id" element={<EditCategory />} />
         </Route>
-
         <Route path="*" element={<Error />} />
       </Routes>
     </div>
