@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import NavbarOther from "../components/NavbarOther";
 import Footer from "../components/Footer";
+import Information from "../components/Information";
 function Category() {
   const { name } = useParams();
   const [category, setCategory] = useState();
@@ -94,6 +95,7 @@ function Category() {
               );
             })}
           </div>
+          <Information/>
           <Footer />
         </>
       )}

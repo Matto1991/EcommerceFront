@@ -5,7 +5,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 //Users
 import SignIn from "./pages/SignIn";
 import SingUp from "./pages/SignUp";
-import AboutProyect from "./pages/AboutProyect";
+import AboutProject from "./pages/AboutProject";
 import Category from "./pages/Category";
 import Product from "./pages/Product";
 import Products from "./pages/Products";
@@ -30,18 +30,20 @@ import EditCategory from "./pages/EditCategory";
 import CreateProduct from "./pages/CreateProduct";
 import Error from "./pages/Error";
 import PurchaseOrder from "./pages/Thanks";
+import Information from "./components/Information";
 
 function App() {
   return (
     <div className="App">
       <Routes>
         {/* Users */}
+        <Route path="/prueba" element={<Information />} />
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/category/:name" element={<Category />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/product/:id" element={<Product />} />
-        <Route path="/project-details" element={<AboutProyect />} />
+        <Route path="/about-project" element={<AboutProject />} />
         <Route path="/signup" element={<SingUp />} />
         <Route path="/login" element={<SignIn />} />
         <Route element={<ProtectedRoute />}>

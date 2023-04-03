@@ -7,7 +7,7 @@ import {
   removeFromCart,
   increaseCart,
 } from "../redux/cartReducer";
-import "./Cart.css";
+import "./cart.css";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 

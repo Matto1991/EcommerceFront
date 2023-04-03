@@ -698,3 +698,10 @@ html {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.btn-info {
+  position: fixed;
+  bottom: 100px;
+  margin-left: 91%;
+  transform: rotate(270deg);
+}

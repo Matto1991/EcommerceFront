@@ -74,7 +74,7 @@ function NavbarHome() {
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
               }`}
             >
-              <Nav.Link href="/project-details">About&nbsp;Project</Nav.Link>
+              <Nav.Link href="/about-project">About&nbsp;Project</Nav.Link>
             </div>
 
             <NavDropdown

@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
+import Information from "../components/Information";
 import NavbarOther from "../components/NavbarOther";
 
 function Products() {
@@ -72,6 +74,8 @@ function Products() {
           })}
         </div>
       </div>
+      <Information />
+      <Footer/>
     </>
   );
 }

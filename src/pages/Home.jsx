@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Categories from "../components/Categories";
 import NavbarHome from "../components/NavbarHome";
+import Information from "../components/Information";
 
 export default function Home() {
   const [featured, setFeatured] = useState([]);
@@ -130,6 +131,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Information />
       <Footer />
     </>
   );
