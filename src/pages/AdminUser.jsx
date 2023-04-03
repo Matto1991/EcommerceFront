@@ -97,7 +97,7 @@ function AdminUser() {
                       <td>
                         {" "}
                         <Avatar
-                          alt="Remy Sharp"
+                          alt="User"
                           src={
                             typeof user.avatar === "object"
                               ? `${process.env.REACT_APP_BACKEND_URL}/${user.avatar}`
@@ -136,7 +136,18 @@ function AdminUser() {
                   <tbody key={admin.id}>
                     <tr>
                       <th scope="row">{admin.id}</th>
-                      <td>{admin.avatar}</td>
+                      <td>
+                        {" "}
+                        <Avatar
+                          alt="Admin"
+                          src={
+                            typeof admin.avatar === "object"
+                              ? `${process.env.REACT_APP_BACKEND_URL}/${admin.avatar}`
+                              : `${process.env.REACT_APP_BACKEND_URL}/img/users/${admin.avatar} `
+                          }
+                          className="navbar-avatar ms-4"
+                        />
+                      </td>
                       <td>
                         {" "}
                         {admin.firstname} {admin.lastname}{" "}
