@@ -55,12 +55,9 @@ function Login() {
               <p className="formulary-subtitle">
                 {" "}
                 Don't have an account?
-                <Link
-                  to="/signup"
-                  className="text-decoration-none fw-bold fs-6 ms-1 link-sign-up"
-                >
+                <Link to="/signup" className="text-decoration-none text-reset">
                   {" "}
-                  <h3 className="d-inline"> Sign up</h3>
+                  <h3 className="formulary-subtitle-cta"> Sign up</h3>
                 </Link>
               </p>
               {/* <button className="btn btn-lg btn-success sign-up-btn border-0">Sign Up</button> */}

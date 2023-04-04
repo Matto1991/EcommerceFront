@@ -50,15 +50,11 @@ function SingUp() {
                 <span className="me-1 formulary-subtitle">
                   Already have an account?
                 </span>
-                <Link
-                  to="/login"
-                  className="formulary-subtitle text-decoration-none fw-bold link-sign-up fs-6 "
-                >
+                <Link to="/login" className="text-decoration-none text-reset">
                   {" "}
-                  <h3 className="d-inline"> Sign in</h3>
+                  <h3 className="formulary-subtitle-cta">Sign in</h3>
                 </Link>
               </p>
-              {/* <button className="btn btn-lg btn-success sign-up-btn border-0">Sign Up</button> */}
             </div>
 
             <div className="form-auth col-md-5 col-lg-5">

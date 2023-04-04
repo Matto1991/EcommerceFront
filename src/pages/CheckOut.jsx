@@ -11,6 +11,7 @@ import NavbarOther from "../components/NavbarOther";
 import { removeFromCart, resetCart } from "../redux/cartReducer";
 import axios from "axios";
 import "./checkout.css";
+import { ToastContainer, toast } from "react-toastify";
 
 function CheckOut() {
   const products = useSelector((state) => state.cart.products);
@@ -35,40 +36,60 @@ function CheckOut() {
   };
 
   const handleCheckout = async () => {
-    setIsLoading(true);
-    const response = await axios({
-      method: "POST",
-      url: `${process.env.REACT_APP_BACKEND_URL}/orders`,
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      data: {
-        products,
-        details: {
-          email,
-          firstname,
-          lastname,
-          address,
-          apartment,
-          city,
-          state,
-          zipcode,
-          payment_method,
+    if (
+      (email,
+      firstname,
+      lastname,
+      address,
+      apartment,
+      city,
+      state,
+      zipcode,
+      payment_method !== "")
+    ) {
+      console.log(0);
+      setIsLoading(true);
+      const response = await axios({
+        method: "POST",
+        url: `${process.env.REACT_APP_BACKEND_URL}/orders`,
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-      },
-    });
-    if (response) {
-      setTimeout(() => {
-        navigate("/thanks", { state: response.data });
-        dispatch(resetCart());
-        setIsLoading(false);
-      }, 2000);
+        data: {
+          products,
+          details: {
+            email,
+            firstname,
+            lastname,
+            address,
+            apartment,
+            city,
+            state,
+            zipcode,
+            payment_method,
+          },
+        },
+      });
+
+      if (response) {
+        setTimeout(() => {
+          navigate("/thanks", { state: response.data });
+          dispatch(resetCart());
+          setIsLoading(false);
+        }, 2000);
+      }
+    } else {
+      console.log(1);
+      return toast.error("Please fulfill the form", {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
     }
   };
 
   return (
     products && (
       <>
+        <ToastContainer className="toast-message" />
         <NavbarOther />
         <div className="container order-box">
           <div className="row p-3 h-100 border rounded ">
@@ -321,7 +342,7 @@ function CheckOut() {
                 <div className="mt-6 d-grid gap-2 text-center">
                   <button
                     className={`btn cta-co-btn w-100${
-                      isLoading ? " disabled" : ""
+                      isLoading ? "disabled" : ""
                     }`}
                     onClick={handleCheckout}
                     disabled={isLoading}
@@ -333,8 +354,11 @@ function CheckOut() {
                   <Link to={"/"} className="text-reset text-decoration-none">
                     <p>
                       <button type="button" className="btn fw-bolder">
+                        <span aria-hidden="true" className="me-2">
+                          {" "}
+                          &larr;
+                        </span>
                         Continue Shopping{" "}
-                        <span aria-hidden="true"> &rarr;</span>
                       </button>
                     </p>
                   </Link>

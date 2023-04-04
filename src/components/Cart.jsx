@@ -103,7 +103,7 @@ function Cart({ name }) {
                             </Link>
                           </div>
                         </div>
-                        <div className="d-flex justify-content-between mt-3 text-end ">
+                        <div className="d-flex justify-content-between align-items-center mt-3">
                           <div className="border rounded border-1 d-flex align-items-center">
                             <i
                               className="btn border-0 bi bi-caret-left"
@@ -115,16 +115,21 @@ function Cart({ name }) {
                               onClick={() => handleIncrementCart(product)}
                             ></i>
                           </div>
-                          <p className="cart-product-subtotal">
-                            Subtotal: US$ {product.quantity * product.price}{" "}
-                          </p>
-                          <IconButton
-                            onClick={() => handleRemoveProduct(product)}
-                            aria-label="delete"
-                            size="small"
-                          >
-                            <DeleteIcon fontSize="small" />
-                          </IconButton>
+                          <div className="d-flex align-items-center">
+                            <p className="cart-product-subtotal mb-0 me-2">
+                              Subtotal:{" "}
+                              <span className="fw-bold">
+                                US$ {product.quantity * product.price}
+                              </span>{" "}
+                            </p>
+                            <IconButton
+                              onClick={() => handleRemoveProduct(product)}
+                              aria-label="delete"
+                              size="small"
+                            >
+                              <DeleteIcon fontSize="small" />
+                            </IconButton>
+                          </div>
                         </div>
                       </div>
                       <hr />
