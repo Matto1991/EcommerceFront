@@ -91,17 +91,15 @@ function NavbarOther() {
             <Avatar
               alt="Remy Sharp"
               src="/img/imagenAdmin.png"
-              className="navbar-avatar mx-2"
+              className="navbar-avatar ms-4"
             />
-            <NavDropdown className="ms-auto mt-2">
+            <NavDropdown className="mt-2 navbar-dynamic-dropdown">
               <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
               <NavDropdown.Item href="/orders">Orders</NavDropdown.Item>
               <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link className="ms-3 d-flex">
-              {/* {products && products.cartTotalQuantity > 0 && ( */}
+            <Nav.Link className="d-flex">
               <Cart />
-              {/* )} */}
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

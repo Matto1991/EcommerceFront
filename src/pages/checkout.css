@@ -1,30 +1,59 @@
+.checkout-form-title {
+  color: var(--brand-green-dark);
+  font-size: 2rem;
+  font-family: "BerlingskeSerif";
+  font-weight: 600;
+}
+
+.checkout-product-title {
+  color: #98866b;
+  font-family: "BerlingskeSerif";
+}
+
+.checkout-product-description {
+  color: var(--light-gray-text);
+  margin-bottom: 1rem !important;
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+
+.checkout-product-price {
+  margin-bottom: 1rem !important;
+  font-size: 0.95rem;
+}
+
 .cta-co-btn {
   color: white !important;
-  padding: 0.5rem 0.8rem 0.5rem 0.8rem;
-  background-color: #4b2e1ae8 !important;
+  padding: 0.5rem 0.8rem 0.5rem 0.8rem !important;
+  background-color: #98866b !important;
   border: none;
 }
 
 .cta-co-btn:hover {
-  background-color: #4b2e1aca !important;
+  background-color: #7e6f59dc !important;
   color: white !important;
 }
 
-.guarantee{
+.guarantee {
   height: 3.5rem;
-    width: 4rem;
+  width: 4rem;
 }
 
 .MasterCard {
   height: 3.2rem;
   width: 3.2rem;
 }
-.paypal{
+.paypal {
   height: 2.7rem;
   width: 2.7rem;
 }
 
-.etranfer{
+.etranfer {
   height: 3rem;
-    width: 3rem;
+  width: 3rem;
+}
+
+.disabled {
+  cursor: not-allowed;
+  background-color: gray !important;
 }

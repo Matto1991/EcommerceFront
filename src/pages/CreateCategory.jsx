@@ -74,7 +74,6 @@ function CreateCategory() {
                   name="image"
                   onChange={(event) => setImage(event.target.files[0])}
                   required
-                  className=""
                 />
                 <small className="me-2 input-tx text-dark">Upload </small>{" "}
                 <PhotoCamera className="input-tx text-dark" />

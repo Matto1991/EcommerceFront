@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { addToCart } from "../redux/cartReducer";
@@ -13,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 function Product() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const { id } = useParams();
   const [product, setProduct] = useState([]);
@@ -76,7 +77,7 @@ function Product() {
                     }}
                   />
                   <h4 className="bold product-price pt-2">
-                    <small className="product-price-small">from</small> U$S{" "}
+                    <small className="product-price-small">from</small> US${" "}
                     {product.price}
                   </h4>
                   <h5 className="border-top card-text product-description border-bottom pt-4 pb-3">
@@ -98,16 +99,14 @@ function Product() {
                   >
                     Add to cart
                   </button>
-                  <ToastContainer className="toast-message" />
+                  <ToastContainer className="toast-success" />
                 </div>
               </div>
             </div>
             <div className="d-flex mt-4">
-              <Link to="/products" className="text-black text-decoration-none">
-                <h4 className="fs-5">
-                  <i className="bi bi-arrow-left fs-5"></i> Back to all products
-                </h4>
-              </Link>
+              <h4 className="fs-5" onClick={() => navigate(-1)}>
+                <i className="bi bi-arrow-left fs-5"></i> Return
+              </h4>
             </div>
           </div>
         </div>
