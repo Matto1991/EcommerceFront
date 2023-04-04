@@ -172,7 +172,14 @@ function CheckOut() {
                     />
                   </div>
                 </div>
-                <h5 className="text-center m-3">Payment method</h5>
+                <div className="d-flex justify-content-center">
+                  <img
+                    src="img/guarantee.png"
+                    alt=""
+                    className="guarantee text-center"
+                  />
+                  <h5 className="text-center m-3">Payment method</h5>
+                </div>
                 <RadioGroup
                   className="d-flex justify-content-evenly"
                   row
@@ -181,27 +188,50 @@ function CheckOut() {
                   value={payment_method}
                   onChange={(event) => setPayment_method(event.target.value)}
                 >
-                  <FormControlLabel
-                    value="creditCard"
-                    control={<Radio />}
-                    label="Credit card"
-                    name="payment_method"
-                    onChange={(event) => setPayment_method(event.target.value)}
-                  />
-                  <FormControlLabel
-                    value="paypal"
-                    control={<Radio />}
-                    label="PayPal"
-                    name="payment_method"
-                    onChange={(event) => setPayment_method(event.target.value)}
-                  />
-                  <FormControlLabel
-                    value="etransfer"
-                    control={<Radio />}
-                    label="eTransfer"
-                    name="payment_method"
-                    onChange={(event) => setPayment_method(event.target.value)}
-                  />
+                  <div className="d-flex">
+                    <FormControlLabel
+                      value="creditCard"
+                      control={<Radio />}
+                      label="Credit card"
+                      name="payment_method"
+                      onChange={(event) =>
+                        setPayment_method(event.target.value)
+                      }
+                    />{" "}
+                    <img
+                      src="img/MasterCard.svg"
+                      alt="MasterCard"
+                      className="MasterCard"
+                    />
+                  </div>
+                  <div className="d-flex">
+                    <FormControlLabel
+                      value="paypal"
+                      control={<Radio />}
+                      label="PayPal"
+                      name="payment_method"
+                      onChange={(event) =>
+                        setPayment_method(event.target.value)
+                      }
+                    />
+                    <img src="img/paypal.svg" alt="paypal" className="paypal" />
+                  </div>
+                  <div className="d-flex">
+                    <FormControlLabel
+                      value="etransfer"
+                      control={<Radio />}
+                      label="eTransfer"
+                      name="payment_method"
+                      onChange={(event) =>
+                        setPayment_method(event.target.value)
+                      }
+                    />
+                    <img
+                      src="img/etranfer.svg"
+                      alt="etranfer"
+                      className="etranfer"
+                    />
+                  </div>
                 </RadioGroup>
               </form>
               <div></div>

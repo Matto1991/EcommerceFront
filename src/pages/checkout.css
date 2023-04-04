@@ -9,3 +9,22 @@
   background-color: #4b2e1aca !important;
   color: white !important;
 }
+
+.guarantee{
+  height: 3.5rem;
+    width: 4rem;
+}
+
+.MasterCard {
+  height: 3.2rem;
+  width: 3.2rem;
+}
+.paypal{
+  height: 2.7rem;
+  width: 2.7rem;
+}
+
+.etranfer{
+  height: 3rem;
+    width: 3rem;
+}
