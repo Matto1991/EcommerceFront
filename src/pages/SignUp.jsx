@@ -52,10 +52,10 @@ function SingUp() {
                 </span>
                 <Link
                   to="/login"
-                  className="formulary-subtitle text-decoration-none fw-bold link-sign-up fs-6"
+                  className="formulary-subtitle text-decoration-none fw-bold link-sign-up fs-6 "
                 >
                   {" "}
-                  Sign in
+                  <h3 className="d-inline"> Sign in</h3>
                 </Link>
               </p>
               {/* <button className="btn btn-lg btn-success sign-up-btn border-0">Sign Up</button> */}

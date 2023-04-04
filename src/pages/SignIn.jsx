@@ -29,8 +29,8 @@ function Login() {
       url: `${process.env.REACT_APP_BACKEND_URL}/auth/users`,
       data: {
         email,
-        password
-      }
+        password,
+      },
     });
 
     if (response.data.message === "Invalid credentials") {
@@ -60,7 +60,7 @@ function Login() {
                   className="text-decoration-none fw-bold fs-6 ms-1 link-sign-up"
                 >
                   {" "}
-                  Sign up
+                  <h3 className="d-inline"> Sign up</h3>
                 </Link>
               </p>
               {/* <button className="btn btn-lg btn-success sign-up-btn border-0">Sign Up</button> */}
