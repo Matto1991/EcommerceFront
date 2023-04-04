@@ -99,7 +99,7 @@ export default function CreateProduct() {
             </div>
             <div className="col-md-6">
               <label htmlFor="inputPassword4" className="form-label">
-                category
+                Category
               </label>
               <input
                 className="form-control"
@@ -143,7 +143,7 @@ export default function CreateProduct() {
             </div>
             <div className="col-12">
               <label htmlFor="inputAddress2" className="form-label">
-                stock
+                Stock
               </label>
               <input
                 type="text"
