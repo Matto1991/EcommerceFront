@@ -76,7 +76,7 @@ function Information() {
           <Link to="/login">
             {" "}
             <button className="btn cta-offcanvas-project mb-3">
-              Comprador Iniciar
+              Iniciar como comprador
             </button>{" "}
           </Link>
           <p>
@@ -90,7 +90,7 @@ function Information() {
           <Link to="/login-admin">
             {" "}
             <button className="btn cta-offcanvas-project">
-              Administrador Iniciar
+              Iniciar como administrador
             </button>
           </Link>
           <hr />
