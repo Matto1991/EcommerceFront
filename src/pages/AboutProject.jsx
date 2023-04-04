@@ -25,12 +25,13 @@ export default function AboutProyect() {
                 <h5 className="card-title">Duración</h5>
                 <p className="card-about fs-5">
                   Este proyecto se llevó a cabo en un período de{" "}
-                  <strong>tres semanas</strong> , específicamente en marzo de
-                  2023, con una metodología de demos semanales. Durante el
-                  proyecto el equipo se enfocó en seleccionar un producto y
-                  diseñar minuciosamente el sitio web para su comercialización.
-                  Se empleó una planificación detallada para garantizar el
-                  cumplimiento de los objetivos en el plazo establecido.
+                  <strong>tres semanas (9+ horas diarias)</strong> ,
+                  específicamente en marzo de 2023, con una metodología de demos
+                  semanales. Durante el proyecto el equipo se enfocó en
+                  seleccionar un producto y diseñar minuciosamente el sitio web
+                  para su comercialización. Se empleó una planificación
+                  detallada para garantizar el cumplimiento de los objetivos en
+                  el plazo establecido.
                 </p>
               </div>
             </div>
@@ -283,7 +284,7 @@ export default function AboutProyect() {
           </div>
         </div>
       </div>
-      <Information/>
+      <Information />
       <Footer />
     </>
   );
