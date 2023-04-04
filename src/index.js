@@ -9,6 +9,8 @@ import { persistor, store } from "./redux/storeConfig";
 import { PersistGate } from "redux-persist/integration/react";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

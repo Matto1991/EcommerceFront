@@ -8,7 +8,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { useSelector, useDispatch } from "react-redux";
 import Footer from "../components/Footer";
 import NavbarOther from "../components/NavbarOther";
-import { removeFromCart } from "../redux/cartReducer";
+import { removeFromCart, resetCart } from "../redux/cartReducer";
 import axios from "axios";
 import "./checkout.css";
 
@@ -25,6 +25,7 @@ function CheckOut() {
   const [state, setState] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [payment_method, setPayment_method] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -34,6 +35,7 @@ function CheckOut() {
   };
 
   const handleCheckout = async () => {
+    setIsLoading(true);
     const response = await axios({
       method: "POST",
       url: `${process.env.REACT_APP_BACKEND_URL}/orders`,
@@ -55,7 +57,13 @@ function CheckOut() {
         },
       },
     });
-    if (response) navigate("/thanks", { state: response.data });
+    if (response) {
+      setTimeout(() => {
+        navigate("/thanks", { state: response.data });
+        dispatch(resetCart());
+        setIsLoading(false);
+      }, 2000);
+    }
   };
 
   return (
@@ -66,7 +74,9 @@ function CheckOut() {
           <div className="row p-3 h-100 border rounded ">
             <div className="col-md-6 ">
               <form className="form-control border-0 rounded p-2">
-                <h3 className="mb-2">Contact information</h3>
+                <h3 className="checkout-form-title mb-4">
+                  Contact information
+                </h3>
                 <div className="mb-3">
                   <label className="form-label">Email address</label>
                   <input
@@ -172,14 +182,7 @@ function CheckOut() {
                     />
                   </div>
                 </div>
-                <div className="d-flex justify-content-center">
-                  <img
-                    src="img/guarantee.png"
-                    alt=""
-                    className="guarantee text-center"
-                  />
-                  <h5 className="text-center m-3">Payment method</h5>
-                </div>
+                <h5 className="text-center mt-4 mb-3">Payment method</h5>
                 <RadioGroup
                   className="d-flex justify-content-evenly"
                   row
@@ -188,50 +191,51 @@ function CheckOut() {
                   value={payment_method}
                   onChange={(event) => setPayment_method(event.target.value)}
                 >
-                  <div className="d-flex">
+                  <div>
                     <FormControlLabel
                       value="creditCard"
                       control={<Radio />}
-                      label="Credit card"
-                      name="payment_method"
-                      onChange={(event) =>
-                        setPayment_method(event.target.value)
+                      label={
+                        <div>
+                          <img
+                            src="/img/visa_pm.png"
+                            alt=""
+                            width={"45px"}
+                            className="me-2"
+                          />
+                          <img
+                            src="/img/mastercard_pm.png"
+                            alt=""
+                            width={"35px"}
+                            className="me-2"
+                          />
+                          <img src="/img/oca_pm.png" alt="" width={"50px"} />
+                        </div>
                       }
-                    />{" "}
-                    <img
-                      src="img/MasterCard.svg"
-                      alt="MasterCard"
-                      className="MasterCard"
-                    />
-                  </div>
-                  <div className="d-flex">
-                    <FormControlLabel
-                      value="paypal"
-                      control={<Radio />}
-                      label="PayPal"
-                      name="payment_method"
-                      onChange={(event) =>
-                        setPayment_method(event.target.value)
-                      }
-                    />
-                    <img src="img/paypal.svg" alt="paypal" className="paypal" />
-                  </div>
-                  <div className="d-flex">
-                    <FormControlLabel
-                      value="etransfer"
-                      control={<Radio />}
-                      label="eTransfer"
                       name="payment_method"
                       onChange={(event) =>
                         setPayment_method(event.target.value)
                       }
                     />
-                    <img
-                      src="img/etranfer.svg"
-                      alt="etranfer"
-                      className="etranfer"
-                    />
                   </div>
+                  <FormControlLabel
+                    value="paypal"
+                    control={<Radio />}
+                    label={
+                      <img src="/img/paypal_pm.webp" alt="" width={"85px"} />
+                    }
+                    name="payment_method"
+                    onChange={(event) => setPayment_method(event.target.value)}
+                  />
+                  <FormControlLabel
+                    value="etransfer"
+                    control={<Radio />}
+                    label={
+                      <img src="/img/e_brou_pm.png" alt="" width={"65px"} />
+                    }
+                    name="payment_method"
+                    onChange={(event) => setPayment_method(event.target.value)}
+                  />
                 </RadioGroup>
               </form>
               <div></div>
@@ -246,20 +250,25 @@ function CheckOut() {
                     {products.map((product, index) => (
                       <li key={index} className="list-unstyled">
                         <div className="row">
-                          <div className="col-8">
-                            <div className="fs-5">
+                          <div className="col-6">
+                            <div className="mb-1">
                               <h4>
                                 <Link
-                                  to="/product/:name"
-                                  className="brown text-decoration-none"
+                                  to={`/product/${product.id}`}
+                                  className="checkout-product-title text-decoration-none"
                                 >
                                   {product.name}
                                 </Link>
                               </h4>
-                              <small className="fw-2 ">$ {product.price}</small>
+                              <div className="checkout-product-description">
+                                {product.description}
+                              </div>
+                              <small className="checkout-product-price">
+                                US${product.price}
+                              </small>
                             </div>
                           </div>
-                          <div className="col-4">
+                          <div className="col-6">
                             <div className="mb-2">
                               <img
                                 alt="img\TheLeroyChair.webp"
@@ -273,13 +282,14 @@ function CheckOut() {
                             </div>
                           </div>
                           <div className="d-flex justify-content-between">
-                            <p>Qty: {product.quantity}</p>
+                            <p>Quantity: {product.quantity}</p>
 
-                            <IconButton aria-label="delete" size="small">
-                              <DeleteIcon
-                                fontSize="small"
-                                onClick={() => handleRemoveProduct(product)}
-                              />
+                            <IconButton
+                              onClick={() => handleRemoveProduct(product)}
+                              aria-label="delete"
+                              size="small"
+                            >
+                              <DeleteIcon fontSize="small" />
                             </IconButton>
                           </div>
                         </div>
@@ -295,32 +305,34 @@ function CheckOut() {
                     <p>
                       Total:{" "}
                       <strong>
-                        {" "}
+                        US${" "}
                         {products.reduce(
                           (acc, product) =>
                             acc + product.price * product.quantity,
                           0
                         )}{" "}
-                        U$S{" "}
                       </strong>
                     </p>
                   )}
                 </div>
-                <p className="mt-1 text-secondary-light">
+                <p className="mt-1 text-secondary-light fw-light">
                   Shipping and taxes calculated at checkout.
                 </p>
                 <div className="mt-6 d-grid gap-2 text-center">
                   <button
-                    className="btn cta-co-btn w-100"
+                    className={`btn cta-co-btn w-100${
+                      isLoading ? " disabled" : ""
+                    }`}
                     onClick={handleCheckout}
+                    disabled={isLoading}
                   >
-                    Confirm order
+                    {isLoading ? "Processing..." : "Confirm order"}
                   </button>
                 </div>
                 <div className="mt-5 text-center">
-                  <Link to={"/"}>
+                  <Link to={"/"} className="text-reset text-decoration-none">
                     <p>
-                      <button type="button" className=" btn fw-bolder">
+                      <button type="button" className="btn fw-bolder">
                         Continue Shopping{" "}
                         <span aria-hidden="true"> &rarr;</span>
                       </button>

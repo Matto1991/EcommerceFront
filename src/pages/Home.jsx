@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import Categories from "../components/Categories";
 import NavbarHome from "../components/NavbarHome";
 import Information from "../components/Information";
+import Slider from "react-slick";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 export default function Home() {
   const [featured, setFeatured] = useState([]);
@@ -51,53 +54,66 @@ export default function Home() {
           <div className="d-flex justify-content-center w-100 mb-5">
             <h2 className="section-title">Featured</h2>
           </div>
-          <div className="row g-4">
+          <Slider
+            dots={false}
+            infinite={true}
+            autoplay={true}
+            autoplaySpeed={3000}
+            slidesToShow={4}
+            slidesToScroll={1}
+            arrows={true}
+            prevArrow={<ArrowBackIosNewIcon />}
+            nextArrow={<ArrowForwardIosIcon />}
+          >
             {featured.map((product) => {
               return (
-                <div key={product.id} className="col-12 col-md-6 col-lg-3">
+                <div key={product.id}>
                   <Link
                     to={`product/${product.id}`}
                     className="text-decoration-none text-black"
                   >
-                    <div className="featured-card card d-flex flex-fill h-100">
-                      <img
-                        src={
-                          typeof product.images === "object"
-                            ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
-                            : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images}`
-                        }
-                        alt={`${product.name}`}
-                        className="rounded-top"
-                      />
-                      <div className="card-body featured-card-body d-flex flex-column justify-content-between rounded-bottom">
-                        <div>
-                          <h5 className="card-title featured-card-title">
-                            {product.name}
-                          </h5>
-                          <p className="card-text featured-card-text">
-                            {product.description}
+                    <div className="featured-card-container">
+                      <div className="featured-card card d-flex flex-fill">
+                        <img
+                          src={
+                            typeof product.images === "object"
+                              ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
+                              : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images}`
+                          }
+                          alt={`${product.name}`}
+                          className="featured-product-image rounded-top"
+                        />
+                        <div className="card-body featured-card-body d-flex flex-column justify-content-between rounded-bottom">
+                          <div>
+                            <h5 className="card-title featured-card-title">
+                              {product.name}
+                            </h5>
+                            <p className="card-text featured-card-text">
+                              {product.description}
+                            </p>
+                          </div>
+                          <p className="card-text mt-4">
+                            <small className="card-price">
+                              From US$ {`${product.price}`}
+                            </small>
                           </p>
                         </div>
-                        <p className="card-text mt-4">
-                          <small className="card-price">
-                            From U$S {`${product.price}`}
-                          </small>
-                        </p>
                       </div>
                     </div>
                   </Link>
                 </div>
               );
             })}
-          </div>
+          </Slider>
         </div>
-        <div className="d-flex justify-content-center team-section">
+        <div className="team-section d-flex justify-content-center align-items-center">
           <Link
             to="/project-details"
             className="text-decoration-none text-reset"
           >
             <div className="rounded text-center cta">
-              Meet our team <i className="bi bi-arrow-up-right-square ms-2"></i>
+              Project details{" "}
+              <i className="bi bi-arrow-up-right-square ms-2"></i>
             </div>
           </Link>
         </div>

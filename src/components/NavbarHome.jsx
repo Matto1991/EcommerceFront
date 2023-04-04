@@ -105,7 +105,9 @@ function NavbarHome() {
             />
             <NavDropdown
               className={` ${
-                isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
+                isScrolling
+                  ? "navbar-dynamic-dropdown"
+                  : "navbar-static-dropdown"
               }`}
             >
               <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
