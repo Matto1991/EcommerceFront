@@ -13,6 +13,7 @@ import SentimentDissatisfiedIcon from "@mui/icons-material/SentimentDissatisfied
 import SentimentSatisfiedIcon from "@mui/icons-material/SentimentSatisfied";
 import SentimentSatisfiedAltIcon from "@mui/icons-material/SentimentSatisfiedAltOutlined";
 import SentimentVerySatisfiedIcon from "@mui/icons-material/SentimentVerySatisfied";
+import ProgressBar from "react-bootstrap/ProgressBar";
 
 const StyledRating = styled(Rating)(({ theme }) => ({
   "& .MuiRating-iconEmpty .MuiSvgIcon-root": {
@@ -108,10 +109,9 @@ function PurchaseOrder() {
                         {" "}
                         <strong>{product.name} </strong>
                         <br /> <p>{product.description}</p>
-                        <br /> U$S {product.price * product.quantity}
+                        US$ {product.price * product.quantity}
                       </td>
                       <td className="text-center">
-                        {" "}
                         <strong>{product.quantity} </strong>
                       </td>
                     </tr>
@@ -122,17 +122,20 @@ function PurchaseOrder() {
           </div>
           <div className="table-responsive">
             STATUS: <strong> {location.state.status} </strong>
-            <div>
-              <Box sx={{ width: 300 }}>
+            <div className="mt-3">
+              <ProgressBar>
+                <ProgressBar striped animated variant="success" now={35} key={1} />
+              </ProgressBar>
+              {/* <Box sx={{ width: 1300 }}>
                 <Slider
                   defaultValue={2}
-                  step={4}
+                  step={3}
                   marks
                   min={1}
-                  max={4}
-                  disabled
+                  max={3}
+                  // disabled
                 />
-              </Box>
+              </Box> */}
             </div>
             <table className="table table-striped table-hover border border rounded  mt-5">
               <thead>
@@ -146,32 +149,37 @@ function PurchaseOrder() {
               <tbody>
                 <tr>
                   <td>
-                    {" "}
-                    <strong>City {details.city}</strong>
-                    <br />
-                    {details.address}
-                    <br /> Apartment {details.apartment}
-                    <br />
-                    Zipcode {details.zipcode}
+                    <ul className="list-group text-start list-unstyled">
+                      <li>{details.address}</li>
+                      <li>Apartment {details.apartment}</li>
+                      <li>
+                        {details.city} {details.zipcode}
+                      </li>
+                      <li>{details.state}</li>
+                    </ul>
                   </td>
                   <td>
-                    <strong>
-                      {details.firstname} {details.lastname}
-                    </strong>
+                    {details.firstname} {details.lastname}
                     <br />
                     {details.email}
                   </td>
                   <td>{details.payment_method}</td>
                   <td>
                     <ul className="list-group text-end list-unstyled">
-                      <li></li>
-                      <li>Shipping U$S 0</li>
-                      <li>Tax U$S 0</li>
+                      <li>Shipping US$ 0 </li>
+                      <li>Tax US$ 0</li>
+                      <li>
+                        Total products:{" "}
+                        {products.reduce(
+                          (a, b) => Number(a) + Number(b.quantity),
+                          0
+                        )}
+                      </li>
                       <li>
                         Total:{" "}
                         <strong>
                           {" "}
-                          U$S{" "}
+                          US${" "}
                           {products.reduce(
                             (acc, product) =>
                               acc + product.price * product.quantity,
