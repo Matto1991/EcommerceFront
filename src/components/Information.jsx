@@ -36,7 +36,7 @@ function Information() {
       <Button
         variant="light"
         onClick={handleShow}
-        className=" cta text-white me-2 btn-info"
+        className="cta-sobre-proyecto text-white me-2 btn-info"
       >
         Sobre el Proyecto
       </Button>
@@ -52,7 +52,7 @@ function Information() {
           </p>
           <Link to="/project/details">
             {" "}
-            <button className="btn cta text-white">
+            <button className="btn cta-offcanvas-project">
               Sobre este proyecto
             </button>{" "}
           </Link>
@@ -75,7 +75,7 @@ function Information() {
           </ul>
           <Link to="/login">
             {" "}
-            <button className="btn cta text-white mb-3">
+            <button className="btn cta-offcanvas-project mb-3">
               Comprador Iniciar
             </button>{" "}
           </Link>
@@ -89,7 +89,7 @@ function Information() {
           </ul>
           <Link to="/login-admin">
             {" "}
-            <button className="btn cta text-white">
+            <button className="btn cta-offcanvas-project">
               Administrador Iniciar
             </button>
           </Link>
@@ -100,7 +100,7 @@ function Information() {
             experiencia de usuario, se recomienda reiniciar la base de datos de
             prueba antes de navegar por el sitio:
           </p>
-          <button onClick={()=>handleResetDb()} className="btn cta text-white">
+          <button onClick={()=>handleResetDb()} className="btn cta-offcanvas-project">
             Reiniciar BD
           </button>
           <ToastContainer className="toast-message" />

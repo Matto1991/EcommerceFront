@@ -66,7 +66,7 @@ function Dashboard() {
                   </span>
                   <div className="card-dashboard mt-2">
                     <h5>Total orders</h5>
-                    <h6>{orders.length}</h6>
+                    <h6>{orders.length + 1}</h6>
                   </div>
                 </div>
                 <div className="card p-2 col">

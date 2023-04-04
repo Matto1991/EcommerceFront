@@ -51,7 +51,7 @@ function AdminOrder() {
                     return (
                       <tr key={order.id}>
                         <td> {order.id}</td>
-                        <td>{order.details.firstname}</td>
+                        <td>{order.details.firstname} {order.details.lastname}</td>
                         <td>
                           {" "}
                           {order.products.reduce(

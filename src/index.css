@@ -640,6 +640,12 @@ html {
   border-top: 0;
 }
 
+.featured-card-body-home {
+  height: 35vh;
+  border: 1px solid var(--dark-gray-background);
+  border-top: 0;
+}
+
 .featured-card-title {
   font-family: "BerlingskeSerif";
   font-weight: 500;
@@ -672,6 +678,43 @@ html {
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
     border 0.3s ease-in-out;
+}
+
+.cta-offcanvas-project {
+  padding: 0.9rem 1.4rem 0.9rem 1.4rem;
+  font-size: 1.1rem;
+  font-weight: 200;
+  color: #ffffff !important;
+  /* background-color: transparent !important; */
+  background-color: #98866ba6 !important;
+  border: 1px solid #98866b !important;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+}
+
+.cta-offcanvas-project:hover {
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: #7e6f59dc !important;
+}
+
+.cta-sobre-proyecto {
+  padding: 0.9rem 1.4rem 0.9rem 1.4rem;
+  font-size: 1.1rem;
+  font-weight: 200;
+  color: #98866b;
+  background-color: #98866ba6 !important;
+  border: 1px solid #98866b;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+}
+
+.cta-sobre-proyecto:hover {
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: #7e6f59dc !important;
 }
 
 .cta a {
