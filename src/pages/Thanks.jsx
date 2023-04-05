@@ -2,8 +2,8 @@ import NavbarOther from "../components/NavbarOther";
 import "./purchaseOrder.css";
 import { useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
-import { Box } from "@mui/system";
-import { Slider } from "@mui/material";
+// import { Box } from "@mui/system";
+// import { Slider } from "@mui/material";
 
 import PropTypes from "prop-types";
 import { styled } from "@mui/material/styles";
@@ -44,9 +44,9 @@ const customIcons = {
   },
 };
 
-function valuetext(value) {
-  return `${value}`;
-}
+// function valuetext(value) {
+//   return `${value}`;
+// }
 
 function IconContainer(props) {
   const { value, ...other } = props;
