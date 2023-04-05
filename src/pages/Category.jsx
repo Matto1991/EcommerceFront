@@ -83,7 +83,7 @@ function Category() {
                             </p>
 
                             <h5 className="categories-price bold card-price pt-2">
-                              <span className="text-dark">from</span> U$S{" "}
+                              <span className="text-dark">from</span> US${" "}
                               {product.price}
                             </h5>
                           </div>
