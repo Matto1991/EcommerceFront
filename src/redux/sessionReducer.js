@@ -5,11 +5,11 @@ const sessionSlice = createSlice({
   initialState: { token: null, user: null },
 
   reducers: {
-    setToken(state, action) {
+    setLoggedUser(state, action) {
       return action.payload;
     },
   },
 });
 
-export const { setToken } = sessionSlice.actions;
+export const { setLoggedUser } = sessionSlice.actions;
 export default sessionSlice.reducer;

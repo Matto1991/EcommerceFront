@@ -6,20 +6,14 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Cart from "../components/Cart";
 import { Avatar } from "@mui/material";
-import { setToken } from "../redux/sessionReducer";
+import { setLoggedUser } from "../redux/sessionReducer";
 
 function NavbarHome() {
+  const loggedUser = useSelector((state) => state.session.user);
   const [isScrolling, setIsScrolling] = useState(false);
-
-  const products = useSelector((state) => state.cart.products);
   const dispatch = useDispatch();
-
-  const cartTotalQuantity = useSelector(
-    (state) => state.cart.cartTotalQuantity
-  );
-
   const handleLogout = () => {
-    dispatch(setToken({ token: null, user: null }));
+    dispatch(setLoggedUser({ token: null, user: null }));
   };
 
   useEffect(() => {
@@ -99,8 +93,12 @@ function NavbarHome() {
               </NavDropdown.Item>
             </NavDropdown>
             <Avatar
-              alt="Remy Sharp"
-              src="/img/imagenAdmin.png"
+              src={
+                loggedUser
+                  ? `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
+                  : `${process.env.REACT_APP_BACKEND_URL}/img/users/no_user.png`
+              }
+              alt={loggedUser ? `${loggedUser.firstname}` : "User picture"}
               className="navbar-avatar ms-4"
             />
             <NavDropdown

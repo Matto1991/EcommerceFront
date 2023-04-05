@@ -4,15 +4,14 @@ import Navbar from "react-bootstrap/Navbar";
 import "./admin.css";
 import Avatar from "@mui/material/Avatar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { useDispatch } from "react-redux";
-import { setToken } from "../redux/sessionReducer";
+import { useSelector, useDispatch } from "react-redux";
+import { setLoggedUser } from "../redux/sessionReducer";
 
 function NavbarAdmin() {
-
-  const dispatch = useDispatch()
-
+  const dispatch = useDispatch();
+  const loggedUser = useSelector((state) => state.session.user);
   const handleLogout = () => {
-    dispatch(setToken({ token: null, user: null }));
+    dispatch(setLoggedUser({ token: null, user: null }));
   };
 
   return (
@@ -24,7 +23,15 @@ function NavbarAdmin() {
           <NavDropdown.Item href="/orders">Your Orders</NavDropdown.Item>
           <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
         </NavDropdown>
-        <Avatar alt="Remy Sharp" src="/img/imagenAdmin.png" className="mx-1" />
+        <Avatar
+          src={
+            loggedUser
+              ? `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
+              : `${process.env.REACT_APP_BACKEND_URL}/img/users/no_user.png`
+          }
+          alt={loggedUser ? `${loggedUser.firstname}` : "User picture"}
+          className="mx-1"
+        />
       </Container>
     </Navbar>
   );

@@ -29,9 +29,9 @@ function Cart({ name }) {
   const handleIncrementCart = (product) => dispatch(increaseCart(product));
 
   const handleRedirect = () => {
-    if (user && user.id && products.length > 0) {
+    if (user.token && products.length > 0) {
       return navigate("/checkout");
-    } else if (user && user.id && products.length === 0) {
+    } else if (user.token && products.length === 0) {
       return toast.error("There are no products in the cart!");
     } else {
       return navigate("/login");

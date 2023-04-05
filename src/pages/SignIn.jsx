@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { setToken } from "../redux/sessionReducer";
+import { setLoggedUser } from "../redux/sessionReducer";
 import { useNavigate, Link } from "react-router-dom";
 import "./form.css";
 import { ToastContainer, toast } from "react-toastify";
@@ -25,7 +25,7 @@ function Login() {
       headers: {
         Authorization: `bearer: ${user.token}`,
       },
-      method: "post",
+      method: "POST",
       url: `${process.env.REACT_APP_BACKEND_URL}/auth/users`,
       data: {
         email,
@@ -38,7 +38,7 @@ function Login() {
     } else if (response.data.message === "User not found") {
       userNotFound();
     } else {
-      dispatch(setToken(response.data));
+      dispatch(setLoggedUser(response.data));
       navigate("/");
     }
   };

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { setToken } from "../redux/sessionReducer";
+import { setLoggedUser } from "../redux/sessionReducer";
 import { useNavigate, Link } from "react-router-dom";
 import "./form.css";
 import { ToastContainer, toast } from "react-toastify";
@@ -37,7 +37,7 @@ export default function LoginAdmin() {
     } else if (response.data.message === "Admin not found") {
       adminNotFound();
     } else {
-      dispatch(setToken(response.data));
+      dispatch(setLoggedUser(response.data));
       navigate("/admin");
     }
   };
