@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { Zoom, toast } from "react-toastify";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -9,6 +10,10 @@ const cartSlice = createSlice({
       const productInCart = state.products.find(
         (item) => item.id === product.id
       );
+
+      if (productInCart && productInCart.quantity >= product.stock) {
+        return;
+      }
 
       productInCart
         ? (productInCart.quantity += 1)
@@ -26,7 +31,18 @@ const cartSlice = createSlice({
       const product = state.products.find(
         (product) => product.id === action.payload.id
       );
-      product.quantity >= 1 ? (product.quantity += 1) : (product.quantity = 1);
+
+      if (product.quantity >= product.stock) {
+        toast.error("Not enough stock available", {
+          position: "top-center",
+          transition: Zoom,
+        });
+        return state;
+      }
+
+      product.quantity += 1;
+
+      return state;
     },
 
     removeFromCart(state, action) {
