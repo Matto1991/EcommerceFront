@@ -43,7 +43,7 @@ function AdminCategories() {
           <div className="d-flex justify-content-between pt-4">
             <h2 className="d-inline">Categories</h2>
             <Link to="/admin/create/category">
-              <button className="btn cta text-white btn-m me-auto">
+              <button className="btn cta-sobre-proyecto text-white btn-m me-auto">
                 Add Category
               </button>
             </Link>

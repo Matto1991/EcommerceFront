@@ -61,12 +61,10 @@
 
 /* Dashboard  */
 .icon-dashboard-order {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: -30px;
-  left: 80%;
-  background-color: rgba(49, 49, 212, 0.900);
+  width: 70px;
+  height: 70px;
+
+  background-color: var(--brand-green-dark);
   color: white;
   display: flex;
   justify-content: center;
@@ -74,12 +72,9 @@
 }
 
 .icon-dashboard-products {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: -30px;
-  left: 80%;
-  background-color: rgb(238, 158, 10, 0.900);
+  width: 70px;
+  height: 70px;
+  background-color: var(--brand-green-dark);
   color: white;
   display: flex;
   justify-content: center;
@@ -87,20 +82,11 @@
 }
 
 .icon-dashboard-sales {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  top: -30px;
-  left: 80%;
-  background-color: green;
+  width: 70px;
+  height: 70px;
+  background-color: var(--brand-green-dark);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.card-dashboard  {
-  display: grid;
-  place-items: center;
-}
-

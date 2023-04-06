@@ -5,6 +5,7 @@ import NavbarOther from "../components/NavbarOther";
 
 import "../pages/form.css";
 import Information from "../components/Information";
+import { Link } from "react-router-dom";
 
 export default function AboutProyect() {
   return (
@@ -106,29 +107,29 @@ export default function AboutProyect() {
                 </div>
 
                 <div className="icons-team text-center">
-                  <a
-                    href="https://www.linkedin.com/in/andr%C3%A9s-viera/"
+                  <Link
+                    to={"https://www.linkedin.com/in/andr%C3%A9s-viera"}
                     target="_blank"
                     className="text-black"
                   >
                     <i className="bi bi-linkedin me-2 "></i>
-                  </a>
+                  </Link>
 
-                  <a
-                    href="https://github.com/andy-viera"
+                  <Link
+                    to={"https://github.com/andy-viera"}
                     target="_blank"
                     className="text-black"
                   >
                     <i className="bi bi-github me-2"></i>
-                  </a>
+                  </Link>
 
-                  <a
-                    href="mailto:andivie12@gmail.com?subject=&body="
+                  <Link
+                    to={"mailto:andivie12@gmail.com?subject=&body="}
                     target="_blank"
                     className="text-black"
                   >
                     <i className="bi bi-envelope-fill "></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -137,7 +138,7 @@ export default function AboutProyect() {
             <div className="col-md-6 col-lg-3">
               <div className="card border-0 p-3">
                 <img
-                  src="/img/VirginiaBarbaroimg.jpg"
+                  src="/img/VirV.jpg"
                   className="img-team shadow mx-auto"
                   alt="..."
                 />
@@ -149,27 +150,29 @@ export default function AboutProyect() {
                 </div>
 
                 <div className="icons-team text-center">
-                  <a
-                    href="https://www.linkedin.com/in/virginia-barbaro/"
+                  <Link
+                    to={"https://www.linkedin.com/in/virginia-barbaro/"}
                     target="_blank"
                     className="text-black"
                   >
                     <i className="bi bi-linkedin me-2"></i>
-                  </a>
-                  <a
-                    href="https://github.com/VirginiaBarbaro"
+                  </Link>
+                  <Link
+                    to={"https://github.com/VirginiaBarbaro"}
                     target="_blank"
                     className="text-black"
                   >
                     <i className="bi bi-github me-2"></i>
-                  </a>
-                  <a
-                    href="mailto:virginiabarbaro@icloud.com?subject=&body=Hola,%20quiero%20contactarte"
+                  </Link>
+                  <Link
+                    to={
+                      "mailto:virginiabarbaro@icloud.com?subject=&body=Hola,%20quiero%20contactarte"
+                    }
                     target="_blank"
                     className="text-black"
                   >
                     <i className="bi bi-envelope-fill "></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -189,27 +192,29 @@ export default function AboutProyect() {
                 </div>
 
                 <div className="icons-team text-center">
-                  <a
-                    href="https://www.linkedin.com/in/aline-farias-111035268/"
+                  <Link
+                    to={"https://www.linkedin.com/in/aline-farias-111035268/"}
                     target="_blank"
                     className="text-black"
                   >
                     <i className="bi bi-linkedin me-2 icons-h"></i>
-                  </a>
-                  <a
-                    href="https://github.com/aliifm"
+                  </Link>
+                  <Link
+                    to={"https://github.com/aliifm"}
                     target="_blank"
                     className="text-black"
                   >
                     <i className="bi bi-github me-2 icons-h"></i>
-                  </a>
-                  <a
-                    href="mailto:Aline.farias.dev@gmail.com?subject==Hola,%20quiero%20contactarte"
+                  </Link>
+                  <Link
+                    to={
+                      "mailto:Aline.farias.dev@gmail.com?subject==Hola,%20quiero%20contactarte"
+                    }
                     target="_blank"
                     className="text-black"
                   >
                     <i className="bi bi-envelope-fill icons-h"></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -229,27 +234,29 @@ export default function AboutProyect() {
                 </div>
 
                 <div className="icons-team text-center">
-                  <a
-                    href="https://www.linkedin.com/in/mathias-sandin/"
+                  <Link
+                    to={"https://www.linkedin.com/in/mathias-sandin/"}
                     target="_blank"
                     className="text-black"
                   >
                     <i className="bi bi-linkedin me-2"></i>
-                  </a>
-                  <a
-                    href="https://github.com/Matto1991?tab=repositories"
+                  </Link>
+                  <Link
+                    to={"https://github.com/Matto1991?tab=repositories"}
                     target="_blank"
                     className="text-black"
                   >
                     <i className="bi bi-github me-2"></i>
-                  </a>
-                  <a
-                    href="mailto:matto.sandin.1991@gmail.com?subject=&body=Hola,%20quiero%20contactarte"
+                  </Link>
+                  <Link
+                    to={
+                      "mailto:matto.sandin.1991@gmail.com?subject=&body=Hola,%20quiero%20contactarte"
+                    }
                     target="_blank"
                     className="text-black"
                   >
                     <i className="bi bi-envelope-fill "></i>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -73,7 +73,8 @@ export default function Home() {
                     className="text-decoration-none text-black"
                   >
                     <div className="featured-card-container">
-                      <div className="featured-card card d-flex flex-fill">
+                      <div className="featured-card card d-flex flex-fill ">
+                        {" "}
                         <img
                           src={
                             typeof product.images === "object"
@@ -106,6 +107,7 @@ export default function Home() {
             })}
           </Slider>
         </div>
+
         <div className="team-section d-flex justify-content-center align-items-center">
           <Link
             to="/project-details"

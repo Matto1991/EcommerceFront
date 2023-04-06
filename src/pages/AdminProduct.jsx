@@ -50,7 +50,9 @@ export default function AdminProduct() {
           <div className="d-flex justify-content-between pt-4">
             <h2 className="d-inline">Products</h2>
             <Link to="/admin/create/product">
-              <button className="btn cta text-white btn-m">Add product</button>
+              <button className="btn cta-sobre-proyecto text-white btn-m">
+                Add product
+              </button>
             </Link>
           </div>
           <div className="table-responsive">

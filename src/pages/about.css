@@ -8,11 +8,12 @@
       rgba(255, 255, 255, 0.803) 96%,
       rgb(255, 255, 255) 100%
     ),
-    url("/public/img/Ecozy\ Luzury\ \(3\).png");
+    url("/public/img/eco-div1.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 50vh;
+  height: 80vh;
+  opacity: 0.9;
 }
 
 .hero-title-about {
@@ -83,4 +84,3 @@
   height: 300px;
   width: 300px;
 }
-

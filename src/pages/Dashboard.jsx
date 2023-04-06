@@ -55,79 +55,107 @@ function Dashboard() {
       <NavbarAdmin />
       <div className="d-flex">
         <AdminDash />
-        <div className="container">
-          <main className="flex-grow-1">
-            <section className="p-4">
-              <h3>Dashboard</h3>
-              <div className="row mt-5 row-cols-1 row-cols-lg-3 g-5 mb-5">
-                <div className="card p-2 col">
-                  <span className="p-2 rounded icon-dashboard-order">
-                    <i className="bi bi-box2"></i>
-                  </span>
-                  <div className="card-dashboard mt-2">
-                    <h5>Total orders</h5>
-                    <h6>{orders.length + 1}</h6>
-                  </div>
+        <div className="container p-4 mt-5">
+          <h2>Dashboard</h2>
+
+          <div className="row mt-5 row-cols-1 row-cols-lg-3 g-4 gx-3 p-2 mb-5 ">
+            <div className="card p-2 col shadow">
+              <div className="card-dashboard d-flex justify-content-evenly p-4  ">
+                <div>
+                  <span className="p-2 rounded icon-dashboard-order ">
+                    <i className="bi bi-box2 fs-3"></i>
+                  </span>{" "}
                 </div>
-                <div className="card p-2 col">
-                  <span className="p-2 rounded icon-dashboard-products">
-                    <i className="bi bi-card-list"></i>
-                  </span>
-                  <div className="card-dashboard mt-2">
-                    <h5>Total products</h5>
-                    <h6>{products.length}</h6>
-                  </div>
-                </div>
-                <div className="card p-2 col">
-                  <span className="p-2 rounded icon-dashboard-sales">
-                    <i className="bi bi-currency-dollar"></i>
-                  </span>
-                  <div className="card-dashboard mt-2">
-                    <h5>Total sales</h5>
-                    <h6>{`${total}`} US$</h6>
+                <div className="text-center">
+                  <h3>Total orders</h3>
+                  <div className="d-flex justify-content-evenly">
+                    <h5>{orders.length + 1} </h5>
+                    <span className="text-success ">
+                      <i className="bi bi-arrow-up "> </i> 11%
+                    </span>
                   </div>
                 </div>
               </div>
-              <div className="d-flex justify-content-between pt-4">
-                <h2 className="d-inline">Last 10 0rders</h2>
+            </div>
+
+            <div className="card p-2 col shadow">
+              <div className="card-dashboard d-flex justify-content-evenly p-4  ">
+                <div>
+                  <span className="p-2 rounded icon-dashboard-products ">
+                    <i className="bi bi-card-list fs-3"></i>
+                  </span>{" "}
+                </div>
+                <div className="text-center">
+                  <h3>Total products</h3>
+                  <div className="d-flex justify-content-evenly">
+                    <h5>{products.length}</h5>
+                    <span className="text-success ">
+                      <i className="bi bi-arrow-up "> </i> 16%
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div className="table-responsive text-center">
-                <table className="table table-striped table-hover border border rounded shadow mt-5">
-                  <thead>
-                    <tr>
-                      <th scope="col">Id</th>
-                      <th scope="col">User</th>
-                      <th scope="col">Total Price</th>
-                      <th scope="col">Options</th>
+            </div>
+
+            <div className="card p-2 col shadow">
+              <div className="card-dashboard d-flex justify-content-evenly p-4  ">
+                <div>
+                  <span className="p-2 rounded icon-dashboard-sales ">
+                    <i className="bi bi-currency-dollar fs-3"></i>
+                  </span>{" "}
+                </div>
+                <div className="text-center">
+                  <h3>Total sales</h3>
+                  <div className="d-flex justify-content-evenly">
+                    <h5>{`${total}`} US$</h5>
+                    <span className="text-danger ">
+                      <i className="bi bi-arrow-down "> </i> 3%
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="d-flex justify-content-between pt-4">
+            <h2 className="d-inline">Last 10 0rders</h2>
+          </div>
+          <div className="table-responsive text-center">
+            <table className="table table-striped table-hover border border rounded shadow mt-5">
+              <thead>
+                <tr className="fs-4">
+                  <th>Id</th>
+                  <th>User</th>
+                  <th>Total Price</th>
+                  <th>Options</th>
+                </tr>
+              </thead>
+              <tbody>
+                {orders.map((order) => {
+                  return (
+                    <tr key={order.id}>
+                      <td> {order.id}</td>
+                      <td>
+                        {order.details.firstname} {order.details.lastname}
+                      </td>
+                      <td>
+                        {" "}
+                        {order.products.reduce(
+                          (acc, product) =>
+                            acc + product.price * product.quantity,
+                          0
+                        )}{" "}
+                        US$
+                      </td>
+                      <td>
+                        <i className="bi bi-box-seam me-2"></i>
+                        {order.status}
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {orders.map((order) => {
-                      return (
-                        <tr key={order.id}>
-                          <td> {order.id}</td>
-                          <td>{order.details.firstname} {order.details.lastname}</td>
-                          <td>
-                            {" "}
-                            {order.products.reduce(
-                              (acc, product) =>
-                                acc + product.price * product.quantity,
-                              0
-                            )}{" "}
-                            US$
-                          </td>
-                          <td>
-                            <i className="bi bi-box-seam me-2"></i>
-                            {order.status}
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
-            </section>
-          </main>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </>

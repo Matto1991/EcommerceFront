@@ -10,7 +10,7 @@ import AboutProject from "./pages/AboutProject";
 import Category from "./pages/Category";
 import Product from "./pages/Product";
 import Products from "./pages/Products";
-import Cart from "./components/Cart";
+
 import CheckOut from "./pages/CheckOut";
 
 //Admins
@@ -20,7 +20,6 @@ import AdminProfile from "./pages/AdminProfile";
 import AdminProduct from "./pages/AdminProduct";
 import EditProduct from "./pages/EditProduct";
 import AdminOrder from "./pages/AdminOrder";
-import AdminOwnOrder from "./pages/AdminOwnOrder";
 import AdminUser from "./pages/AdminUser";
 import CreateUser from "./pages/CreateUser";
 import EditUser from "./pages/EditUser";
@@ -32,6 +31,7 @@ import CreateProduct from "./pages/CreateProduct";
 import Error from "./pages/Error";
 import PurchaseOrder from "./pages/Thanks";
 import Information from "./components/Information";
+import UserOrders from "./pages/UserOrders";
 
 function App() {
   return (
@@ -52,6 +52,7 @@ function App() {
         <Route element={<UserProtectedRouter redirectTo="/login" />}>
           <Route path="/thanks" element={<PurchaseOrder />} />
           <Route path="/checkout" element={<CheckOut />} />
+          <Route path="/orders" element={<UserOrders />} />
         </Route>
         {/* Admins */}
         <Route
@@ -72,7 +73,6 @@ function App() {
           <Route path="/admin/edit/user/:id" element={<EditUser />} />
           <Route path="/admin/edit/admin/:id" element={<EditAdmin />} />
           <Route path="/admin/orders" element={<AdminOrder />} />
-          <Route path="/orders" element={<AdminOwnOrder />} />
           <Route path="/admin/create/product" element={<CreateProduct />} />
           <Route path="admin/edit/product/:id" element={<EditProduct />} />
           <Route path="/admin/categories" element={<AdminCategories />} />
