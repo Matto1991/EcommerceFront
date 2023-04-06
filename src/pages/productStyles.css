@@ -79,10 +79,11 @@
 
 .back-soon-product {
   border: none;
-  background-color: #005b47c4;
+  background-color: #7e6f59c6;
   color: #f8f9fa;
-  padding: .3rem;
-  border-radius: 20px;
+  padding: 0.5rem;
+  border-radius: 5px;
+
 }
 
 .product-btn:hover {
