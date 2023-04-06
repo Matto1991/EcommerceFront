@@ -47,15 +47,17 @@ function Information() {
         <Offcanvas.Body>
           <p>
             {" "}
-            El presente sitio de e-commerce es un proyecto desarrollado por
-            estudiantes del Coding Bootcamp de Hack Academy.
+            <i class="bi bi-database-exclamation me-2"></i> Para una mejor
+            experiencia de usuario, se recomienda reiniciar la base de datos de
+            prueba antes de navegar por el sitio:
           </p>
-          <Link to="/project/details">
-            {" "}
-            <button className="btn cta-offcanvas-project">
-              Sobre este proyecto
-            </button>{" "}
-          </Link>
+          <button
+            onClick={() => handleResetDb()}
+            className="btn cta-offcanvas-project"
+          >
+            Reiniciar BD
+          </button>
+          <ToastContainer className="toast-message" />
           <hr />
           <h5>
             <i class="bi bi-people me-2"></i> Usuarios de prueba
@@ -94,16 +96,18 @@ function Information() {
             </button>
           </Link>
           <hr />
+
           <p>
             {" "}
-            <i class="bi bi-database-exclamation me-2"></i> Para una mejor
-            experiencia de usuario, se recomienda reiniciar la base de datos de
-            prueba antes de navegar por el sitio:
+            El presente sitio de e-commerce es un proyecto desarrollado por
+            estudiantes del Coding Bootcamp de Hack Academy.
           </p>
-          <button onClick={()=>handleResetDb()} className="btn cta-offcanvas-project">
-            Reiniciar BD
-          </button>
-          <ToastContainer className="toast-message" />
+          <Link to="/project/details">
+            {" "}
+            <button className="btn cta-offcanvas-project">
+              Sobre este proyecto
+            </button>{" "}
+          </Link>
         </Offcanvas.Body>
       </Offcanvas>
     </>
