@@ -66,8 +66,10 @@ function Product() {
               <div className="col-12 col-lg-4">
                 <div className="card-body ">
                   <h1 className="product-title card-title ">{product.name}</h1>
-                  <p>Ships in 1 week</p>
-
+                  <div className="d-flex justify-content-between">
+                    <p>Ships in 1 week</p>
+                    <span>Stock: {product.stock}</span>
+                  </div>
                   <Rating
                     name="simple-controlled"
                     className="brown"

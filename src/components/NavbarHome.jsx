@@ -110,6 +110,7 @@ function NavbarHome() {
             >
               <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
               <NavDropdown.Item href="/orders">Orders</NavDropdown.Item>
+              <NavDropdown.Item href="/login">Login</NavDropdown.Item>
               <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link className="d-flex">
