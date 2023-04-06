@@ -6,6 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 import "./form.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Information from "../components/Information";
 
 function Login() {
   const user = useSelector((state) => state.session);
@@ -110,6 +111,7 @@ function Login() {
           </div>
         </div>
       </div>
+      <Information />
     </>
   );
 }

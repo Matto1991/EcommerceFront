@@ -6,6 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 import "./form.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Information from "../components/Information";
 
 export default function LoginAdmin() {
   const user = useSelector((state) => state.session);
@@ -50,18 +51,6 @@ export default function LoginAdmin() {
           <div className="row formulary ">
             <div className="formulary-welcome-message col-md-6 col-lg-6 text-center d-flex flex-column justify-content-center">
               <h2>Welcome to Ecozy Luxury</h2>
-              <p className="formulary-subtitle">
-                {" "}
-                Trying to create a user account?
-                <Link
-                  to="/signup"
-                  className="text-decoration-none fw-bold fs-6 ms-1 link-sign-up"
-                >
-                  {" "}
-                  Sign up
-                </Link>
-              </p>
-              {/* <button className="btn btn-lg btn-success sign-up-btn border-0">Sign Up</button> */}
             </div>
             <div className="col-md-5 col-lg-5">
               <form onSubmit={(event) => handleAdminLogin(event)}>
@@ -111,6 +100,7 @@ export default function LoginAdmin() {
           </div>
         </div>
       </div>
+      <Information />
     </>
   );
 }

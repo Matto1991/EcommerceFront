@@ -1,6 +1,7 @@
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
+import UserProtectedRouter from "./components/UserProtectedRouter";
 
 //Users
 import SignIn from "./pages/SignIn";
@@ -41,19 +42,29 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/category/:name" element={<Category />} />
-        <Route path="/cart" element={<Cart />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/project/details" element={<AboutProject />} />
         <Route path="/signup" element={<SingUp />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/login/admin" element={<SignInAdmin />} />
-        <Route element={<ProtectedRoute />}>
+
+        {/* Rutas protegidas */}
+        <Route element={<UserProtectedRouter redirectTo="/login"/>} >
           <Route path="/thanks" element={<PurchaseOrder />} />
-          <Route path="/profile" element={<AdminProfile />} />
           <Route path="/checkout" element={<CheckOut />} />
-          {/* Admins */}
+        </Route>
+        {/* Admins */}
+        <Route
+          element={
+            <ProtectedRoute
+              path="/admin"
+              element={<Dashboard />}
+              redirectTo="/"
+            />
+          }
+        >
           <Route path="/admin" element={<Dashboard />} />
-          <Route path="/profile" element={<AdminProfile />} />
+          <Route path="/admin/profile" element={<AdminProfile />} />
           <Route path="/admin/products" element={<AdminProduct />} />
           <Route path="admin/edit/product/:id" element={<EditProduct />} />
           <Route path="/admin/users" element={<AdminUser />} />
@@ -65,8 +76,8 @@ function App() {
           <Route path="/admin/create/product" element={<CreateProduct />} />
           <Route path="admin/edit/product/:id" element={<EditProduct />} />
           <Route path="/admin/categories" element={<AdminCategories />} />
-          <Route path="/admin/createCategory" element={<CreateCategory />} />
-          <Route path="/admin/editCategory/:id" element={<EditCategory />} />
+          <Route path="/admin/create/category" element={<CreateCategory />} />
+          <Route path="/admin/edit/category/:id" element={<EditCategory />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>

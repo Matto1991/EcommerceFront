@@ -19,7 +19,7 @@ function NavbarAdmin() {
       <Container>
         <Navbar.Brand className="text-white">Administrator panel</Navbar.Brand>
         <NavDropdown className="text-black ms-auto mt-2 text-white">
-          <NavDropdown.Item href="/profile">Your Profile</NavDropdown.Item>
+          <NavDropdown.Item href="/admin/profile">Your Profile</NavDropdown.Item>
           <NavDropdown.Item href="/orders">Your Orders</NavDropdown.Item>
           <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
         </NavDropdown>

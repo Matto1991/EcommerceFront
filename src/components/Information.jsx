@@ -42,14 +42,13 @@ function Information() {
       </Button>
       <Offcanvas show={show} onHide={handleClose} placement={"start"}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Sobre este proyecto</Offcanvas.Title>
+          <Offcanvas.Title>Sobre el proyecto</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <p>
             {" "}
             <i class="bi bi-database-exclamation me-2"></i> Para una mejor
-            experiencia de usuario, se recomienda reiniciar la base de datos de
-            prueba antes de navegar por el sitio:
+            experiencia, se recomienda reiniciar la base de datos antes de navegar por el sitio.
           </p>
           <button
             onClick={() => handleResetDb()}
@@ -89,7 +88,7 @@ function Information() {
             <li>E-mail: admin@ecozy.com</li>
             <li>Password: 1234</li>
           </ul>
-          <Link to="/login-admin">
+          <Link to="/login/admin">
             {" "}
             <button className="btn cta-offcanvas-project">
               Iniciar como administrador
