@@ -49,7 +49,7 @@ function App() {
         <Route path="/login/admin" element={<SignInAdmin />} />
 
         {/* Rutas protegidas */}
-        <Route element={<UserProtectedRouter redirectTo="/login"/>} >
+        <Route element={<UserProtectedRouter redirectTo="/login" />}>
           <Route path="/thanks" element={<PurchaseOrder />} />
           <Route path="/checkout" element={<CheckOut />} />
         </Route>

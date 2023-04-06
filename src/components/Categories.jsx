@@ -46,7 +46,7 @@ function Categories() {
                       handleGoTo(`/category/${categories[0].name}`)
                     }
                   >
-                    <h3 className="text-white display-6 category-card-title">
+                    <h3 className="category-name text-white display-6 category-card-title">
                       {categories[0].name}
                     </h3>
                   </div>
@@ -66,7 +66,7 @@ function Categories() {
                       handleGoTo(`/category/${categories[1].name}`)
                     }
                   >
-                    <h3 className="text-white display-6">
+                    <h3 className=" category-name text-white display-6">
                       {categories[1].name}
                     </h3>
                   </div>
@@ -86,7 +86,7 @@ function Categories() {
                       handleGoTo(`/category/${categories[2].name}`)
                     }
                   >
-                    <h3 className="text-white display-6">
+                    <h3 className=" category-name text-white display-6">
                       {categories[2].name}
                     </h3>
                   </div>
@@ -106,14 +106,15 @@ function Categories() {
                 }}
                 onClick={() => handleGoTo(`/category/${categories[3].name}`)}
               >
-                <h3 className="text-white display-6">{categories[3].name}</h3>
+                <h3 className=" category-name text-white display-6">
+                  {categories[3].name}
+                </h3>
               </div>
             </div>
             {/* --------------------------------sets----------------------------- */}
           </div>
         </>
       )}
-      
     </>
   );
 }
