@@ -73,6 +73,18 @@
     border 0.3s ease-in-out;
 }
 
+.product-btn[disabled] {
+  cursor: not-allowed;
+}
+
+.back-soon-product {
+  border: none;
+  background-color: #005b47c4;
+  color: #f8f9fa;
+  padding: .3rem;
+  border-radius: 20px;
+}
+
 .product-btn:hover {
   border: 1px solid #fff;
   color: #fff;

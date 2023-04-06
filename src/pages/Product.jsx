@@ -66,10 +66,7 @@ function Product() {
               <div className="col-12 col-lg-4">
                 <div className="card-body ">
                   <h1 className="product-title card-title ">{product.name}</h1>
-                  <div className="d-flex justify-content-between">
-                    <p>Ships in 1 week</p>
-                    <span>Stock: {product.stock}</span>
-                  </div>
+                  <p>Ships in 1 week</p>
                   <Rating
                     name="simple-controlled"
                     className="brown"
@@ -89,19 +86,26 @@ function Product() {
                   <p className="product-additional-info">
                     Fabric or Leather: Mohair - Mink Size: 100" Wide
                   </p>
+                  <div className="d-flex justify-content-between">
+                    <p className="mt-3">Stock: {product.stock}</p>
+                    {product.stock === 0 && (
+                      <p className="mt-2 me-2 back-soon-product">Back soon</p>
+                    )}
+                  </div>
+                  <ToastContainer className="toast-success" />
                 </div>
 
-                <div className="d-flex justify-content-around align-items-end ">
-                  <h4 className="card-text pt-5 fw-light card-price">
+                <div className="d-flex justify-content-between align-items-end ">
+                  <h4 className="card-text pt-5 fw-light card-price ms-3">
                     Free shipping
                   </h4>
                   <button
-                    className="product-btn rounded"
+                    className="product-btn rounded me-3"
                     onClick={() => handleAddToCart()}
+                    disabled={product.stock === 0}
                   >
                     Add to cart
                   </button>
-                  <ToastContainer className="toast-success" />
                 </div>
               </div>
             </div>
