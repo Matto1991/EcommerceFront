@@ -56,7 +56,7 @@ function Information() {
           >
             Reiniciar BD
           </button>
-          <ToastContainer className="toast-message" />
+          <ToastContainer className="toast-success" />
           <hr />
           <h5>
             <i class="bi bi-people me-2"></i> Usuarios de prueba
