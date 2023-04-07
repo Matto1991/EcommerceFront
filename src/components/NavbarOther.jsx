@@ -98,7 +98,6 @@ function NavbarOther() {
               className="navbar-avatar ms-4"
             />
             <NavDropdown className="mt-2 navbar-dynamic-dropdown">
-              <NavDropdown.Item href="/admin/profile">Profile</NavDropdown.Item>
               <NavDropdown.Item href="/orders">Orders</NavDropdown.Item>
               <NavDropdown.Item href="/login">Login</NavDropdown.Item>
               <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>

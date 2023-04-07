@@ -20,7 +20,6 @@ function UserOrders() {
         url: `${process.env.REACT_APP_BACKEND_URL}/orders/${token.id}`,
       });
       setOrders(response.data);
-      console.log(response.data);
     };
     getOrders();
   }, []);
@@ -45,27 +44,28 @@ function UserOrders() {
                 </thead>
                 <tbody>
                   {console.log(orders)}
-                  {orders.map((order) => {
-                    return (
-                      <tr key={order.id}>
-                        <td> {order.id}</td>
-                        <td>{order.createdAt}</td>
-                        <td>
-                          <i className="bi bi-box-seam me-2"></i>
-                          {order.status}
-                        </td>
-                        <td>
-                          {" "}
-                          {order.products.reduce(
-                            (acc, product) =>
-                              acc + product.price * product.quantity,
-                            0
-                          )}{" "}
-                          U$S
-                        </td>
-                      </tr>
-                    );
-                  })}
+                  {orders &&
+                    orders.map((order) => {
+                      return (
+                        <tr key={order.id}>
+                          <td> {order.id}</td>
+                          <td>{order.createdAt}</td>
+                          <td>
+                            <i className="bi bi-box-seam me-2"></i>
+                            {order.status}
+                          </td>
+                          <td>
+                            {" "}
+                            {order.products.reduce(
+                              (acc, product) =>
+                                acc + product.price * product.quantity,
+                              0
+                            )}{" "}
+                            U$S
+                          </td>
+                        </tr>
+                      );
+                    })}
                 </tbody>
               </table>
             </div>

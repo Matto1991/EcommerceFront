@@ -124,18 +124,14 @@ function PurchaseOrder() {
             STATUS: <strong> {location.state.status} </strong>
             <div className="mt-3">
               <ProgressBar>
-                <ProgressBar striped animated variant="success" now={35} key={1} />
-              </ProgressBar>
-              {/* <Box sx={{ width: 1300 }}>
-                <Slider
-                  defaultValue={2}
-                  step={3}
-                  marks
-                  min={1}
-                  max={3}
-                  // disabled
+                <ProgressBar
+                  striped
+                  animated
+                  variant="success"
+                  now={35}
+                  key={1}
                 />
-              </Box> */}
+              </ProgressBar>
             </div>
             <table className="table table-striped table-hover border border rounded  mt-5">
               <thead>

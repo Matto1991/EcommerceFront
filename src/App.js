@@ -16,7 +16,7 @@ import CheckOut from "./pages/CheckOut";
 //Admins
 import SignInAdmin from "./pages/SignInAdmin";
 import Dashboard from "./pages/Dashboard";
-import AdminProfile from "./pages/AdminProfile";
+
 import AdminProduct from "./pages/AdminProduct";
 import EditProduct from "./pages/EditProduct";
 import AdminOrder from "./pages/AdminOrder";
@@ -65,7 +65,6 @@ function App() {
           }
         >
           <Route path="/admin" element={<Dashboard />} />
-          <Route path="/admin/profile" element={<AdminProfile />} />
           <Route path="/admin/products" element={<AdminProduct />} />
           <Route path="admin/edit/product/:id" element={<EditProduct />} />
           <Route path="/admin/users" element={<AdminUser />} />
