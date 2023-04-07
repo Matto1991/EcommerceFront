@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <div className="footer">
@@ -35,10 +37,34 @@ export default function Footer() {
             <div className="col-3">
               <ul className="list-unstyled footer-list">
                 <li className="fs-5">Contact Us</li>
-                <li>Andres Viera</li>
-                <li>Virginia Barbaro</li>
-                <li>Mathias Sandín</li>
-                <li>Aline Farias</li>
+                <Link
+                  to="https://www.linkedin.com/in/andr%C3%A9s-viera/"
+                  className="text-decoration-none text-black contact-us-name"
+                  target="_blank"
+                >
+                  <li>Andres Viera</li>
+                </Link>
+                <Link
+                  to="https://www.linkedin.com/in/virginia-barbaro/"
+                  className="text-decoration-none text-black contact-us-name"
+                  target="_blank"
+                >
+                  <li>Virginia Barbaro</li>
+                </Link>
+                <Link
+                  to="https://www.linkedin.com/in/mathias-sandin/"
+                  target="_blank"
+                  className="text-decoration-none text-black contact-us-name"
+                >
+                  <li>Mathias Sandín</li>
+                </Link>
+                <Link
+                  to="https://www.linkedin.com/in/aline-farias-111035268/"
+                  className="text-decoration-none text-black contact-us-name"
+                  target="_blank"
+                >
+                  <li>Aline Farias</li>
+                </Link>
               </ul>
             </div>
           </div>

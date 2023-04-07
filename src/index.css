@@ -551,6 +551,10 @@ html {
   width: 6rem;
 }
 
+.contact-us-name:hover {
+  color: #005b47 !important;
+}
+
 /* End Footer Styles */
 
 /* Start Home styles */

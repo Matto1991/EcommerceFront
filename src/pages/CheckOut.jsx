@@ -285,7 +285,7 @@ function CheckOut() {
                                 {product.description}
                               </div>
                               <small className="checkout-product-price">
-                                US${product.price}
+                                US${" "}{product.price}
                               </small>
                             </div>
                           </div>

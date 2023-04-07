@@ -32,6 +32,7 @@ import Error from "./pages/Error";
 import PurchaseOrder from "./pages/Thanks";
 import Information from "./components/Information";
 import UserOrders from "./pages/UserOrders";
+import UserOrderDetails from "./pages/UserOrderDetails";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           <Route path="/thanks" element={<PurchaseOrder />} />
           <Route path="/checkout" element={<CheckOut />} />
           <Route path="/orders" element={<UserOrders />} />
+          <Route path="/orders/details/:id" element={<UserOrderDetails />} />
         </Route>
         {/* Admins */}
         <Route

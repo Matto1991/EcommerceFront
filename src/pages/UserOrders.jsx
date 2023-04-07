@@ -31,7 +31,6 @@ function UserOrders() {
     orders && (
       <div>
         <NavbarOther />
-
         <div className="d-flex header-order-purchase ">
           <section className="container">
             <h2 className="d-inline">Orders</h2>
@@ -47,7 +46,6 @@ function UserOrders() {
                   </tr>
                 </thead>
                 <tbody>
-                  {console.log(orders)}
                   {orders &&
                     orders.map((order) => {
                       return (
@@ -71,7 +69,7 @@ function UserOrders() {
                           </td>
                           <td>
                             <Link
-                              to={"#"}
+                              to={`/orders/details/${order.id}`}
                               className="text-decoration-none brown"
                             >
                               {" "}
