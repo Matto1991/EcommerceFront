@@ -4,34 +4,41 @@ export default function Footer() {
       <div className="row footer-container mx-auto">
         <div className="col-8">
           <div className="row">
-            <div className="col-4">
+            <div className="col-3">
+              <div className="text-center">
+                <img
+                  src="/img/logo-png-removebg-preview.png"
+                  alt=""
+                  className="img-footer"
+                />
+                <p className="fs-5">Ecozy Luxury</p>
+              </div>
+            </div>
+            <div className="col-3">
               <ul className="list-unstyled footer-list">
-                <li>Our Story</li>
-                <li>Order Swatches</li>
-                <li>Ready to Ship</li>
-                <li>Gift cards</li>
-                <li>Lookbooks</li>
-                <li>Journal</li>
+                <li className="fs-5">Pages</li>
+                <li>Home</li>
+                <li>Categories</li>
+                <li>About Us</li>
+                <li>Cart</li>
               </ul>
             </div>
-            <div className="col-4">
+            <div className="col-3">
               <ul className="list-unstyled footer-list">
-                <li>Design Services</li>
-                <li>Trade Program</li>
-                <li>Contract Program</li>
-                <li>Ambassador Program</li>
-                <li>Comfort Guide</li>
-                <li>FAQ</li>
+                <li className="fs-5">Categories</li>
+                <li>Living</li>
+                <li>Bedroom</li>
+                <li>Dining</li>
+                <li>Sets</li>
               </ul>
             </div>
-            <div className="col-4">
+            <div className="col-3">
               <ul className="list-unstyled footer-list">
-                <li>Contact Us</li>
-                <li>Careers</li>
-                <li>Privacy Policy</li>
-                <li>Do Not Sell My Information</li>
-                <li>Terms and Conditions</li>
-                <li>Journal</li>
+                <li className="fs-5">Contact Us</li>
+                <li>Andres Viera</li>
+                <li>Virginia Barbaro</li>
+                <li>Mathias Sandín</li>
+                <li>Aline Farias</li>
               </ul>
             </div>
           </div>
@@ -62,7 +69,6 @@ export default function Footer() {
               <i className="bi bi-instagram me-2 fs-5"></i>
               <i className="bi bi-twitter me-2 fs-5"></i>
               <i className="bi bi-facebook me-2 fs-5"></i>
-              <i className="bi bi-pinterest me-2 fs-5"></i>
             </div>
           </div>
         </div>

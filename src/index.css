@@ -538,6 +538,10 @@ html {
   color: var(--brand-green-dark);
 }
 
+.img-footer {
+  width: 6rem;
+}
+
 /* End Footer Styles */
 
 /* Start Home styles */
@@ -743,12 +747,11 @@ html {
   background-color: var(--category-gray) !important;
   filter: brightness(80%);
 }
-.category-name{
+.category-name {
   filter: brightness(100%);
-  
-color: white;
-  text-shadow: rgb(0, 0, 0) 0.1em 0.1em 0.2em
- 
+
+  color: white;
+  text-shadow: rgb(0, 0, 0) 0.1em 0.1em 0.2em;
 }
 
 .pt-8 {
