@@ -10,6 +10,54 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 export default function Home() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    initialSlide: 1,
+    nextArrow: true,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 820,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 510,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   const [featured, setFeatured] = useState([]);
 
   useEffect(() => {
@@ -55,13 +103,7 @@ export default function Home() {
             <h2 className="section-title">Featured</h2>
           </div>
           <Slider
-            dots={false}
-            infinite={true}
-            autoplay={true}
-            autoplaySpeed={3000}
-            slidesToShow={4}
-            slidesToScroll={1}
-            arrows={true}
+            {...settings}
             prevArrow={<ArrowBackIosNewIcon />}
             nextArrow={<ArrowForwardIosIcon />}
           >
