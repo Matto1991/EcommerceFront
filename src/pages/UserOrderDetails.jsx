@@ -39,19 +39,19 @@ function UserOrderDetails() {
             <table className="table table-striped table-hover border border rounded  mt-5">
               <thead>
                 <tr>
-                  <th className="text-center product-id">Product ID</th>
-                  <th className="text-center">Product</th>
-                  <th className="text-center">Details</th>
+                  <th className="text-center product-id title-table-details-order">Product ID</th>
+                  <th className="text-center title-table-details-order">Product</th>
+                  <th className="text-center title-table-details-order">Details</th>
                 </tr>
               </thead>
               <tbody>
                 {orders.products
                   ? orders.products.map((product) => (
                       <tr key={product.id}>
-                        <td className="text-center">
+                        <td className="text-center single-row-order-details">
                           <p>{product.id}</p>
                         </td>
-                        <td className="text-center">
+                        <td className="text-center single-row-order-details">
                           {" "}
                           <img
                             src={
@@ -63,7 +63,7 @@ function UserOrderDetails() {
                             className="rounded img-table mt-3"
                           />
                         </td>
-                        <td className="">
+                        <td className="single-row-order-details">
                           <p>
                             <strong>{product.name}</strong>
                           </p>
@@ -79,13 +79,13 @@ function UserOrderDetails() {
             <table className="table table-striped table-hover border border rounded  mt-5">
               <thead className="mt-5">
                 <tr>
-                  <th className="text-center">Total paid</th>
-                  <th className="text-center">Customer information</th>
+                  <th className="text-center title-table-details-order">Total paid</th>
+                  <th className="text-center title-table-details-order">Customer information</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="text-center">
+                  <td className="text-center single-row-order-details">
                     <p>
                       Total:{" "}
                       {orders.products.reduce(
@@ -100,7 +100,7 @@ function UserOrderDetails() {
                       <i className="bi bi-credit-card me-2 ms-2"></i>
                     </p>
                   </td>
-                  <td className="text-center">
+                  <td className="text-center single-row-order-details">
                     <p>
                       {orders.details.firstname} {orders.details.lastname}
                     </p>
