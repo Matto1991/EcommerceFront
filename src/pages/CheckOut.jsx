@@ -80,7 +80,7 @@ function CheckOut() {
       }
     } else {
       console.log(1);
-      return toast.error("Please fulfill the form", {
+      return toast.error("Please fill-in the form", {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
     }
@@ -285,7 +285,7 @@ function CheckOut() {
                                 {product.description}
                               </div>
                               <small className="checkout-product-price">
-                                US${" "}{product.price}
+                                US$ {product.price}
                               </small>
                             </div>
                           </div>

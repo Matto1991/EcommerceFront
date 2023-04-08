@@ -11,7 +11,6 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 export default function Home() {
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -19,7 +18,7 @@ export default function Home() {
     initialSlide: 1,
     nextArrow: true,
     autoplay: true,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 2500,
     arrows: true,
     responsive: [
       {
@@ -152,7 +151,7 @@ export default function Home() {
 
         <div className="team-section d-flex justify-content-center align-items-center">
           <Link
-            to="/project-details"
+            to="/project/details"
             className="text-decoration-none text-reset"
           >
             <div className="rounded text-center cta">

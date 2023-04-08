@@ -1,48 +1,59 @@
 /* ABOUT */
 
-.hero-about {
-  background-image: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 70%,
-      rgba(255, 255, 255, 0.278) 89%,
-      rgba(255, 255, 255, 0.803) 96%,
-      rgb(255, 255, 255) 100%
-    ),
-    url("/public/img/eco-div1.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 80vh;
-  opacity: 0.9;
+.about-project-title {
+  font-size: 2.4rem;
+  font-family: "BerlingskeSerif";
 }
 
-.hero-title-about {
-  font-size: 3rem;
-  font-weight: 500;
-  color: var(--brand-dark-brown);
+.about-project-section {
+  margin-top: 8rem;
+}
+
+.card-about-title {
+  font-size: 1.45rem;
+  font-family: "BerlingskeSerif";
+}
+
+.card-about-separator {
+  margin: 0.5rem 0 1.2rem 0;
+  opacity: 100;
+  width: 90%;
+  color: black;
+  border: 0.8px solid black;
+}
+
+.card-about-text {
+  font-size: 0.96rem;
+}
+
+.about-project-team-section {
+  margin-top: 6rem;
+}
+
+.about-project-section-title {
+  font-size: 2rem;
   font-family: "BerlingskeSerif";
 }
 
 .img-team {
   border-radius: 50%;
-}
-
-.img-team {
+  object-fit: cover;
   height: 200px;
   width: 200px;
-  border-radius: 50%;
-  border: solid 2px var(--brand-ligth-brown);
+  border: solid 2px var(--light-gray-text);
 }
+
 .img-team-matto {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  border: solid 2px var(--brand-ligth-brown);
+  border: solid 2px var(--light-gray-text);
 }
 
 .icons-team i {
-  margin-left: 10px;
-  font-size: 30px;
+  color: #6a6a6a;
+  margin-left: 0.2rem;
+  font-size: 1.55rem;
   transition: 0.3s;
 }
 .icons-h:hover {
@@ -51,13 +62,19 @@
   cursor: pointer;
 }
 
+.card-team-title {
+  margin-top: 0.4rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
 .icon-about {
   width: 50px;
   height: 50px;
   position: absolute;
   top: -30px;
   left: 80%;
-  background-color: var(--brand-dark-brown);
+  background-color: #104438dd;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,7 +97,20 @@
   color: var(--brand-green) !important;
 }
 
+.about-project-quote-section {
+  margin-top: 6rem;
+}
+
+.quote-section-text {
+  font-size: 1.8rem;
+  font-family: "BerlingskeSerif";
+}
+
+.quote-section-text-author {
+  font-size: 1.3rem;
+}
+
 .ha-img {
-  height: 300px;
+  margin-top: 6rem;
   width: 300px;
 }

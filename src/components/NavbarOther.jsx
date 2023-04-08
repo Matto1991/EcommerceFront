@@ -83,10 +83,6 @@ function NavbarOther() {
                 Dining
               </NavDropdown.Item>
               <NavDropdown.Item href="/category/sets">Sets</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Inspiration
-              </NavDropdown.Item>
             </NavDropdown>
             <Avatar
               src={

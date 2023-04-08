@@ -33,77 +33,83 @@ function Information() {
 
   return (
     <>
-      <Button
-        variant="light"
+      <button
         onClick={handleShow}
-        className="cta-sobre-proyecto text-white me-2 btn-info"
+        className="cta-sobre-proyecto text-white btn-information"
       >
-        Sobre el Proyecto
-      </Button>
-      <Offcanvas show={show} onHide={handleClose} placement={"start"}>
+        Sobre el proyecto
+      </button>
+      <Offcanvas show={show} onHide={handleClose} placement={"end"}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Sobre el proyecto</Offcanvas.Title>
+          <Offcanvas.Title></Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-          <p>
+        <Offcanvas.Body className="body-offcanvas-project">
+          <h5 className="title-offcanvas-project">
+            <i class="bi bi-database-fill me-1"></i> BASE DE DATOS
+          </h5>
+          <hr className="separator-offcanvas-project" />
+          <p className="text-offcanvas-project">
             {" "}
             <i class="bi bi-database-exclamation me-2"></i> Para una mejor
-            experiencia, se recomienda reiniciar la base de datos antes de navegar por el sitio.
+            experiencia, se recomienda reiniciar la base de datos antes de
+            navegar por el sitio.
           </p>
           <button
             onClick={() => handleResetDb()}
-            className="btn cta-offcanvas-project"
+            className="cta-offcanvas-project"
           >
             Reiniciar BD
           </button>
           <ToastContainer className="toast-success" />
-          <hr />
-          <h5>
-            <i class="bi bi-people me-2"></i> Usuarios de prueba
+          <h5 className="title-offcanvas-project mt-4">
+            <i class="bi bi-people-fill me-1"></i> USUARIOS DE PRUEBA
           </h5>
-          <p>
+          <hr className="separator-offcanvas-project" />
+          <p className="text-offcanvas-project">
             {" "}
             Para simplificar el acceso a la aplicación, se proporcionan los
             siguientes usuarios de prueba:
           </p>
-          <p>
+          <p className="text-offcanvas-project">
             <i class="bi bi-person me-2"></i>Usuario para{" "}
             <strong>Comprador</strong>:
           </p>
-          <ul>
+          <ul className="text-offcanvas-project">
             <li>E-mail: user@ecozy.com</li>
             <li>Password: 1234</li>
           </ul>
           <Link to="/login">
             {" "}
-            <button className="btn cta-offcanvas-project mb-3">
+            <button className="cta-offcanvas-project mb-3">
               Iniciar como comprador
             </button>{" "}
           </Link>
-          <p>
+          <p className="text-offcanvas-project">
             <i class="bi bi-person-gear me-2"></i>Usuario para{" "}
             <strong>Administrador</strong>:
           </p>
-          <ul>
+          <ul className="text-offcanvas-project">
             <li>E-mail: admin@ecozy.com</li>
             <li>Password: 1234</li>
           </ul>
           <Link to="/login/admin">
             {" "}
-            <button className="btn cta-offcanvas-project">
+            <button className="cta-offcanvas-project">
               Iniciar como administrador
             </button>
           </Link>
-          <hr />
-
-          <p>
+          <h5 className="title-offcanvas-project mt-4">
+            <i class="bi bi-person-lines-fill me-1"></i> AUTORES
+          </h5>
+          <hr className="separator-offcanvas-project" />
+          <p className="text-offcanvas-project">
             {" "}
             El presente sitio de e-commerce es un proyecto desarrollado por
-            estudiantes del Coding Bootcamp de Hack Academy.
+            estudiantes del coding bootcamp de Hack Academy.
           </p>
           <Link to="/project/details">
             {" "}
-            <button className="btn cta-offcanvas-project">
+            <button className="cta-offcanvas-project">
               Sobre este proyecto
             </button>{" "}
           </Link>

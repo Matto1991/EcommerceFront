@@ -1,7 +1,7 @@
 /* Start Icons */
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;600;700;800&display=swap");
 /* End Icons */
 
 /* Start Fonts */
@@ -447,6 +447,8 @@ html {
 
 .navbar-other-static {
   background-color: #ffffff6e;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .navbar-other-static-text::after {
@@ -698,31 +700,55 @@ html {
 }
 
 .cta-offcanvas-project {
-  padding: 0.9rem 1.4rem 0.9rem 1.4rem;
-  font-size: 1.1rem;
-  font-weight: 200;
-  color: #ffffff !important;
-  /* background-color: transparent !important; */
-  background-color: #98866ba6 !important;
-  border: 1px solid #98866b !important;
-  cursor: pointer;
+  border-radius: 0.4rem;
+  padding: 0.5rem 0.85rem 0.35rem 0.85rem;
+  font-size: 0.94rem;
+  font-family: "BerlingskeSerif" !important;
+  color: #98866b;
+  background-color: white;
+  border: 1px solid #98866ba6 !important;
+
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
     border 0.3s ease-in-out;
 }
 
 .cta-offcanvas-project:hover {
   color: #fff;
-  border: 1px solid #fff;
   background-color: #7e6f59dc !important;
 }
 
+.title-offcanvas-project {
+  font-size: 1rem;
+  letter-spacing: 0.09rem;
+  font-weight: 600;
+}
+
+.separator-offcanvas-project {
+  width: 90%;
+  opacity: 100 !important;
+  border: 0.8px solid black !important  ;
+  margin: 0.6rem 0 1rem 0;
+}
+
+.text-offcanvas-project {
+  font-size: 0.95rem;
+}
+
+.body-offcanvas-project {
+  padding: 2rem !important;
+}
+
 .cta-sobre-proyecto {
-  padding: 0.9rem 1.4rem 0.9rem 1.4rem;
-  font-size: 1.1rem;
+  width: 10rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border: 0.5px solid white;
+  padding: 0.3rem 0rem 0.6rem 0rem;
+  font-size: 1rem;
   font-weight: 200;
-  color: #98866b;
-  background-color: #98866ba6 !important;
-  border: 1px solid #98866b;
+  background-color: #7e6f5994 !important;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   cursor: pointer;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
     border 0.3s ease-in-out;
@@ -730,8 +756,7 @@ html {
 
 .cta-sobre-proyecto:hover {
   color: #fff;
-  border: 1px solid #fff;
-  background-color: #7e6f59dc !important;
+  background-color: #6b5e4caa !important;
 }
 
 .cta a {
@@ -760,11 +785,17 @@ html {
   background-color: var(--category-gray) !important;
   filter: brightness(80%);
 }
-.category-name {
-  filter: brightness(100%);
 
+.category-name {
+  border-radius: 0.3rem;
+  padding: 0.8rem 1.5rem 0.8rem 1.5rem;
+  border: 1.35px solid white;
+  filter: brightness(100%);
   color: white;
-  text-shadow: rgb(0, 0, 0) 0.1em 0.1em 0.2em;
+  font-size: 1.8rem;
+  font-family: "BerlingskeSerif";
+  font-weight: 500 !important;
+  /*  text-shadow: rgb(0, 0, 0) 0.1em 0.1em 0.2em; */
 }
 
 .pt-8 {
@@ -786,10 +817,6 @@ html {
 .category-card:hover {
   filter: brightness(100%);
   /* box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.456); */
-}
-
-.category-card-title {
-  color: black !important;
 }
 
 .inspiration-section {
@@ -915,10 +942,10 @@ html {
   cursor: pointer;
 }
 
-.btn-info {
+.btn-information {
   position: fixed;
-  bottom: 100px;
-  margin-left: 88%;
+  bottom: 20%;
+  left: 93.2%;
   transform: rotate(270deg);
 }
 

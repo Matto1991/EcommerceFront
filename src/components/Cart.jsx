@@ -176,8 +176,11 @@ function Cart({ name }) {
                   Checkout
                 </button>
                 <button className="btn" onClick={handleClose}>
+                  <span aria-hidden="true" className="me-2">
+                    {" "}
+                    &larr;
+                  </span>
                   Continue Shopping
-                  <span aria-hidden="true"> &rarr;</span>
                 </button>
               </div>
             </div>

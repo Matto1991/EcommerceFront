@@ -31,9 +31,9 @@ function UserOrders() {
     orders && (
       <div>
         <NavbarOther />
-        <div className="d-flex header-order-purchase ">
+        <div className="d-flex header-order-purchase">
           <section className="container">
-            <h2 className="d-inline">Orders</h2>
+            <h2 className="d-inline orders-title">Your orders</h2>
             <div className="table-responsive">
               <table className="table table-striped table-hover border border rounded shadow mt-5">
                 <thead>

@@ -69,18 +69,17 @@ function PurchaseOrder() {
         <NavbarOther />
         <div className="container">
           <div className="header-order-purchase p-3 text-center">
-            <h4>Payment successful</h4>
-            <h1 className="brown">Thanks for ordering!</h1>
+            <h1 className="thanks-title">Thanks for ordering!</h1>
             <p>
-              We appreciate your order, we are currently processing it! Hold on
-              and we will send you confirmation very soon!
+              We appreciate your order, it is currently being processed. You
+              should receive your order confirmation soon!
             </p>
           </div>
-          <div className="order-placed d-flex justify-content-between">
-            <h3>Order</h3>
+          <div className="thanks-section d-flex justify-content-between">
+            <h3 className="thanks-section-title">Order</h3>
             <p>Order number: {location.state.id} </p>
           </div>
-          <div className="table-responsive ">
+          <div className="table-responsive">
             <table className="table table-striped table-hover border border rounded  mt-5">
               <thead>
                 <tr>
@@ -121,7 +120,7 @@ function PurchaseOrder() {
             </table>
           </div>
           <div className="table-responsive">
-            STATUS: <strong> {location.state.status} </strong>
+            Status: <strong> {location.state.status} </strong>
             <div className="mt-3">
               <ProgressBar>
                 <ProgressBar
@@ -163,9 +162,9 @@ function PurchaseOrder() {
                   <td>
                     <ul className="list-group text-end list-unstyled">
                       <li>Shipping US$ 0 </li>
-                      <li>Tax US$ 0</li>
+                      <li>Tax US$ 13</li>
                       <li>
-                        Total products:{" "}
+                        Products:{" "}
                         {products.reduce(
                           (a, b) => Number(a) + Number(b.quantity),
                           0
@@ -178,7 +177,7 @@ function PurchaseOrder() {
                           US${" "}
                           {products.reduce(
                             (acc, product) =>
-                              acc + product.price * product.quantity,
+                              acc + product.price * product.quantity + 13,
                             0
                           )}{" "}
                         </strong>{" "}
@@ -189,7 +188,7 @@ function PurchaseOrder() {
               </tbody>
             </table>
           </div>
-          <div className="d-flex flex-column justify-content-center align-items-center mt-4">
+          <div className="d-flex flex-column justify-content-center align-items-center mt-5">
             <h5>Help us give you a better experience.</h5>
             <StyledRating
               name="highlight-selected-only"
@@ -198,14 +197,6 @@ function PurchaseOrder() {
               getLabelText={(value) => customIcons[value].label}
               highlightSelectedOnly
               className="m-3"
-            />
-            <p className="brown fw-bold">Thanks for visiting us!</p>
-          </div>
-          <div className="text-center m-3">
-            <img
-              src={"/img/logo-png.png"}
-              alt="logo"
-              className="rounded img-table"
             />
           </div>
         </div>

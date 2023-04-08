@@ -2,6 +2,24 @@
   margin-top: 7rem;
 }
 
+.orders-title {
+  font-family: "BerlingskeSerif";
+}
+
+.thanks-title {
+  color: var(--brand-green-dark);
+  font-family: "BerlingskeSerif";
+}
+
+.thanks-section {
+  margin-top: 2.5rem;
+  margin-bottom: -2rem;
+}
+
+.thanks-section-title {
+  font-family: "BerlingskeSerif";
+}
+
 .img-table {
   width: 180px;
   height: 120px;
@@ -19,6 +37,6 @@
 }
 
 .title-table-details-order {
-   background-color: #005b474a !important;
+  background-color: #005b474a !important;
   /* background-color: #ffe9d05f !important; */
 }

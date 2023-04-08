@@ -7,13 +7,13 @@ export default function Footer() {
         <div className="col-8">
           <div className="row">
             <div className="col-3">
-              <div className="text-center">
+              <div className="h-100 d-flex flex-column justify-content-center align-items-left">
                 <img
                   src="/img/logo-png-removebg-preview.png"
                   alt=""
                   className="img-footer"
                 />
-                <p className="fs-5">Ecozy Luxury</p>
+                <p className="fs-5 fw-light">Ecozy Luxury</p>
               </div>
             </div>
             <div className="col-3">
