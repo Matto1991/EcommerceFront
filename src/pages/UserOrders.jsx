@@ -62,7 +62,7 @@ function UserOrders() {
                             {" "}
                             {order.products.reduce(
                               (acc, product) =>
-                                acc + product.price * product.quantity,
+                                acc + product.price * product.quantity + 13,
                               0
                             )}{" "}
                             U$S
