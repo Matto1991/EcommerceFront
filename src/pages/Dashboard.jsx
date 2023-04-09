@@ -69,7 +69,7 @@ function Dashboard() {
                 <div className="text-center">
                   <h3>Total orders</h3>
                   <div className="d-flex justify-content-evenly">
-                    <h5>{orders.length + 1} </h5>
+                    <h5>{orders.length} </h5>
                     <span className="text-success ">
                       <i className="bi bi-arrow-up "> </i> 11%
                     </span>

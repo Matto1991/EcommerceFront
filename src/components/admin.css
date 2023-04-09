@@ -81,11 +81,11 @@
 }
 
 .offcanvas-link:hover {
-  background-color: #2d2d2d;
+  background-color: #2d2d2d17;
 }
 
 .offcanvas-link:hover > * {
-  color: white;
+  color: black;
 }
 
 .offcanvas-link-active {

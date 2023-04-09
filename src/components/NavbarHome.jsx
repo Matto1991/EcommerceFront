@@ -107,11 +107,11 @@ function NavbarHome() {
             >
               {loggedUser ? (
                 <>
-                  <NavDropdown.Item onClick={handleLogout}>
-                    Logout
-                  </NavDropdown.Item>
                   <NavDropdown.Item href="/orders">
                     Your orders
+                  </NavDropdown.Item>
+                  <NavDropdown.Item onClick={handleLogout}>
+                    Logout
                   </NavDropdown.Item>
                 </>
               ) : (

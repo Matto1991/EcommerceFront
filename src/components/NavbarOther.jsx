@@ -94,14 +94,13 @@ function NavbarOther() {
               className="navbar-avatar ms-4"
             />
             <NavDropdown className="mt-2 navbar-dynamic-dropdown">
-              <NavDropdown.Item href="/orders">Orders</NavDropdown.Item>
               {loggedUser ? (
                 <>
-                  <NavDropdown.Item onClick={handleLogout}>
-                    Logout
-                  </NavDropdown.Item>
                   <NavDropdown.Item href="/orders">
                     Your orders
+                  </NavDropdown.Item>
+                  <NavDropdown.Item onClick={handleLogout}>
+                    Logout
                   </NavDropdown.Item>
                 </>
               ) : (

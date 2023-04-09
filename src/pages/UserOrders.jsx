@@ -46,41 +46,49 @@ function UserOrders() {
                   </tr>
                 </thead>
                 <tbody>
-                  {orders &&
-                    orders.map((order) => {
-                      return (
-                        <tr key={order.id}>
-                          <td> {order.id}</td>
-                          <td>
-                            {format(new Date(order.createdAt), "dd-MM-yyyy")}
-                          </td>
-                          <td>
-                            <i className="bi bi-box-seam me-2"></i>
-                            {order.status}
-                          </td>
-                          <td>
+                  {orders.length > 0 &&
+                    orders.map((order) => (
+                      <tr key={order.id}>
+                        <td> {order.id}</td>
+                        <td>
+                          {format(new Date(order.createdAt), "dd-MM-yyyy")}
+                        </td>
+                        <td>
+                          <i className="bi bi-box-seam me-2"></i>
+                          {order.status}
+                        </td>
+                        <td>
+                          {" "}
+                          {order.products.reduce(
+                            (acc, product) =>
+                              acc + product.price * product.quantity + 13,
+                            0
+                          )}{" "}
+                          U$S
+                        </td>
+                        <td>
+                          <Link
+                            to={`/orders/details/${order.id}`}
+                            className="text-decoration-none brown"
+                          >
                             {" "}
-                            {order.products.reduce(
-                              (acc, product) =>
-                                acc + product.price * product.quantity + 13,
-                              0
-                            )}{" "}
-                            U$S
-                          </td>
-                          <td>
-                            <Link
-                              to={`/orders/details/${order.id}`}
-                              className="text-decoration-none brown"
-                            >
-                              {" "}
-                              More
-                            </Link>
-                          </td>
-                        </tr>
-                      );
-                    })}
+                            More
+                          </Link>
+                        </td>
+                      </tr>
+                    ))}
                 </tbody>
               </table>
+              {orders.length === 0 && (
+                <div className="no-orders rounded mx-auto">
+                  <h2 className="no-orders-title text-center">
+                    You haven't ordered anything yet!
+                  </h2>
+                  <h2 className="no-orders-message text-center">
+                    When available, you will your orders here.
+                  </h2>
+                </div>
+              )}
             </div>
           </section>
         </div>
