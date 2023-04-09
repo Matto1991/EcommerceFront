@@ -94,6 +94,16 @@ export default function AdminProduct() {
                 );
               })}
             </table>
+            {products.length === 0 && (
+              <div className="no-orders rounded mx-auto">
+                <h2 className="no-orders-title text-center">
+                  There are no products to display!
+                </h2>
+                <h2 className="no-orders-message text-center">
+                  When available, you will find them here.
+                </h2>
+              </div>
+            )}
           </div>
         </section>
       </div>

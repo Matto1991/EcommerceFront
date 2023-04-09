@@ -50,6 +50,8 @@ function CreateUser() {
     } else {
       toast.success(`Successfully created ${isAdmin ? "Admin" : "User"}`);
     }
+
+    navigate(-1);
   };
 
   return (
@@ -68,7 +70,7 @@ function CreateUser() {
         </div>
 
         <div className="col-md-5 col-lg-5 mx-auto">
-          <h2 className=" text-dark create-account fs-1">Create User</h2>
+          <h2 className="create-admin-title fs-1">Create User</h2>
 
           <form
             className="row g-3"
@@ -170,7 +172,7 @@ function CreateUser() {
             </div>
             <div className="col-6 mx-auto">
               <button
-                className="btn text-white cta sign-up-btn border-0 w-75 m-4 fs-5 d-block mx-auto"
+                className="create-admin-form rounded border-0 w-75 m-4 fs-5 d-block mx-auto"
                 type="submit"
               >
                 Create

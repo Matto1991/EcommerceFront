@@ -1,11 +1,13 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import NavbarAdmin from "../components/NavbarAdmin";
 import { IconButton } from "@mui/material";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
 import { useNavigate, useParams } from "react-router-dom";
 
 function EditCategory() {
+  const token = useSelector((state) => state.session.token);
   const { id } = useParams();
   const [name, setName] = useState("");
   const [image, setImage] = useState(null);
@@ -19,10 +21,14 @@ function EditCategory() {
 
     formData.append("image", image);
     const response = await axios({
-      method: "patch",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      method: "PATCH",
       url: `${process.env.REACT_APP_BACKEND_URL}/categories/${id}`,
       data: formData,
     });
+    navigate(-1);
   };
 
   return (
@@ -39,7 +45,7 @@ function EditCategory() {
           </h4>
         </div>
         <div className="col-md-5 col-lg-5 mx-auto">
-          <h2 className=" text-dark create-account fs-1">Edit</h2>
+          <h2 className="create-admin-title fs-1">Edit</h2>
 
           <form
             className="row g-3"
@@ -83,7 +89,7 @@ function EditCategory() {
             </div>
             <div className="col-6">
               <button
-                className="btn cta text-white sign-up-btn border-0 w-75 fs-5 d-block"
+                className="create-admin-form rounded border-0 w-75 fs-5 d-block"
                 type="submit"
               >
                 Edit

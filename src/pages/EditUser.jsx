@@ -54,6 +54,8 @@ export default function EditUser() {
     } else {
       toast.success("Successfully edited User");
     }
+
+    navigate(-1);
   };
 
   return (
@@ -71,7 +73,7 @@ export default function EditUser() {
           </h4>
         </div>
         <div className="col-md-5 col-lg-5 mx-auto">
-          <h2 className=" text-dark create-account fs-1">Edit user</h2>
+          <h2 className="create-admin-title fs-1">Edit user</h2>
 
           <form
             className="row g-3"
@@ -127,7 +129,7 @@ export default function EditUser() {
             </div>
             <div className="col-6">
               <button
-                className="btn cta text-white sign-up-btn border-0 w-75 m-4 fs-5 d-block mx-auto"
+                className="create-admin-form rounded border-0 w-75 m-4 fs-5 d-block mx-auto"
                 type="submit"
               >
                 Edit

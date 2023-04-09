@@ -25,7 +25,7 @@ export default function LoginAdmin() {
       headers: {
         Authorization: `bearer: ${user.token}`,
       },
-      method: "post",
+      method: "POST",
       url: `${process.env.REACT_APP_BACKEND_URL}/auth/admins`,
       data: {
         email,

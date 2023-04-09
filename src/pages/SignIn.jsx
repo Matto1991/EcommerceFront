@@ -46,7 +46,7 @@ function Login() {
 
   return (
     <>
-      <ToastContainer />
+      <ToastContainer className="toast-success" />
 
       <div className="form-login">
         <div className="container sign-up p-5">

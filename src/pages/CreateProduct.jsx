@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function CreateProduct() {
   const token = useSelector((state) => state.session.token);
-
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -35,12 +34,13 @@ export default function CreateProduct() {
     const response = await axios({
       headers: {
         "Content-Type": "multipart/form-data",
-        //   Authorization: `bearer ${token}`,
+        Authorization: `bearer ${token}`,
       },
       method: "POST",
       url: `${process.env.REACT_APP_BACKEND_URL}/products`,
       data: formData,
     });
+    navigate(-1);
   };
 
   return (
@@ -58,7 +58,7 @@ export default function CreateProduct() {
         </div>
 
         <div className="col-md-5 col-lg-5 mx-auto">
-          <h2 className=" text-dark create-account fs-1">Create product</h2>
+          <h2 className="create-admin-title fs-1">Create product</h2>
 
           <form
             className="row g-3"
@@ -73,7 +73,7 @@ export default function CreateProduct() {
               <input
                 className="form-control"
                 type="text"
-                placeholder="name"
+                placeholder="Name"
                 name="name"
                 id="name"
                 value={name}
@@ -89,7 +89,7 @@ export default function CreateProduct() {
               <input
                 className="form-control"
                 type="text"
-                placeholder="Lastname"
+                placeholder="Description"
                 name="description"
                 id="description"
                 value={description}
@@ -99,12 +99,12 @@ export default function CreateProduct() {
             </div>
             <div className="col-md-6">
               <label htmlFor="inputPassword4" className="form-label">
-                Category
+                CategoryId
               </label>
               <input
                 className="form-control"
-                type="text"
-                placeholder="Lastname"
+                type="number"
+                placeholder="Category"
                 name="category"
                 id="category"
                 value={categoryId}
@@ -116,9 +116,9 @@ export default function CreateProduct() {
               <label htmlFor="Price" className="form-label"></label>
               Price
               <input
-                type="text"
+                type="number"
                 className="form-control"
-                placeholder="price"
+                placeholder="Price"
                 name="price"
                 id="price"
                 value={price}
@@ -128,12 +128,12 @@ export default function CreateProduct() {
             </div>
             <div className="col-12">
               <label htmlFor="inputAddress2" className="form-label">
-                Featured
+                {"Featured (1 for yes, 0 for no)"}
               </label>
               <input
-                type="text"
+                type="number"
                 className="form-control"
-                placeholder="featured"
+                placeholder="Featured"
                 name="featured"
                 id="featured"
                 value={featured}
@@ -146,9 +146,9 @@ export default function CreateProduct() {
                 Stock
               </label>
               <input
-                type="text"
+                type="number"
                 className="form-control"
-                placeholder="stock"
+                placeholder="Stock"
                 name="stock"
                 id="stock"
                 value={stock}
@@ -174,7 +174,7 @@ export default function CreateProduct() {
                 <PhotoCamera className="input-tx text-dark" />
               </IconButton>
               <button
-                className="btn cta text-white mt-4  border-0 w-75 fs-5"
+                className="create-admin-form rounded mt-4 border-0 w-75 fs-5"
                 type="submit"
               >
                 Create

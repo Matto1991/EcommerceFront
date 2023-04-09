@@ -110,7 +110,7 @@ function Product() {
               </div>
             </div>
             <div className="d-flex mt-4">
-              <h4 className="fs-5" onClick={() => navigate(-1)}>
+              <h4 className="fs-5 cursor-pointer" onClick={() => navigate(-1)}>
                 <i className="bi bi-arrow-left fs-5"></i> Return
               </h4>
             </div>

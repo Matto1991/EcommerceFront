@@ -141,7 +141,7 @@ function AdminUser() {
                       <td>
                         {" "}
                         <Avatar
-                          alt="Admin"
+                          alt={admin.firstname}
                           src={
                             typeof admin.avatar === "object"
                               ? `${process.env.REACT_APP_BACKEND_URL}/${admin.avatar}`
@@ -176,6 +176,16 @@ function AdminUser() {
                 );
               })}
             </table>
+            {users.length === 0 && (
+              <div className="no-orders rounded mx-auto">
+                <h2 className="no-orders-title text-center">
+                  There are no users to display!
+                </h2>
+                <h2 className="no-orders-message text-center">
+                  When available, you will find them here.
+                </h2>
+              </div>
+            )}
           </div>
         </section>
       </div>

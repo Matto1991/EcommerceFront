@@ -55,13 +55,13 @@ function Dashboard() {
       <NavbarAdmin />
       <div className="d-flex">
         <AdminDash />
-        <div className="container p-4 mt-5">
-          <h2>Dashboard</h2>
+        <div className="container p-4">
+          <h2 className="admin-section-title">Dashboard</h2>
 
-          <div className="row mt-5 row-cols-1 row-cols-lg-3 g-4 gx-3 p-2 mb-5 ">
-            <div className="card p-2 col shadow">
-              <div className="card-dashboard d-flex justify-content-evenly p-4  ">
-                <div>
+          <div className="dashbord-cards-container row g-3 my-5 mx-auto">
+            <div className="col col-md-4 col-lg-4 ">
+              <div className=" card shadow d-flex flex-row justify-content-center p-4">
+                <div className="me-4">
                   <span className="p-2 rounded icon-dashboard-order ">
                     <i className="bi bi-box2 fs-3"></i>
                   </span>{" "}
@@ -78,9 +78,9 @@ function Dashboard() {
               </div>
             </div>
 
-            <div className="card p-2 col shadow">
-              <div className="card-dashboard d-flex justify-content-evenly p-4  ">
-                <div>
+            <div className="col col-md-4 col-lg-4">
+              <div className="card shadow d-flex flex-row justify-content-center p-4">
+                <div className="me-4">
                   <span className="p-2 rounded icon-dashboard-products ">
                     <i className="bi bi-card-list fs-3"></i>
                   </span>{" "}
@@ -97,9 +97,9 @@ function Dashboard() {
               </div>
             </div>
 
-            <div className="card p-2 col shadow">
-              <div className="card-dashboard d-flex justify-content-evenly p-4  ">
-                <div>
+            <div className="col col-md-4 col-lg-4">
+              <div className="card shadow d-flex flex-row justify-content-center p-4">
+                <div className="me-4">
                   <span className="p-2 rounded icon-dashboard-sales ">
                     <i className="bi bi-currency-dollar fs-3"></i>
                   </span>{" "}
@@ -116,13 +116,14 @@ function Dashboard() {
               </div>
             </div>
           </div>
-          <div className="d-flex justify-content-between pt-4">
-            <h2 className="d-inline">Last 10 0rders</h2>
+
+          <div className="admin-last-orders-section d-flex justify-content-between">
+            <h2 className="admin-section-title">Last Orders</h2>
           </div>
           <div className="table-responsive text-center">
-            <table className="table table-striped table-hover border border rounded shadow mt-5">
+            <table className="table table-striped table-hover border border rounded shadow mt-4">
               <thead>
-                <tr className="fs-4">
+                <tr className="table-columns">
                   <th>Id</th>
                   <th>User</th>
                   <th>Total Price</th>
@@ -155,6 +156,16 @@ function Dashboard() {
                 })}
               </tbody>
             </table>
+            {orders.length === 0 && (
+              <div className="no-orders rounded mx-auto">
+                <h2 className="no-orders-title">
+                  There are no orders to display!
+                </h2>
+                <h2 className="no-orders-message">
+                  When available, you will find them here.
+                </h2>
+              </div>
+            )}
           </div>
         </div>
       </div>

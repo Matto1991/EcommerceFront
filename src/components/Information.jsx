@@ -45,12 +45,12 @@ function Information() {
         </Offcanvas.Header>
         <Offcanvas.Body className="body-offcanvas-project">
           <h5 className="title-offcanvas-project">
-            <i class="bi bi-database-fill me-1"></i> BASE DE DATOS
+            <i className="bi bi-database-fill me-1"></i> BASE DE DATOS
           </h5>
           <hr className="separator-offcanvas-project" />
           <p className="text-offcanvas-project">
             {" "}
-            <i class="bi bi-database-exclamation me-2"></i> Para una mejor
+            <i className="bi bi-database-exclamation me-2"></i> Para una mejor
             experiencia, se recomienda reiniciar la base de datos antes de
             navegar por el sitio.
           </p>
@@ -62,7 +62,7 @@ function Information() {
           </button>
           <ToastContainer className="toast-success" />
           <h5 className="title-offcanvas-project mt-4">
-            <i class="bi bi-people-fill me-1"></i> USUARIOS DE PRUEBA
+            <i className="bi bi-people-fill me-1"></i> USUARIOS DE PRUEBA
           </h5>
           <hr className="separator-offcanvas-project" />
           <p className="text-offcanvas-project">
@@ -71,7 +71,7 @@ function Information() {
             siguientes usuarios de prueba:
           </p>
           <p className="text-offcanvas-project">
-            <i class="bi bi-person me-2"></i>Usuario para{" "}
+            <i className="bi bi-person me-2"></i>Usuario para{" "}
             <strong>Comprador</strong>:
           </p>
           <ul className="text-offcanvas-project">
@@ -85,7 +85,7 @@ function Information() {
             </button>{" "}
           </Link>
           <p className="text-offcanvas-project">
-            <i class="bi bi-person-gear me-2"></i>Usuario para{" "}
+            <i className="bi bi-person-gear me-2"></i>Usuario para{" "}
             <strong>Administrador</strong>:
           </p>
           <ul className="text-offcanvas-project">
@@ -99,7 +99,7 @@ function Information() {
             </button>
           </Link>
           <h5 className="title-offcanvas-project mt-4">
-            <i class="bi bi-person-lines-fill me-1"></i> AUTORES
+            <i className="bi bi-person-lines-fill me-1"></i> AUTORES
           </h5>
           <hr className="separator-offcanvas-project" />
           <p className="text-offcanvas-project">

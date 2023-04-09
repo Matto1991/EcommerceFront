@@ -291,15 +291,20 @@ function CheckOut() {
                           </div>
                           <div className="col-6">
                             <div className="mb-2">
-                              <img
-                                alt="img\TheLeroyChair.webp"
-                                src={
-                                  typeof product.images === "object"
-                                    ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
-                                    : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `
-                                }
-                                className="img-fluid border border-1 rounded"
-                              />
+                              <Link
+                                to={`/product/${product.id}`}
+                                className="text-decoration-none"
+                              >
+                                <img
+                                  alt="img\TheLeroyChair.webp"
+                                  src={
+                                    typeof product.images === "object"
+                                      ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
+                                      : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `
+                                  }
+                                  className="img-fluid border border-1 rounded"
+                                />
+                              </Link>
                             </div>
                           </div>
                           <div className="d-flex justify-content-between">

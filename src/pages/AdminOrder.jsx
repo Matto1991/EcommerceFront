@@ -51,7 +51,9 @@ function AdminOrder() {
                     return (
                       <tr key={order.id}>
                         <td> {order.id}</td>
-                        <td>{order.details.firstname} {order.details.lastname}</td>
+                        <td>
+                          {order.details.firstname} {order.details.lastname}
+                        </td>
                         <td>
                           {" "}
                           {order.products.reduce(
@@ -70,6 +72,16 @@ function AdminOrder() {
                   })}
                 </tbody>
               </table>
+              {orders.length === 0 && (
+                <div className="no-orders rounded mx-auto">
+                  <h2 className="no-orders-title text-center">
+                    There are no orders to display!
+                  </h2>
+                  <h2 className="no-orders-message text-center">
+                    When available, you will find them here.
+                  </h2>
+                </div>
+              )}
             </div>
           </section>
         </div>

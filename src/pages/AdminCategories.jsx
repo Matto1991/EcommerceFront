@@ -1,13 +1,15 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
 import NavbarAdmin from "../components/NavbarAdmin";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AdminDash from "../components/AdminDash";
 
 function AdminCategories() {
+  const token = useSelector((state) => state.session.token);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -25,6 +27,9 @@ function AdminCategories() {
 
   const handleDelete = async (id) => {
     const response = await axios({
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
       method: "delete",
       url: `${process.env.REACT_APP_BACKEND_URL}/categories/${id}`,
     });
@@ -84,6 +89,16 @@ function AdminCategories() {
                 );
               })}
             </table>
+            {categories.length === 0 && (
+              <div className="no-orders rounded mx-auto">
+                <h2 className="no-orders-title text-center">
+                  There are no categories to display!
+                </h2>
+                <h2 className="no-orders-message text-center">
+                  When available, you will find them here.
+                </h2>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -8,7 +8,7 @@
   position: sticky !important;
   top: 0px;
   z-index: 100;
-  background-color: #271c15;
+  background-color: #2d2d2d;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
@@ -44,9 +44,75 @@
   background-color: transparent !important;
 }
 
+.admin-section-title {
+  font-family: "BerlingskeSerif";
+}
+
+.dashbord-cards-container {
+  width: 90%;
+}
+
+.no-orders {
+  margin-top: 2.7rem;
+  width: 60%;
+  padding: 1rem 1.2rem 1rem 1.2rem;
+  background-color: #2323230e;
+}
+
+.no-orders-title {
+  margin-bottom: 0.8rem;
+  font-size: 2.15rem;
+  color: var(--brand-green-dark);
+  font-family: "BerlingskeSerif";
+}
+
+.no-orders-message {
+  color: rgb(135, 135, 135);
+  font-size: 0.93rem;
+  font-weight: 200;
+}
+
+.admin-last-orders-section {
+  margin-top: 6rem;
+}
+
+.table-columns th {
+  font-size: 1rem;
+}
+
 .offcanvas-link:hover {
-  background-color: #dfd7cf;
-  border-radius: 10px;
+  background-color: #2d2d2d;
+}
+
+.offcanvas-link:hover > * {
+  color: white;
+}
+
+.offcanvas-link-active {
+  background-color: #2d2d2d;
+}
+
+.offcanvas-link-children-active {
+  color: white;
+}
+
+.create-admin-title {
+  font-family: "BerlingskeSerif";
+  color: var(--brand-green-dark);
+}
+
+.create-admin-form {
+  padding: 0.5rem 0 0.35rem 0;
+  color: white;
+  background-color: #98866b;
+  font-size: 1.3rem;
+  font-family: "BerlingskeSerif";
+  font-weight: 200;
+  transition: background-color 0.15s ease-in-out 0.1s;
+}
+
+.create-admin-form:hover {
+  background-color: #7e6f59;
 }
 
 .edit-btn {

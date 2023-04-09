@@ -12,6 +12,7 @@ function NavbarHome() {
   const loggedUser = useSelector((state) => state.session.user);
   const [isScrolling, setIsScrolling] = useState(false);
   const dispatch = useDispatch();
+
   const handleLogout = () => {
     dispatch(setLoggedUser({ token: null, user: null }));
   };
@@ -104,9 +105,18 @@ function NavbarHome() {
                   : "navbar-static-dropdown"
               }`}
             >
-              <NavDropdown.Item href="/orders">Orders</NavDropdown.Item>
-              <NavDropdown.Item href="/login">Login</NavDropdown.Item>
-              <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
+              {loggedUser ? (
+                <>
+                  <NavDropdown.Item onClick={handleLogout}>
+                    Logout
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/orders">
+                    Your orders
+                  </NavDropdown.Item>
+                </>
+              ) : (
+                <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+              )}
             </NavDropdown>
             <Nav.Link className="d-flex">
               <Cart />

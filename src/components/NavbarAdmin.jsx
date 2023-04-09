@@ -17,20 +17,19 @@ function NavbarAdmin() {
   return (
     <Navbar className="navbar shadow navbar-admin mb-4" expand="lg">
       <Container>
-        <Navbar.Brand className="text-white">Administrator panel</Navbar.Brand>
+        <Navbar.Brand className="text-white" href="/admin">
+          Administrator panel
+        </Navbar.Brand>
         <NavDropdown className="text-black ms-auto mt-2 text-white">
-          <NavDropdown.Item href="/admin/profile">Your Profile</NavDropdown.Item>
-          <NavDropdown.Item href="/orders">Your Orders</NavDropdown.Item>
           <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
         </NavDropdown>
         <Avatar
           src={
-            loggedUser
-              ? `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
-              : `${process.env.REACT_APP_BACKEND_URL}/img/users/no_user.png`
+            loggedUser &&
+            `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
           }
-          alt={loggedUser ? `${loggedUser.firstname}` : "User picture"}
-          className="mx-1"
+          alt={loggedUser ? `${loggedUser.firstname}` : "Admin picture"}
+          className="navbar-avatar ms-2"
         />
       </Container>
     </Navbar>

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import NavbarAdmin from "../components/NavbarAdmin";
 import IconButton from "@mui/material/IconButton";
 import PhotoCamera from "@mui/icons-material/PhotoCamera";
@@ -7,9 +8,9 @@ import { useState } from "react";
 import axios from "axios";
 
 function EditProduct() {
+  const token = useSelector((state) => state.session.token);
   const navigate = useNavigate();
   const { id } = useParams();
-
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
@@ -30,6 +31,9 @@ function EditProduct() {
   useEffect(() => {
     const getProduct = async () => {
       const response = await axios({
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
         method: "GET",
         url: `${process.env.REACT_APP_BACKEND_URL}/products/${id}`,
       });
@@ -55,11 +59,13 @@ function EditProduct() {
     const response = await axios({
       headers: {
         "Content-Type": "multipart/form-data",
+        Authorization: `bearer ${token}`,
       },
       method: "PATCH",
       url: `${process.env.REACT_APP_BACKEND_URL}/products/${id}`,
       data: formData,
     });
+    navigate(-1);
   };
 
   return (
@@ -75,7 +81,7 @@ function EditProduct() {
           </h4>
         </div>
         <div className="col-md-5 col-lg-5 mx-auto">
-          <h2 className=" text-dark create-account fs-1">Edit product</h2>
+          <h2 className="create-admin-title fs-1">Edit product</h2>
           <form
             className="row g-3"
             onSubmit={(event) => {
@@ -190,7 +196,7 @@ function EditProduct() {
             </IconButton>
             <div className="col-6 mx-auto">
               <button
-                className="btn cta text-white  border-0 w-75  fs-5 "
+                className="create-admin-form rounded border-0 w-75  fs-5 "
                 type="submit"
               >
                 Edit
