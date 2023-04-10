@@ -75,7 +75,7 @@ function AdminUser() {
           <div className="d-flex justify-content-between pt-4">
             <h2 className="d-inline">Users</h2>
             <Link to="/admin/create/user">
-              <button className="btn cta-sobre-proyecto text-white btn-m">
+              <button className="btn cta-dashboard text-white btn-m">
                 Add user
               </button>
             </Link>

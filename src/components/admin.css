@@ -8,7 +8,7 @@
   position: sticky !important;
   top: 0px;
   z-index: 100;
-  background-color: #2d2d2d;
+  background-color: var(--brand-green-dark);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
@@ -89,7 +89,7 @@
 }
 
 .offcanvas-link-active {
-  background-color: #2d2d2d;
+  background-color: var(--brand-green-dark);
 }
 
 .offcanvas-link-children-active {
@@ -127,8 +127,8 @@
 
 /* Dashboard  */
 .icon-dashboard-order {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
 
   background-color: var(--brand-green-dark);
   color: white;
@@ -138,8 +138,8 @@
 }
 
 .icon-dashboard-products {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   background-color: var(--brand-green-dark);
   color: white;
   display: flex;
@@ -148,11 +148,32 @@
 }
 
 .icon-dashboard-sales {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   background-color: var(--brand-green-dark);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cta-dashboard {
+  width: 10rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border: 0.5px solid white;
+  padding: 0.3rem 0rem 0.6rem 0rem;
+  font-size: 1rem;
+  font-weight: 200;
+  background-color: #024738d1 !important;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+}
+
+.cta-dashboard:hover {
+  color: #fff;
+  background-color: #024738 !important;
 }

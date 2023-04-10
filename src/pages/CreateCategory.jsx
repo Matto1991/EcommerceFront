@@ -44,7 +44,7 @@ function CreateCategory() {
         </div>
         <div className="col-md-5 col-lg-5 mx-auto">
           <div className="d-flex flex-column align-items-center w-100">
-            <h2 className="create-admin-title fs-1 mb-4">Create Category</h2>
+            <h2 className=" create-admin-title fs-1 mb-4">Create Category</h2>
             <form
               onSubmit={(event) => {
                 handleCategoryCreation(event);
@@ -63,30 +63,32 @@ function CreateCategory() {
                 onChange={(event) => setName(event.target.value)}
                 required
               />
-              <div className="mx-auto">
-                <IconButton
-                  aria-label="upload picture"
-                  component="label"
-                  className=" mt-3"
+              <div className="text-center">
+                <div className="">
+                  <IconButton
+                    aria-label="upload picture"
+                    component="label"
+                    className=" mt-3"
+                  >
+                    <input
+                      hidden
+                      accept="image/*"
+                      type="file"
+                      name="image"
+                      onChange={(event) => setImage(event.target.files[0])}
+                      required
+                    />
+                    <small className="me-2 input-tx text-dark">Upload</small>{" "}
+                    <PhotoCamera className="input-tx text-dark" />
+                  </IconButton>
+                </div>
+                <button
+                  className="cta-dashboard text-white rounded border-0 w-75 m-4 fs-5 d-block "
+                  type="submit"
                 >
-                  <input
-                    hidden
-                    accept="image/*"
-                    type="file"
-                    name="image"
-                    onChange={(event) => setImage(event.target.files[0])}
-                    required
-                  />
-                  <small className="me-2 input-tx text-dark">Upload</small>{" "}
-                  <PhotoCamera className="input-tx text-dark" />
-                </IconButton>
+                  Create
+                </button>
               </div>
-              <button
-                className="create-admin-form rounded border-0 w-75 m-4 fs-5 d-block mx-auto"
-                type="submit"
-              >
-                Create
-              </button>
             </form>
           </div>
         </div>

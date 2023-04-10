@@ -196,7 +196,7 @@ function EditProduct() {
             </IconButton>
             <div className="col-6 mx-auto">
               <button
-                className="create-admin-form rounded border-0 w-75  fs-5 "
+                className="cta-dashboard text-white rounded border-0 w-75  fs-5 "
                 type="submit"
               >
                 Edit

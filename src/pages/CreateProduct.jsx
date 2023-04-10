@@ -174,7 +174,7 @@ export default function CreateProduct() {
                 <PhotoCamera className="input-tx text-dark" />
               </IconButton>
               <button
-                className="create-admin-form rounded mt-4 border-0 w-75 fs-5"
+                className="cta-dashboard text-white rounded mt-4 border-0 w-75 fs-5"
                 type="submit"
               >
                 Create

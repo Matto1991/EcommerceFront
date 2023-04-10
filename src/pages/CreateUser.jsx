@@ -172,7 +172,7 @@ function CreateUser() {
             </div>
             <div className="col-6 mx-auto">
               <button
-                className="create-admin-form rounded border-0 w-75 m-4 fs-5 d-block mx-auto"
+                className="cta-dashboard text-white rounded border-0 w-75 m-4 fs-5 d-block mx-auto"
                 type="submit"
               >
                 Create

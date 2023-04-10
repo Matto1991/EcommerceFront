@@ -41,10 +41,18 @@ function Product() {
   }, []);
 
   const handleAddToCart = () => {
-    notify();
-    dispatch(addToCart({ product }));
+    console.log(products);
+    const currentProduct = products.find((item) => item.id === product.id);
+    console.log(currentProduct);
+    if (currentProduct.quantity < currentProduct.stock) {
+      notify();
+      dispatch(addToCart({ product }));
+    } else {
+      toast.error(`Can´t add ${product.name} to cart`, {
+        position: "bottom-left",
+      });
+    }
   };
-
   return (
     product.images && (
       <>

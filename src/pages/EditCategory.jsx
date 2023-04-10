@@ -89,7 +89,7 @@ function EditCategory() {
             </div>
             <div className="col-6">
               <button
-                className="create-admin-form rounded border-0 w-75 fs-5 d-block"
+                className="cta-dashboard text-white rounded border-0 w-75 fs-5 d-block"
                 type="submit"
               >
                 Edit

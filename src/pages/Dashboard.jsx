@@ -58,15 +58,15 @@ function Dashboard() {
           <h2 className="admin-section-title">Dashboard</h2>
 
           <div className="dashbord-cards-container row g-3 my-5 mx-auto">
-            <div className="col col-md-4 col-lg-4 ">
-              <div className=" card shadow d-flex flex-row justify-content-center p-4">
+            <div className="col col-md-10 col-lg-4 ">
+              <div className=" card h-100 shadow d-flex flex-row justify-content-center p-4">
                 <div className="me-4">
                   <span className="p-2 rounded icon-dashboard-order ">
-                    <i className="bi bi-box2 fs-3"></i>
+                    <i className="bi bi-box2 fs-5"></i>
                   </span>{" "}
                 </div>
                 <div className="text-center">
-                  <h3>Total orders</h3>
+                  <h4>Total orders</h4>
                   <div className="d-flex justify-content-evenly">
                     <h5>{orders.length} </h5>
                     <span className="text-success ">
@@ -77,15 +77,15 @@ function Dashboard() {
               </div>
             </div>
 
-            <div className="col col-md-4 col-lg-4">
-              <div className="card shadow d-flex flex-row justify-content-center p-4">
+            <div className="col col-md-10 col-lg-4">
+              <div className="card h-100 shadow d-flex flex-row justify-content-center p-4">
                 <div className="me-4">
                   <span className="p-2 rounded icon-dashboard-products ">
-                    <i className="bi bi-card-list fs-3"></i>
+                    <i className="bi bi-card-list fs-5"></i>
                   </span>{" "}
                 </div>
                 <div className="text-center">
-                  <h3>Total products</h3>
+                  <h4>Total products</h4>
                   <div className="d-flex justify-content-evenly">
                     <h5>{products.length}</h5>
                     <span className="text-success ">
@@ -96,15 +96,15 @@ function Dashboard() {
               </div>
             </div>
 
-            <div className="col col-md-4 col-lg-4">
-              <div className="card shadow d-flex flex-row justify-content-center p-4">
+            <div className="col col-md-10 col-lg-4">
+              <div className="card h-100 shadow d-flex flex-row justify-content-center p-4">
                 <div className="me-4">
                   <span className="p-2 rounded icon-dashboard-sales ">
-                    <i className="bi bi-currency-dollar fs-3"></i>
+                    <i className="bi bi-currency-dollar fs-5"></i>
                   </span>{" "}
                 </div>
                 <div className="text-center">
-                  <h3>Total sales</h3>
+                  <h4>Total sales</h4>
                   <div className="d-flex justify-content-evenly">
                     <h5>{`${total}`} US$</h5>
                     <span className="text-danger ">
