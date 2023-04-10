@@ -241,7 +241,7 @@ export default function AboutProyect() {
               </div>
             </div>
           </div>
-          {/* <div className="mt-5 text-center">
+          <div className="mt-5 text-center">
             <hr />
             <h2 className="mt-5 mb-4 fw-bold">Tecnologías </h2>
             <img
@@ -249,7 +249,7 @@ export default function AboutProyect() {
               alt="tecnologias"
               className="w-75 p-4"
             />
-          </div> */}
+          </div>
           <div className="text-center">
             <img src="/img/ha_logo.svg" alt="Hack Academy" className="ha-img" />
           </div>

@@ -15,7 +15,7 @@ function NavbarAdmin() {
   };
 
   return (
-    <Navbar className="navbar shadow navbar-admin mb-4" expand="lg">
+    <Navbar className="navbar shadow navbar-admin" expand="lg">
       <Container>
         <Navbar.Brand className="text-white" href="/admin">
           Administrator panel
