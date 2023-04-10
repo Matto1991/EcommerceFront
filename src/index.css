@@ -962,12 +962,26 @@ html {
   transform: rotate(270deg);
 }
 
-@media (min-width: 805px) {
+@media (min-width: 992px) {
   .btn-information {
     position: fixed;
     bottom: 20%;
     transform: rotate(270deg);
-    left: 87%;
+    left: 90%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn-information {
+    position: fixed;
+    left: 91%;
+  }
+}
+
+@media (max-width: 991px) {
+  .btn-information {
+    position: fixed;
+    left: 87.4%;
   }
 }
 
