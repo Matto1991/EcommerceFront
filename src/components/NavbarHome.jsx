@@ -10,6 +10,7 @@ import { setLoggedUser } from "../redux/sessionReducer";
 
 function NavbarHome() {
   const loggedUser = useSelector((state) => state.session.user);
+
   const [isScrolling, setIsScrolling] = useState(false);
   const dispatch = useDispatch();
 
@@ -49,6 +50,13 @@ function NavbarHome() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav id="navbar-movil">
+          {/* <div
+              className={`position-relative ${
+                isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
+              }`}
+            >
+             {loggedUser.isAdmin && <Nav.Link href="/">Admin</Nav.Link> }
+            </div> */}
             <div
               className={`position-relative ${
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
