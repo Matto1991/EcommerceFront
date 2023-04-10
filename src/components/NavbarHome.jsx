@@ -50,12 +50,12 @@ function NavbarHome() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav id="navbar-movil">
-          <div
+            <div
               className={`position-relative ${
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
               }`}
             >
-             {loggedUser?.isAdmin && <Nav.Link href="/admin">Admin</Nav.Link> }
+              {loggedUser?.isAdmin && <Nav.Link href="/admin">Admin</Nav.Link>}
             </div>
             <div
               className={`position-relative ${
@@ -103,7 +103,9 @@ function NavbarHome() {
                   ? `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
                   : `${process.env.REACT_APP_BACKEND_URL}/img/users/no_user.png`
               }
-              alt={loggedUser.token ? `${loggedUser.firstname}` : "User picture"}
+              alt={
+                loggedUser.token ? `${loggedUser.firstname}` : "User picture"
+              }
               className="navbar-avatar ms-4"
             />
             <NavDropdown
@@ -123,7 +125,10 @@ function NavbarHome() {
                   </NavDropdown.Item>
                 </>
               ) : (
-                <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                <>
+                  <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                  <NavDropdown.Item href="/signup">Sign up!</NavDropdown.Item>
+                </>
               )}
             </NavDropdown>
             <Nav.Link className="d-flex">
