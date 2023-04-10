@@ -39,9 +39,15 @@ function UserOrderDetails() {
             <table className="table table-striped table-hover border border rounded  mt-5">
               <thead>
                 <tr>
-                  <th className="text-center product-id title-table-details-order">Product ID</th>
-                  <th className="text-center title-table-details-order">Product</th>
-                  <th className="text-center title-table-details-order">Details</th>
+                  <th className="text-center product-id title-table-details-order">
+                    Product ID
+                  </th>
+                  <th className="text-center title-table-details-order">
+                    Product
+                  </th>
+                  <th className="text-center title-table-details-order">
+                    Details
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -76,46 +82,52 @@ function UserOrderDetails() {
                   : null}
               </tbody>
             </table>
-            <table className="table table-striped table-hover border border rounded  mt-5">
-              <thead className="mt-5">
-                <tr>
-                  <th className="text-center title-table-details-order">Total paid</th>
-                  <th className="text-center title-table-details-order">Customer information</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="text-center single-row-order-details">
-                    <p>
-                      Total:{" "}
-                      {orders.products.reduce(
-                        (acc, product) =>
-                          acc + product.price * product.quantity,
-                        0
-                      )}{" "}
-                      US$
-                    </p>
-                    <p>
-                      Method payment: {orders.details.payment_method}
-                      <i className="bi bi-credit-card me-2 ms-2"></i>
-                    </p>
-                  </td>
-                  <td className="text-center single-row-order-details">
-                    <p>
-                      {orders.details.firstname} {orders.details.lastname}
-                    </p>
-                    <p>
-                      {orders.details.address}, Apartament:{" "}
-                      {orders.details.apartment}
-                    </p>
-                    <p>
-                      {orders.details.city} {orders.details.zipcode},{" "}
-                      {orders.details.state}
-                    </p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            {orders && orders.products && orders.details && (
+              <table className="table table-striped table-hover border border rounded  mt-5">
+                <thead className="mt-5">
+                  <tr>
+                    <th className="text-center title-table-details-order">
+                      Total paid
+                    </th>
+                    <th className="text-center title-table-details-order">
+                      Customer information
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="text-center single-row-order-details">
+                      <p>
+                        Total:{" "}
+                        {orders.products.reduce(
+                          (acc, product) =>
+                            acc + product.price * product.quantity,
+                          0
+                        )}{" "}
+                        US$
+                      </p>
+                      <p>
+                        Method payment: {orders.details.payment_method}
+                        <i className="bi bi-credit-card me-2 ms-2"></i>
+                      </p>
+                    </td>
+                    <td className="text-center single-row-order-details">
+                      <p>
+                        {orders.details.firstname} {orders.details.lastname}
+                      </p>
+                      <p>
+                        {orders.details.address}, Apartament:{" "}
+                        {orders.details.apartment}
+                      </p>
+                      <p>
+                        {orders.details.city} {orders.details.zipcode},{" "}
+                        {orders.details.state}
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            )}
           </div>
         </div>
       </div>
