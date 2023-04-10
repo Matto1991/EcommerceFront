@@ -9,7 +9,8 @@ import { setLoggedUser } from "../redux/sessionReducer";
 
 function NavbarAdmin() {
   const dispatch = useDispatch();
-  const loggedUser = useSelector((state) => state.session.user);
+  const loggedUser = useSelector((state) => state.session);
+  
   const handleLogout = () => {
     dispatch(setLoggedUser({ token: null, user: null }));
   };

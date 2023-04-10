@@ -9,7 +9,8 @@ import { Avatar } from "@mui/material";
 import { setLoggedUser } from "../redux/sessionReducer";
 
 function NavbarHome() {
-  const loggedUser = useSelector((state) => state.session.user);
+  const loggedUser = useSelector((state) => state.session);
+  console.log(loggedUser)
 
   const [isScrolling, setIsScrolling] = useState(false);
   const dispatch = useDispatch();
@@ -50,13 +51,13 @@ function NavbarHome() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav id="navbar-movil">
-          {/* <div
+          <div
               className={`position-relative ${
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
               }`}
             >
-             {loggedUser.isAdmin && <Nav.Link href="/">Admin</Nav.Link> }
-            </div> */}
+             {loggedUser?.isAdmin && <Nav.Link href="/admin">Admin</Nav.Link> }
+            </div>
             <div
               className={`position-relative ${
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
@@ -103,7 +104,7 @@ function NavbarHome() {
                   ? `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
                   : `${process.env.REACT_APP_BACKEND_URL}/img/users/no_user.png`
               }
-              alt={loggedUser ? `${loggedUser.firstname}` : "User picture"}
+              alt={loggedUser.token ? `${loggedUser.firstname}` : "User picture"}
               className="navbar-avatar ms-4"
             />
             <NavDropdown
@@ -113,7 +114,7 @@ function NavbarHome() {
                   : "navbar-static-dropdown"
               }`}
             >
-              {loggedUser ? (
+              {loggedUser.token ? (
                 <>
                   <NavDropdown.Item href="/orders">
                     Your orders
