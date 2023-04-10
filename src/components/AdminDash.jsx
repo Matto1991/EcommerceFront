@@ -29,7 +29,7 @@ function AdminDash() {
             onClick={(event) => handleListItemClick(event, "/admin")}
           >
             <i
-              className={`bi bi-house me-2 icon-sidebar ${
+              className={`bi bi-graph-up-arrow me-2 icon-sidebar ${
                 location.pathname === "/admin"
                   ? "offcanvas-link-children-active"
                   : ""
@@ -156,6 +156,12 @@ function AdminDash() {
             >
               Orders
             </span>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/" className="nav-link text-dark offcanvas-link">
+            <i className="bi bi-house me-2 icon-sidebar"></i>
+            <span className="nav-link-text">Website</span>
           </Link>
         </li>
         {/* Repeat the same pattern for other list items */}

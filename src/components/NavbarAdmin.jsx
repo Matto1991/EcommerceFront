@@ -6,11 +6,12 @@ import Avatar from "@mui/material/Avatar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useSelector, useDispatch } from "react-redux";
 import { setLoggedUser } from "../redux/sessionReducer";
+import { Nav } from "react-bootstrap";
 
 function NavbarAdmin() {
   const dispatch = useDispatch();
   const loggedUser = useSelector((state) => state.session);
-  
+
   const handleLogout = () => {
     dispatch(setLoggedUser({ token: null, user: null }));
   };
@@ -21,6 +22,7 @@ function NavbarAdmin() {
         <Navbar.Brand className="text-white" href="/admin">
           Administrator panel
         </Navbar.Brand>
+
         <NavDropdown className="text-black ms-auto mt-2 text-white">
           <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>
         </NavDropdown>

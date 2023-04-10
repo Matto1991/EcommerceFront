@@ -97,76 +97,44 @@ function NavbarHome() {
               </NavDropdown.Item>
               <NavDropdown.Item href="/category/sets">Sets</NavDropdown.Item>
             </NavDropdown>
-            <Avatar
-              src={
-                loggedUser.token
-                  ? `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
-                  : `${process.env.REACT_APP_BACKEND_URL}/img/users/no_user.png`
-              }
-              alt={
-                loggedUser.token ? `${loggedUser.firstname}` : "User picture"
-              }
-              className="navbar-avatar ms-4"
-            />
-            <NavDropdown
-              className={` ${
-                isScrolling
-                  ? "navbar-dynamic-dropdown"
-                  : "navbar-static-dropdown"
-              }`}
-            >
-              {loggedUser.token ? (
-                <>
-                  <NavDropdown.Item href="/orders">
-                    Your orders
-                  </NavDropdown.Item>
-                  <NavDropdown.Item onClick={handleLogout}>
-                    Logout
-                  </NavDropdown.Item>
-                </>
-              ) : (
-                <>
-                  <NavDropdown.Item href="/login">Login</NavDropdown.Item>
-                  <NavDropdown.Item href="/signup">Sign up!</NavDropdown.Item>
-                </>
-              )}
-            </NavDropdown>
-            <Nav.Link className="d-flex">
-              <div className="d-flex align-items-center">
-                <Avatar
-                  src={
-                    loggedUser.token
-                      ? `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
-                      : `${process.env.REACT_APP_BACKEND_URL}/img/users/no_user.png`
-                  }
-                  alt={
-                    loggedUser.token
-                      ? `${loggedUser.firstname}`
-                      : "User picture"
-                  }
-                  className="navbar-avatar ms-3 ms-lg-4"
-                />
-                <NavDropdown
-                  className={` ${
-                    isScrolling
-                      ? "navbar-dynamic-dropdown"
-                      : "navbar-static-dropdown"
-                  }`}
-                >
-                  {loggedUser.token ? (
-                    <>
-                      <NavDropdown.Item href="/orders">
-                        Your orders
-                      </NavDropdown.Item>
-                      <NavDropdown.Item onClick={handleLogout}>
-                        Logout
-                      </NavDropdown.Item>
-                    </>
-                  ) : (
+            <div className="d-flex align-items-center">
+              <Avatar
+                src={
+                  loggedUser.token
+                    ? `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
+                    : `${process.env.REACT_APP_BACKEND_URL}/img/users/no_user.png`
+                }
+                alt={
+                  loggedUser.token ? `${loggedUser.firstname}` : "User picture"
+                }
+                className="navbar-avatar ms-3 ms-lg-4"
+              />
+              <NavDropdown
+                className={` ${
+                  isScrolling
+                    ? "navbar-dynamic-dropdown"
+                    : "navbar-static-dropdown"
+                }`}
+              >
+                {loggedUser.token ? (
+                  <>
+                    <NavDropdown.Item href="/orders">
+                      Your orders
+                    </NavDropdown.Item>
+                    <NavDropdown.Item onClick={handleLogout}>
+                      Logout
+                    </NavDropdown.Item>
+                  </>
+                ) : (
+                  <>
                     <NavDropdown.Item href="/login">Login</NavDropdown.Item>
-                  )}
-                </NavDropdown>
-              </div>
+                    <NavDropdown.Item href="/signup">Sign up!</NavDropdown.Item>
+                  </>
+                )}
+              </NavDropdown>
+            </div>
+
+            <Nav.Link className="d-flex">
               <Nav.Link className="d-flex ms-4 ms-lg-0">
                 <Cart />
               </Nav.Link>
