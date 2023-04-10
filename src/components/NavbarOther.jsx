@@ -93,7 +93,7 @@ function NavbarOther() {
             </NavDropdown>
             <Avatar
               src={
-                loggedUser
+                loggedUser.token
                   ? `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
                   : `${process.env.REACT_APP_BACKEND_URL}/img/users/no_user.png`
               }
@@ -101,7 +101,7 @@ function NavbarOther() {
               className="navbar-avatar ms-4"
             />
             <NavDropdown className="mt-2 navbar-dynamic-dropdown">
-              {loggedUser ? (
+              {loggedUser.token ? (
                 <>
                   <NavDropdown.Item href="/orders">
                     Your orders

@@ -10,7 +10,6 @@ import { setLoggedUser } from "../redux/sessionReducer";
 
 function NavbarHome() {
   const loggedUser = useSelector((state) => state.session);
-  console.log(loggedUser)
 
   const [isScrolling, setIsScrolling] = useState(false);
   const dispatch = useDispatch();
@@ -100,7 +99,7 @@ function NavbarHome() {
             </NavDropdown>
             <Avatar
               src={
-                loggedUser
+                loggedUser.token
                   ? `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
                   : `${process.env.REACT_APP_BACKEND_URL}/img/users/no_user.png`
               }
