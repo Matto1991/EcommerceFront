@@ -49,7 +49,7 @@ function NavbarHome() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav id="navbar-movil">
+          <Nav className="navbar-movil">
             <div
               className={`position-relative ${
                 isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
@@ -132,7 +132,44 @@ function NavbarHome() {
               )}
             </NavDropdown>
             <Nav.Link className="d-flex">
-              <Cart />
+              <div className="d-flex align-items-center">
+                <Avatar
+                  src={
+                    loggedUser.token
+                      ? `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
+                      : `${process.env.REACT_APP_BACKEND_URL}/img/users/no_user.png`
+                  }
+                  alt={
+                    loggedUser.token
+                      ? `${loggedUser.firstname}`
+                      : "User picture"
+                  }
+                  className="navbar-avatar ms-3 ms-lg-4"
+                />
+                <NavDropdown
+                  className={` ${
+                    isScrolling
+                      ? "navbar-dynamic-dropdown"
+                      : "navbar-static-dropdown"
+                  }`}
+                >
+                  {loggedUser.token ? (
+                    <>
+                      <NavDropdown.Item href="/orders">
+                        Your orders
+                      </NavDropdown.Item>
+                      <NavDropdown.Item onClick={handleLogout}>
+                        Logout
+                      </NavDropdown.Item>
+                    </>
+                  ) : (
+                    <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                  )}
+                </NavDropdown>
+              </div>
+              <Nav.Link className="d-flex ms-4 ms-lg-0">
+                <Cart />
+              </Nav.Link>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

@@ -200,11 +200,22 @@ html {
   color: #fff !important;
   font-family: 200;
 }
-
 @media (min-width: 992px) {
-  #navbar-movil {
+  .navbar-movil {
     margin-left: auto;
     align-items: center;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-movil {
+    margin-top: 7px;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 5px;
+    background-color: #ffffff90;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
 }
 

@@ -50,13 +50,13 @@ function NavbarOther() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto align-items-center">
-          <div
+          <Nav className="navbar-movil">
+            <div
               className={`position-relative ${
-                isScrolling ? "navbar-dynamic-text" : "navbar-static-text"
+                isScrolling ? "navbar-dynamic-text" : "navbar-other-static-text"
               }`}
             >
-             {loggedUser?.isAdmin && <Nav.Link href="/admin">Admin</Nav.Link> }
+              {loggedUser?.isAdmin && <Nav.Link href="/admin">Admin</Nav.Link>}
             </div>
             <div
               className={`position-relative ${
@@ -91,30 +91,40 @@ function NavbarOther() {
               </NavDropdown.Item>
               <NavDropdown.Item href="/category/sets">Sets</NavDropdown.Item>
             </NavDropdown>
-            <Avatar
-              src={
-                loggedUser.token
-                  ? `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
-                  : `${process.env.REACT_APP_BACKEND_URL}/img/users/no_user.png`
-              }
-              alt={loggedUser ? `${loggedUser.firstname}` : "User picture"}
-              className="navbar-avatar ms-4"
-            />
-            <NavDropdown className="mt-2 navbar-dynamic-dropdown">
-              {loggedUser.token ? (
-                <>
-                  <NavDropdown.Item href="/orders">
-                    Your orders
-                  </NavDropdown.Item>
-                  <NavDropdown.Item onClick={handleLogout}>
-                    Logout
-                  </NavDropdown.Item>
-                </>
-              ) : (
-                <NavDropdown.Item href="/login">Login</NavDropdown.Item>
-              )}
-            </NavDropdown>
-            <Nav.Link className="d-flex">
+            <div className="d-flex  align-items-lg-center">
+              <Avatar
+                src={
+                  loggedUser.token
+                    ? `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
+                    : `${process.env.REACT_APP_BACKEND_URL}/img/users/no_user.png`
+                }
+                alt={
+                  loggedUser.token ? `${loggedUser.firstname}` : "User picture"
+                }
+                className="navbar-avatar ms-3 ms-lg-4"
+              />
+              <NavDropdown
+                className={` ${
+                  isScrolling
+                    ? "navbar-dynamic-dropdown"
+                    : "navbar-other-static-dropdown"
+                }`}
+              >
+                {loggedUser.token ? (
+                  <>
+                    <NavDropdown.Item href="/orders">
+                      Your orders
+                    </NavDropdown.Item>
+                    <NavDropdown.Item onClick={handleLogout}>
+                      Logout
+                    </NavDropdown.Item>
+                  </>
+                ) : (
+                  <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                )}
+              </NavDropdown>
+            </div>
+            <Nav.Link className="d-flex ms-4 ms-lg-0">
               <Cart />
             </Nav.Link>
           </Nav>
