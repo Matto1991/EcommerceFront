@@ -943,14 +943,88 @@ html {
 }
 
 .btn-information {
+  width: 10rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border: 0.5px solid white;
+  padding: 0.3rem 0rem 0.6rem 0rem;
+  font-size: 1rem;
+  font-weight: 200;
+  background-color: #7e6f5994 !important;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
   position: fixed;
   bottom: 20%;
-  left: 93.2%;
+  left: 92%;
   transform: rotate(270deg);
 }
 
-@media (max-width: 805px) {
-  .btn-info {
-    margin-left: 80%;
+@media (min-width: 805px) {
+  .btn-information {
+    position: fixed;
+    bottom: 20%;
+    transform: rotate(270deg);
+    left: 87%;
   }
 }
+
+@media (max-width: 804px) {
+  .btn-information {
+    position: fixed;
+    bottom: 20%;
+    transform: rotate(270deg);
+    left: 85%;
+  }
+}
+
+@media (max-width: 676px) {
+  .btn-information {
+    position: fixed;
+    left: 83%;
+  }
+}
+
+@media (max-width: 586px) {
+  .btn-information {
+    position: fixed;
+    left: 76%;
+  }
+}
+
+@media (max-width: 432px) {
+  .btn-information {
+    position: fixed;
+    left: 70%;
+  }
+}
+
+@media (max-width: 352px) {
+  .btn-information {
+    position: fixed;
+    left: 65%;
+  }
+}
+.cta-sobre-proyecto-btn {
+  width: 10rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border: 0.5px solid white;
+  padding: 0.3rem 0rem 0.6rem 0rem;
+  font-size: 1rem;
+  font-weight: 200;
+  background-color: #7e6f5994 !important;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+}
+
+/* @media (max-width: 805px) {
+  .btn-information {
+    margin-left: 82% !important;
+  }
+} */

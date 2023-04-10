@@ -35,7 +35,7 @@ function Information() {
     <>
       <button
         onClick={handleShow}
-        className="cta-sobre-proyecto text-white btn-information"
+        className="cta-sobre-proyecto-btn text-white btn-information"
       >
         Sobre el proyecto
       </button>
