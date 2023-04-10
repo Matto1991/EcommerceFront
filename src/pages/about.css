@@ -92,6 +92,10 @@
   align-items: center;
 }
 
+.card-text-about {
+  color: var(--brand-ligth-brown);
+}
+
 .about-title {
   font-weight: 400;
   color: var(--brand-green) !important;

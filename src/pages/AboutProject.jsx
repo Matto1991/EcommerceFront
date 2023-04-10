@@ -19,9 +19,9 @@ export default function AboutProyect() {
             estudiantes del coding bootcamp de Hack Academy.
           </p>
         </div>
-        <div className="row row-cols-1 row-cols-lg-3 g-5 mb-5 mt-4">
+        <div className="row row-cols-1 row-cols-md-3 g-4">
           <div className="col">
-            <div className="card about-project-card shadow">
+            <div className="card h-100 shadow">
               <span className="p-2 rounded icon-about">
                 <i className="fs-5 bi bi-clock text-white"></i>
               </span>
@@ -29,17 +29,20 @@ export default function AboutProyect() {
                 <h5 className="card-about-title mb-0">Duración</h5>
                 <hr className="card-about-separator" />
                 <p className="card-about-text">
-                  Este proyecto se llevó a cabo en un período de{" "}
-                  <strong>tres semanas (9 horas diarias aprox.)</strong>, en
-                  marzo de 2023. Durante el proyecto el equipo se enfocó en
-                  generar una compañía falsa y construir el sitio web de la
-                  misma aplicando los conocimientos aprendidos previamente.
+                  Este proyecto se llevó a cabo en el mes de marzo de 2023 como
+                  proyecto final, dedicando entre{" "}
+                  <strong> 9 y 12 horas diarias </strong> aprox. Durante el
+                  proyecto el equipo se enfocó en seleccionar un producto y
+                  construir este sitio web, aplicando los conocimientos
+                  aprendidos previamente durante el bootcamp. Se empleó una
+                  planificación detallada para garantizar el cumplimiento de los
+                  objetivos en el plazo establecido.
                 </p>
               </div>
             </div>
           </div>
           <div className="col">
-            <div className="card shadow">
+            <div className="card h-100 shadow">
               <span className="p-2 rounded icon-about">
                 <i className="fs-5 bi bi-code-square text-white"></i>
               </span>
@@ -62,7 +65,7 @@ export default function AboutProyect() {
             </div>
           </div>
           <div className="col">
-            <div className="card shadow">
+            <div className="card h-100 shadow">
               <span className="p-2 rounded icon-about">
                 <i className=" fs-5 bi bi-list-ul text-white"></i>
               </span>
@@ -98,6 +101,9 @@ export default function AboutProyect() {
                 />
                 <div className="card-body text-center">
                   <h3 className="card-title card-team-title">ANDRES VIERA</h3>
+                  <p className="card-text-about fw-bold fs-6">
+                    Full Stack Developer Jr.
+                  </p>
 
                   <div className="icons-team d-flex justify-content-center">
                     <Link
@@ -134,6 +140,9 @@ export default function AboutProyect() {
                   <h3 className="card-title card-team-title">
                     VIRGINIA BARBARO
                   </h3>
+                  <p className="card-text-about fw-bold fs-6">
+                    Full Stack Developer Jr.
+                  </p>
                   <div className="icons-team d-flex justify-content-center">
                     <Link
                       to={"https://www.linkedin.com/in/virginia-barbaro/"}
@@ -169,6 +178,9 @@ export default function AboutProyect() {
                 />
                 <div className="card-body text-center">
                   <h3 className="card-title card-team-title">ALINE FARIAS</h3>
+                  <p className="card-text-about fw-bold fs-6">
+                    Full Stack Developer Jr.
+                  </p>
                   <div className="icons-team d-flex justify-content-center">
                     <Link
                       to={"https://www.linkedin.com/in/aline-farias-111035268/"}
@@ -181,7 +193,7 @@ export default function AboutProyect() {
                     </Link>
                     <Link
                       to={
-                        "mailto:Aline.farias.dev@gmail.com?subject==Hola,%20quiero%20contactarte"
+                        "mailto:aline.farias.dev@gmail.com?subject==Hola,%20quiero%20contactarte"
                       }
                       target="_blank"
                     >
@@ -201,6 +213,9 @@ export default function AboutProyect() {
                 />
                 <div className="card-body text-center">
                   <h3 className="card-title card-team-title">MATHIAS SANDIN</h3>
+                  <p className="card-text-about fw-bold fs-6">
+                    Full Stack Developer Jr.
+                  </p>
                   <div className="icons-team d-flex justify-content-center">
                     <Link
                       to={"https://www.linkedin.com/in/mathias-sandin/"}
@@ -241,7 +256,7 @@ export default function AboutProyect() {
               </div>
             </div>
           </div>
-          {/* <div className="mt-5 text-center">
+          <div className="mt-5 text-center">
             <hr />
             <h2 className="mt-5 mb-4 fw-bold">Tecnologías </h2>
             <img
@@ -249,7 +264,7 @@ export default function AboutProyect() {
               alt="tecnologias"
               className="w-75 p-4"
             />
-          </div> */}
+          </div>
           <div className="text-center">
             <img src="/img/ha_logo.svg" alt="Hack Academy" className="ha-img" />
           </div>

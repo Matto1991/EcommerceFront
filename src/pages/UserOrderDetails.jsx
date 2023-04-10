@@ -33,7 +33,7 @@ function UserOrderDetails() {
     <>
       <NavbarOther />
       <div>
-        <div className="container">
+        <div className="container header-order-purchase">
           <h2 className="text-center mt-5">Order number: {orders.id}</h2>
           <div className="table-responsive-orders-details">
             <table className="table table-striped table-hover border border rounded  mt-5">
@@ -96,7 +96,7 @@ function UserOrderDetails() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td className="text-center single-row-order-details">
+                    <td className="text-center ">
                       <p>
                         Total:{" "}
                         {orders.products.reduce(
@@ -111,7 +111,7 @@ function UserOrderDetails() {
                         <i className="bi bi-credit-card me-2 ms-2"></i>
                       </p>
                     </td>
-                    <td className="text-center single-row-order-details">
+                    <td className="text-center ">
                       <p>
                         {orders.details.firstname} {orders.details.lastname}
                       </p>
