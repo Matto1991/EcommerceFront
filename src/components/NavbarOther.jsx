@@ -120,7 +120,10 @@ function NavbarOther() {
                     </NavDropdown.Item>
                   </>
                 ) : (
-                  <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                  <>
+                    <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                    <NavDropdown.Item href="/signup">Sign up!</NavDropdown.Item>
+                  </>
                 )}
               </NavDropdown>
             </div>

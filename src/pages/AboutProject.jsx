@@ -95,7 +95,7 @@ export default function AboutProyect() {
             <div className="col-md-6  col-lg-3">
               <div className="card border-0 p-3">
                 <img
-                  src="/img/team_Andres.png"
+                  src="/img/team_Andres-removebg-preview (1).png"
                   className="img-team shadow mx-auto"
                   alt="Andres Viera"
                 />
