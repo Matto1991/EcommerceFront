@@ -145,8 +145,8 @@ function AdminUser() {
                           alt={admin.firstname}
                           src={
                             typeof admin.avatar === "object"
-                              ? `${process.env.REACT_APP_BACKEND_URL}/${admin.avatar}`
-                              : `${process.env.REACT_APP_BACKEND_URL}/img/users/${admin.avatar} `
+                              ? `${process.env.REACT_APP_IMAGES_URL}/${admin.avatar}`
+                              : `${process.env.REACT_APP_IMAGES_URL}/users/${admin.avatar} `
                           }
                           className="navbar-avatar ms-4"
                         />
