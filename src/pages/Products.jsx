@@ -48,7 +48,7 @@ function Products() {
                       src={
                         typeof product.images === "object"
                           ? `${process.env.REACT_APP_IMAGES_URL}/${product.images[0]}`
-                          : `${process.env.REACT_APP_IMAGES_URL}/img/users/${product.images} `
+                          : `${process.env.REACT_APP_IMAGES_URL}/users/${product.images} `
                       }
                       alt={`${product.name}`}
                       className="product-image rounded-top img-fluid"

@@ -25,6 +25,7 @@ function UserOrders() {
       setOrders(response.data);
     };
     getOrders();
+    // eslint-disable-next-line
   }, []);
 
   return (
