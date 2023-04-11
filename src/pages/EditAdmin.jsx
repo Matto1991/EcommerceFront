@@ -34,6 +34,7 @@ export default function EditAdmin() {
     };
 
     getUser();
+    // eslint-disable-next-line
   }, []);
 
   const handleAdminEdit = async (event) => {

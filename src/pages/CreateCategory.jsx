@@ -18,7 +18,7 @@ function CreateCategory() {
     formData.append("name", name);
 
     formData.append("image", image);
-    const response = await axios({
+    await axios({
       headers: {
         Authorization: `Bearer ${token}`,
       },

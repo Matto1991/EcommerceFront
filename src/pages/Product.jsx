@@ -16,7 +16,8 @@ function Product() {
   const navigate = useNavigate();
 
   const { id } = useParams();
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState(null);
+  //eslint-disable-next-line
   const [categories, setCategories] = useState([]);
 
   const [value, setValue] = useState(4);
@@ -38,23 +39,22 @@ function Product() {
       setProduct(response.data);
     };
     getProduct();
+    //eslint-disable-next-line
   }, []);
 
   const handleAddToCart = () => {
-    console.log(products);
     const currentProduct = products.find((item) => item.id === product.id);
-    console.log(currentProduct);
-    if (currentProduct.quantity < currentProduct.stock) {
-      notify();
-      dispatch(addToCart({ product }));
-    } else {
-      toast.error(`Can´t add ${product.name} to cart`, {
+
+    if (currentProduct && currentProduct.quantity >= currentProduct.stock)
+      return toast.error(`Can´t add ${product.name} to cart`, {
         position: "bottom-left",
       });
-    }
+    dispatch(addToCart({ product }));
+    notify();
   };
+
   return (
-    product.images && (
+    product && (
       <>
         <NavbarOther />
         <div className="container mt-5">
@@ -65,8 +65,8 @@ function Product() {
                   className="img-fluid h-100"
                   src={
                     typeof product.images === "object"
-                      ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
-                      : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `
+                      ? `${process.env.REACT_APP_IMAGES_URL}/${product.images[0]}`
+                      : `${process.env.REACT_APP_IMAGES_URL}/users/${product.images} `
                   }
                   alt={product.name}
                 />

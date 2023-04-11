@@ -17,10 +17,12 @@ function Category() {
       });
 
       setCategory(response.data);
+
       setProducts(response.data.products);
     };
 
     getCategories();
+    //eslint-disable-next-line
   }, []);
 
   return (
@@ -57,8 +59,8 @@ function Category() {
                             className="product-image img-fluid "
                             src={
                               typeof product.images === "object"
-                                ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
-                                : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `
+                                ? `${process.env.REACT_APP_IMAGES_URL}/${product.images[0]}`
+                                : `${process.env.REACT_APP_IMAGES_URL}/img/users/${product.images} `
                             }
                             alt={product.name}
                           />
@@ -95,7 +97,7 @@ function Category() {
               );
             })}
           </div>
-          <Information/>
+          <Information />
           <Footer />
         </>
       )}

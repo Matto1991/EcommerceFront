@@ -24,6 +24,7 @@ function Dashboard() {
       setOrders(response.data);
     };
     getOrders();
+    // eslint-disable-next-line
   }, []);
 
   const total = orders.reduce((accumulator, order) => {
@@ -47,6 +48,7 @@ function Dashboard() {
       setProducts(response.data);
     };
     getProducts();
+    // eslint-disable-next-line
   }, []);
 
   return (

@@ -79,7 +79,6 @@ function CheckOut() {
         }, 2000);
       }
     } else {
-      console.log(1);
       return toast.error("Please fill-in the form", {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
@@ -299,8 +298,8 @@ function CheckOut() {
                                   alt="img\TheLeroyChair.webp"
                                   src={
                                     typeof product.images === "object"
-                                      ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
-                                      : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `
+                                      ? `${process.env.REACT_APP_IMAGES_URL}/${product.images[0]}`
+                                      : `${process.env.REACT_APP_IMAGES_URL}/users/${product.images} `
                                   }
                                   className="img-fluid border border-1 rounded"
                                 />

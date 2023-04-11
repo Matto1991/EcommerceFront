@@ -42,6 +42,7 @@ function EditProduct() {
     };
 
     getProduct();
+    // eslint-disable-next-line
   }, []);
 
   const handleProductEdit = async (event) => {
@@ -56,7 +57,7 @@ function EditProduct() {
     formData.append("image", image);
     formData.append("categoryId", categoryId);
 
-    const response = await axios({
+    await axios({
       headers: {
         "Content-Type": "multipart/form-data",
         Authorization: `bearer ${token}`,

@@ -22,6 +22,7 @@ function AdminOrder() {
     };
 
     getOrders();
+    // eslint-disable-next-line
   }, []);
 
   return (

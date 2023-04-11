@@ -6,7 +6,6 @@ import Avatar from "@mui/material/Avatar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useSelector, useDispatch } from "react-redux";
 import { setLoggedUser } from "../redux/sessionReducer";
-import { Nav } from "react-bootstrap";
 
 function NavbarAdmin() {
   const dispatch = useDispatch();
@@ -29,7 +28,7 @@ function NavbarAdmin() {
         <Avatar
           src={
             loggedUser &&
-            `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
+            `${process.env.REACT_APP_IMAGES_URL}/users/${loggedUser.avatar}`
           }
           alt={loggedUser ? `${loggedUser.firstname}` : "Admin picture"}
           className="navbar-avatar ms-2"

@@ -97,8 +97,8 @@ function PurchaseOrder() {
                         <img
                           src={
                             typeof product.images === "object"
-                              ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
-                              : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images}`
+                              ? `${process.env.REACT_APP_IMAGES_URL}/${product.images[0]}`
+                              : `${process.env.REACT_APP_IMAGES_URL}/users/${product.images}`
                           }
                           alt={`${product.name}`}
                           className="rounded img-table"
@@ -162,7 +162,7 @@ function PurchaseOrder() {
                   <td>
                     <ul className="list-group text-end list-unstyled">
                       <li>Shipping US$ 0 </li>
-                      <li>Tax US$ 13</li>
+                      <li>Tax US$ 150</li>
                       <li>
                         Products:{" "}
                         {products.reduce(

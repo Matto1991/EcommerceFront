@@ -31,7 +31,7 @@ export default function CreateProduct() {
     formData.append("image", image);
     formData.append("categoryId", categoryId);
 
-    const response = await axios({
+    await axios({
       headers: {
         "Content-Type": "multipart/form-data",
         Authorization: `bearer ${token}`,

@@ -2,10 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import NavbarHome from "../components/NavbarHome";
 import NavbarOther from "../components/NavbarOther";
-import { format } from "date-fns";
-import { tr } from "date-fns/locale";
 import Footer from "../components/Footer";
 
 function UserOrderDetails() {
@@ -26,7 +23,7 @@ function UserOrderDetails() {
       console.log(response.data);
       setOrders(response.data);
     };
-    getOrderId();
+    getOrderId(); // eslint-disable-next-line
   }, []);
 
   return (
@@ -40,7 +37,7 @@ function UserOrderDetails() {
               <thead>
                 <tr>
                   <th className="text-center product-id title-table-details-order">
-                    Product ID
+                    Id
                   </th>
                   <th className="text-center title-table-details-order">
                     Product
@@ -62,8 +59,8 @@ function UserOrderDetails() {
                           <img
                             src={
                               typeof product.images === "object"
-                                ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
-                                : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images}`
+                                ? `${process.env.REACT_APP_IMAGES_URL}/${product.images[0]}`
+                                : `${process.env.REACT_APP_IMAGES_URL}/img/users/${product.images}`
                             }
                             alt={`${product.name}`}
                             className="rounded img-table mt-3"

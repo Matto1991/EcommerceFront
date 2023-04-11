@@ -35,6 +35,7 @@ export default function EditUser() {
     };
 
     getUser();
+    // eslint-disable-next-line
   }, []);
 
   const handleUserEdit = async (event) => {

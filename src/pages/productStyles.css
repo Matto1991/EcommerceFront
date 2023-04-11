@@ -19,7 +19,7 @@
 }
 
 .product-card {
-  height: 100% !important;
+  height: 50% !important;
 }
 
 .product-image {
@@ -83,7 +83,6 @@
   color: #f8f9fa;
   padding: 0.5rem;
   border-radius: 5px;
-
 }
 
 .product-btn:hover {

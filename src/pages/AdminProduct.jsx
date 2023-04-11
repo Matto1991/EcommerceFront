@@ -24,6 +24,7 @@ export default function AdminProduct() {
     };
 
     getProduct();
+    // eslint-disable-next-line
   }, []);
 
   const handlProductDelete = async (id) => {

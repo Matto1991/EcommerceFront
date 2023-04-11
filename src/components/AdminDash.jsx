@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./admin.css";
 
 function AdminDash() {
+  // eslint-disable-next-line
   const [activeLink, setActiveLink] = useState("");
   const location = useLocation();
   const navigate = useNavigate();

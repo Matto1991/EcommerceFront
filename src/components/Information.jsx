@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
+
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -11,12 +11,12 @@ function Information() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  // eslint-disable-next-line
   const navigate = useNavigate();
 
   const notify = () => {
     toast.success("Database reset successfully", {
-      position: "bottom-right",
+      position: "bottom-left",
     });
   };
 

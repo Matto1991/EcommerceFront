@@ -35,7 +35,7 @@ function Products() {
             classic.
           </p>
         </div>
-        <div className="row g-4 container-fluid">
+        <div className="row g-4 container-fluid ">
           {products.map((product) => {
             return (
               <div key={product.id} className="col-12 col-md-6 mt-5 p-3">
@@ -47,14 +47,13 @@ function Products() {
                     <img
                       src={
                         typeof product.images === "object"
-                          ? `${process.env.REACT_APP_BACKEND_URL}/${product.images[0]}`
-                          : `${process.env.REACT_APP_BACKEND_URL}/img/users/${product.images} `
+                          ? `${process.env.REACT_APP_IMAGES_URL}/${product.images[0]}`
+                          : `${process.env.REACT_APP_IMAGES_URL}/img/users/${product.images} `
                       }
                       alt={`${product.name}`}
-                      className="product-image rounded-top "
-                      width="100%"
+                      className="product-image rounded-top img-fluid"
                     />
-                    <div className="card-body rounded-bottom featured-card-body d-flex justify-content-between p-4">
+                    <div className="card-body rounded-bottom featured-card-body d-flex justify-content-between p-4 ">
                       <div>
                         <h4 className="card-title featured-card-title">
                           {product.name}
@@ -65,6 +64,10 @@ function Products() {
                             Ships in 3-5 days
                           </span>{" "}
                         </p>
+                        <h4 className="bold product-price mt-2">
+                          <small className="product-price-small">from</small>{" "}
+                          US$ {product.price}
+                        </h4>
                       </div>
                     </div>
                   </div>
@@ -75,7 +78,7 @@ function Products() {
         </div>
       </div>
       <Information />
-      <Footer/>
+      <Footer />
     </>
   );
 }

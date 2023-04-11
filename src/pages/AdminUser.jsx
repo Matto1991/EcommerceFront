@@ -39,6 +39,7 @@ function AdminUser() {
 
     getUsers();
     getAdmins();
+    // eslint-disable-next-line
   }, []);
 
   const handleUserDelete = async (userId) => {
@@ -102,8 +103,8 @@ function AdminUser() {
                           alt="User"
                           src={
                             typeof user.avatar === "object"
-                              ? `${process.env.REACT_APP_BACKEND_URL}/${user.avatar}`
-                              : `${process.env.REACT_APP_BACKEND_URL}/img/users/${user.avatar} `
+                              ? `${process.env.REACT_APP_IMAGES_URL}/${user.avatar}`
+                              : `${process.env.REACT_APP_IMAGES_URL}/users/${user.avatar} `
                           }
                           className="navbar-avatar ms-4"
                         />

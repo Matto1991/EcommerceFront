@@ -37,7 +37,7 @@ function Categories() {
                   <div
                     className="d-flex justify-content-center align-items-center rounded category-card"
                     style={{
-                      backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[0].image})`,
+                      backgroundImage: `url(${process.env.REACT_APP_IMAGES_URL}/${categories[0].image})`,
                       backgroundRepeat: "no-Repeat",
                       backgroundSize: "cover",
                       backgroundPosition: "center",
@@ -57,7 +57,7 @@ function Categories() {
                   <div
                     className="d-flex justify-content-center align-items-center rounded category-card"
                     style={{
-                      backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[1].image})`,
+                      backgroundImage: `url(${process.env.REACT_APP_IMAGES_URL}/${categories[1].image})`,
                       backgroundRepeat: "no-Repeat",
                       backgroundSize: "cover",
                       backgroundPosition: "center",
@@ -77,7 +77,7 @@ function Categories() {
                   <div
                     className="d-flex justify-content-center align-items-center rounded category-card"
                     style={{
-                      backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[2].image})`,
+                      backgroundImage: `url(${process.env.REACT_APP_IMAGES_URL}/${categories[2].image})`,
                       backgroundRepeat: "no-Repeat",
                       backgroundSize: "cover",
                       backgroundPosition: "center",
@@ -99,7 +99,7 @@ function Categories() {
               <div
                 className="d-flex justify-content-center align-items-center rounded category-card-right"
                 style={{
-                  backgroundImage: `url(${process.env.REACT_APP_BACKEND_URL}/${categories[3].image})`,
+                  backgroundImage: `url(${process.env.REACT_APP_IMAGES_URL}/${categories[3].image})`,
                   backgroundRepeat: "no-Repeat",
                   backgroundSize: "cover",
                   backgroundPosition: "center",

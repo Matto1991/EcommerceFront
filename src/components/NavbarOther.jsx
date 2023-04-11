@@ -95,8 +95,8 @@ function NavbarOther() {
               <Avatar
                 src={
                   loggedUser.token
-                    ? `${process.env.REACT_APP_BACKEND_URL}/img/users/${loggedUser.avatar}`
-                    : `${process.env.REACT_APP_BACKEND_URL}/img/users/no_user.png`
+                    ? `${process.env.REACT_APP_IMAGES_URL}/users/${loggedUser.avatar}`
+                    : `${process.env.REACT_APP_IMAGES_URL}/users/no_user.png`
                 }
                 alt={
                   loggedUser.token ? `${loggedUser.firstname}` : "User picture"
